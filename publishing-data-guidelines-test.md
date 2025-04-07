@@ -102,3 +102,29 @@ Recommended standards:
 - **FAIR Principles** for best practices in data consistency, accuracy, and compliance
 
 ---
+
+## Examples 
+
+The following are real-world examples of successful data publication within MeteoGate.
+
+<b>Metadata</b> 
+
+[E-SOH discovery metadata](https://observations.eumetnet.eu/collections/observations/dataset)
+
+[KNMI discovery metadata](https://tlnt19059.sharepoint.com/sites/FEMDI/_layouts/15/download.aspx?UniqueId=6a0407399d65402b8d18c2ef82ac1c06&e=UFaGwI) 
+
+<b>Notifications</b>
+
+[WMO notification examples](https://schemas.wmo.int/wnm/1.0.0/examples) 
+
+<b>APIs</b> 
+
+[DMI’s EDR API](https://opendatadocs.dmi.govcloud.dk/en/APIs/Forecast_Data_EDR_API) 
+
+[DMI’s STAC API](https://opendatadocs.dmi.govcloud.dk/en/APIs/Forecast_Data_STAC-API) 
+
+[FMI’s EDR API](https://opendata.fmi.fi/edr/collections) 
+
+[KNMI’s EDR API](https://developer.dataplatform.knmi.nl/edr-api)  
+
+[MeteoSwiss STAC API](https://github.com/MeteoSwiss/opendata) 
