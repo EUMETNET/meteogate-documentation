@@ -99,7 +99,7 @@ Compliance is ensured through:
 Recommended standards:
 - **EUMETDAPS** definitions for European meteorological data-sharing policies
 - Standardized vocabularies from **WMO**, **ECMWF**, **EUMETNET**, and **EUMETSAT**
-- **FAIR Principles** for best practices in data consistency, accuracy, and compliance
+- **[FAIR Principles](https://www.go-fair.org/fair-principles/)** for best practices in data consistency, accuracy, and compliance
 
 ---
 
@@ -128,3 +128,20 @@ The following are real-world examples of successful data publication within Mete
 [KNMI’s EDR API](https://developer.dataplatform.knmi.nl/edr-api)  
 
 [MeteoSwiss STAC API](https://github.com/MeteoSwiss/opendata) 
+
+---
+
+## Steps to Publish Data Through MeteoGate
+
+### 1. Choose a suitable data publishing pattern and deployment environment 
+The choice between using a MeteoGate HVD service, the API Gateway, or direct access affects design choices and deployment. The deployment platform – whether EWC, public cloud, or on-premises – should align with data access needs and cost considerations. Establish rate limits and potentially access control to ensure efficient resource use and fair access. 
+
+### 2. Structure and Prepare Data
+
+Data must be structured into well-organised datasets and collections, ensuring compatibility with MeteoGate and WMO standards. High data quality is essential, and discovery metadata must be created to enable searchability in MeteoGate, WMO WIS2, and external search engines. 
+
+### 3. Deploy and Integrate Data Supply  
+
+The Data Supply must be deployed according to the chosen publishing pattern. This involves setting up and validating API endpoints, publishing metadata and notifications, and ensuring security, scalability, and compliance. Once ready, Data Publishers must integrate the Data Supply with MeteoGate and WIS2 components. 
+
+...TBC
