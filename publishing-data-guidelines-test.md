@@ -238,4 +238,111 @@ The access restrictions may be different for different datasets and APIs. Typica
 The access restrictions are implemented in different ways depending on the Data Publishing Pattern used: 
 - Pattern 1: When sharing data through a HVD service, the technical access restrictions also depend on the HVD service’s agreed specifications.  
 - Pattern 2: The MeteoGate API Gateway allows setting 1) authentication (whether users need to authenticate using API Key or not to access the endpoint) and 2) rate limits (maximum number of requests per time interval) for each API endpoint. Rate limits can be set separately for authenticated and unauthenticated users, when authentication is not required (i.e. when offering better QoS to registered users). The Data Publisher can set the access restrictions for the Data Supply during the onboarding process.  
-- Pattern 3: When sharing data directly, the Data Publisher is responsible for implementing all required access restrictions. 
+- Pattern 3: When sharing data directly, the Data Publisher is responsible for implementing all required access restrictions.
+  
+
+## Structure and Prepare Data 
+
+Datasets should be structured in a way that ensures efficient access, consistency, interoperability, and discoverability within MeteoGate and WMO WIS2. Key aspects of structuring include defining dataset boundaries, standardizing parameters, optimizing metadata, ensuring proper indexing, and selecting suitable API technologies for data retrieval. 
+
+MeteoGate does not enforce specific data structures or quality requirements. Data Owners and Data Publishers are responsible for ensuring that the published data is of sufficient quality. They can choose the most suitable data structures and formats based on their specific use cases, domains, and user requirements. However, MeteoGate and WIS 2 require standardized metadata and notifications for discoverability and interoperability. Also, Data Owners that are WMO members need to fulfil WMO data quality requirements. 
+
+Data should be organised into datasets that share common characteristics, such as type (e.g., weather station observations), format, vocabulary, access protocol, quality management process, and license. 
+
+Datasets are published as collections, which are logical groupings of related resources exposed through an API. Each collection is assigned a unique URL for accessibility. Different API technologies require different structuring approaches: 
+
+- [OGC API - Environmental Data Retrieval (EDR)](https://ogcapi.ogc.org/edr/) is recommended for interactive data access, enabling spatiotemporal queries and dynamic retrieval of real-time or historical observations within MeteoGate’s Data Explorer and Data Consumer applications.
+- [SpatioTemporal Asset Catalog (STAC)](https://stacspec.org/en/) is recommended for pre-packaged data, providing a standardized catalog structure for geospatial and temporal datasets, enhancing metadata discoverability and supporting large-scale archives. 
+
+Both EDR and STAC improve data usability but serve different purposes. EDR is optimized for direct queries and interactive exploration, while STAC is suited for structured metadata-driven dataset discovery. 
+
+**Recommendations** 
+
+- Ensure compatibility with API technologies such as EDR and STAC to optimize data retrieval.
+- Follow the restrictive EDR profile to maintain consistency in data structuring.
+- Use STAC for geospatial and temporal datasets to improve metadata standardization and searchability.
+- Organise datasets based on retrieval methods (e.g., real-time data, historical archives, aggregated summaries) for usability.
+- Define standardized parameters such as temperature, wind speed, and precipitation to ensure consistency across datasets and enable effective query.
+- Ensure datasets are accessible through unique URLs to support efficient discovery and retrieval.
+- Ensure compatibility with MeteoGate Data Explorer by:  
+  - Including a list of available parameters (parameter_names) in the collection metadata.
+  - Providing observation locations in GeoJSON format (collections/<collection_name>/locations).
+  - Ensuring that data includes a time axis (domain.axes.t) for temporal queries. 
+- Optimize data indexing for fast and reliable API queries. 
+
+### Data formats
+
+To ensure interoperability, usability, and performance across MeteoGate, data format should be chosen based on the type of data, the user community, and technical compatibility with MeteoGate services. 
+
+**Recommendations** 
+
+**1. Use an Open, Non-Proprietary Format** 
+
+  An open format allows unrestricted usage without licensing constraints, ensuring accessibility for both data producers and software developers. Open formats enhance interoperability and prevent vendor lock-in. 
+
+**2. Choose a Format that Matches Your Data Type**
+
+  Different data structures require different formats:
+- Tabular data representing sets of  features (e.g., in-situ observations, station measurements)
+  → Recommended formats: Comma-Separated-Variable (CSV), TSV, GeoJSON (RFC 7946), BUFR, Parquet, GeoParquet. Cloud-optimized formats like Parquet are ideal for very large datasets. 
+
+- Spatiotemporal coverage data (e.g., grids, multi-dimensional arrays)
+  → Recommended formats: CoverageJSON, GRIB, HDF5, NetCDF (NetCDF4 as a profile of HDF5), GeoTIFF, Cloud-Optimised-GeoTIFF, Zarr. CoverageJSON is the recommended format for use with OGC API - EDR and supports efficient, standards-based access to coverage data. 
+
+- Overlapping cases → BUFR can encode both point-based and coverage data, but it is complex. Time-series data may be represented as a tabular list (CSV, Parque) or a one-dimensional array (NetCDF), Zarr.
+
+**3. Select a Format that Your User Community Understands** 
+
+The best format depends on who will use the data: 
+
+- For WMO members and meteorological agencies, GRIB and BUFR are well-established. 
+- For broader public use and data science applications, choose widely adopted formats like GeoJSON, CSV, and GeoTIFF. 
+- For multidisciplinary scientific research, formats like NetCDF (CF-NetCDF), HDF5, and Zarr provide enhanced compatibility with analysis tools. 
+
+If serving multiple user groups, consider offering data in multiple formats. Additionally, some formats have domain-specific profiles (e.g., CF-NetCDF for atmospheric and oceanographic sciences), so be clear on which profile or convention is being used. 
+
+**4. Ensure Compatibility with MeteoGate and WIS2** 
+
+To maximize usability and compliance with MeteoGate API Gateway and Data Explorer, HVD services, and WIS2, Data Publishers should: 
+- Use XML, HTML, and JSON formats. Currently, the MeteoGate API Gateway primarily supports these formats, and they are recommended for API-based data access. However, other formats may be necessary depending on the dataset type and intended use case.
+- Use CoverageJSON for APIs based on OGC API - EDR, especially when integration with MeteoGate Data Explorer is expected.
+- Provide GeoJSON for vector data and spatial metadata.
+- For HVD data, follow the requirements in MeteoGate HVD service documentation. _<link?>_
+- For WMO data, follow Manual on Codes (WMO No. 306) for standardized formats. _<link?>_
+
+ ### Naming Conventions 
+
+Naming conventions should follow standard practices to provide a clear and logical structure for users and comply with international standards. 
+
+**Recommendations** 
+
+- Ensure names are human-readable and self-describing. 
+- Ensure names are aligned with relevant vocabularies and OGC standards, including the restrictive EDR profile. Where applicable, use WMO, ECMWF, EUMETNET, EUMETSAT vocabularies, which define standardized terminology and 
+  metadata for atmospheric and climate data. 
+- Use lowercase and hyphenated naming for all endpoints, resources, and parameters. 
+- Follow plural nouns for collections and singular nouns for individual resources. 
+- Maintain consistency in naming conventions between all your APIs. 
+- Learn from good examples to maintain consistency across all APIs within MeteoGate. 
+
+### License 
+
+The Data Owner should make sure that all data published via MeteoGate have a well-defined license that specifies usage rights, restrictions, and attribution requirements.  
+
+**Recommendations** 
+
+- Make sure that your data is licenced at an adequate level. Choose an appropriate open data license based on the intended use and distribution model, such as CC BY 4.0 for attribution-required use or CC0 for public domain dedication. For High Value Data sets it is recommended to use CC BY 4 or equivalent.  
+- Include license metadata in discovery, collection and resource metadata, using standardized fields. 
+- Document the license information clearly in the API documentation and provide links to the full license text for transparency. 
+- Maintain consistency in licensing between all your APIs, collections, and datasets 
+- Learn from good examples to maintain consistency across all APIs within MeteoGate. 
+
+### Metadata 
+
+Data Publishers are responsible for including metadata for their datasets. Metadata should be published before the actual data is made available.  
+
+In MeteoGate, metadata is categorized into three levels:  
+- Discovery Metadata 
+- Collection Metadata 
+- Resource/File-level Metadata 
+
+TBC
