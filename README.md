@@ -21,8 +21,10 @@ This repository uses a **branch-based workflow** for managing and publishing doc
    git checkout docs-dev
 2. Make changes in the Markdown files in the docs/ folder.
 3. Preview the site locally (requires MkDocs).
+   ```bash
     mkdocs serve
 4. Commit and push changes:
+   ```bash
     git add .
     git commit -m "Update docs"
     git push origin docs-dev
