@@ -36,13 +36,12 @@ Documentation source files are located in the docs/ directory, organized by sect
 
 index.md: Homepage
 
-1-overview.md, 2-discovering-and-accessing-data.md, etc.: Section content
-
-glossary.md, references.md: Supporting material
+- 1-overview.md, 2-discovering-and-accessing-data.md, etc.: Section content
+- glossary.md, references.md: Supporting material
 
 ## Tools
 
-MkDocs – Static site generator
-Material for MkDocs – Theme used for styling the documentation
-GitHub Pages – Static site hosting used to publish the documentation
-Read the Docs (optional) – Hosting alternative (not currently used in production)
+- MkDocs – Static site generator
+- Material for MkDocs – Theme used for styling the documentation
+- GitHub Pages – Static site hosting used to publish the documentation
+- Read the Docs (optional) – Hosting alternative (not currently used in production)
