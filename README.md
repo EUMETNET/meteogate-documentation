@@ -1,16 +1,24 @@
-# MeteoGate Documentation – Development Branch (`docs-dev`)
+# MeteoGate Documentation
 
-This branch is used for writing, updating, and reviewing documentation for **MeteoGate**. All documentation work should be done here before publishing.
+This repository contains the documentation for the **MeteoGate** system.
 
-> Changes from this branch are reviewed and merged into the `main` branch by a pull request. The documentation is then built and published from `main` to the `gh-pages` branch via MkDocs and GitHub Actions.
+MeteoGate provides a one-stop shop for discovering, accessing, and sharing meteorological and hydrological data.
 
----
-
-## 🔄 Branch Workflow
+## Branches in this Repository
 
 - `docs-dev` — Development branch for editing and writing documentation (Markdown).
 - `main` — Integration branch for reviewed and accepted changes.
-- `gh-pages` — Built automatically from `main` and published via GitHub Pages.
+- `gh-pages` — Built from `main` and published via GitHub Pages.
+
+## Published Documentation Site
+
+🔗 https://eumetnet.github.io/meteogate-documentation/
+
+## Want to contribute?
+
+Documentation is developed in [`docs-dev`](https://github.com/eumetnet/meteogate-documentation/tree/docs-dev) branch. This branch is used for writing, updating, and reviewing documentation for **MeteoGate**. All documentation work should be done here before publishing.
+
+> Changes from this branch are reviewed and merged into the `main` branch by a pull request. The documentation is then built and published from `main` to the `gh-pages` branch via MkDocs and GitHub Actions.
 
 ---
 
