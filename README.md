@@ -2,9 +2,23 @@
 
 This repository contains the documentation for the **MeteoGate** system.
 
-📚 **Documentation is maintained in the [`docs-dev`](https://github.com/EUMETNET/meteogate-documentation/tree/docs-dev) branch.**
+MeteoGate provides a one-stop shop for discovering, accessing, and sharing meteorological and hydrological data.
 
-If you wish to contribute, read or edit the documentation, please switch to the `docs-dev` branch.
+## Branches in this Repository
 
-> The published site is available at:  
-> 🔗 https://eumetnet.github.io/meteogate-documentation/
+- **`docs-dev`** – The main development branch for all documentation content.  
+  All updates, edits, and contributions should be made here.
+
+- **`gh-pages`** – The publishing branch used by GitHub Pages to serve the documentation site.  
+  Content is deployed from `docs-dev` via pull request once reviewed and approved.
+
+- **`main`** – This branch contains only a high-level overview and pointers to the active documentation workflow.  
+  It is not used for writing documentation.
+
+## Published Documentation Site
+
+🔗 https://eumetnet.github.io/meteogate-documentation/
+
+## Want to contribute?
+
+Please switch to the [`docs-dev`](https://github.com/eumetnet/meteogate-documentation/tree/docs-dev) branch and follow the contribution guide there.
