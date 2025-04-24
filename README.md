@@ -16,7 +16,7 @@ MeteoGate provides a one-stop shop for discovering, accessing, and sharing meteo
 
 ## Want to contribute?
 
-Documentation is developed in [`docs-dev`](https://github.com/eumetnet/meteogate-documentation/tree/docs-dev) branch. This branch is used for writing, updating, and reviewing documentation for **MeteoGate**. All documentation work should be done here before publishing.
+Documentation is written, updated and reviewed in [`docs-dev`](https://github.com/eumetnet/meteogate-documentation/tree/docs-dev) branch.  All documentation work should be done in this branch before publishing.
 
 > Changes from this branch are reviewed and merged into the `main` branch by a pull request. The documentation is then built and published from `main` to the `gh-pages` branch via MkDocs and GitHub Actions.
 
