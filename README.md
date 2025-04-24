@@ -20,7 +20,9 @@ Documentation is written, updated and reviewed in [`docs-dev`](https://github.co
 
 > Changes from this branch are reviewed and merged into the `main` branch by a pull request. The documentation is then built and published from `main` to the `gh-pages` branch via MkDocs and GitHub Actions.
 
-## ✍️ How to Contribute
+---
+
+## How to Contribute
 
 1. **Clone the repository** and switch to the `docs-dev` branch:
    ```bash
@@ -51,7 +53,9 @@ Documentation is written, updated and reviewed in [`docs-dev`](https://github.co
    The live site is available at:  
    🔗 https://eumetnet.github.io/meteogate-documentation/
 
-## 📁 Documentation Structure
+---
+
+## Documentation Structure
 
 All documentation source files are located in the `docs/` directory, organized by section:
 
@@ -59,7 +63,9 @@ All documentation source files are located in the `docs/` directory, organized b
 - `1-overview.md`, `2-discovering-and-accessing-data.md`, etc. – Section content
 - `glossary.md`, `references.md` – Supporting material
 
-## 🛠️ Tools
+---
+
+## Tools
 
 - **MkDocs** – Static site generator for documentation
 - **Material for MkDocs** – Theme used for styling and navigation
