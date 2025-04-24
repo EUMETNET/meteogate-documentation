@@ -22,7 +22,7 @@ Documentation is written, updated and reviewed in [`docs-dev`](https://github.co
 
 ---
 
-## ✍️ How to Contribute
+## How to Contribute
 
 1. **Clone the repository** and switch to the `docs-dev` branch:
    ```bash
@@ -56,7 +56,7 @@ The live site is available at:
 
 ---
 
-## 📁 Documentation Structure
+## Documentation Structure
 
 All documentation source files are located in the `docs/` directory, organized by section:
 
@@ -66,7 +66,7 @@ All documentation source files are located in the `docs/` directory, organized b
 
 ---
 
-## 🛠️ Tools
+## Tools
 
 - **MkDocs** – Static site generator for documentation
 - **Material for MkDocs** – Theme used for styling and navigation
