@@ -1,0 +1,25 @@
+site_name: MeteoGate Documentation
+site_description: Documentation for MeteoGate Users, Data Publishers and Operators
+site_author: EUMETNET
+repo_url: https://github.com/EUMETNET/meteogate-documentation
+theme:
+  name: material
+  language: en
+  logo: eumetnet.png
+  features:
+    - navigation.instant
+    - navigation.tabs
+    - navigation.sections
+    - navigation.top
+    - toc.integrate
+    - search.highlight
+    - content.code.copy
+
+nav:
+  - Home: index.md
+  - 1. Overview: 1-overview.md
+  - 2. Discovering and Accessing Data: 2-discovering-and-accessing-data.md
+  - 3. Publishing Data: 3-publishing-data.md
+  - 4. Operating and Maintaining Community Components: 4-operating-and-maintaining-community-components.md
+  - Glossary: glossary.md
+  - References: references.md
