@@ -1,10 +1,28 @@
+# MeteoGate Documentation
+
+This repository contains the documentation for the **MeteoGate** system.
+
+MeteoGate provides a one-stop shop for discovering, accessing, and sharing meteorological and hydrological data.
+
+## Branches in this Repository
+
+- `docs-dev` — Development branch for editing and writing documentation (Markdown).
+- `main` — Integration branch for reviewed and accepted changes.
+- `gh-pages` — Built from `main` and published via GitHub Pages.
+
+## Published Documentation Site
+
+🔗 https://eumetnet.github.io/meteogate-documentation/
+
+## Want to contribute?
+
 Documentation is written, updated and reviewed in [`docs-dev`](https://github.com/eumetnet/meteogate-documentation/tree/docs-dev) branch.  All documentation work should be done in this branch before publishing.
 
 > Changes from this branch are reviewed and merged into the `main` branch by a pull request. The documentation is then built and published from `main` to the `gh-pages` branch via MkDocs and GitHub Actions.
 
 ---
 
-## How to Contribute
+## ✍️ How to Contribute
 
 1. **Clone the repository** and switch to the `docs-dev` branch:
    ```bash
@@ -32,12 +50,13 @@ Documentation is written, updated and reviewed in [`docs-dev`](https://github.co
    This allows review before the changes are published.
 
 6. **Once merged into `main`, the site is built and deployed** to the `gh-pages` branch.  
-   The live site is available at:  
-   🔗 https://eumetnet.github.io/meteogate-documentation/
+ 
+The live site is available at:  
+🔗 https://eumetnet.github.io/meteogate-documentation/
 
 ---
 
-## Documentation Structure
+## 📁 Documentation Structure
 
 All documentation source files are located in the `docs/` directory, organized by section:
 
@@ -47,7 +66,7 @@ All documentation source files are located in the `docs/` directory, organized b
 
 ---
 
-## Tools
+## 🛠️ Tools
 
 - **MkDocs** – Static site generator for documentation
 - **Material for MkDocs** – Theme used for styling and navigation
