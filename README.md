@@ -1,10 +1,8 @@
-# MeteoGate Documentation
+# MeteoGate Documentation – Development Branch (`docs-dev`)
 
-This repository contains the documentation for the **MeteoGate** system.
+This branch is used for writing, updating, and reviewing documentation for **MeteoGate**. All documentation work should be done here before publishing.
 
-📚 Documentation is **developed** in the `docs-dev` branch.  
-📦 Documentation is **reviewed and merged** into `main`.  
-🌐 The documentation is **built from `main` and published** via `gh-pages`.
+> Changes from this branch are reviewed and merged into the `main` branch by a pull request. The documentation is then built and published from `main` to the `gh-pages` branch via MkDocs and GitHub Actions.
 
 ---
 
@@ -46,11 +44,25 @@ This repository contains the documentation for the **MeteoGate** system.
 6. **Once merged into `main`, the site is built and deployed** to the `gh-pages` branch.  
    The live site is available at:  
    🔗 https://eumetnet.github.io/meteogate-documentation/
+---
+
+## 📁 Documentation Structure
+
+All documentation source files are located in the `docs/` directory, organized by section:
+
+- `index.md` – Homepage
+- `1-overview.md`, `2-discovering-and-accessing-data.md`, etc. – Section content
+- `glossary.md`, `references.md` – Supporting material
 
 ---
 
-## 🛠 Tools Used
+## 🛠️ Tools
 
-- [MkDocs](https://www.mkdocs.org/) – Static site generator
-- [Material for MkDocs](https://squidfunk.github.io/mkdocs-material/) – Theme
-- [GitHub Pages](https://pages.github.com/) – Hosting
+- **MkDocs** – Static site generator for documentation
+- **Material for MkDocs** – Theme used for styling and navigation
+- **GitHub Pages** – Used for publishing the site from the `gh-pages` branch
+- **Read the Docs** *(optional)* – Alternative platform for documentation hosting
+
+---
+
+ℹ️ **Need help?** Let a maintainer know or open an issue!
