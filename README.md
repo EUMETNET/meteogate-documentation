@@ -6,14 +6,9 @@ MeteoGate provides a one-stop shop for discovering, accessing, and sharing meteo
 
 ## Branches in this Repository
 
-- **`docs-dev`** – The main development branch for all documentation content.  
-  All updates, edits, and contributions should be made here.
-
-- **`gh-pages`** – The publishing branch used by GitHub Pages to serve the documentation site.  
-  Content is deployed from `docs-dev` once reviewed and approved.
-
-- **`main`** – This branch contains only a high-level overview and pointers to the active documentation workflow.  
-  It is not used for writing documentation.
+- `docs-dev` — Development branch for editing and writing documentation (Markdown).
+- `main` — Integration branch for reviewed and accepted changes.
+- `gh-pages` — Built from `main` and published via GitHub Pages.
 
 ## Published Documentation Site
 
