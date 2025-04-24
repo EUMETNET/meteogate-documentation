@@ -1,6 +1,6 @@
 # Welcome to the MeteoGate Documentation
 
-**MeteoGate provides a ‘One-Stop Shop’ for discovering and accessing meteorological and hydrological data across Europe.**
+**MeteoGate is a ‘One-Stop Shop’ for discovering and accessing meteorological and hydrological data across Europe.**
   
 It enables National Meteorological and Hydrological Services (NMHSs) to share data openly while retaining full control and ownership. Through a common technical and policy framework, MeteoGate supports both public data access and obligations under EU legislation and the WMO WIS 2.0 initiative.
 
