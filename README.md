@@ -72,4 +72,6 @@ All documentation source files are located in the `docs/` directory, organized b
 - **GitHub Pages** – Used for publishing the site from the `gh-pages` branch
 - **Read the Docs** *(optional)* – Alternative platform for documentation hosting
 
+---
+
 ℹ️ **Need help?** Let a maintainer know or open an issue!
