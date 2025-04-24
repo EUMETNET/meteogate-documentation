@@ -10,7 +10,7 @@ MeteoGate provides a one-stop shop for discovering, accessing, and sharing meteo
   All updates, edits, and contributions should be made here.
 
 - **`gh-pages`** – The publishing branch used by GitHub Pages to serve the documentation site.  
-  Content is deployed from `docs-dev` via pull request once reviewed and approved.
+  Content is deployed from `docs-dev` once reviewed and approved.
 
 - **`main`** – This branch contains only a high-level overview and pointers to the active documentation workflow.  
   It is not used for writing documentation.
