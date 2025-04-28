@@ -8,7 +8,7 @@ MeteoGate provides a one-stop shop for discovering, accessing, and sharing meteo
 
 - `docs-dev` — Development branch for editing and writing documentation (Markdown).
 - `main` — Integration branch for reviewed and accepted changes.
-- `gh-pages` — Static html pages built automatically from `main` and published via GitHub Pages.
+- `gh-pages` — Static html pages built automatically from `main` using MKDocs and published via GitHub Pages.
 
 ## Published Documentation Site
 
