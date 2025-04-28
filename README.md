@@ -49,7 +49,7 @@ Documentation is written, updated and reviewed in [`docs-dev`](https://github.co
 5. **Open a pull request from `docs-dev` to `main`**  
    This allows review before the changes are published.
 
-6. **Once merged into `main`, the site is built and deployed** to the `gh-pages` branch.
+6. **Once merged into `main`, the site is built and deployed** to the `gh-pages` branch.  
    The site is automatically built and deployed using a GitHub Actions workflow. 
    The MkDocs tool is used to generate static HTML pages from the Markdown files, and GitHub Pages hosts the final published site.
    No manual building or deployment is required — changes are automatically published once merged.
