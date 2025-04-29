@@ -15,7 +15,7 @@ MeteoGate helps organisations and people share weather and water data within Eur
 MeteoGate provides technical infrastructure, underpinned by policies, standards, and processes, which enable data to be discovered and accessed in one place. It follows rules set by the WMO and the data owners, letting people share data without changing who owns it. 
 Developed and operated by [EUMETNET](https://www.eumetnet.eu/), MeteoGate lets European National Meteorological Services openly share their hydrological and meteorological data and information.  
 
-![image](https://github.com/user-attachments/assets/23d10296-5751-4387-86c8-6650495a023d)
+![MeteoGate Overview](images/meteogate-overview.png)
 
 **MeteoGate Data Explorer** lets users discover data through search, browse and preview functionalities. It provides URLs for setting up routine access to data as well as for subscribing to data updates from the WIS 2.0 Global Broker.
 
