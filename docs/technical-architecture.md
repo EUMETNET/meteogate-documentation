@@ -5,7 +5,7 @@ MeteoGate provides technical infrastructure, underpinned by policies, standards,
 Below is an overview of the technical components and information flows of the MeteoGate solution. It contains a high-level description of the MeteoGate components, how they fit together and what they need to do. Note that in addition to MeteoGate-specific components, MeteoGate utilises Local components, WMO WIS 2.0 components, and Third-Party components.
 An overview of the components and information flows is provided in the following diagram. Subsequently, the functionality of each component is described on a high level. The description of information flows is simplified.
 
-![MeteoGate components](https://github.com/user-attachments/assets/df71e3ab-d3bc-49cd-965d-caab8cf1e212)
+![MeteoGate technical components](images/meteogate-technical-components.png)
 
 ## MeteoGate Community Components
 
