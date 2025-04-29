@@ -95,6 +95,6 @@ A detailed description of each component’s role in the system and a high-level
 
 The diagram below illustrates the primary deployment setup in the European Weather Cloud (EWC), with mirrored environments hosted across the ECMWF and EUMETSAT sites to ensure redundancy and availability. Additional environments, such as public cloud deployments (e.g. AWS), are not part of the current reference setup but may be supported in the future as the MeteoGate expands.
 
-![MeteoGate technical deployment diagram](images/meteogate-technical-components.png)
+![MeteoGate technical deployment diagram](images/meteogate-technical-deployment.png)
 
 
