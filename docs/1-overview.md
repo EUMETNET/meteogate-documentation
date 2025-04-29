@@ -83,7 +83,7 @@ The interaction of the stakeholders is shown in the following diagram.
 
 This section describes the high-level ‘data publication to access’ end-to-end process. It describes the flow from publishing to utilising data through MeteoGate. It includes roles and activities involved in the process. The process is described in the following diagram. Each of the activities is subsequently discussed.
 
-![image](https://github.com/user-attachments/assets/3bc49ecd-68e2-4df5-a97d-baf182c5d1d3)
+![MeteoGate high-level end-to-end-process](images/meteogate-data-publication-to-access-process.png)
 
 i.  **Create Data**: In its operations, the Data Owner creates or updates data (for example, observations from automated weather stations or weather model data) in its applications. 
 
