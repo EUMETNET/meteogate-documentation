@@ -1,4 +1,15 @@
-# MeteoGate Technical Components  
+# Technical Architecture
+
+This section provides an overview of the technical architecture of the MeteoGate system. It describes the system's key components and explains how they are deployed across cloud environments.
+
+The page covers:
+- A high-level architecture diagram showing the major components and information flows.
+- A brief description of each Community, Local, WMO WIS 2.0, and Third-Party component.
+- Technical deployment diagram, illustrating how the components are deployed and interconnected.
+
+---
+
+# MeteoGate Technical Components
 
 MeteoGate provides technical infrastructure, underpinned by policies, standards, and processes, which enable data to be discovered and accessed in one place. It follows rules set by the WMO and the data owners, letting people share data without changing who owns it. 
 
@@ -73,4 +84,17 @@ MeteoGate doesn't manage passwords or user accounts. The Developer Portal requir
 ### Third-Party Configuration Management Tool
 
 MeteoGate administrators use a GitHub Configuration Management Tool to register local Data Supply components and configure API Gateways.
+
+---
+
+# MeteoGate Technical Deployment Diagram
+
+This section focuses on the technical architecture of the MeteoGate Community Components operated by Community Capability Operators. It provides an overview of the runtime environments and how the key components are deployed and managed across different cloud platforms.
+
+A detailed description of each component’s role in the system and a high-level architecture diagram are presented in the above section.
+
+The diagram below illustrates the primary deployment setup in the European Weather Cloud (EWC), with mirrored environments hosted across the ECMWF and EUMETSAT sites to ensure redundancy and availability. Additional environments, such as public cloud deployments (e.g. AWS), are not part of the current reference setup but may be supported in the future as the MeteoGate expands.
+
+![MeteoGate technical deployment diagram](images/meteogate-technical-components.png)
+
 
