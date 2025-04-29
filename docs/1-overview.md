@@ -10,12 +10,12 @@ MeteoGate helps NMHSs make their data and data products discoverable and accessi
 
 MeteoGate in an EUMETNET Programme.  Delivery responsibility is delegated to a Member who will act as the Programme Manager.
 
-## MeteoGate System overview  
+## MeteoGate System Overview  
 MeteoGate helps organisations and people share weather and water data within Europe and worldwide.
 MeteoGate provides technical infrastructure, underpinned by policies, standards, and processes, which enable data to be discovered and accessed in one place. It follows rules set by the WMO and the data owners, letting people share data without changing who owns it. 
 Developed and operated by [EUMETNET](https://www.eumetnet.eu/), MeteoGate lets European National Meteorological Services openly share their hydrological and meteorological data and information.  
 
-![MeteoGate Overview](images/meteogate-overview.png)
+![MeteoGate system overview](images/meteogate-overview.png)
 
 **MeteoGate Data Explorer** lets users discover data through search, browse and preview functionalities. It provides URLs for setting up routine access to data as well as for subscribing to data updates from the WIS 2.0 Global Broker.
 
@@ -45,8 +45,6 @@ When using the MeteoGate API Gateway, Data Consumers have three access levels, d
 3.	EUMETNET Members: Restricted to EUMETNET Members.
 
 Additional access levels may be added in the future.
-
-
 
 ## MeteoGate Stakeholders 
 
@@ -78,7 +76,7 @@ MeteoGate is run by a Programme at EUMETNET, called FEMDI, with responsibility f
 
 The interaction of the stakeholders is shown in the following diagram.
 
-![image](https://github.com/user-attachments/assets/cbf96eae-2253-4194-bf8d-1384f37eb9ef)
+![MeteoGate stakeholder interaction](images/meteogate-stakeholders.png)
 
 
 ## High-Level End-to-End Process
