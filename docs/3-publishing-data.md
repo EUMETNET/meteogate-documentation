@@ -1,8 +1,8 @@
 # Publishing Data Guidelines
 
-These guidelines describe how to publish open meteorological and hydrological data through **MeteoGate**, ensuring compliance with **EU High-Value Datasets (HVD)** regulations and **WMO WIS 2.0** obligations.  
+This section describes how to publish open meteorological and hydrological data through **MeteoGate**, ensuring compliance with **EU High-Value Datasets (HVD)** regulations and **WMO WIS 2.0** obligations.  
 
-The document is intended for **National Meteorological and Hydrological Services (NMHSs)** and other entities publishing data via MeteoGate.
+These instructions are intended for **National Meteorological and Hydrological Services (NMHSs)** and other entities publishing data via MeteoGate.
 
 - For an overview of MeteoGate, refer to the _MeteoGate Overview_.
 - For detailed instructions on API development, refer to the _MeteoGate API Developer Guide_.
