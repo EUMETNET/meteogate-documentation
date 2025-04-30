@@ -1,22 +1,5 @@
 # Publishing Data Guidelines
 
-## Contents
-- [Introduction](#introduction)
-- [What is a Data Supply?](#what-is-a-data-supply)
-- [Roles in the Data Publishing Process](#roles-in-the-data-publishing-process)
-- [Data Publishers’ Responsibilities](#data-publishers-responsibilities)
-- [Fulfilling EU and WMO Obligations](#fulfilling-eu-and-wmo-obligations)
-- [Examples](#examples)
-- [Steps to Publish Data Through MeteoGate](#steps-to-publish-data-through-meteogate)
-- [Select data publishing pattern](#select-data-publishing-pattern)
-- [Structure and Prepare Data](#structure-and-prepare-data)
-- [Deploy and Integrate Data Supply](#deploy-and-integrate-data-supply)
-- [Onboarding Data Supply to MeteoGate and WMO WIS 2](#onboarding-data-supply-to-meteogate-and-wmo-wis-2)
-
----
-
-## Introduction
-
 These guidelines describe how to publish open meteorological and hydrological data through **MeteoGate**, ensuring compliance with **EU High-Value Datasets (HVD)** regulations and **WMO WIS 2.0** obligations.  
 
 The document is intended for **National Meteorological and Hydrological Services (NMHSs)** and other entities publishing data via MeteoGate.
