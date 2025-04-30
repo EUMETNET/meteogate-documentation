@@ -14,7 +14,7 @@ Open data can be accessed freely, but consumers must follow data usage rights an
 -	Any attempt to gain entry to locked or restricted areas will result in a permanent ban
 -	Any unlawful activity on the website may result in referral to law enforcement agencies.
 
-> _<Include data access on API Gateway, Data Supply and Data Explorer.>
+> _Include data access on API Gateway, Data Supply and Data Explorer.
 
 ## Discovering Data
 
@@ -28,7 +28,7 @@ The Data Explorer uses metadata and data from Global Discovery Catalogue and Met
 
 When you have found the data that you wish to use, you can copy the appropriate API endpoint URL from Data Explorer and use it to access the data.
 
-> _<authentication? API Key; add link>
+> _authentication? API Key; add link
 
 ### Searching the Global Discovery Catalogue
 
@@ -143,12 +143,12 @@ There are several ways to formulate the access request:
 2.	Copy the URL link from a notification message
   •	In case you have subscribed to notifications about particular data from the Global Broker, the notification message includes a direct URL link to the data you have subscribed to
 3.	Formulate manually using metadata from API
-  1.	Access the API collection URL to get collection metadata, which provides information on available collections and parameters (e.g. https://apisixdev.eumetnet-femdi.eumetsat.ewcloud.host/fi/edr/collections)
+  1.	Access the API collection URL to get collection metadata, which provides information on available collections and parameters (e.g. ```https://apisixdev.eumetnet-femdi.eumetsat.ewcloud.host/fi/edr/collections```)
   2.	Browse collection metadata to find collections and parameters to data that are available from that API.
   3.	Decide what data you want to get (e.g. collection type, collection, type of data, time, geographic extent, output formats, other parameters)
   4.	Formulate the access request by combining the API base URL, collection, and parameters.
 
-> _<follow formats specified in metadata, e.g. date and time>
+> _follow formats specified in metadata, e.g. date and time
 
 **How to send the access request**
 
@@ -160,13 +160,13 @@ You can also access data from software code using e.g. Python by sending the acc
 
 In addition, there are specialised software programs that can be used to access and display data. MeteoGate Data Explorer is an example of such a solution.
 
-> _<add examples. code libraries mentioned?>
+> _add examples. code libraries mentioned?
 
 **How to use data**
 
 Use data according to terms and conditions and license.
 
-> _<reference to terms of use. what else? how to use in code etc.)>
+> _reference to terms of use. what else? how to use in code etc.)
 
 **How to access Data Supply components requiring authentication**
 
@@ -178,4 +178,4 @@ Some Data Supply APIs are not accessed through the MeteoGate API Gateway(s), but
 
 Follow the instructions available from the particular Data Provider to access these APIs. You should find the required links or information on the Data Provider from the metadata available from the API base URL.
 
-> _<to be updated>
+> _to be updated
