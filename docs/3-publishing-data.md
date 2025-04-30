@@ -122,7 +122,7 @@ The Data Supply must be deployed according to the chosen publishing pattern. Thi
 
 ---
 
-## Select data publishing pattern 
+## Select Data Publishing Pattern 
 
 The Data Publisher and/or Data Owner will decide how they want their data to be made available. Data can be published through MeteoGate in three different patterns. The choice should be based on the data type, existing technical solutions and runtime environments already used for sharing open data (if any), and specific requirements for access control, cost, and performance. Data Publishers and/or Owners can choose different options for different datasets and APIs. 
 
