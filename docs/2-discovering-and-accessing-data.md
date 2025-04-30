@@ -62,7 +62,7 @@ Users from EUMETNET Members can receive priority access for official duty by reg
 
 The API Key (which is a string of characters) is appended to the HTTP header of the data access request or alternatively provided as an URL parameter.
 
-Registering as normal user
+**Registering as normal user**
 
 Navigate to MeteoGate Developer Portal and log in with your preferred identity provider. If required, input missing account information such as first and last name. You are then taken to the Developer Portal front page.
 
