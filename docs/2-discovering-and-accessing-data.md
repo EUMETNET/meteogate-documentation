@@ -2,7 +2,7 @@
 
 <intro>
 
-## Terms and conditions on using data
+## Terms and Conditions on Using dData
 
 The MeteoGate Participation Management policy outlines the agreements Data Consumers must respect. In addition, the MeteoGate Data Governance policy includes Data Consumer Fair Use.
 
@@ -14,7 +14,7 @@ Open data can be accessed freely, but consumers must follow data usage rights an
 -	Any attempt to gain entry to locked or restricted areas will result in a permanent ban
 -	Any unlawful activity on the website may result in referral to law enforcement agencies.
 
-> _Include data access on API Gateway, Data Supply and Data Explorer.
+> _Add link. Include data access on API Gateway, Data Supply and Data Explorer.
 
 ## Discovering Data
 
