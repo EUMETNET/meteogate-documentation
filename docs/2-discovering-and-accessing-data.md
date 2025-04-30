@@ -38,7 +38,7 @@ You can search for datasets using keywords, geographic area of interest, tempora
 
 See the Guide to WIS 2.0 for more information on using the Global Discovery Catalogue.
 
-> _<add link>
+> _add link
 
 ### Subscribing to notifications about availability of new data
 
