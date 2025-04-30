@@ -92,9 +92,7 @@ There are Data Supply components that require users to register, but which handl
 
 ###	Accessing data through MeteoGate API Gateway
 
-MeteoGate API Gateways provide managed access to the local data sources that are available through MeteoGate. The API Gateways manage data requests and data access flow by e.g., providing cybersecurity, priority access, request limiting, and rate limiting measures. The API Gateway also collects usage data. There are several API Gateways available. The Data 
-
-Publisher chooses which API Gateway instance they want to use. It is also possible to publish data directly, without using the API Gateway.
+MeteoGate API Gateways provide managed access to the local data sources that are available through MeteoGate. The API Gateways manage data requests and data access flow by e.g., providing cybersecurity, priority access, request limiting, and rate limiting measures. The API Gateway also collects usage data. There are several API Gateways available. The Data Publisher chooses which API Gateway instance they want to use. It is also possible to publish data directly, without using the API Gateway.
 
 Data is accessed by sending an access request to the API. Data can be accessed with a web browser, a specialised software program, or programmatically (i.e. from software code).
 
