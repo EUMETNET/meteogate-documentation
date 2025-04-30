@@ -120,6 +120,8 @@ Data must be structured into well-organised datasets and collections, ensuring c
 
 The Data Supply must be deployed according to the chosen publishing pattern. This involves setting up and validating API endpoints, publishing metadata and notifications, and ensuring security, scalability, and compliance. Once ready, Data Publishers must integrate the Data Supply with MeteoGate and WIS2 components. 
 
+---
+
 ## Select data publishing pattern 
 
 The Data Publisher and/or Data Owner will decide how they want their data to be made available. Data can be published through MeteoGate in three different patterns. The choice should be based on the data type, existing technical solutions and runtime environments already used for sharing open data (if any), and specific requirements for access control, cost, and performance. Data Publishers and/or Owners can choose different options for different datasets and APIs. 
@@ -213,6 +215,7 @@ The access restrictions are implemented in different ways depending on the Data 
 - Pattern 2: The MeteoGate API Gateway allows setting 1) authentication (whether users need to authenticate using API Key or not to access the endpoint) and 2) rate limits (maximum number of requests per time interval) for each API endpoint. Rate limits can be set separately for authenticated and unauthenticated users, when authentication is not required (i.e. when offering better QoS to registered users). The Data Publisher can set the access restrictions for the Data Supply during the onboarding process.  
 - Pattern 3: When sharing data directly, the Data Publisher is responsible for implementing all required access restrictions.
   
+---
 
 ## Structure and Prepare Data 
 
