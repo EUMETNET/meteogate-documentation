@@ -52,6 +52,8 @@ See the Guide to WIS 2.0 for more information on subscribing to notifications.
  
 ## Accessing Data
 
+Once you have found a dataset that fits your needs, you can access it either anonymously or as a registered user, depending on the data policy. This section explains how to register for API access (if required), use API Keys, and retrieve data through MeteoGate API Gateway or directly from Data Supply services.
+
 ### Registering to MeteoGate and creating API Keys 
 
 Most of the data accessible through MeteoGate is open to anonymous users and does not require registering as a MeteoGate user. But when required by a data policy and in line with EU regulation, the MeteoGate API Gateway requires authentication from the user using an API Key.  Users can also register to receive higher Quality of Service than anonymous users.
