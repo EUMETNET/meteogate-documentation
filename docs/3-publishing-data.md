@@ -77,6 +77,8 @@ Recommended standards:
 - Standardized vocabularies from **WMO**, **ECMWF**, **EUMETNET**, and **EUMETSAT**
 - **[FAIR Principles](https://www.go-fair.org/fair-principles/)** for best practices in data consistency, accuracy, and compliance
 
+---
+
 ## Examples 
 
 The following are real-world examples of successful data publication within MeteoGate.
@@ -102,6 +104,8 @@ The following are real-world examples of successful data publication within Mete
 [KNMI’s EDR API](https://developer.dataplatform.knmi.nl/edr-api)  
 
 [MeteoSwiss STAC API](https://github.com/MeteoSwiss/opendata) 
+
+---
 
 ## Steps to Publish Data Through MeteoGate
 
