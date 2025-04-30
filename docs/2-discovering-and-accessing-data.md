@@ -129,7 +129,7 @@ There are several ways to find the API that can provide data for your needs:
 6.	Search for datasets on a web search engine, e.g. Google Dataset Search
 7.	Data Supply (e.g. WIS2Box UI)
 
-The API base URL looks like this, for example: apisixdev.eumetnet-femdi.eumetsat.ewcloud.host/fi/edr
+The API base URL looks like this, for example: ```apisixdev.eumetnet-femdi.eumetsat.ewcloud.host/fi/edr```
 
 > Bulk download? different link?
 
