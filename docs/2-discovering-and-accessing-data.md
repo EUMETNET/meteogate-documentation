@@ -125,7 +125,7 @@ There are several ways to find the API that can provide data for your needs:
 1.	MeteoGate Data Explorer (recommended, see above)
 2.	WMO WIS2 Global Discovery Catalogue (see above)
 3.	Route list in MeteoGate Developer Portal (see above)
-   •	Note that the route list includes only Data Supply components that are accessed through MeteoGate API Gateway(s).
+   - Note that the route list includes only Data Supply components that are accessed through MeteoGate API Gateway(s).
 5.	Notification message (see above)
 6.	Search for datasets on a web search engine, e.g. Google Dataset Search
 7.	Data Supply (e.g. WIS2Box UI)
@@ -137,16 +137,17 @@ The API base URL looks like this, for example: apisixdev.eumetnet-femdi.eumetsat
 **How formulate the access request**
 
 There are several ways to formulate the access request:
+
 1.	Use an API query tool (e.g. Swagger), if available
-  - Browse available collections and parameters from an API using specialist software, which formulates access request according to your preferences
-  - Copy the resulting access request
+    - Browse available collections and parameters from an API using specialist software, which formulates access request according to your preferences
+    - Copy the resulting access request
 2.	Copy the URL link from a notification message
-  - In case you have subscribed to notifications about particular data from the Global Broker, the notification message includes a direct URL link to the data you have subscribed to
+    - In case you have subscribed to notifications about particular data from the Global Broker, the notification message includes a direct URL link to the data you have subscribed to
 3.	Formulate manually using metadata from API
-  1. Access the API collection URL to get collection metadata, which provides information on available collections and parameters (e.g. ```https://apisixdev.eumetnet-femdi.eumetsat.ewcloud.host/fi/edr/collections```)
-  2. Browse collection metadata to find collections and parameters to data that are available from that API.
-  3. Decide what data you want to get (e.g. collection type, collection, type of data, time, geographic extent, output formats, other parameters)
-  4. Formulate the access request by combining the API base URL, collection, and parameters.
+    1. Access the API collection URL to get collection metadata, which provides information on available collections and parameters (e.g. ```https://apisixdev.eumetnet-femdi.eumetsat.ewcloud.host/fi/edr/collections```)
+    2. Browse collection metadata to find collections and parameters to data that are available from that API.
+    3. Decide what data you want to get (e.g. collection type, collection, type of data, time, geographic extent, output formats, other parameters)
+    4. Formulate the access request by combining the API base URL, collection, and parameters.
 
 > follow formats specified in metadata, e.g. date and time
 
