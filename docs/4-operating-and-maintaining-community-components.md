@@ -317,4 +317,208 @@ Reports may include:
 
 Guidelines and templates will be provided by the Programme team. Reports are compiled using monitoring tools and logs (see seaction: [Monitoring](#monitoring-and-observability))
 
+## Managing API Routes 
+
+API Gateway configuration—including available Data Supply API endpoints (i.e. upstream APIs), rate limiting, and authentication settings—is managed through the API Management Tool at [EUMETNET/api-management-tool-poc](https://github.com/EUMETNET/api-management-tool-poc) 
+
+### Configuring API Routes
+
+Configuration is defined in YAML files and maintained in version control. API Gateway route configuration (API endpoints) is stored in GitHub in YAML. Admins can update endpoints, rate limiting, and authentication settings in the file. Upon commit and push, an updated route configuration is generated, which is simpler than the APISIX configuration file.
+
+A GitHub action workflow (Python code) generates a detailed APISIX configuration (YAML) and publishes it to selected API Gateway instances via APISIX REST API, updating the APISIX instance on the target platform.
+
+Instructions for using the API Management Tool, including defining new routes, applying rate limits, and controlling access, are available in the GitHub repository’s README and examples.
+
+_Note_: Some upstream APIs may require a dedicated API key for the API Gateway to access the backend service. Instructions for including upstream credentials securely are available in the API Management Tool repository. 
+
+Onboarding an API follows the below process:
+
+ 
+
+1. Create a Pull Request 
+    - Navigate to the [designated repository](https://github.com/EURODEO/api-management-tool-poc/)
+    - Create a new branch for your changes
+    - Add the necessary code to onboard the API. 
+ 
+2. Gateway Configuration - YAML File 
+    - Add the following configuration to the YAML file: 
+```
+id: xxx                         #replace with your own descriptive and unique id 
+version: 1.0.0 
+platform: EWC    
+routes: 
+  - Route: 
+      id:                       #add descriptive and unique id for API endpoint here 
+      endpoint: https://api...  # add API endpoint URL here, needs to be a static URL 
+      rateLimitAuth:            #add your rate limit values for authenticated user 
+        count:                  #add rate limit here  
+        time_window:            #add time window here 
+      rateLimitAnon:            #add your rate limit values for anonymous user 
+        count:                  #add rate limit here 
+        time_window:            #add time window here 
+      cors: true   
+
+ ```
+
+3. Commit & Merge 
+    - Commit your changes to the branch. 
+    - Create a pull request and request a review. 
+    - Once approved, merge the pull request into the main branch. 
+ 
+4. Check on Development Portal 
+    - Verify that the new route is listed in the Developer Portal.
+  
+### Naming API Routes 
+
+API routes configured through the MeteoGate API Gateway must follow a consistent and descriptive naming scheme to ensure clarity, discoverability, and alignment across the Developer Portal and Data Explorer. 
+Routes are defined in the API Management Tool (GitHub) and are: 
+- Exposed through structured URLs, such as: https://meteogate.api.eu/{service}/{dataset} 
+- Visible to end users in the Developer Portal and Data Explorer. 
+- Identified using a parameter:id in the YAML configuration. 
+
+A formal naming scheme and hierarchy for API routes will be defined and published by the Programme team. This will ensure alignment across services such as E-SOH, radar data, and climate data APIs. 
+
+Until then, route paths should be: 
+- Descriptive and human-readable. 
+- Consistent across environments. 
+- Designed to reflect the data service, collection, or domain. 
+
+Further guidance and examples will be added to the API Management Tool documentation as the scheme is finalized. 
+
+_Route names / naming schemes / hierarchy <- guidance needed on the naming scheme: The URL that someone will use to access e.g. E-SOH data via MeteoGate GW. i.e. meteogate.api.eu/XXX  
+Stuart and Vegar to make a proposal_
+
+## Managing Admin Users 
+
+Administration credentials for MeteoGate Community Components must be handled securely and consistently across all environments. Each component has its own method for managing admin-level access, and some share credentials with automation tools used for deployment and configuration. 
+
+Admin credentials must be securely stored and rotated according to the hosting organisation’s security policy. Only authorised personnel should have access. Integration with Vault and GitHub secret management is strongly recommended. 
+
+**API Gateway (APISIX)** 
+- Admin access is handled via a single administrator account per instance. 
+- Credentials are defined during initial configuration and stored as GitHub repository secrets. 
+- The same credentials are used for both manual administration and automation (e.g., GitHub workflows). 
+- APISIX supports only one admin account per instance. 
+
+**Identity & Access Manager (Keycloak)** 
+- Admin credentials are defined during the Terraform-based initial deployment. 
+- Credentials may be updated manually or via Vault integration. 
+- No per-user interface for managing admin roles is currently in use; role mapping is managed internally within Keycloak. <is that so> 
+
+**Developer Portal** 
+- The Developer Portal does not have a dedicated admin account. 
+- Admin-level operations (e.g. disabling users, resetting keys) are performed using backend scripts and service tokens. 
+
+**Key Vault (HashiCorp Vault)** 
+- Vault admin access is configured during initial setup. 
+- Currently, access is based on a root token, which should be used with caution. 
+- The setup supports integration with other IdPs in future to enable more granular admin access and auditing. 
+
+## Managing Users 
+
+User management in MeteoGate is largely automated through the Developer Portal and requires minimal manual intervention from admins under normal circumstances. 
+
+### User Registration and Provisioning 
+
+- When a user authenticates for the first time (e.g. via GitHub or another IdP), a user account is automatically created in the Identity & Access Manager (Keycloak). 
+- Upon requesting an API Key, the Developer Portal: 
+  - Creates a user account in the Key Vault 
+  - Registers the user as a consumer in each API Gateway instance 
+- Each user can have one API Key at a time. The Developer Portal checks for existing API Key and consumer status before issuing a new key. 
+- Users are initially assigned to the USER group. 
+
+### User Roles 
+
+There are three types of users in the system: 
+- **USER**: Default group with standard access and rate limits. 
+- **EUMETNET_USER**: Granted higher rate limits via API Gateway policies. 
+- **ADMIN**: Has rights to manage users and system settings via backend tools. 
+
+Rate limit configuration: 
+- For **USERs**, rate limits are defined per API route in the API Gateway configuration. 
+- For **EUMETNET_USERs**, a global enhanced rate limit is applied using the API Management
+- Tool configuration file (YAML). This setting overrides route-specific limits to allow higher throughput.
+
+### Manual User Management 
+
+Although automated, user accounts can be managed manually by administrators using backend scripts provided in the [Developer Portal backend](https://github.com/EUMETNET/Dev-portal/tree/main/backend)
+
+Available admin operations include: 
+- Enable / disable a user (disabling works by revoking the user’s API Key). 
+- Remove a user account. 
+_ Promote or demote a user to/from the **EUMETNET_USER** group. 
+
+These operations are handled in the correct technical order to avoid inconsistencies and are intended for exceptional cases or support situations. 
+
+Admins performing these operations must use a valid admin token to authenticate with the backend. 
+
+## Managing API Keys
+
+API Key management in MeteoGate is primarily automated through the **Developer Portal**. End users can request and manage their API Key without administrative intervention. 
+
+### Automated Management via Developer Portal 
+- When a registered user requests an API Key, the Developer Portal: 
+    1. Creates a new API Key in the Key Vault
+    2. Associates the key with the user’s account
+    3. Registers the key in all relevant API Gateway instances as part of the consumer configuration 
+
+- Each user may hold only one API Key at a time. The system checks for existing keys before issuing a new one. 
+
+### Manual Key Administration 
+
+In exceptional cases (e.g. security incidents or support actions), admins can: 
+  - View, revoke, or delete API Keys manually. 
+  - Use Vault’s web UI or backend scripts available in GitHub to manage keys. 
+Scripts for key management and automation are available in: [EURODEO/Dev-portal GitHub repository](https://github.com/EURODEO/Dev-portal)
+
+### API Key Validity and Expiry 
+
+Currently, API Keys do not expire automatically. Support for configurable key validity periods is planned for future updates and will be defined in the Developer Portal and Key Vault integration settings. 
+
+API Key lifecycle policies (e.g. renewal, expiration, and deactivation) should follow the Programme’s security requirements and be documented accordingly. 
+
+## Managing IdPs 
+
+Admins can manage the set of trusted IdPs in the Identity & Access Manager (Keycloak) UI. Keycloak supports an extensive list of IdPs out-of-the-box. It also supports any OpenId Connect or SAML 2.0 IdP.  
+
+In Keycloak, the configuration is done in “Identity Providers” in the left pane of the UI. Setting up an IdP also requires setup on the IdP side. 
+
+To add or configure a new Identity Provider, refer to the official Keycloak documentation: [Keycloak Server Admin Guide – Identity Brokering](https://www.keycloak.org/docs/latest/server_admin/index.html#_identity_broker) 
+
+_<to be updated; what is the policy for managing IdPs, e.g. approval?>_
+
+## Syncing User and API Endpoint Data Between Environments 
+
+In deployments where MeteoGate API Gateway instances are hosted in multiple cloud environments (e.g. EWC at ECMWF and EUMETSAT), configuration consistency across instances is essential. 
+
+### User Synchronisation 
+
+- When a user registers via the Developer Portal, they are automatically registered as a consumer in each deployed API Gateway instance. 
+- This ensures that the same API Key can be used across all environments. 
+- The Developer Portal backend handles this synchronisation logic. 
+
+See technical implementation in: [EURODEO/Dev-portal GitHub repository](https://github.com/EURODEO/Dev-portal) 
+
+### Route Synchronisation 
+
+- All Data Supply routes (API endpoints) are defined and maintained using the API Management Tool in GitHub: EUMETNET/api-management-tool-poc 
+- By default, routes are added to all Gateway instances, but the system is flexible: routes can also be configured per platform using the platform: field in the YAML configuration. 
+- Once committed, a GitHub Actions workflow generates APISIX-compatible configuration files and applies them across environments via the Admin API. 
+
+The entire sync and deployment process is containerised, runs in Kubernetes, and is designed for reliable operation across federated platforms. This architecture ensures seamless multi-cloud availability and simplifies the onboarding of new APIs and users across the MeteoGate federation.
+
+## Key Vault Service Token Renewals 
+
+API Gateway and Developer Portal use service tokens to communicate with Key Vault. These tokens have a maximum TTL of 768 hours (32 days). To prevent token revocation, a Cron job is scheduled to run on the 1st and 15th of each month to reset the token period. 
+
+
+# Processes and Reporting 
+
+This chapter defines the shared operational processes that all MeteoGate Community Capability Operators must follow to ensure a consistent level of service, regulatory compliance, and operational accountability.
+
+These processes form the foundation of coordinated service delivery and support the federated nature of the system. They are aligned with the FEMDI Programme’s Quality-of-Service (QoS) objectives and provide common expectations for how issues are resolved, changes managed, and performance monitored. 
+
+Community Capability Operators may use their own internal IT service management frameworks (e.g. ITIL). However, all processes must meet the minimum requirements defined by MeteoGate to ensure interoperability and oversight across environments. 
+
+Possibly amend with relevant common process diagrams from [42 Common Processes and Ways of Working - MeteoGate.docx](https://tlnt19059.sharepoint.com/:w:/r/sites/FEMDI/ET%20FEMDI/ET%20Working%20folder/Documentation%20working%20area/42%20Common%20Processes%20and%20Ways%20of%20Working%20-%20MeteoGate.docx?d=w34e1ef2e9e3c46f280165abff29f429c&csf=1&web=1&e=CUSvDF)
 
