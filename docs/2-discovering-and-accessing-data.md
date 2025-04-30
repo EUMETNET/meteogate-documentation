@@ -176,6 +176,6 @@ For API endpoints that require authentication using API Key, the API Key is appe
 
 Some Data Supply APIs are not accessed through the MeteoGate API Gateway(s), but directly. You can still find these APIs by the same means as the APIs that are accessed through the MeteoGate API Gateway(s), for example using the Data Explorer or WIS 2.0 Global Discovery Catalogue.
 
-Follow the instructions available from the particular Data Provider to access these APIs. You should find the required links or information on the Data Provider from the metadata or a landing page available from the API base URL. Some Data Supply components may require authentication.
+Follow the instructions and documentation available from the particular Data Provider to access these APIs. You should find the required links or information on the Data Provider from the metadata or a landing page available from the API base URL. Some Data Supply components may require authentication.
 
 > to be updated
