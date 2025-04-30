@@ -124,8 +124,7 @@ There are several ways to find the API that can provide data for your needs:
 
 1.	MeteoGate Data Explorer (recommended, see above)
 2.	WMO WIS2 Global Discovery Catalogue (see above)
-3.	Route list in MeteoGate Developer Portal (see above)
-   - Note that the route list includes only Data Supply components that are accessed through MeteoGate API Gateway(s).
+3.	Route list in MeteoGate Developer Portal (see above). Note that the route list includes only Data Supply components that are accessed through MeteoGate API Gateway(s).
 5.	Notification message (see above)
 6.	Search for datasets on a web search engine, e.g. Google Dataset Search
 7.	Data Supply (e.g. WIS2Box UI)
