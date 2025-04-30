@@ -11,8 +11,6 @@ These instructions are intended for **National Meteorological and Hydrological S
 
 > _Documentation map to be added; link to MeteoGate general instructions._
 
----
-
 ## What is a Data Supply?
 
 In MeteoGate, a **Data Supply** is the technical component used to share, manage, and publish data and metadata. It enables:
@@ -26,8 +24,6 @@ A **Data Publisher** deploys a Data Supply to make datasets available through Me
 
 More details on architecture and integration options can be found in the _MeteoGate Overview_.  
 > _(link to be updated)_
-
----
 
 ## Roles in the Data Publishing Process
 
@@ -44,8 +40,6 @@ The data publishing process involves several roles:
 > _Role names to be confirmed._  
 > _(link to be updated)_
 
----
-
 ## Data Publishers’ Responsibilities
 
 Data Publishers must ensure:
@@ -59,8 +53,6 @@ Data Publishers must ensure:
 
 See full policy in the _MeteoGate Participation Management Policy_.  
 > _(link to be updated)_
-
----
 
 ## Fulfilling EU and WMO Obligations
 
@@ -84,8 +76,6 @@ Recommended standards:
 - **EUMETDAPS** definitions for European meteorological data-sharing policies
 - Standardized vocabularies from **WMO**, **ECMWF**, **EUMETNET**, and **EUMETSAT**
 - **[FAIR Principles](https://www.go-fair.org/fair-principles/)** for best practices in data consistency, accuracy, and compliance
-
----
 
 ## Examples 
 
@@ -113,8 +103,6 @@ The following are real-world examples of successful data publication within Mete
 
 [MeteoSwiss STAC API](https://github.com/MeteoSwiss/opendata) 
 
----
-
 ## Steps to Publish Data Through MeteoGate
 
 ### 1. Select data publishing pattern(s) and deployment environment
@@ -127,8 +115,6 @@ Data must be structured into well-organised datasets and collections, ensuring c
 ### 3. Deploy and Integrate Data Supply  
 
 The Data Supply must be deployed according to the chosen publishing pattern. This involves setting up and validating API endpoints, publishing metadata and notifications, and ensuring security, scalability, and compliance. Once ready, Data Publishers must integrate the Data Supply with MeteoGate and WIS2 components. 
-
-
 
 ## Select data publishing pattern 
 
@@ -190,7 +176,6 @@ This pattern is appropriate for the following situations​:
 - Want to use fine-grained access control (e.g. for example, various groups of registered users with different QoS, paid or premium access, etc.). 
 - Want to set rate limits and quotas or allow monitoring above the capabilities offered by the MeteoGate API Gateway. 
 - Access control, request management and collection of usage metrics are already handled by a Third Party or the Data Supply/API (for example, the Data Publisher already has API Management implemented as part of the Data    Supply capability).
-
  
 In the future, EUMETNET Members may also make use of a packaged instance of the MeteoGate API that can be deployed locally either on-premises or in a designated cloud tenancy. This will enable the Members to benefit from all necessary API Management capabilities such as rate limiting, access control, and sharing of API keys while limiting its use for only to their own datasets. 
 
