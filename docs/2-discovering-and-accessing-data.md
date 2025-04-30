@@ -104,11 +104,13 @@ Accessing data begins with formulating a data access request. It is basically a 
 
 A data access request may like this, for example:
 
+```
 https://apisixdev.eumetnet-femdi.eumetsat.ewcloud.host/fi/edr/collections/ecmwf/instances/20240911T000000/locations/100683?&datetime=2024-09-11T06:00Z/2024-09-12T09:00Z&parameter-name=Temperature&crs=CRS:84&f=GeoJSON
+```
 
 In the example, the parts of the access request are as follows:
 
-API endpoint: https://apisixdev.eumetnet-femdi.eumetsat.ewcloud.host/fi/edr/collections/ecmwf/instances/20240911T000000/locations/100683
+API endpoint: ```https://apisixdev.eumetnet-femdi.eumetsat.ewcloud.host/fi/edr/collections/ecmwf/instances/20240911T000000/locations/100683```
 
 In the example, the request is targeting a specific dataset (ECMWF data), for a particular date and time (2024-09-11T00:00:00) and at a specific location (100683). The API endpoint specifies the API base URL including the type of API (https://apisixdev.eumetnet-femdi.eumetsat.ewcloud.host/fi/edr), collection or dataset (ecmwf), instance of a collection (in this case, data taken at a particular time: 20240911T000000), specific location within the collection instance (in this case, a station id: 100683). You can see from the base URL, that it point to the MeteoGate API Gateway.
 
