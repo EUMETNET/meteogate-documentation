@@ -305,18 +305,6 @@ The section covers API Gateway tasks (e.g., onboarding new APIs, managing routes
 
 
 
-## Performance reporting
-
-Operators must submit regular reports (e.g., monthly) to the MeteoGate Programme Manager. These reports enable performance tracking against QoS targets and support transparency across MeteoGate. 
-
-Reports may include: 
-- Availability and uptime metrics 
-- API Gateway usage statistics 
-- Incident and support request summaries 
-- Capacity and resource usage 
-
-Guidelines and templates will be provided by the Programme team. Reports are compiled using monitoring tools and logs (see seaction: [Monitoring](#monitoring-and-observability))
-
 ## Managing API Routes 
 
 API Gateway configuration—including available Data Supply API endpoints (i.e. upstream APIs), rate limiting, and authentication settings—is managed through the API Management Tool at [EUMETNET/api-management-tool-poc](https://github.com/EUMETNET/api-management-tool-poc) 
@@ -521,4 +509,100 @@ These processes form the foundation of coordinated service delivery and support 
 Community Capability Operators may use their own internal IT service management frameworks (e.g. ITIL). However, all processes must meet the minimum requirements defined by MeteoGate to ensure interoperability and oversight across environments. 
 
 Possibly amend with relevant common process diagrams from [42 Common Processes and Ways of Working - MeteoGate.docx](https://tlnt19059.sharepoint.com/:w:/r/sites/FEMDI/ET%20FEMDI/ET%20Working%20folder/Documentation%20working%20area/42%20Common%20Processes%20and%20Ways%20of%20Working%20-%20MeteoGate.docx?d=w34e1ef2e9e3c46f280165abff29f429c&csf=1&web=1&e=CUSvDF)
+
+## Incident Management 
+
+Community Capability Operators must ensure timely identification, logging, communication, and resolution of service incidents. This includes: 
+
+- Coordinating with the MeteoGate Service Desk, which acts as the first point of contact for all stakeholders. 
+- Following agreed escalation procedures for high-impact or unresolved issues. 
+- Documenting incident resolution steps and timelines. 
+- Ensuring lessons learned are recorded and shared if applicable. 
+
+MeteoGate includes custom error pages to improve user experience during service failures. 
+
+**Problem Management** 
+
+In addition to resolving individual incidents, Community Capability Operators are expected to: 
+- Identify recurring incidents or systemic issues that indicate underlying problems. 
+- Perform root cause analysis and propose long-term corrective actions. 
+- Coordinate fixes or infrastructure changes that reduce the likelihood of recurrence. 
+- Document known issues and mitigation strategies to support future troubleshooting. 
+
+Problem resolution efforts should be tracked and reported where appropriate, especially for issues affecting multiple environments or stakeholders. 
+
+## Support Requests Management 
+
+The MeteoGate Service Desk, operated by a FEMDI consortium member, is the central contact for all stakeholders. It handles receiving, triaging, and coordinating support requests, ensuring consistent issue management.
+
+**The Service Desk is responsible for:**
+- Receiving and logging support requests from users. 
+- Performing initial triage and assigning requests to the appropriate Community Capability Operator, Data Publisher, or other responsible party. 
+- Coordinating the resolution process and maintaining case oversight. 
+- Communicating with end users throughout the support lifecycle. 
+
+**Community Capability Operators are responsible for:** 
+- Responding to support requests escalated by the Service Desk that fall within their operational domain (e.g. API Gateway, Developer Portal, Vault). 
+- Troubleshooting and resolving technical issues related to the Community Components they host. 
+- Tracking the progress and status of support cases, and reporting on response or resolution times if required. 
+- Collaborating with Data Publishers, other operators, or technical teams as needed to resolve incidents.
+
+## Change Management 
+
+Changes to infrastructure or configuration (e.g., new routes, IdPs, or platform updates) must follow a documented and controlled change process. 
+
+Community Capability Operators must: 
+- Plan and test changes before applying them in production. 
+- Use version-controlled configuration (e.g., via GitHub) for transparency. 
+- Coordinate with other operators and the MeteoGate Solution Manager for changes that impact shared services.
+  
+
+## Performance reporting
+
+Operators must submit regular reports (e.g., monthly) to the MeteoGate Programme Manager. These reports enable performance tracking against QoS targets and support transparency across MeteoGate. 
+
+Reports may include: 
+- Availability and uptime metrics 
+- API Gateway usage statistics 
+- Incident and support request summaries 
+- Capacity and resource usage 
+
+Guidelines and templates will be provided by the Programme team. Reports are compiled using monitoring tools and logs (see section: [Monitoring](#monitoring-and-observability))
+
+_To be updated with any further requirements/guidance from EUMETNET_
+
+## Data Management 
+
+This section outlines the Operator's data management related responsibilities. 
+
+### Personal Data 
+
+Personal data is handled according to [MeteoGate Privacy Policy](https://tlnt19059.sharepoint.com/:w:/r/sites/FEMDI/ET%20FEMDI/ET%20Working%20folder/Operating%20Model/FEMDI%20Privacy%20policy.docx?d=w86090b46ea1642dfbdf40e2bc483e503&csf=1&web=1&e=RVrHSQ), EU’s General Data Protection Regulation (GDPR), and other relevant legislation. 
+
+Personal data processed includes: 
+
+- Registered user identities (managed by the Identity & Access Manager) 
+- API key metadata (managed by the Key Vault) 
+- User access control metadata, stored as consumer objects (managed by API Gateway) 
+- Contact information in dataset metadata (provided and managed by the Data Publisher) 
+
+GDPR-related requests (e.g., deletion or correction) should be directed to the MeteoGate Service Desk, which coordinates resolution with responsible parties. 
+
+Community Capability Operators are responsible for: 
+
+- Ensuring that personal data processed by the Community Components they operate (e.g. in Identity and Access Manager, Key Vault, and API Gateway) is stored securely and only accessible by authorised personnel. 
+- Supporting GDPR-related processes in their hosted environment (e.g. deletion of user data upon request). 
+- Implementing technical and organisational measures to protect personal data in accordance with MeteoGate’s security and privacy requirements.
+
+
+Meteorological and Hydrological Data 
+Community Capability Operators provide the technical platform for publishing and accessing data but are not responsible for the content or quality of the datasets. Responsibility for the accuracy, structure, and compliance of data and metadata lies with the respective Data Owners and Publishers. 
+
+Community Capability Operators must: 
+- Ensure reliable and secure API access to published datasets. 
+- Refrain from altering, filtering, or interpreting the published content in any way. 
+
+For more detailed definitions of roles and responsibilities related to data handling, publication, and ownership, refer to the [MeteoGate Data Governance Policy](https://tlnt19059.sharepoint.com/:w:/r/sites/FEMDI/ET%20FEMDI/ET%20Working%20folder/Operating%20Model/Data%20governance%20policy.docx?d=wb938b06e5b694bf1914c4202ee6aaa8a&csf=1&web=1&e=AH2lgh). 
+
+
 
