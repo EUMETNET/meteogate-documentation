@@ -1,3 +1,3 @@
 # References
 
-Cited documents and links.
+Cited documents, and links.
