@@ -511,3 +511,67 @@ The integration process depends on the chosen Data Publishing Pattern and involv
 
 - **Pattern 3**: Direct Access 
   - Ensure integration with WMO WIS2 components, including metadata sharing and notifications, by repeating the WIS2 related steps above. 
+
+MeteoGate Community Capability Operators and WMO WIS2 Capability Operators are responsible for performing the necessary technical configurations in MeteoGate HVD services, MeteoGate API Gateway, and WMO WIS2 components. 
+
+
+## Additional Considerations 
+
+### Quality-of-Service
+
+MeteoGate has been established to deliver the target quality of service outlined in the Quality-of-Service agreement. This may vary depending on which data is being requested, with operational data and products generally being at a higher service than non-operational data and products. In general, a reasonable level of QoS is recommended for the supplied data.   
+ 
+MeteoGate will monitor the availability of the APIs and notify the Data Supplier in case any inactive or low performing APIs are detected. 
+
+_Outstanding question: Should data publishers be given minimum QoS thresholds for their API that need to be met before being onboarded, or will we accept any quality of API? 
+Guidance/rule on minimum “quality” for upstream data services, e.g. minimum requests/sec … and how this is validated during the on-boarding process; Or… review performance logs after 6 months and give feedback if needed._ 
+
+### Data Quality and Data Governance 
+
+Data Publishers are responsible for ensuring data quality. Commonly recognised guidelines such as the [FAIR Principles](https://www.go-fair.org/fair-principles/) provide best practices to help maintain data consistency, accuracy, and compliance. 
+
+WMO members are expected to meet relevant data quality standards, including: 
+- [WMO Integrated Global Observing System (WIGOS) Manual (2023)](https://community.wmo.int/en/activity-areas/WIGOS)  
+- [WMO Integrated Processing and Prediction System (WIPPS) Manual (2023)](https://community.wmo.int/en/activity-areas/wmo-integrated-processing-and-prediction-system-wipps)   
+- EUCOS Performance Standards _<link?>_
+
+**Data Governance** 
+
+Data governance policies ensure structured data management, compliance, and interoperability. The [MeteoGate Data Governance Policy](https://tlnt19059.sharepoint.com/:w:/r/sites/FEMDI/_layouts/15/Doc.aspx?sourcedoc=%7BB938B06E-5B69-4BF1-914C-4202EE6AAA8A%7D&file=Data%20governance%20policy.docx&action=default&mobileredirect=true) defines the requirements for data documentation and publication. 
+
+
+### Incident Response and Support Requests 
+
+MeteoGate's centralized helpdesk will handle inquiries, technical issues, and incident reports related to data publication. Data Publishers may receive support requests and incident notifications through this helpdesk.
+
+Per HVD regulation, Data Publishers must designate a contact point for incident notifications and support requests. Clear communication channels are crucial for data reliability, efficient issue resolution, and user support in the federated system. Data Publishers share the contact information as part of the onboarding process. 
+
+Data Publishers will manage incidents related to their data services, including establishing IT service management processes, responding to issues promptly, and coordinating with MeteoGate’s helpdesk to resolve incidents.
+
+
+### Monitoring and Insights 
+
+Effective monitoring and logging are essential for ensuring API health, performance, and security. MeteoGate recommends a comprehensive observability stack to facilitate real-time monitoring, centralised logging, and proactive issue detection. 
+
+In MeteoGate, logging and monitoring occur at three levels: 
+- Individual API Level (Data Publisher Responsibility): Each Data Publisher’s API is responsible for logging request details, errors, and performance metrics. This includes structured logs (e.g., JSON-based logging) that provide visibility into API behaviour, response times, and error rates. 
+- HVD Service Level (Data Publishing Pattern 1): MeteoGate’s centralised data services log request details, errors, and performance metrics. _to be updated_ 
+- MeteoGate API Gateway Level (Data Publishing Pattern 2): MeteoGate API Gateway provides centralised logging, monitoring, and traffic analysis. It collects logs for all requests passing through the gateway, including request origins, response times, error rates, and usage metrics.
+
+MeteoGate includes an insights service and provides the following metrics that can be used for API performance reporting, when using Data Publishing Patterns 1 or 2: 
+- Info by data service end point (APIsix “route”), mapped on to dataset being published 
+- Total number of requests made to the API 
+- Data volume  
+- Time to process a request  
+- Http response code for the request 
+- API key used  
+- IP addresses  
+- Total number of datasets (and/or routes) registered in the MeteoGate API Gateway  
+- Total number of datasets with APIs provided by EUMETNET Members  
+- Total number of registered users  
+- Keywords / search terms used  
+- Number of “views” for each dataset 
+
+**Recommendations**
+
+Ensure that your APIs are monitored and logged for security, performance, and reliability. Data Publishers remain responsible for local monitoring and logging even when using Data Publishing Patterns 1 or 2. 
