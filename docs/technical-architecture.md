@@ -9,7 +9,7 @@ The page covers:
 
 ---
 
-# MeteoGate Technical Components
+## MeteoGate Technical Components
 
 MeteoGate provides technical infrastructure, underpinned by policies, standards, and processes, which enable data to be discovered and accessed in one place. It follows rules set by the WMO and the data owners, letting people share data without changing who owns it. 
 
@@ -18,9 +18,9 @@ An overview of the components and information flows is provided in the following
 
 ![MeteoGate technical components](images/meteogate-technical-components.png)
 
-## MeteoGate Community Components
+### MeteoGate Community Components
 
-### API Gateways 
+#### API Gateways 
 
 API Gateways provide managed access to the data shared through MeteoGate. The API Gateway also collects data on transactions to provide data usage and publishing information through the Insights Service.
 API Gateways handle data requests from Data Consumer applications, provide cybersecurity and access control, and proxy access to connected Data Supply services. The API Gateway may need to authenticate users accessing some datasets, as stated in the data policy. The API Gateway uses unique tokens (API Keys) appended to data access requests to identify users. Users must register in the MeteoGate Developer Portal to obtain an API Key.
@@ -45,9 +45,9 @@ API Keys issued to registered users are stored securely in the Key Vault.
 ### Insights Service
 Community Capability Operators and other stakeholders can use the Insights service to monitor data discovery and use. For example, they can observe how the data is passing through the MeteoGate system to be able to address any issues.
 
-## Local Components 
+### Local Components 
 
-### Data Supply 
+#### Data Supply 
 
 Data Supply is a Local Component in MeteoGate responsible for exposing meteorological and hydrological data, managing metadata, and fulfilling notification requirements. While many of its functions support WMO WIS 2.0 obligations, Data Supply is also a core part of how data is published and made available through MeteoGate.
 There are two main types of Data Supply in MeteoGate:
