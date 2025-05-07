@@ -30,19 +30,19 @@ Selecting the deployment platforms is an architectural decision for MeteoGate, i
 Even though the API Gateway instances are federated, the Data Consumer can use the same API Key at every API Gateway instance. There is a centralised control and configuration process for managing the API Gateway instances.
 The API Gateway supports multiple API standards.
 
-### Data Explorer
+#### Data Explorer
 
 Data Explorer is a web application that enables Data Consumers to search and browse the data available through MeteoGate. It also pulls in supplementary information from OSCAR/Surface. The Data Explorer uses metadata and data from both Global Discovery Catalogue and Data Supply components.
 
-### Identity & Access Manager
+#### Identity & Access Manager
 
 Some MeteoGate data policies require that users register before they can access the open data. The Identity & Access Manager administers access to data through MeteoGate Community Components, including Developer Portal and potentially Data Explorer. It also supports federated authentication through trusted Third-Party Identity Providers and includes an internal user repository for storing minimal user data (e.g., username, email) in compliance with GDPR.
 
-### Key Vault
+#### Key Vault
 
 API Keys issued to registered users are stored securely in the Key Vault.
 
-### Insights Service
+#### Insights Service
 Community Capability Operators and other stakeholders can use the Insights service to monitor data discovery and use. For example, they can observe how the data is passing through the MeteoGate system to be able to address any issues.
 
 ### Local Components 
@@ -64,30 +64,30 @@ Each Data Supply shall support the following core capabilities:
 
 Data Supply implementations can be based on the technology of the Data Publisher’s choice, if they meet interoperability requirements defined by MeteoGate and comply with relevant WMO and EU policies.
 
-## WMO 2.0 Components
+### WMO 2.0 Components
 
-### WMO WIS 2.0 Global Discovery Catalogue
+#### WMO WIS 2.0 Global Discovery Catalogue
 
 The [Global Discovery Catalogue](https://github.com/wmo-im/wis2-gdc) is a web application for data search and discovery, describing data from WIS 2.0 and MeteoGate. It subscribes to notifications from the Global Broker to update discovery metadata. 
 The catalogue provides summary descriptions and URLs for accessing shared data via the API Gateway or directly.
 
-### WMO WIS 2.0 Global Broker
+#### WMO WIS 2.0 Global Broker
 
 The [Global Broker](https://community.wmo.int/en/activity-areas/wis/WIS2-overview) is an application that provides subscription-based notifications about discovery metadata and data changes. It subscribes to notifications from the Data Supply and republishes them to Data Consumer applications. These notifications enable real-time data sharing. WIS 2.0 includes several Global Brokers."
 
-## Third-Party Components
+### Third-Party Components
 
-### Third-Party Identity Providers
+#### Third-Party Identity Providers
 
 MeteoGate doesn't manage passwords or user accounts. The Developer Portal requires users to authenticate via a Third-Party Identity Provider (e.g., Azure AD, Google, GitHub or EUMETNET Member’s IdP service). The Identity Provider supplies limited attributes, such as user identifier and email, to the Identity and Access Manager.
 
-### Third-Party Configuration Management Tool
+#### Third-Party Configuration Management Tool
 
 MeteoGate administrators use a GitHub Configuration Management Tool to register local Data Supply components and configure API Gateways.
 
 ---
 
-# MeteoGate Technical Deployment Diagram
+## MeteoGate Technical Deployment Diagram
 
 This section focuses on the technical architecture of the MeteoGate Community Components operated by Community Capability Operators. It provides an overview of the runtime environments and how the key components are deployed and managed across different cloud platforms.
 
@@ -96,5 +96,3 @@ A detailed description of each component’s role in the system and a high-level
 The diagram below illustrates the primary deployment setup in the European Weather Cloud (EWC), with mirrored environments hosted across the ECMWF and EUMETSAT sites to ensure redundancy and availability. Additional environments, such as public cloud deployments (e.g. AWS), are not part of the current reference setup but may be supported in the future as the MeteoGate expands.
 
 ![MeteoGate technical deployment diagram](images/meteogate-technical-deployment.png)
-
-
