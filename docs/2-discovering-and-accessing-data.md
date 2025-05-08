@@ -51,6 +51,8 @@ Notifications are published on Data Supply components and republished at the WMO
 You can subscribe to specific WIS2 topics to receive notifications on the data types you are interested in. Topic structure follows the WIS 2.0 Topic Hierarchy. The Message Broker Protocol (MQTT 3.1 or MQTT 5) is used to convey the notifications. The notifications are formatted according to WIS 2.0 Notification standard.
 
 See the Guide to WIS 2.0 for more information on subscribing to notifications.
+
+---
  
 ## Accessing Data
 
