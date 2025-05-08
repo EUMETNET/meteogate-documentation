@@ -2,6 +2,8 @@
 
 This section explains how to find and access meteorological and hydrological data through the MeteoGate system. It describes the tools available for discovering datasets, subscribing to notifications, and retrieving data via APIs. The section also provides guidance on registering as a MeteoGate user, authentication, API Keys, and how to use the data in your own systems or workflows. Whether accessing data through the API Gateway or directly from a Data Supply component, this section will help Data Consumers make effective use of MeteoGate’s services.
 
+---
+
 ## Terms and Conditions on Using Data
 
 The MeteoGate Participation Management policy outlines the agreements Data Consumers must respect. In addition, the MeteoGate Data Governance policy includes Data Consumer Fair Use.
