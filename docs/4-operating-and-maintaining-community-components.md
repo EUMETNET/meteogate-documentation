@@ -302,9 +302,6 @@ Service operations include configuring API routes, managing user authentication 
 
 The section covers API Gateway tasks (e.g., onboarding new APIs, managing routes and rate limits) and support services (e.g., handling user groups, IdP configurations, and secrets management). Many operations are implemented through configuration as code and automated workflows in GitHub repositories
 
-
-
-
 ## Managing API Routes 
 
 API Gateway configuration—including available Data Supply API endpoints (i.e. upstream APIs), rate limiting, and authentication settings—is managed through the API Management Tool at [EUMETNET/api-management-tool-poc](https://github.com/EUMETNET/api-management-tool-poc) 
@@ -320,8 +317,6 @@ Instructions for using the API Management Tool, including defining new routes, a
 _Note_: Some upstream APIs may require a dedicated API key for the API Gateway to access the backend service. Instructions for including upstream credentials securely are available in the API Management Tool repository. 
 
 Onboarding an API follows the below process:
-
- 
 
 1. Create a Pull Request 
     - Navigate to the [designated repository](https://github.com/EURODEO/api-management-tool-poc/)
