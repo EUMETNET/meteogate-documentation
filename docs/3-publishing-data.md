@@ -4,9 +4,6 @@ This section describes how to publish open meteorological and hydrological data 
 
 These instructions are intended for **National Meteorological and Hydrological Services (NMHSs)** and other entities publishing data via MeteoGate.
 
-- For an overview of MeteoGate, refer to the _MeteoGate Overview_.
-- For detailed instructions on API development, refer to the _MeteoGate API Developer Guide_.
-
 > _Note: Currently MeteoGate introduction, glossary, roles, overall architecture, and technical component descriptions are in the MeteoGate Overview._
 
 > _Documentation map to be added; link to MeteoGate general instructions._
