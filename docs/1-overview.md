@@ -12,6 +12,8 @@ MeteoGate helps NMHSs make their data and data products discoverable and accessi
 
 MeteoGate in an EUMETNET Programme.  Delivery responsibility is delegated to a Member who will act as the Programme Manager.
 
+---
+
 ## MeteoGate System Overview  
 MeteoGate helps organisations and people share weather and water data within Europe and worldwide.
 MeteoGate provides technical infrastructure, underpinned by policies, standards, and processes, which enable data to be discovered and accessed in one place. It follows rules set by the WMO and the data owners, letting people share data without changing who owns it. 
@@ -48,6 +50,8 @@ When using the MeteoGate API Gateway, Data Consumers have three access levels, d
 
 Additional access levels may be added in the future.
 
+---
+
 ## MeteoGate Stakeholders 
 
 This section describes MeteoGate stakeholders and their mutual interaction.
@@ -80,6 +84,7 @@ The interaction of the stakeholders is shown in the following diagram.
 
 ![MeteoGate stakeholder interaction](images/meteogate-stakeholders.png)
 
+---
 
 ## High-Level End-to-End Process
 
@@ -122,6 +127,7 @@ _Note_: Using the API Gateway is optional for the Data Publisher. They can also 
 
 ix.	**Insights service**: Community Capability Operators and other stakeholders can use the Insights service in the API Gateway to monitor data discovery and use. For example, they can observe how the data is passing through the system to be able to address any issues.
 
+---
 
 ## Data Quality
 MeteoGate is responsible for the common data sharing infrastructure but does not specify data quality. Data Owners and Data Publishers are responsible for ensuring data quality.
@@ -132,6 +138,4 @@ _...TBA_
 ## Quality of Service
 
 _...TBA_
-
-
 
