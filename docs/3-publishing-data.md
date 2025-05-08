@@ -11,6 +11,8 @@ These instructions are intended for **National Meteorological and Hydrological S
 
 > _Documentation map to be added; link to MeteoGate general instructions._
 
+---
+
 ## What is a Data Supply?
 
 In MeteoGate, a **Data Supply** is the technical component used to share, manage, and publish data and metadata. It enables:
