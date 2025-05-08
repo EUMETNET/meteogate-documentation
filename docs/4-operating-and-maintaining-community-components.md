@@ -4,7 +4,7 @@ This section provides technical guidance for MeteoGate Community Capability Oper
 
 It covers deploying, configuring, and managing shared platform services like Data Explorer, API Gateway, Developer Portal, and authentication components. 
 
-This guide will be updated as MeteoGate evolves, incorporating feedback, lessons learned, and improvements based on operational experience and new technical developments. 
+These instructions will be updated as MeteoGate evolves, incorporating feedback, lessons learned, and improvements based on operational experience and new technical developments. 
 
 ## Community Components 
 
@@ -75,7 +75,9 @@ The standard EWC deployment supports geographical redundancy using DNS-based loa
 
 QoS metrics and expectations—such as uptime, latency, and response time—will be specified in the final QoS documentation. Operators are expected to monitor performance and report monthly as part of operational governance. 
 
-See also: Section about [Monitoring](#monitoring-and-observability) and Reporting Performance. 
+See also: Section about [Monitoring](#monitoring-and-observability) and Reporting Performance.
+
+---
 
 ## Service Lifecycle 
 
@@ -294,6 +296,8 @@ Community Capability Operators must ensure that:
 
 For more information, refer to the **MeteoGate Cybersecurity Policy** _[link to be added]_.
 
+---
+
 ## Service Operations 
 
 This section provides operational guidance for Community Capability Operators to maintain MeteoGate Community Components. Tasks ensure shared services like the API Gateway, Developer Portal, Key Vault, and Identity & Access Management remain available, secure, and efficient.
@@ -493,6 +497,8 @@ The entire sync and deployment process is containerised, runs in Kubernetes, and
 ### Key Vault Service Token Renewals 
 
 API Gateway and Developer Portal use service tokens to communicate with Key Vault. These tokens have a maximum TTL of 768 hours (32 days). To prevent token revocation, a Cron job is scheduled to run on the 1st and 15th of each month to reset the token period. 
+
+---
 
 ## Processes and Reporting 
 
