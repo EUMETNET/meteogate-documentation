@@ -1,6 +1,6 @@
 # 4. Operating and Maintaining MeteoGate Community Components
 
-This section provides technical guidance for MeteoGate Community Capability Operators, typically NMHSs or designated EUMETNET members, responsible for operating and maintaining MeteoGate's Community Components. 
+This section provides technical guidance for MeteoGate ***Community Capability Operators***, typically NMHSs or designated EUMETNET members, responsible for operating and maintaining MeteoGate's Community Components. 
 
 It covers deploying, configuring, and managing shared platform services like Data Explorer, API Gateway, Developer Portal, and authentication components. 
 
