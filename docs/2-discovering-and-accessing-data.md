@@ -64,25 +64,25 @@ Users from EUMETNET Members can receive priority access for official duty by reg
 
 The API Key (which is a string of characters) is appended to the HTTP header of the data access request or alternatively provided as an URL parameter.
 
-**Registering as normal user**
+#### Registering as normal user
 
 Navigate to MeteoGate Developer Portal and log in with your preferred identity provider. If required, input missing account information such as first and last name. You are then taken to the Developer Portal front page.
 
-**Registering as EUMETNET Member user**
+#### Registering as EUMETNET Member user
 
 Navigate to MeteoGate Developer Portal and log in with your organisation’s identity provider (e.g. Azure AD). The identity provider should provide your work email address, showing that you are affiliated with a EUMETNET Member. If required, input missing account information such as first and last name. You are then taken to the Developer Portal front page.
 
 Send email to the MeteoGate helpdesk with a request for priority EUMETNET Member access, including the email address you used to register to the Developer portal. The MeteoGate support agent will verify that you are affiliated with a EUMETNET Member and add you to the appropriate EUMETNET Member group.
 
-**Creating API Key**
+#### Creating API Key
 
 You can obtain a new API Key by clicking the ‘Create API Key’ button in the Developer Portal. The API Key (which is a string of characters) is subsequently shown.
 
-**Deleting API Key**
+#### Deleting API Key
 
 If there is a need to revoke your API Key (for example, the API Key has been compromised), you can delete the API Key by clicking the ‘Delete API Key’ button in the Developer Portal.
 
-**Viewing available API endpoints (i.e. routes)**
+#### Viewing available API endpoints (i.e. routes)
 
 You can view the API endpoints (i.e. routes) available through the MeteoGate API Gateways by clicking the ‘Show routes’ button in the in the Developer Portal.
 
@@ -98,7 +98,7 @@ Data is accessed by sending an access request to the API. Data can be accessed w
 
 Note that these instructions apply specifically to OGC-API-EDR type of API.
 
-**What is an access request?**
+#### What is an access request?
 
 Accessing data begins with formulating a data access request. It is basically a text string send to the MeteoGate API Gateway. It includes the URL for the particular API endpoint and parameters. The API Key (which is also a text string) must be included for restricted data.
 
@@ -116,7 +116,7 @@ Parameters: ```&datetime=2024-09-11T06:00Z/2024-09-12T09:00Z&parameter-name=Temp
 
 Parameters are often specified after a ? symbol in the access request. In the example, the parameters request temperature data for the time range between September 11, 2024, 06:00 UTC, and September 12, 2024, 09:00 UTC. The data should be returned in GeoJSON format, using CRS:84 as the coordinate system.
 
-**How to find the API**
+#### How to find the API
 
 First, it is necessary to identify the API from which the data will be retrieved. The collection metadata for the API in question specify how the access request should be formulated. For example, it specifies which collections (datasets) and parameters are available.
 
@@ -133,7 +133,7 @@ The API base URL looks like this, for example: ```apisixdev.eumetnet-femdi.eumet
 
 > Bulk download? different link?
 
-**How formulate the access request**
+#### How formulate the access request
 
 There are several ways to formulate the access request:
 
@@ -150,7 +150,7 @@ There are several ways to formulate the access request:
 
 > follow formats specified in metadata, e.g. date and time
 
-**How to send the access request**
+#### How to send the access request
 
 Data can be accessed with a web browser, a specialised software program, or programmatically (i.e. from software code). Data access happens behind the scenes. There is no UI for the MeteoGate API Gateway.
 
@@ -162,13 +162,13 @@ In addition, there are specialised software programs that can be used to access 
 
 > add examples. code libraries mentioned?
 
-**How to use data**
+#### How to use data
 
 Use data according to terms and conditions and license.
 
 > reference to terms of use. what else? how to use in code etc.)
 
-**How to access Data Supply components requiring authentication**
+#### How to access Data Supply components requiring authentication
 
 For API endpoints that require authentication using API Key, the API Key is appended to the HTTP header of the data access request or alternatively provided as an URL parameter. Metadata should state whether the endpoint requires authentication.
 
