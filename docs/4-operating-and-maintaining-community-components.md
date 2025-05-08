@@ -550,7 +550,7 @@ Community Capability Operators must:
 - Use version-controlled configuration (e.g., via GitHub) for transparency. 
 - Coordinate with other operators and the MeteoGate Solution Manager for changes that impact shared services.
 
-### Performance reporting
+### Performance Reporting
 
 Operators must submit regular reports (e.g., monthly) to the MeteoGate Programme Manager. These reports enable performance tracking against QoS targets and support transparency across MeteoGate. 
 
