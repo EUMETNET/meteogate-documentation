@@ -4,7 +4,9 @@ This section provides technical guidance for MeteoGate Community Capability Oper
 
 It covers deploying, configuring, and managing shared platform services like Data Explorer, API Gateway, Developer Portal, and authentication components. 
 
-These instructions will be updated as MeteoGate evolves, incorporating feedback, lessons learned, and improvements based on operational experience and new technical developments. 
+These instructions will be updated as MeteoGate evolves, incorporating feedback, lessons learned, and improvements based on operational experience and new technical developments.
+
+---
 
 ## Community Components 
 
