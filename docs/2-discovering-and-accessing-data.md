@@ -16,6 +16,8 @@ Open data can be accessed freely, but consumers must follow data usage rights an
 
 > Add link. Include data access on API Gateway, Data Supply and Data Explorer.
 
+---
+
 ## Discovering Data
 
 The first step in utilizing MeteoGate to access data is to find data that suits your needs.
