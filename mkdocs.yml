@@ -8,7 +8,7 @@ theme:
   logo: eumetnet.png
   palette:
     primary: black
-    accent: blue
+    accent: indigo
   font:
     text: Open Sans
   features:
