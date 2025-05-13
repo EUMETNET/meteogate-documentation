@@ -2,7 +2,6 @@ site_name: MeteoGate Documentation
 site_description: Documentation for MeteoGate Users, Data Publishers and Operators
 site_author: EUMETNET
 repo_url: https://github.com/EUMETNET/meteogate-documentation
-extra_css: styles/styles.css
 theme:
   name: material
   language: en
@@ -15,6 +14,8 @@ theme:
     - toc.integrate
     - search.highlight
     - content.code.copy
+extra_css:
+- styles.css
 
 nav:
   - Home: index.md
