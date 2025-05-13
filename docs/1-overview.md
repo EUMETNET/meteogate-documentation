@@ -1,5 +1,9 @@
 # 1. Overview
 
+This section introduces MeteoGate and provides a high-level understanding of the system, its components, stakeholders, and usage.
+
+---
+
 ## What is MeteoGate
 MeteoGate is a ‘One-Stop Shop’ for meteorological and hydrological products and data. It provides an integrated view of all data available through MeteoGate, and the ability to access it in a simple, consistent way.
 MeteoGate helps NMHSs make their data and data products discoverable and accessible while complying with:
@@ -9,6 +13,8 @@ MeteoGate helps NMHSs make their data and data products discoverable and accessi
 - National Open Data requirements
 
 MeteoGate in an EUMETNET Programme.  Delivery responsibility is delegated to a Member who will act as the Programme Manager.
+
+---
 
 ## MeteoGate System Overview  
 MeteoGate helps organisations and people share weather and water data within Europe and worldwide.
@@ -46,6 +52,8 @@ When using the MeteoGate API Gateway, Data Consumers have three access levels, d
 
 Additional access levels may be added in the future.
 
+---
+
 ## MeteoGate Stakeholders 
 
 This section describes MeteoGate stakeholders and their mutual interaction.
@@ -78,6 +86,7 @@ The interaction of the stakeholders is shown in the following diagram.
 
 ![MeteoGate stakeholder interaction](images/meteogate-stakeholders.png)
 
+---
 
 ## High-Level End-to-End Process
 
@@ -120,6 +129,7 @@ _Note_: Using the API Gateway is optional for the Data Publisher. They can also 
 
 ix.	**Insights service**: Community Capability Operators and other stakeholders can use the Insights service in the API Gateway to monitor data discovery and use. For example, they can observe how the data is passing through the system to be able to address any issues.
 
+---
 
 ## Data Quality
 MeteoGate is responsible for the common data sharing infrastructure but does not specify data quality. Data Owners and Data Publishers are responsible for ensuring data quality.
@@ -129,7 +139,7 @@ _...TBA_
 
 ## Quality of Service
 
+---
+
 _...TBA_
-
-
 
