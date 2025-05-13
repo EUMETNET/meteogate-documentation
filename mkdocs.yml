@@ -6,6 +6,11 @@ theme:
   name: material
   language: en
   logo: eumetnet.png
+  palette:
+    primary: black
+    accent: blue
+  font:
+    text: Open Sans
   features:
     - navigation.instant
     - navigation.tabs
@@ -14,8 +19,6 @@ theme:
     - toc.integrate
     - search.highlight
     - content.code.copy
-extra_css:
-- styles/styles.css
 
 nav:
   - Home: index.md
