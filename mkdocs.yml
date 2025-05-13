@@ -15,7 +15,7 @@ theme:
     - search.highlight
     - content.code.copy
 extra_css:
-- styles.css
+- styles/styles.css
 
 nav:
   - Home: index.md
