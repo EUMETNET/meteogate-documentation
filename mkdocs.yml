@@ -21,11 +21,11 @@ theme:
     - content.code.copy
 
 nav:
-  - Home: index.md
-  - 1. Overview: 1-overview.md
-  - 2. Discovering and Accessing Data: 2-discovering-and-accessing-data.md
-  - 3. Publishing Data: 3-publishing-data.md
-  - 4. Operating and Maintaining Community Components: 4-operating-and-maintaining-community-components.md
-  - Technical Architecture: technical-architecture.md
-  - Glossary: glossary.md
-  - References: references.md
+  - HOME: index.md
+  - 1. OVERVIEW: 1-overview.md
+  - 2. DISCOVERING AND ACCESSING DATA: 2-discovering-and-accessing-data.md
+  - 3. PUBLISHING DATA: 3-publishing-data.md
+  - 4. OPERATING AND MAINTAINING COMMUNITY COMPONENTS: 4-operating-and-maintaining-community-components.md
+  - TECHNICAL ARCHITECTURE: technical-architecture.md
+  - GLOSSARY: glossary.md
+  - REFERENCES: references.md
