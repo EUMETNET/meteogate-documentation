@@ -4,11 +4,6 @@ This section describes how to publish open meteorological and hydrological data 
 
 These instructions are intended for **National Meteorological and Hydrological Services (NMHSs)** and other entities publishing data via MeteoGate, referred to as **Data Publishers** in MeteoGate.
 
-> _Note: Currently MeteoGate introduction, glossary, roles, overall architecture, and technical component descriptions are in the MeteoGate Overview._
-
-> _Documentation map to be added; link to MeteoGate general instructions._
-
----
 
 ## What is a Data Supply?
 
@@ -22,8 +17,8 @@ In MeteoGate, a **Data Supply** is the technical component used to share, manage
 
 A **Data Publisher** deploys a Data Supply to make datasets available through MeteoGate.
 
-More details on architecture and integration options can be found in the _MeteoGate Overview_.  
-> _(link to be updated)_
+More details on architecture and integration options can be found in the [MeteoGate Overview](https://eumetnet.github.io/meteogate-documentation/1-overview/).  
+
 
 ## Roles in the Data Publishing Process
 
@@ -36,9 +31,7 @@ The data publishing process involves several roles:
   - **Community Capability Operators**: Maintain MeteoGate data discovery and sharing infrastructure.
   - **FEMDI Coordinating Member**: Oversees system-level governance.
 
-> _A full description of roles and responsibilities is available in the MeteoGate Overview._  
-> _Role names to be confirmed._  
-> _(link to be updated)_
+See full description of roles and responsibilities in the [MeteoGate Overview](https://eumetnet.github.io/meteogate-documentation/1-overview/).  
 
 ## Data Publishers’ Responsibilities
 
@@ -141,7 +134,7 @@ EUMETNET currently has the following HVD services available:
 
   - [Land-based surface observations](https://observations.eumetnet.eu/) (E-SOH)  
   - [Radar](https://github.com/EURODEO/openradardata-requirements/blob/main/Deliverable_Requirements.md)    
-  - Climate _<link to instructions, e.g. GitHub> _
+  - [Climate](https://github.com/EUMETNET/ogc-edr-workshop) 
   - [Warnings](https://meteoalarm.org/en/live/page/redistribution-hub#list)
 
 _Check specific integration requirements and instructions from the respective HVD service links._
@@ -163,7 +156,7 @@ The data is requested from and goes through the MeteoGate API Gateway allowing:
   - Managed data requests and data flow e.g., authorization, access control, and rate limiting
   - Collection of insights on data requests and access​.
 
-Read more about the MeteoGate API Gateway features on MeteoGate Overview and GitHub _<links TBA>._
+Read more about the MeteoGate API Gateway features on [MeteoGate Architecture](https://eumetnet.github.io/meteogate-documentation/technical-architecture/) and GitHub _link TBA_
 
 This pattern is appropriate for the following situations​: 
 
