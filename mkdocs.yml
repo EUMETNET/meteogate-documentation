@@ -5,7 +5,7 @@ repo_url: https://github.com/EUMETNET/meteogate-documentation
 theme:
   name: material
   language: en
-  logo: eumetnet.png
+  logo: meteogate.svg
   palette:
     primary: black
     accent: indigo
