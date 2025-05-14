@@ -8,10 +8,10 @@ This section introduces MeteoGate and provides a high-level understanding of the
 MeteoGate is a ‘One-Stop Shop’ for meteorological and hydrological products and data. It provides an integrated view of all data available through MeteoGate, and the ability to access it in a simple, consistent way.
 MeteoGate helps NMHSs make their data and data products discoverable and accessible while complying with:
 
-- WMO WIS2.0 inter-governmental agreements
-- EU’s Open Data Directive
-- EU High Value Datasets Regulation
-- National Open Data requirements
+  - WMO WIS2.0 inter-governmental agreements
+  - EU’s Open Data Directive
+  - EU High Value Datasets Regulation
+  - National Open Data requirements
 
 MeteoGate in an EUMETNET Programme.  Delivery responsibility is delegated to a Member who will act as the Programme Manager.
 
@@ -27,29 +27,33 @@ Developed and operated by [EUMETNET](https://www.eumetnet.eu/), MeteoGate lets E
 **MeteoGate Data Explorer** lets users discover data through search, browse and preview functionalities. It provides URLs for setting up routine access to data as well as for subscribing to data updates from the WIS 2.0 Global Broker.
 
 **MeteoGate API Gateway** for data access is made up of two key parts:
-- API Management provides the interface between data consumers and local data stores. Once checks are completed it passes valid requests to Members.
-- Identity & Access Manager carries out checks, making sure that access policies are being followed and quality of service maintained.
+
+  - API Management provides the interface between data consumers and local data stores. Once checks are completed it passes valid requests to Members.
+  - Identity & Access Manager carries out checks, making sure that access policies are being followed and quality of service maintained.
 
 Currently, there is an API Gateway running on the [European Weather Cloud](https://www.europeanweather.cloud/). In the future, additional instances can be offered from public cloud platforms, if required.
 
 **The Data Supply** (also called WIS 2 Node) is a local component operated by each National Meteorological and Hydrological Service (NMHS) or as a centralised service (for High-Value Datasets). It is responsible for exposing data, managing metadata, and publishing notifications in line with WIS 2.0 requirements. Data Supply components:
-- Serve data collections via standard APIs (e.g. OGC API - EDR),
-- Generate and publish discovery metadata and provenance metadata,
-- Send update notifications via a Local Broker to the WIS 2.0 Global Broker.
+
+  - Serve data collections via standard APIs (e.g. OGC API - EDR),
+  - Generate and publish discovery metadata and provenance metadata,
+  - Send update notifications via a Local Broker to the WIS 2.0 Global Broker.
 
 In MeteoGate, there are two main types of Data Supply components. The first are centrally operated HVD Services, which provide access to EU High-Value Datasets such as E-SOH (land-based surface observations), radar data, and climate datasets. The second type consists of locally maintained Data Supplies operated by (NMHSs).
 In addition, the **Insights Service** provides shared monitoring and analytics capabilities across the system. It collects usage statistics, performance metrics, and operational health data from core components such as the API Gateway.
 
 MeteoGate builds on the following [WMO WIS 2.0](https://community.wmo.int/en/activity-areas/wis) components:
-- **Global Discovery Catalogue** lists and describes data assets and data collections, indexed, linked, and searchable to support data discovery and usage. It will only provide a basic interface to find data aimed at developers.
-- **Global Broker** provides a subscription service for notifications about the updates to both discovery metadata and the data.
+
+  - **Global Discovery Catalogue** lists and describes data assets and data collections, indexed, linked, and searchable to support data discovery and usage. It will only provide a basic interface to find data aimed at developers.
+  - **Global Broker** provides a subscription service for notifications about the updates to both discovery metadata and the data.
 
 ### Data Access Levels
 
 When using the MeteoGate API Gateway, Data Consumers have three access levels, determined by the Data Owner and Data Publisher:
-1.	Unauthenticated access: Open to anonymous users.
-2.	Authenticated access: Requires registration, offering higher Quality of Service and additional data as decided by the Data Owner.
-3.	EUMETNET Members: Restricted to EUMETNET Members.
+
+  1.	Unauthenticated access: Open to anonymous users.
+  2.	Authenticated access: Requires registration, offering higher Quality of Service and additional data as decided by the Data Owner.
+  3.	EUMETNET Members: Restricted to EUMETNET Members.
 
 Additional access levels may be added in the future.
 
@@ -62,26 +66,25 @@ This section describes MeteoGate stakeholders and their mutual interaction.
 ### Governance
  
 MeteoGate is run by a Programme at EUMETNET, called FEMDI, with responsibility for delivery delegated to a EUMETNET Member as the ‘Programme Manager’.
-- **MeteoGate Owner:** The organisation responsible for development, operation, maintenance, and funding of the MeteoGate system. EUMETNET is the owner of MeteoGate. EUMETNET Assembly will be the topmost governing body with overarching governance for strategic, technical, financial, and legal aspects of MeteoGate.
-- **FEMDI Programme Manager:** This role sits within the Coordinating Member, which has delegated authority from the MeteoGate Owner for the operation of the whole of the FEMDI Programme. The Coordinating Member is a Member of EUMETNET, selected through a robust bidding and assessment process. This organisation will coordinate and govern the FEMDI Programme.
-- **MeteoGate Solution Manager:** This role oversees and coordinates the operation and maintenance of the MeteoGate solution. This encompasses Community Components, as well as integrations to Data Supply Components and WMO WIS 2.0 Components. The Solution Manager sits within the Coordinating Member or other agreed 
-- **MeteoGate Service Desk** is the one point of contact for MeteoGate stakeholders and acts as first-level support. The Service Desk coordinates with other parties to fulfil user requests and solve incidents.
-- **FEMDI Expert Team:** A team of experts providing technical and policy recommendations and support to the MeteoGate Programme Manager and Solution Manager. The membership is open to EUMETNET Members, with observers from other organisations as appropriate.
+
+  - **MeteoGate Owner:** The organisation responsible for development, operation, maintenance, and funding of the MeteoGate system. EUMETNET is the owner of MeteoGate. EUMETNET Assembly will be the topmost governing body with overarching governance for strategic, technical, financial, and legal aspects of MeteoGate.
+  - **FEMDI Programme Manager:** This role sits within the Coordinating Member, which has delegated authority from the MeteoGate Owner for the operation of the whole of the FEMDI Programme. The Coordinating Member is a Member of EUMETNET, selected through a robust bidding and assessment process. This organisation will coordinate and govern the FEMDI Programme.
+  - **MeteoGate Solution Manager:** This role oversees and coordinates the operation and maintenance of the MeteoGate solution. This encompasses Community Components, as well as integrations to Data Supply Components and WMO WIS 2.0 Components. The Solution Manager sits within the Coordinating Member or other agreed 
+  - **MeteoGate Service Desk** is the one point of contact for MeteoGate stakeholders and acts as first-level support. The Service Desk coordinates with other parties to fulfil user requests and solve incidents.
+  - **FEMDI Expert Team:** A team of experts providing technical and policy recommendations and support to the MeteoGate Programme Manager and Solution Manager. The membership is open to EUMETNET Members, with observers from other organisations as appropriate.
 
 ### Community Component Roles
 
--	**MeteoGate Community Capability Operators**: Provide, operate, and maintain the infrastructure to allow for data to be discovered and shared through MeteoGate. They provide support services and manage access to the services they are responsible for. Community Capability Operators are selected from EUMETNET Members, ECMWF and EUMETSAT using standard EUMETNET processes.
-
-**Dependency on: WMO WIS 2.0 Capability Operator**: Provides and operates the common infrastructure for the WIS 2.0 system. There are Local capability operators that operate a WMO WIS 2.0 compliant Data Supply Component. In addition, there are Global capability operators that operate shared WMO 2.0 components, some of which are also used in MeteoGate.
+  -	**MeteoGate Community Capability Operators**: Provide, operate, and maintain the infrastructure to allow for data to be discovered and shared through MeteoGate. They provide support services and manage access to the services they are responsible for. Community Capability Operators are selected from EUMETNET Members, ECMWF and EUMETSAT using standard EUMETNET processes.
+  -	**Dependency on: WMO WIS 2.0 Capability Operator**: Provides and operates the common infrastructure for the WIS 2.0 system. There are Local capability operators that operate a WMO WIS 2.0 compliant Data Supply Component. In addition, there are Global capability operators that operate shared WMO 2.0 components, some of which are also used in MeteoGate.
 
 ### Data Supply Roles
 
--	Data Owner: Maintains the authority to decide how their data can be used through rights, obligations, terms, and conditions. They are typically EUMETNET Members.
--	Data Publisher: Collects and shares data using MeteoGate. This role may be the Data Owner as well, or act on behalf of another Data Owner. They are typically EUMETNET Members.
--	Local Capability Operator: Provides and operates a Data Supply Capability which integrates with the MeteoGate Community capabilities. They will provide support services and manage access to the services they are responsible for. They will also have technical mechanisms to ensure others are compliant with MeteoGate. Local Capability Operator can be the same party as Data Owner and/or Data Publisher. They are typically EUMETNET Members. 
--	Data Consumer: The individual or organisation that accesses shared data through MeteoGate and utilises it. Data Consumers include, for example, NMHSs, public and private sector organisations, research institutions, and citizens.
-
-**Third-Party Data Publisher** is a Data Publisher that shares data through MeteoGate but are not EUMETNET Members (for example, private companies).
+  -	**Data Owner:** Maintains the authority to decide how their data can be used through rights, obligations, terms, and conditions. They are typically EUMETNET Members.
+  -	**Data Publisher:** Collects and shares data using MeteoGate. This role may be the Data Owner as well, or act on behalf of another Data Owner. They are typically EUMETNET Members.
+  -	**Local Capability Operator:** Provides and operates a Data Supply Capability which integrates with the MeteoGate Community capabilities. They will provide support services and manage access to the services they are responsible for. They will also have technical mechanisms to ensure others are compliant with MeteoGate. Local Capability Operator can be the same party as Data Owner and/or Data Publisher. They are typically EUMETNET Members. 
+  -	**Data Consumer:** The individual or organisation that accesses shared data through MeteoGate and utilises it. Data Consumers include, for example, NMHSs, public and private sector organisations, research institutions, and citizens.
+  -	**Third-Party Data Publisher:** A Data Publisher that shares data through MeteoGate but are not EUMETNET Members (for example, private companies).
 
 The interaction of the stakeholders is shown in the following diagram.
 
