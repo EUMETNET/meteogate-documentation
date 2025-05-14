@@ -12,9 +12,9 @@ MeteoGate makes open meteorological and hydrological data freely accessible to a
 
 This guide is designed for:
 
-- **Data Consumers:** Users accessing public data through open APIs  
-- **Data Publishers** NMHSs contributing data and metadata  
-- **Community Capability Operators** NMHSs operating shared MeteoGate platform components.
+  - **Data Consumers:** Users accessing public data through open APIs  
+  - **Data Publishers** NMHSs contributing data and metadata  
+  - **Community Capability Operators** NMHSs operating shared MeteoGate platform components.
 
 ---
 
@@ -34,9 +34,9 @@ This guide is designed for:
 
 ## About This Documentation
 
-- This documentation is actively maintained and version-controlled.  
-- The documentation source is maintained in GitHub: [MeteoGate Documentation GitHub](https://github.com/EUMETNET/meteogate-documentation) 
-- For questions or issues, please contact the documentation team or submit a GitHub issue.
+  - This documentation is actively maintained and version-controlled.  
+  - The documentation source is maintained in GitHub: [MeteoGate Documentation GitHub](https://github.com/EUMETNET/meteogate-documentation) 
+  - For questions or issues, please contact the documentation team or submit a GitHub issue.
 
 ---
 
