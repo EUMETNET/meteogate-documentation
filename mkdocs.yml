@@ -1,5 +1,5 @@
 site_name: MeteoGate Documentation
-site_description: Documentation for MeteoGate Users, Data Publishers and Operators
+site_description: Guidance and instructions for MeteoGate Stakeholders: Data Consumers, Data Publishers and Community Capability Operators
 site_author: EUMETNET
 repo_url: https://github.com/EUMETNET/meteogate-documentation
 theme:
@@ -26,6 +26,6 @@ nav:
   - 2. DISCOVERING AND ACCESSING DATA: 2-discovering-and-accessing-data.md
   - 3. PUBLISHING DATA: 3-publishing-data.md
   - 4. OPERATING COMMUNITY COMPONENTS: 4-operating-and-maintaining-community-components.md
-  - TECHNICAL ARCHITECTURE: technical-architecture.md
+  - ARCHITECTURE: technical-architecture.md
   - GLOSSARY: glossary.md
   - REFERENCES: references.md

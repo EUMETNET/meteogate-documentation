@@ -1,6 +1,6 @@
-# Technical Architecture
+# Architecture
 
-This section provides an overview of the technical architecture of the MeteoGate system. It describes the system's key components and explains how they are deployed across cloud environments.
+This section provides an overview of the architecture of the MeteoGate system. It describes the system's key components and explains how they are deployed across cloud environments.
 
 The page covers:
 - A high-level architecture diagram showing the major components and information flows.
@@ -9,7 +9,7 @@ The page covers:
 
 ---
 
-## MeteoGate Technical Components
+## MeteoGate Components
 
 MeteoGate provides technical infrastructure, underpinned by policies, standards, and processes, which enable data to be discovered and accessed in one place. It follows rules set by the WMO and the data owners, letting people share data without changing who owns it. 
 

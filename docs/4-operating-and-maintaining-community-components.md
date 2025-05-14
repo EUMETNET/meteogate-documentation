@@ -1,4 +1,4 @@
-# 4. Operating and Maintaining MeteoGate Community Components
+# 4. Operating MeteoGate Community Components
 
 This section provides technical guidance for MeteoGate **Community Capability Operators**, typically NMHSs or designated EUMETNET members, responsible for operating and maintaining MeteoGate's Community Components. 
 
@@ -460,7 +460,7 @@ In exceptional cases (e.g. security incidents or support actions), admins can:
   - Use Vault’s web UI or backend scripts available in GitHub to manage keys. 
 Scripts for key management and automation are available in: [EURODEO/Dev-portal GitHub repository](https://github.com/EURODEO/Dev-portal)
 
-### #API Key Validity and Expiry 
+### API Key Validity and Expiry 
 
 Currently, API Keys do not expire automatically. Support for configurable key validity periods is planned for future updates and will be defined in the Developer Portal and Key Vault integration settings. 
 
