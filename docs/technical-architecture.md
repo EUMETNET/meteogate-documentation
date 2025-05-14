@@ -9,7 +9,7 @@ The page covers:
 
 ---
 
-## MeteoGate Technical Components
+## MeteoGate Components
 
 MeteoGate provides technical infrastructure, underpinned by policies, standards, and processes, which enable data to be discovered and accessed in one place. It follows rules set by the WMO and the data owners, letting people share data without changing who owns it. 
 
