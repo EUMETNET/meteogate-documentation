@@ -293,7 +293,7 @@ To maximize usability and compliance with MeteoGate API Gateway and Data Explore
   - For HVD data, follow the requirements in MeteoGate HVD service documentation. _<link?>_
   - For WMO data, follow Manual on Codes (WMO No. 306) for standardized formats. _<link?>_
 
- ### Naming Conventions 
+### Naming Conventions 
 
 Naming conventions should follow standard practices to provide a clear and logical structure for users and comply with international standards. 
 
