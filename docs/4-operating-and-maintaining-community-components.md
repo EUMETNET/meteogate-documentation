@@ -12,24 +12,21 @@ These instructions will be updated as MeteoGate evolves, incorporating feedback,
 
 The Community Components covered in this guide include: 
 
-- **Data Explorer**: User interface for data discovery and visualisation.
-- **API Gateway (APISIX)**: Routes and secures external API traffic.
-- **Developer Portal**: User interface for registration and API key management.
-- **Key Vault (HashiCorp Vault)**: Stores and manages secrets such as API keys.
-- **Identity & Access Manager (Keycloak)**: Handles identity federation and user group management.
-- **Third-Party Configuration Management Tool (GitHub)**: Automates API route deployment and configuration via the API Management Tool.
+  - **Data Explorer**: User interface for data discovery and visualisation.
+  - **API Gateway (APISIX)**: Routes and secures external API traffic.
+  - **Developer Portal**: User interface for registration and API key management.
+  - **Key Vault (HashiCorp Vault)**: Stores and manages secrets such as API keys.
+  - **Identity & Access Manager (Keycloak)**: Handles identity federation and user group management.
+  - **Third-Party Configuration Management Tool (GitHub)**: Automates API route deployment and configuration via the API Management Tool.
 
 ## Responsibilities by Role
 
 The agreed responsibilities of MeteoGate operators include:
   
-- **MeteoGate Community Capability Operators** provide IT services for MeteoGate environments (e.g., EWC, AWS) they host and operate the Community Components within those environments. They can use their own IT service management practices if they meet MeteoGate Quality of Service criteria and FEMDI Programme requirements. They collaborate with Data Providers, other Community Capability Operators, WMO WIS2 Capability Operators, FEMDI Solution Manager, and Programme Manager. Typically, they are NMHSs or designated EUMETNET members.
-
-- **The MeteoGate Programme Manager** is part of the Coordinating Member, which has delegated authority from the FEMDI Owner to operate the FEMDI Programme. The Coordinating Member, an EUMETNET member selected through a bidding process, coordinates and governs the FEMDI Programme.
-
-- **MeteoGate Solution Manager**: Oversees FEMDI Programme IT Service Management, providing Quality of Service criteria, guidance to Community Capability Operators, and monitoring compliance.
-
-- **MeteoGate Service Desk**: Acts as the first point of contact for stakeholders, offering first-level support, coordinating with other parties to address user requests, incidents, and problems. It is organized by a Consortium Member.
+  - **MeteoGate Community Capability Operators** provide IT services for MeteoGate environments (e.g., EWC, AWS) they host and operate the Community Components within those environments. They can use their own IT service management practices if they meet MeteoGate Quality of Service criteria and FEMDI Programme requirements. They collaborate with Data Providers, other Community Capability Operators, WMO WIS2 Capability Operators, FEMDI Solution Manager, and Programme Manager. Typically, they are NMHSs or designated EUMETNET members.
+  - **The MeteoGate Programme Manager** is part of the Coordinating Member, which has delegated authority from the FEMDI Owner to operate the FEMDI Programme. The Coordinating Member, an EUMETNET member selected through a bidding process, coordinates and governs the FEMDI Programme.
+  - **MeteoGate Solution Manager**: Oversees FEMDI Programme IT Service Management, providing Quality of Service criteria, guidance to Community Capability Operators, and monitoring compliance.
+  - **MeteoGate Service Desk**: Acts as the first point of contact for stakeholders, offering first-level support, coordinating with other parties to address user requests, incidents, and problems. It is organized by a Consortium Member.
 
 ## Onboarding and Offboarding 
 
@@ -50,17 +47,21 @@ ITIL definitions will be used where required. These can be found here: [ITIL Glo
 There are a few IT Service Management processes that Community Capability Operators need to implement and follow. 
 
 **Support Request Management**
-- Tracking, prioritizing, and resolving MeteoGate stakeholder inquiries and issues. 
+
+  - Tracking, prioritizing, and resolving MeteoGate stakeholder inquiries and issues. 
 
 **Incident & Problem Management**
-- Timely resolution of incidents to restore normal service operation as quickly as possible, in co-operation with relevant parties. 
-- Identifying and resolving underlying causes of recurring incidents and problems, in co-operation with relevant parties. 
 
-**Change Management** 
-- Controlled and efficient handling of changes to IT services, systems, and infrastructure, in co-operation with relevant parties. 
+  - Timely resolution of incidents to restore normal service operation as quickly as possible, in co-operation with relevant parties. 
+  - Identifying and resolving underlying causes of recurring incidents and problems, in co-operation with relevant parties. 
 
-**Performance Management and Reporting** 
-- Ensures that the performance of MeteoGate services is being monitored on an ongoing basis, with regular reports on functions like the availability and capacity.
+**Change Management**
+
+  - Controlled and efficient handling of changes to IT services, systems, and infrastructure, in co-operation with relevant parties. 
+
+**Performance Management and Reporting**
+
+  - Ensures that the performance of MeteoGate services is being monitored on an ongoing basis, with regular reports on functions like the availability and capacity.
 
 ## Quality-of-Service 
 
@@ -68,10 +69,10 @@ MeteoGate Community Components must be operated in accordance with the Quality-o
 
 To meet these objectives, Community Capability Operators must: 
 
-- Leverage cloud-native scalability features, including autoscaling, node-level resource limits, and container orchestration (Kubernetes). 
-- Ensure that sufficient compute, memory, and storage resources are provisioned to support expected traffic volumes, performance requirements, and failover scenarios. 
-- Deploy core components across redundant availability zones or regions, where supported (e.g. in EWC across ECMWF and EUMETSAT sites). 
-- Use a cloud provider–specific or open-source load balancer (e.g. NGINX, Route 53) to distribute traffic across environments and ensure failover capability. 
+  - Leverage cloud-native scalability features, including autoscaling, node-level resource limits, and container orchestration (Kubernetes). 
+  - Ensure that sufficient compute, memory, and storage resources are provisioned to support expected traffic volumes, performance requirements, and failover scenarios. 
+  - Deploy core components across redundant availability zones or regions, where supported (e.g. in EWC across ECMWF and EUMETSAT sites). 
+  - Use a cloud provider–specific or open-source load balancer (e.g. NGINX, Route 53) to distribute traffic across environments and ensure failover capability. 
 
 The standard EWC deployment supports geographical redundancy using DNS-based load balancing (Route 53). As EWC infrastructure evolves, it may support cross-zone application-level availability and external failover, which should be adopted when feasible. 
 
@@ -97,16 +98,16 @@ In MeteoGate, the API Gateway and Support Services are deployed using Infrastruc
 
 Currently supported environments: 
 
-- EWC (fully supported)
-- AWS (Terraform support available; documentation to be updated) 
+  - EWC (fully supported)
+  - AWS (Terraform support available; documentation to be updated) 
 
 In the EWC environment: 
 
-- Kubernetes clusters are created within the Community Capability Operator’s EWC tenant. 
-- Identical mirrored environments can be deployed across ECMWF and EUMETSAT availability zones to ensure redundancy and high availability. A shared DNS-based load balancing setup using Route 53 distributes traffic between the two environments. This setup ensures failover and geographical redundancy, with Route 53 automatically directing requests to an available instance. 
-- All core components (API Gateway, Developer Portal, Vault, Keycloak, etc.) are then automatically installed and configured via Terraform into these Kubernetes clusters. Most installation and configuration steps are automated. Manual tasks are limited to injecting required secrets and managing access credentials. 
-- The deployed services are placed behind a load balancer and accessed through a Nginx reverse proxy. 
-- Each Kubernetes node runs Ubuntu 22 LTS.
+  - Kubernetes clusters are created within the Community Capability Operator’s EWC tenant. 
+  - Identical mirrored environments can be deployed across ECMWF and EUMETSAT availability zones to ensure redundancy and high availability. A shared DNS-based load balancing setup using Route 53 distributes traffic between the two environments. This setup ensures failover and geographical redundancy, with Route 53 automatically directing requests to an available instance. 
+  - All core components (API Gateway, Developer Portal, Vault, Keycloak, etc.) are then automatically installed and configured via Terraform into these Kubernetes clusters. Most installation and configuration steps are automated. Manual tasks are limited to injecting required secrets and managing access credentials. 
+  - The deployed services are placed behind a load balancer and accessed through a Nginx reverse proxy. 
+  - Each Kubernetes node runs Ubuntu 22 LTS.
 
 Terraform modules and technical instructions are available at: [GitHub – EURODEO/femdi-gateway-iac](https://github.com/EURODEO/femdi-gateway-iac) 
 
@@ -119,36 +120,41 @@ The following MeteoGate Community Components are automatically installed and pre
 Some manual actions (such as registering new API Gateway instances and injecting sensitive secrets) are still required. These are described in the following section. 
 
 **API Gateway (APISIX)**
-- Deployment and basic configuration handled by Terraform. 
-- To activate a new API Gateway instance, it must be manually registered in the API Management Tool (GitHub-based). Integration instructions for new instances are available in the API Management Tool repository: EUMETNET/api-management-tool-poc. (See section 4 for more on the API Management Tool). 
-- Routes are managed using the API Management Tool in GitHub (see section 4). <add link> 
-- Secrets for API Gateway admin access must be added to Vault during setup. 
 
-**Developer Portal** 
-- Deployed as custom UI and backend components via a Helm chart. 
-- Terraform handles installation and initial configuration. 
-- See: EURODEO/Dev-portal – Helm chart 
+  - Deployment and basic configuration handled by Terraform. 
+  - To activate a new API Gateway instance, it must be manually registered in the API Management Tool (GitHub-based). Integration instructions for new instances are available in the API Management Tool repository: EUMETNET/api-management-tool-poc. (See section 4 for more on the API Management Tool). 
+  - Routes are managed using the API Management Tool in GitHub (see section 4). <add link> 
+  - Secrets for API Gateway admin access must be added to Vault during setup. 
 
-**Key Vault (HashiCorp Vault)** 
-- Installed in HA mode (cluster) by Terraform. 
-- Secrets used in route configuration should be added via GitHub-managed configurations. 
+**Developer Portal**
 
-**Identity & Access Manager (Keycloak)** 
-- Installed and initially configured by Terraform. 
-- Some IdPs (e.g. GitHub, Google) are pre-registered; secrets such as client IDs and passwords must be provided as parameters. 
-- Additional setup can be done via the Keycloak UI. 
-- Documentation pending. 
+  - Deployed as custom UI and backend components via a Helm chart. 
+  - Terraform handles installation and initial configuration. 
+  - See: EURODEO/Dev-portal – Helm chart 
 
-**Third-Party Configuration Management Tool** 
-- GitHub-based tool for managing API Gateway route configuration. 
-- Operators must be granted access to manage route YAML files and trigger CI/CD workflows.
+**Key Vault (HashiCorp Vault)**
+
+  - Installed in HA mode (cluster) by Terraform. 
+  - Secrets used in route configuration should be added via GitHub-managed configurations. 
+
+**Identity & Access Manager (Keycloak)**
+
+  - Installed and initially configured by Terraform. 
+  - Some IdPs (e.g. GitHub, Google) are pre-registered; secrets such as client IDs and passwords must be provided as parameters. 
+  - Additional setup can be done via the Keycloak UI. 
+  - Documentation pending. 
+
+**Third-Party Configuration Management Tool**
+
+  - GitHub-based tool for managing API Gateway route configuration. 
+  - Operators must be granted access to manage route YAML files and trigger CI/CD workflows.
 
 ### Initial Configuration 
 
 Most installation and configuration steps are automated. Manual tasks are limited to injecting required secrets and managing access credentials. After provisioning, the following initial tasks may be required: 
 
-- Identity Provider Setup: Some IdPs (such as GitHub or Google) are pre-configured via Terraform. Credentials (e.g. client secrets) must be provided securely before deployment. Additional IdPs must be added manually. See section 5.2 for managing IdPs in Keycloak. <add link> 
-- Key Vault Bootstrapping: Vault is initialised by Terraform. Secrets used for configuring API Gateway admin access and CI/CD credentials must be added via GitHub. 
+  - Identity Provider Setup: Some IdPs (such as GitHub or Google) are pre-configured via Terraform. Credentials (e.g. client secrets) must be provided securely before deployment. Additional IdPs must be added manually. See section 5.2 for managing IdPs in Keycloak. <add link> 
+  - Key Vault Bootstrapping: Vault is initialised by Terraform. Secrets used for configuring API Gateway admin access and CI/CD credentials must be added via GitHub. 
 
 ### Updates 
 
@@ -158,9 +164,9 @@ Applying updates is the responsibility of the Community Capability Operator host
 
 Update needs include: 
 
-- Security patches and version upgrades for the API Gateway, Vault, and Keycloak. 
-- Regular updates to underlying infrastructure (e.g., Kubernetes, operating systems). 
-- Synchronisation of configuration or deployment changes introduced in the GitHub repositories. 
+  - Security patches and version upgrades for the API Gateway, Vault, and Keycloak. 
+  - Regular updates to underlying infrastructure (e.g., Kubernetes, operating systems). 
+  - Synchronisation of configuration or deployment changes introduced in the GitHub repositories. 
 
 In EWC environments, Community Capability Operators are expected to coordinate with EUMETSAT and ECMWF as infrastructure providers regarding updates that impact shared platform services. 
 
@@ -170,11 +176,12 @@ More detailed update instructions, including versioning recommendations and roll
 
 All new deployments of MeteoGate Community Components must be tested to verify that services are correctly installed, configured, and reachable. Existing deployments should also be re-tested after updates or configuration changes to ensure continuity and stability. 
 
-Testing should cover the following areas: 
-- Basic availability checks for each component (e.g., API Gateway routes, Developer Portal access). 
-- Authentication and authorisation flows via configured Identity Providers. 
-- Secret management and API key issuance. 
-- End-to-end functional testing, where feasible. A dedicated test script for verifying component readiness is planned and tracked in the FEMDI backlog. 
+Testing should cover the following areas:
+
+  - Basic availability checks for each component (e.g., API Gateway routes, Developer Portal access). 
+  - Authentication and authorisation flows via configured Identity Providers. 
+  - Secret management and API key issuance. 
+  - End-to-end functional testing, where feasible. A dedicated test script for verifying component readiness is planned and tracked in the FEMDI backlog. 
 
 Integration or end-to-end test automation is recommended when possible, although unit testing for Terraform-managed infrastructure remains limited in practice. 
 
@@ -188,20 +195,22 @@ Community Capability Operators are responsible for configuring, maintaining, and
 
 **Logging Requirements** 
 
-The logging setup should capture at minimum: 
-- Authentication and authorisation events (e.g., login attempts, group assignments, API key usage) 
-- API request metadata and error responses 
-- Component health and operational status 
-- Administrative actions and configuration changes 
-- System warnings and failures 
+The logging setup should capture at minimum:
+
+  - Authentication and authorisation events (e.g., login attempts, group assignments, API key usage) 
+  - API request metadata and error responses 
+  - Component health and operational status 
+  - Administrative actions and configuration changes 
+  - System warnings and failures 
 
 **Responsibilities of Operators** 
 
-Operators must ensure that: 
-- Logs are retained securely and in accordance with applicable compliance or internal policy requirements. 
-- Access to logs is restricted to authorised personnel. 
-- Logs are collected and made available for use in incident response, performance analysis, and system audits. 
-- Centralised logging tools (e.g., ELK stack, Loki, or cloud-native logging solutions) are used where possible to streamline access and analysis.
+Operators must ensure that:
+
+  - Logs are retained securely and in accordance with applicable compliance or internal policy requirements. 
+  - Access to logs is restricted to authorised personnel. 
+  - Logs are collected and made available for use in incident response, performance analysis, and system audits. 
+  - Centralised logging tools (e.g., ELK stack, Loki, or cloud-native logging solutions) are used where possible to streamline access and analysis.
 
 Logging also supports processes defined in Chapter 5 (e.g., Incident Management and Problem Management) by providing the necessary data for troubleshooting and post-incident review. _<links>_ 
 
@@ -213,16 +222,17 @@ _TBA_
 
 Monitoring and observability are essential for maintaining reliable operations, detecting issues early, and supporting performance analysis across MeteoGate Community Components. 
 
-Each deployment should include: 
-- Basic service health and resource monitoring. 
-- Performance metrics collection. 
-- Alerting for critical failures or degraded service.
+Each deployment should include:
+
+  - Basic service health and resource monitoring. 
+  - Performance metrics collection. 
+  - Alerting for critical failures or degraded service.
 
 **Tools and setup** 
 
-- **Prometheus** is used as the primary monitoring solution to collect metrics from components such as the API Gateway and Kubernetes infrastructure. Prometheus-based setup is not yet fully documented. Configuration examples will be provided in the GitHub repository. 
+  - **Prometheus** is used as the primary monitoring solution to collect metrics from components such as the API Gateway and Kubernetes infrastructure. Prometheus-based setup is not yet fully documented. Configuration examples will be provided in the GitHub repository. 
 
-- **Alertmanager** is used to trigger notifications based on defined rules (e.g. service downtime, resource limits). The default Alertmanager configuration, including email-based alerting setup and instructions for extending it (e.g. Slack notifications, grouping), is described in the GitHub repository: EUMETNET/femdi-gateway-iac 
+  - **Alertmanager** is used to trigger notifications based on defined rules (e.g. service downtime, resource limits). The default Alertmanager configuration, including email-based alerting setup and instructions for extending it (e.g. Slack notifications, grouping), is described in the GitHub repository: EUMETNET/femdi-gateway-iac 
 
 A central **Insights Service** is planned as part of MeteoGate to provide shared usage metrics and operational dashboards. Further information will be added as the service becomes available. 
 
@@ -232,17 +242,17 @@ To ensure service continuity and enable recovery from system failures or data lo
 
 Community Capability Operators are responsible for implementing and maintaining the backup and disaster recovery solutions in their respective environments. This includes verifying that backups are functional, accessible, and restorable when needed. 
 
-ll core components, including: 
-- API Gateway (APISIX): etcd database 
-- Identity & Access Manager (Keycloak): PostgreSQL database 
-- Key Vault (Vault): Raft storage 
-are configured with scheduled Cron jobs to perform backups. These jobs are defined using Terraform and store encrypted backup files in an AWS S3 bucket by default. The setup supports adaptation to other cloud environments. 
+All core components, including: 
+
+  - API Gateway (APISIX): etcd database 
+  - Identity & Access Manager (Keycloak): PostgreSQL database 
+  - Key Vault (Vault): Raft storage are configured with scheduled Cron jobs to perform backups. These jobs are defined using Terraform and store encrypted backup files in an AWS S3 bucket by default. The setup supports adaptation to other cloud environments. 
 
 Backups are retained according to the policies defined by the Community Capability Operator. The backup frequency can be customised; a recommended baseline is: _<to be confirmed>_ 
 
-- Daily backups of all stateful components. 
-- Retention period of at least 7–14 days for critical data. 
-- Full restore test at least every 6 months. 
+  - Daily backups of all stateful components. 
+  - Retention period of at least 7–14 days for critical data. 
+  - Full restore test at least every 6 months. 
 
 Restore operations are executed manually using predefined command templates. These templates are included in the infrastructure codebase and support consistent restoration across environments. 
 
@@ -267,23 +277,23 @@ MeteoGate uses built-in security features such as access control, encryption, an
 
 Operators must ensure protection against: 
 
-- Unauthorised access to administrative interfaces and user data. 
-- Denial-of-service (DoS) attacks and traffic spikes. 
-- Misconfigurations that could expose APIs or internal components. 
-- Credential or token leakage (e.g. admin passwords, service tokens). 
+  - Unauthorised access to administrative interfaces and user data. 
+  - Denial-of-service (DoS) attacks and traffic spikes. 
+  - Misconfigurations that could expose APIs or internal components. 
+  - Credential or token leakage (e.g. admin passwords, service tokens). 
 
 #### Authentication and Authorisation 
 
-- Authentication is handled via third-party Identity Providers (IdPs), federated through Keycloak. 
-- User registration and login are managed by the Developer Portal, which interacts with Keycloak and creates consumer records in the API Gateway (APISIX). 
-- Access to APIs can be restricted via API Keys, which are issued by the Developer Portal and stored securely in the Key Vault (Vault). 
-- Admins can manage user roles and disable access through backend scripts (see Section 4.3).
+  - Authentication is handled via third-party Identity Providers (IdPs), federated through Keycloak. 
+  - User registration and login are managed by the Developer Portal, which interacts with Keycloak and creates consumer records in the API Gateway (APISIX). 
+  - Access to APIs can be restricted via API Keys, which are issued by the Developer Portal and stored securely in the Key Vault (Vault). 
+  - Admins can manage user roles and disable access through backend scripts (see Section 4.3).
 
 #### Encryption 
 
-- All communication between MeteoGate components and users is encrypted using HTTPS/TLS. 
-- Internal traffic between Vault instances in HA mode is also encrypted. 
-- Encrypted storage and secure access are used for backups, secrets, and API credentials.
+  - All communication between MeteoGate components and users is encrypted using HTTPS/TLS. 
+  - Internal traffic between Vault instances in HA mode is also encrypted. 
+  - Encrypted storage and secure access are used for backups, secrets, and API credentials.
 
 Important: Ensure all public endpoints use valid TLS certificates and that internal service communication is encrypted and authenticated. 
 
@@ -291,10 +301,10 @@ Important: Ensure all public endpoints use valid TLS certificates and that inter
 
 Community Capability Operators must ensure that: 
 
-- Access to sensitive infrastructure (e.g. Kubernetes clusters, GitHub secrets, Vault root tokens) is limited and auditable. 
-- Logs are retained and regularly reviewed (see Section 5.5). 
-- System components are patched in a timely manner (see Section 3.4 Updates). 
-- Security incidents are managed according to the incident process (see Section 5.1). <links>
+  - Access to sensitive infrastructure (e.g. Kubernetes clusters, GitHub secrets, Vault root tokens) is limited and auditable. 
+  - Logs are retained and regularly reviewed (see Section 5.5). 
+  - System components are patched in a timely manner (see Section 3.4 Updates). 
+  - Security incidents are managed according to the incident process (see Section 5.1). <links>
 
 For more information, refer to the **MeteoGate Cybersecurity Policy** _[link to be added]_.
 
@@ -324,12 +334,12 @@ _Note_: Some upstream APIs may require a dedicated API key for the API Gateway t
 
 Onboarding an API follows the below process:
 
-1. Create a Pull Request 
+  1. Create a Pull Request 
     - Navigate to the [designated repository](https://github.com/EURODEO/api-management-tool-poc/)
     - Create a new branch for your changes
     - Add the necessary code to onboard the API. 
  
-2. Gateway Configuration - YAML File 
+  2. Gateway Configuration - YAML File 
     - Add the following configuration to the YAML file: 
 ```
 id: xxx                         #replace with your own descriptive and unique id 
@@ -349,28 +359,30 @@ routes:
 
  ```
 
-3. Commit & Merge 
+  3. Commit & Merge 
     - Commit your changes to the branch. 
     - Create a pull request and request a review. 
     - Once approved, merge the pull request into the main branch. 
  
-4. Check on Development Portal 
+  4. Check on Development Portal 
     - Verify that the new route is listed in the Developer Portal.
   
 ### Naming API Routes 
 
 API routes configured through the MeteoGate API Gateway must follow a consistent and descriptive naming scheme to ensure clarity, discoverability, and alignment across the Developer Portal and Data Explorer. 
-Routes are defined in the API Management Tool (GitHub) and are: 
-- Exposed through structured URLs, such as: https://meteogate.api.eu/{service}/{dataset} 
-- Visible to end users in the Developer Portal and Data Explorer. 
-- Identified using a parameter:id in the YAML configuration. 
+Routes are defined in the API Management Tool (GitHub) and are:
+
+  - Exposed through structured URLs, such as: https://meteogate.api.eu/{service}/{dataset} 
+  - Visible to end users in the Developer Portal and Data Explorer. 
+  - Identified using a parameter:id in the YAML configuration. 
 
 A formal naming scheme and hierarchy for API routes will be defined and published by the Programme team. This will ensure alignment across services such as E-SOH, radar data, and climate data APIs. 
 
-Until then, route paths should be: 
-- Descriptive and human-readable. 
-- Consistent across environments. 
-- Designed to reflect the data service, collection, or domain. 
+Until then, route paths should be:
+
+  - Descriptive and human-readable. 
+  - Consistent across environments. 
+  - Designed to reflect the data service, collection, or domain. 
 
 Further guidance and examples will be added to the API Management Tool documentation as the scheme is finalized. 
 
@@ -383,25 +395,29 @@ Administration credentials for MeteoGate Community Components must be handled se
 
 Admin credentials must be securely stored and rotated according to the hosting organisation’s security policy. Only authorised personnel should have access. Integration with Vault and GitHub secret management is strongly recommended. 
 
-**API Gateway (APISIX)** 
-- Admin access is handled via a single administrator account per instance. 
-- Credentials are defined during initial configuration and stored as GitHub repository secrets. 
-- The same credentials are used for both manual administration and automation (e.g., GitHub workflows). 
-- APISIX supports only one admin account per instance. 
+**API Gateway (APISIX)**
 
-**Identity & Access Manager (Keycloak)** 
-- Admin credentials are defined during the Terraform-based initial deployment. 
-- Credentials may be updated manually or via Vault integration. 
-- No per-user interface for managing admin roles is currently in use; role mapping is managed internally within Keycloak. <is that so> 
+  - Admin access is handled via a single administrator account per instance. 
+  - Credentials are defined during initial configuration and stored as GitHub repository secrets. 
+  - The same credentials are used for both manual administration and automation (e.g., GitHub workflows). 
+  - APISIX supports only one admin account per instance. 
 
-**Developer Portal** 
-- The Developer Portal does not have a dedicated admin account. 
-- Admin-level operations (e.g. disabling users, resetting keys) are performed using backend scripts and service tokens. 
+**Identity & Access Manager (Keycloak)**
 
-**Key Vault (HashiCorp Vault)** 
-- Vault admin access is configured during initial setup. 
-- Currently, access is based on a root token, which should be used with caution. 
-- The setup supports integration with other IdPs in future to enable more granular admin access and auditing. 
+  - Admin credentials are defined during the Terraform-based initial deployment. 
+  - Credentials may be updated manually or via Vault integration. 
+  - No per-user interface for managing admin roles is currently in use; role mapping is managed internally within Keycloak. <is that so> 
+
+**Developer Portal**
+
+  - The Developer Portal does not have a dedicated admin account. 
+  - Admin-level operations (e.g. disabling users, resetting keys) are performed using backend scripts and service tokens. 
+
+**Key Vault (HashiCorp Vault)**
+
+  - Vault admin access is configured during initial setup. 
+  - Currently, access is based on a root token, which should be used with caution. 
+  - The setup supports integration with other IdPs in future to enable more granular admin access and auditing. 
 
 ### Managing Users 
 
@@ -409,33 +425,36 @@ User management in MeteoGate is largely automated through the Developer Portal a
 
 #### User Registration and Provisioning 
 
-- When a user authenticates for the first time (e.g. via GitHub or another IdP), a user account is automatically created in the Identity & Access Manager (Keycloak). 
-- Upon requesting an API Key, the Developer Portal: 
-  - Creates a user account in the Key Vault 
-  - Registers the user as a consumer in each API Gateway instance 
-- Each user can have one API Key at a time. The Developer Portal checks for existing API Key and consumer status before issuing a new key. 
-- Users are initially assigned to the USER group. 
+  - When a user authenticates for the first time (e.g. via GitHub or another IdP), a user account is automatically created in the Identity & Access Manager (Keycloak). 
+  - Upon requesting an API Key, the Developer Portal: 
+    - Creates a user account in the Key Vault 
+    - Registers the user as a consumer in each API Gateway instance 
+  - Each user can have one API Key at a time. The Developer Portal checks for existing API Key and consumer status before issuing a new key. 
+  - Users are initially assigned to the USER group. 
 
 #### User Roles 
 
-There are three types of users in the system: 
-- **USER**: Default group with standard access and rate limits. 
-- **EUMETNET_USER**: Granted higher rate limits via API Gateway policies. 
-- **ADMIN**: Has rights to manage users and system settings via backend tools. 
+There are three types of users in the system:
 
-Rate limit configuration: 
-- For **USERs**, rate limits are defined per API route in the API Gateway configuration. 
-- For **EUMETNET_USERs**, a global enhanced rate limit is applied using the API Management
-- Tool configuration file (YAML). This setting overrides route-specific limits to allow higher throughput.
+  - **USER**: Default group with standard access and rate limits. 
+  - **EUMETNET_USER**: Granted higher rate limits via API Gateway policies. 
+  - **ADMIN**: Has rights to manage users and system settings via backend tools. 
+
+Rate limit configuration:
+
+  - For **USERs**, rate limits are defined per API route in the API Gateway configuration. 
+  - For **EUMETNET_USERs**, a global enhanced rate limit is applied using the API Management
+  - Tool configuration file (YAML). This setting overrides route-specific limits to allow higher throughput.
 
 #### Manual User Management 
 
 Although automated, user accounts can be managed manually by administrators using backend scripts provided in the [Developer Portal backend](https://github.com/EUMETNET/Dev-portal/tree/main/backend)
 
-Available admin operations include: 
-- Enable / disable a user (disabling works by revoking the user’s API Key). 
-- Remove a user account. 
-_ Promote or demote a user to/from the **EUMETNET_USER** group. 
+Available admin operations include:
+
+  - Enable / disable a user (disabling works by revoking the user’s API Key). 
+  - Remove a user account. 
+  - Promote or demote a user to/from the **EUMETNET_USER** group. 
 
 These operations are handled in the correct technical order to avoid inconsistencies and are intended for exceptional cases or support situations. 
 
@@ -445,19 +464,21 @@ Admins performing these operations must use a valid admin token to authenticate 
 
 API Key management in MeteoGate is primarily automated through the **Developer Portal**. End users can request and manage their API Key without administrative intervention. 
 
-#### Automated Management via Developer Portal 
-- When a registered user requests an API Key, the Developer Portal: 
+#### Automated Management via Developer Portal
+
+  - When a registered user requests an API Key, the Developer Portal: 
     1. Creates a new API Key in the Key Vault
     2. Associates the key with the user’s account
     3. Registers the key in all relevant API Gateway instances as part of the consumer configuration 
-
-- Each user may hold only one API Key at a time. The system checks for existing keys before issuing a new one. 
+  - Each user may hold only one API Key at a time. The system checks for existing keys before issuing a new one. 
 
 #### Manual Key Administration 
 
-In exceptional cases (e.g. security incidents or support actions), admins can: 
+In exceptional cases (e.g. security incidents or support actions), admins can:
+
   - View, revoke, or delete API Keys manually. 
-  - Use Vault’s web UI or backend scripts available in GitHub to manage keys. 
+  - Use Vault’s web UI or backend scripts available in GitHub to manage keys.
+
 Scripts for key management and automation are available in: [EURODEO/Dev-portal GitHub repository](https://github.com/EURODEO/Dev-portal)
 
 ### API Key Validity and Expiry 
@@ -482,17 +503,17 @@ In deployments where MeteoGate API Gateway instances are hosted in multiple clou
 
 #### User Synchronisation 
 
-- When a user registers via the Developer Portal, they are automatically registered as a consumer in each deployed API Gateway instance. 
-- This ensures that the same API Key can be used across all environments. 
-- The Developer Portal backend handles this synchronisation logic. 
+  - When a user registers via the Developer Portal, they are automatically registered as a consumer in each deployed API Gateway instance. 
+  - This ensures that the same API Key can be used across all environments. 
+  - The Developer Portal backend handles this synchronisation logic. 
 
 See technical implementation in: [EURODEO/Dev-portal GitHub repository](https://github.com/EURODEO/Dev-portal) 
 
 #### Route Synchronisation 
 
-- All Data Supply routes (API endpoints) are defined and maintained using the API Management Tool in GitHub: EUMETNET/api-management-tool-poc 
-- By default, routes are added to all Gateway instances, but the system is flexible: routes can also be configured per platform using the platform: field in the YAML configuration. 
-- Once committed, a GitHub Actions workflow generates APISIX-compatible configuration files and applies them across environments via the Admin API. 
+  - All Data Supply routes (API endpoints) are defined and maintained using the API Management Tool in GitHub: EUMETNET/api-management-tool-poc 
+  - By default, routes are added to all Gateway instances, but the system is flexible: routes can also be configured per platform using the platform: field in the YAML configuration. 
+  - Once committed, a GitHub Actions workflow generates APISIX-compatible configuration files and applies them across environments via the Admin API. 
 
 The entire sync and deployment process is containerised, runs in Kubernetes, and is designed for reliable operation across federated platforms. This architecture ensures seamless multi-cloud availability and simplifies the onboarding of new APIs and users across the MeteoGate federation.
 
@@ -516,20 +537,21 @@ Possibly amend with relevant common process diagrams from [42 Common Processes a
 
 Community Capability Operators must ensure timely identification, logging, communication, and resolution of service incidents. This includes: 
 
-- Coordinating with the MeteoGate Service Desk, which acts as the first point of contact for all stakeholders. 
-- Following agreed escalation procedures for high-impact or unresolved issues. 
-- Documenting incident resolution steps and timelines. 
-- Ensuring lessons learned are recorded and shared if applicable. 
+  - Coordinating with the MeteoGate Service Desk, which acts as the first point of contact for all stakeholders. 
+  - Following agreed escalation procedures for high-impact or unresolved issues. 
+  - Documenting incident resolution steps and timelines. 
+  - Ensuring lessons learned are recorded and shared if applicable. 
 
 MeteoGate includes custom error pages to improve user experience during service failures. 
 
 **Problem Management** 
 
-In addition to resolving individual incidents, Community Capability Operators are expected to: 
-- Identify recurring incidents or systemic issues that indicate underlying problems. 
-- Perform root cause analysis and propose long-term corrective actions. 
-- Coordinate fixes or infrastructure changes that reduce the likelihood of recurrence. 
-- Document known issues and mitigation strategies to support future troubleshooting. 
+In addition to resolving individual incidents, Community Capability Operators are expected to:
+
+  - Identify recurring incidents or systemic issues that indicate underlying problems. 
+  - Perform root cause analysis and propose long-term corrective actions. 
+  - Coordinate fixes or infrastructure changes that reduce the likelihood of recurrence. 
+  - Document known issues and mitigation strategies to support future troubleshooting. 
 
 Problem resolution efforts should be tracked and reported where appropriate, especially for issues affecting multiple environments or stakeholders. 
 
@@ -538,35 +560,39 @@ Problem resolution efforts should be tracked and reported where appropriate, esp
 The MeteoGate Service Desk, operated by a FEMDI consortium member, is the central contact for all stakeholders. It handles receiving, triaging, and coordinating support requests, ensuring consistent issue management.
 
 **The Service Desk is responsible for:**
-- Receiving and logging support requests from users. 
-- Performing initial triage and assigning requests to the appropriate Community Capability Operator, Data Publisher, or other responsible party. 
-- Coordinating the resolution process and maintaining case oversight. 
-- Communicating with end users throughout the support lifecycle. 
 
-**Community Capability Operators are responsible for:** 
-- Responding to support requests escalated by the Service Desk that fall within their operational domain (e.g. API Gateway, Developer Portal, Vault). 
-- Troubleshooting and resolving technical issues related to the Community Components they host. 
-- Tracking the progress and status of support cases, and reporting on response or resolution times if required. 
-- Collaborating with Data Publishers, other operators, or technical teams as needed to resolve incidents.
+  - Receiving and logging support requests from users. 
+  - Performing initial triage and assigning requests to the appropriate Community Capability Operator, Data Publisher, or other responsible party. 
+  - Coordinating the resolution process and maintaining case oversight. 
+  - Communicating with end users throughout the support lifecycle. 
+
+**Community Capability Operators are responsible for:**
+
+  - Responding to support requests escalated by the Service Desk that fall within their operational domain (e.g. API Gateway, Developer Portal, Vault). 
+  - Troubleshooting and resolving technical issues related to the Community Components they host. 
+  - Tracking the progress and status of support cases, and reporting on response or resolution times if required. 
+  - Collaborating with Data Publishers, other operators, or technical teams as needed to resolve incidents.
 
 ### Change Management 
 
 Changes to infrastructure or configuration (e.g., new routes, IdPs, or platform updates) must follow a documented and controlled change process. 
 
-Community Capability Operators must: 
-- Plan and test changes before applying them in production. 
-- Use version-controlled configuration (e.g., via GitHub) for transparency. 
-- Coordinate with other operators and the MeteoGate Solution Manager for changes that impact shared services.
+Community Capability Operators must:
+
+  - Plan and test changes before applying them in production. 
+  - Use version-controlled configuration (e.g., via GitHub) for transparency. 
+  - Coordinate with other operators and the MeteoGate Solution Manager for changes that impact shared services.
 
 ### Performance Reporting
 
 Operators must submit regular reports (e.g., monthly) to the MeteoGate Programme Manager. These reports enable performance tracking against QoS targets and support transparency across MeteoGate. 
 
-Reports may include: 
-- Availability and uptime metrics 
-- API Gateway usage statistics 
-- Incident and support request summaries 
-- Capacity and resource usage 
+Reports may include:
+
+  - Availability and uptime metrics 
+  - API Gateway usage statistics 
+  - Incident and support request summaries 
+  - Capacity and resource usage 
 
 Guidelines and templates will be provided by the Programme team. Reports are compiled using monitoring tools and logs (see section: [Monitoring](#monitoring-and-observability))
 
@@ -582,26 +608,27 @@ Personal data is handled according to [MeteoGate Privacy Policy](https://tlnt190
 
 Personal data processed includes: 
 
-- Registered user identities (managed by the Identity & Access Manager) 
-- API key metadata (managed by the Key Vault) 
-- User access control metadata, stored as consumer objects (managed by API Gateway) 
-- Contact information in dataset metadata (provided and managed by the Data Publisher) 
+  - Registered user identities (managed by the Identity & Access Manager) 
+  - API key metadata (managed by the Key Vault) 
+  - User access control metadata, stored as consumer objects (managed by API Gateway) 
+  - Contact information in dataset metadata (provided and managed by the Data Publisher) 
 
 GDPR-related requests (e.g., deletion or correction) should be directed to the MeteoGate Service Desk, which coordinates resolution with responsible parties. 
 
 Community Capability Operators are responsible for: 
 
-- Ensuring that personal data processed by the Community Components they operate (e.g. in Identity and Access Manager, Key Vault, and API Gateway) is stored securely and only accessible by authorised personnel. 
-- Supporting GDPR-related processes in their hosted environment (e.g. deletion of user data upon request). 
-- Implementing technical and organisational measures to protect personal data in accordance with MeteoGate’s security and privacy requirements.
+  - Ensuring that personal data processed by the Community Components they operate (e.g. in Identity and Access Manager, Key Vault, and API Gateway) is stored securely and only accessible by authorised personnel. 
+  - Supporting GDPR-related processes in their hosted environment (e.g. deletion of user data upon request). 
+  - Implementing technical and organisational measures to protect personal data in accordance with MeteoGate’s security and privacy requirements.
 
 #### Meteorological and Hydrological Data
 
 Community Capability Operators provide the technical platform for publishing and accessing data but are not responsible for the content or quality of the datasets. Responsibility for the accuracy, structure, and compliance of data and metadata lies with the respective Data Owners and Publishers. 
 
-Community Capability Operators must: 
-- Ensure reliable and secure API access to published datasets. 
-- Refrain from altering, filtering, or interpreting the published content in any way. 
+Community Capability Operators must:
+
+  - Ensure reliable and secure API access to published datasets. 
+  - Refrain from altering, filtering, or interpreting the published content in any way. 
 
 For more detailed definitions of roles and responsibilities related to data handling, publication, and ownership, refer to the [MeteoGate Data Governance Policy](https://tlnt19059.sharepoint.com/:w:/r/sites/FEMDI/ET%20FEMDI/ET%20Working%20folder/Operating%20Model/Data%20governance%20policy.docx?d=wb938b06e5b694bf1914c4202ee6aaa8a&csf=1&web=1&e=AH2lgh).
 
