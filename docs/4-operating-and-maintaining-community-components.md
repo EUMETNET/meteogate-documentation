@@ -1,4 +1,4 @@
-# 4. Operating MeteoGate Community Components
+# 4. Operating Shared Components
 
 This section provides technical guidance for MeteoGate **Community Capability Operators**, typically NMHSs or designated EUMETNET members, responsible for operating and maintaining MeteoGate's Community Components. 
 
