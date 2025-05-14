@@ -26,7 +26,7 @@ This guide is designed for:
 | [2. Discovering and Accessing Data](2-discovering-and-accessing-data.md) | How users can search for, preview, and retrieve data |
 | [3. Publishing Data](3-publishing-data.md) | How NMHSs can publish datasets and APIs via MeteoGate |
 | [4. Operating Community Components](4-operating-and-maintaining-community-components.md) | Admin and operator guide for shared services |
-| [Technical Architecture](technical-architecture.md) | Overview of the technical architecture of the MeteoGate system |
+| [Architecture](technical-architecture.md) | Overview of the architecture of the MeteoGate system |
 | [Glossary](glossary.md) | Definitions of key concepts |
 | [References](references.md) | Relevant policies, tools, and resources |
 
