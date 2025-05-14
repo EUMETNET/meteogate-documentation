@@ -12,11 +12,12 @@ The MeteoGate Participation Management policy outlines the agreements Data Consu
 
 Data Consumers must agree to the following MeteoGate Terms of Use:
 
-Open data can be accessed freely, but consumers must follow data usage rights and use data within terms of the licenses as specified in the metadata. In addition, consumers must comply with the Data Governance policy re. fair use. 
--	Any abusive behaviour towards other users or staff members will result in a warning, suspension or ban
--	Users must comply with the law of their country when using MeteoGate
--	Any attempt to gain entry to locked or restricted areas will result in a permanent ban
--	Any unlawful activity on the website may result in referral to law enforcement agencies.
+Open data can be accessed freely, but consumers must follow data usage rights and use data within terms of the licenses as specified in the metadata. In addition, consumers must comply with the Data Governance policy re. fair use.
+
+  -	Any abusive behaviour towards other users or staff members will result in a warning, suspension or ban
+  -	Users must comply with the law of their country when using MeteoGate
+  -	Any attempt to gain entry to locked or restricted areas will result in a permanent ban
+  -	Any unlawful activity on the website may result in referral to law enforcement agencies.
 
 > Add link. Include data access on API Gateway, Data Supply and Data Explorer.
 
@@ -130,12 +131,12 @@ First, it is necessary to identify the API from which the data will be retrieved
 
 There are several ways to find the API that can provide data for your needs:
 
-1.	MeteoGate Data Explorer (recommended, see above)
-2.	WMO WIS2 Global Discovery Catalogue (see above)
-3.	Route list in MeteoGate Developer Portal (see above). Note that the route list includes only Data Supply components that are accessed through MeteoGate API Gateway(s).
-5.	Notification message (see above)
-6.	Search for datasets on a web search engine, e.g. Google Dataset Search
-7.	Data Supply (e.g. WIS2Box UI)
+  1.	MeteoGate Data Explorer (recommended, see above)
+  2.	WMO WIS2 Global Discovery Catalogue (see above)
+  3.	Route list in MeteoGate Developer Portal (see above). Note that the route list includes only Data Supply components that are accessed through MeteoGate API Gateway(s).
+  5.	Notification message (see above)
+  6.	Search for datasets on a web search engine, e.g. Google Dataset Search
+  7.	Data Supply (e.g. WIS2Box UI)
 
 The API base URL looks like this, for example: ```apisixdev.eumetnet-femdi.eumetsat.ewcloud.host/fi/edr```
 
@@ -145,12 +146,12 @@ The API base URL looks like this, for example: ```apisixdev.eumetnet-femdi.eumet
 
 There are several ways to formulate the access request:
 
-1.	Use an API query tool (e.g. Swagger), if available
+  1.	Use an API query tool (e.g. Swagger), if available
     - Browse available collections and parameters from an API using specialist software, which formulates access request according to your preferences
     - Copy the resulting access request
-2.	Copy the URL link from a notification message
+  2.	Copy the URL link from a notification message
     - In case you have subscribed to notifications about particular data from the Global Broker, the notification message includes a direct URL link to the data you have subscribed to
-4.	Formulate manually using metadata from API
+  4.	Formulate manually using metadata from API
     1. Access the API collection URL to get collection metadata, which provides information on available collections and parameters (e.g. ```https://apisixdev.eumetnet-femdi.eumetsat.ewcloud.host/fi/edr/collections```)
     2. Browse collection metadata to find collections and parameters to data that are available from that API.
     3. Decide what data you want to get (e.g. collection type, collection, type of data, time, geographic extent, output formats, other parameters)
