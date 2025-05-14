@@ -1,5 +1,5 @@
 site_name: MeteoGate Documentation
-site_description: Guidance and instructions for MeteoGate Stakeholders: Data Consumers, Data Publishers and Community Capability Operators
+site_description: Guidance and instructions for MeteoGate Stakeholders – Data Consumers, Data Publishers and Community Capability Operators
 site_author: EUMETNET
 repo_url: https://github.com/EUMETNET/meteogate-documentation
 theme:
