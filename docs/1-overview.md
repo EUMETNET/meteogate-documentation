@@ -98,36 +98,39 @@ This section describes the high-level ‘data publication to access’ end-to-en
 
 ![MeteoGate high-level end-to-end-process](images/meteogate-data-publication-to-access-process.png)
 
-  i.  **Create Data**: In its operations, the Data Owner creates or updates data (for example, observations from automated weather stations or weather model data) in its applications. 
+i.  **Create Data**: In its operations, the Data Owner creates or updates data (for example, observations from automated weather stations or weather model data) in its applications.
+  
+ii.	**Publish data**: The Data Publisher:
 
-  ii.	**Publish data**: The Data Publisher:
   - Collects the data (manually or automatically) and publishes it on its Data Supply component either
     - as an addition to an existing dataset, for example, one update cycle worth of new data added to a dataset consisting of weather observations; or,
     - if the shared data forms a completely new dataset, one is created. 
   -	Updates the Collection-level metadata if required.
-  -	Creates or updates the Resource-level metadata.
-  -	Manually updates the Discovery metadata on the Data Supply referring to the new or updated data, if required. 
+    -	Creates or updates the Resource-level metadata.
+    -	Manually updates the Discovery metadata on the Data Supply referring to the new or updated data, if required. 
 
 _Note_: Discovery metadata does not change often. It may change, for example, if there is a fundamental change in the scope of the shared data, or a change in Data Publisher information or data licensing. New discovery metadata also needs to be created for completely new datasets.
 
-  iii.	**Publish notification**: The Local Capability Operator publishes a notification to advertise the new discovery metadata and/or data. 
+iii.	**Publish notification**: The Local Capability Operator publishes a notification to advertise the new discovery metadata and/or data.
 
-  iv.	**WMO re-publishes notification**: The WMO WIS 2.0 Global Broker subscribes to notifications from the Data Supply. It then re-publishes notifications about the new data and metadata to all applications which have subscribed to them.
+iv.	**WMO re-publishes notification**: The WMO WIS 2.0 Global Broker subscribes to notifications from the Data Supply. It then re-publishes notifications about the new data and metadata to all applications which have subscribed to them.
+  
+v.	**Update WMO catalogue**: The WMO WIS 2.0 Global Discovery Catalogue subscribes to notifications from the Global Broker and thus gets notified of new and updated discovery metadata. When it gets notified about such a change, the Global Discovery Catalogue fetches the updated discovery metadata and updates the catalogue accordingly.
+  
+vi.	**Find data**: Data Consumers can be made aware about available data in various ways. They can:
 
-  v.	**Update WMO catalogue**: The WMO WIS 2.0 Global Discovery Catalogue subscribes to notifications from the Global Broker and thus gets notified of new and updated discovery metadata. When it gets notified about such a change, the Global Discovery Catalogue fetches the updated discovery metadata and updates the catalogue accordingly.
-
-  vi.	**Find data**: Data Consumers can be made aware about available data in various ways. They can:
-  -	Subscribe to notifications from the Global Broker and be notified about updated metadata and data. 
+  -	Subscribe to notifications from the Global Broker and be notified about updated metadata and data.
   -	Find the datasets that meet their needs using the Data Explorer by browsing or searching for datasets with specific characteristics. 
   -	Search and browse the WMO’s Global Discovery Catalogue, in cases where a summary of the available datasets is sufficient.
   -	Search via common search engines – records in the WMO Global Discovery Catalogue are indexed by the search engines enabling data consumers to find them via their favourite/normal search path.
+    
+vii.	**Request data**: Using information provided in the discovery metadata, the Data Consumer can:
 
-  vii.	**Request data**: Using information provided in the discovery metadata, the Data Consumer can:
   -	Make anonymous requests for shared data through the API Gateway. 
   -	When required by a data policy and in line with EU regulation, the API Gateway requires authentication from the user using an API Key. A Data Consumer can obtain an API Key by registering to MeteoGate using a trusted Third-Party Identity Provider. 
   -	Bulk download data. 
 
-  viii.	**Proxied access**: The API Gateway proxies access to connected Data Supply services. The user can then utilise the data in their own applications. 
+viii.	**Proxied access**: The API Gateway proxies access to connected Data Supply services. The user can then utilise the data in their own applications. 
 
 _Note_: Using the API Gateway is optional for the Data Publisher. They can also publish the data directly from the Data Supply (for example, if the dataset is very large or if the Data Publisher already has API Management implemented as part of their Data Supply capability).
 
