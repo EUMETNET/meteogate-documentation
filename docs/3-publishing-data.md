@@ -121,7 +121,7 @@ The Data Supply must be deployed according to the chosen publishing pattern. Thi
 
 ---
 
-## Select Data Publishing Pattern 
+## 1. Select Data Publishing Pattern 
 
 The Data Publisher and/or Data Owner will decide how they want their data to be made available. Data can be published through MeteoGate in three different patterns. The choice should be based on the data type, existing technical solutions and runtime environments already used for sharing open data (if any), and specific requirements for access control, cost, and performance. Data Publishers and/or Owners can choose different options for different datasets and APIs. 
 
@@ -216,7 +216,7 @@ The access restrictions are implemented in different ways depending on the Data 
   
 ---
 
-## Structure and Prepare Data 
+## 2. Structure and Prepare Data 
 
 Datasets should be structured in a way that ensures efficient access, consistency, interoperability, and discoverability within MeteoGate and WMO WIS2. Key aspects of structuring include defining dataset boundaries, standardizing parameters, optimizing metadata, ensuring proper indexing, and selecting suitable API technologies for data retrieval. 
 
@@ -377,7 +377,7 @@ Effective linking enhances discoverability and navigation. In MeteoGate, links s
 - Implement X-Forwarded and X-Prefix Headers for correct URL resolution when using the MeteoGate API Gateway. 
 - Ensure consistent and intuitive navigation by maintaining a clear and logical link structure throughout the API. 
 
-## Deploy and Integrate Data Supply 
+## 3. Deploy and Integrate Data Supply 
 
 ### Choosing a Deployment Framework 
 
@@ -512,7 +512,6 @@ The integration process depends on the chosen Data Publishing Pattern and involv
   - Ensure integration with WMO WIS2 components, including metadata sharing and notifications, by repeating the WIS2 related steps above. 
 
 MeteoGate Community Capability Operators and WMO WIS2 Capability Operators are responsible for performing the necessary technical configurations in MeteoGate HVD services, MeteoGate API Gateway, and WMO WIS2 components. 
-
 
 ## Additional Considerations 
 
