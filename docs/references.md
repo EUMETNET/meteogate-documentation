@@ -74,7 +74,7 @@ This section lists useful references related to MeteoGate.
 ### Relevant Standards
 
   - [Discovery Metadata Vocabulary](https://wiki.esipfed.org/Attribute_Convention_for_Data_Discovery_1-3)
-  - [FAIR Principles](https://wiki.esipfed.org/Attribute_Convention_for_Data_Discovery_1-3%22%EF%B7%9FHYPERLINK %22https://www.go-fair.org/fair-principles/)
+  - [FAIR Principles](https://www.go-fair.org/fair-principles/)
   - [OpenAPI Specification](https://www.openapis.org/)
   - [OGC API](https://ogcapi.ogc.org/)
   - [OGC API – EDR](https://ogcapi.ogc.org/edr/)
