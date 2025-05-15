@@ -47,7 +47,7 @@ See the Guide to WIS 2.0 for more information on using the Global Discovery Cata
 
 > add link
 
-### Subscribing to notifications about availability of new data
+### Subscribing to Notifications About Availability of New Data
 
 You can subscribe to receive notifications about new and updated data and metadata. You can choose the API endpoints, datasets, and topics for which you want to receive notifications. The notifications also include URL that can be used to access the newly added data. Notifications are especially useful in utilizing real-time data.
 
@@ -63,7 +63,7 @@ See the Guide to WIS 2.0 for more information on subscribing to notifications.
 
 Once you have found a dataset that fits your needs, you can access it either anonymously or as a registered user, depending on the data policy. This section explains how to register for API access (if required), use API Keys, and retrieve data through MeteoGate API Gateway or directly from Data Supply services.
 
-### Registering to MeteoGate and creating API Keys 
+### Registering to MeteoGate and Creating API Keys 
 
 Most of the data accessible through MeteoGate is open to anonymous users and does not require registering as a MeteoGate user. But when required by a data policy and in line with EU regulation, the MeteoGate API Gateway requires authentication from the user using an API Key.  Users can also register to receive higher Quality of Service than anonymous users.
 
@@ -73,11 +73,11 @@ Users from EUMETNET Members can receive priority access for official duty by reg
 
 The API Key (which is a string of characters) is appended to the HTTP header of the data access request or alternatively provided as an URL parameter.
 
-#### Registering as normal user
+#### Registering as Normal User
 
 Navigate to MeteoGate Developer Portal and log in with your preferred identity provider. If required, input missing account information such as first and last name. You are then taken to the Developer Portal front page.
 
-#### Registering as EUMETNET Member user
+#### Registering as EUMETNET Member User
 
 Navigate to MeteoGate Developer Portal and log in with your organisation’s identity provider (e.g. Azure AD). The identity provider should provide your work email address, showing that you are affiliated with a EUMETNET Member. If required, input missing account information such as first and last name. You are then taken to the Developer Portal front page.
 
@@ -91,23 +91,23 @@ You can obtain a new API Key by clicking the ‘Create API Key’ button in the 
 
 If there is a need to revoke your API Key (for example, the API Key has been compromised), you can delete the API Key by clicking the ‘Delete API Key’ button in the Developer Portal.
 
-#### Viewing available API endpoints (i.e. routes)
+#### Viewing Available API Endpoints (i.e. routes)
 
-You can view the API endpoints (i.e. routes) available through the MeteoGate API Gateways by clicking the ‘Show routes’ button in the in the Developer Portal.
+You can view the API endpoints (i.e. routes) of the Data Suplly components available through the MeteoGate API Gateways by clicking the ‘Show routes’ button in the in the Developer Portal.
 
-###	Registering as a local user on the Data Supply 
+### Registering as a Local User on the Data Supply
 
 There are Data Supply components that require users to register, but which handle authentication and access control locally. You cannot use a MeteoGate API Key to access data on these Data Supply components but need to create a local user account and authenticate following the Data Provider’s instructions.
 
-###	Accessing data through MeteoGate API Gateway
+### Accessing Data Through MeteoGate API Gateway
 
-MeteoGate API Gateways provide managed access to the local data sources that are available through MeteoGate. The API Gateways manage data requests and data access flow by e.g., providing cybersecurity, priority access, request limiting, and rate limiting measures. The API Gateway also collects usage data. There are several API Gateways available. The Data Publisher chooses which API Gateway instance they want to use. It is also possible to publish data directly, without using the API Gateway.
+MeteoGate API Gateways provide managed access to the local Data Supply components that are available through MeteoGate. The API Gateways manage data requests and data access flow by e.g., providing cybersecurity, priority access, request limiting, and rate limiting measures. The API Gateway also collects usage data. There are several API Gateways available. The Data Publisher chooses which API Gateway instance they want to use. It is also possible to publish data directly, without using the API Gateway.
 
-Data is accessed by sending an access request to the API. Data can be accessed with a web browser, a specialised software program, or programmatically (i.e. from software code).
+Data is accessed by sending an access request to a specific API endpoint of the API Gateway. Data can be accessed with a web browser, a specialised software program, or programmatically (i.e. from software code).
 
 Note that these instructions apply specifically to OGC-API-EDR type of API.
 
-#### What is an access request?
+#### What is an Access Request?
 
 Accessing data begins with formulating a data access request. It is basically a text string send to the MeteoGate API Gateway. It includes the URL for the particular API endpoint and parameters. The API Key (which is also a text string) must be included for restricted data.
 
@@ -124,7 +124,7 @@ In the example, the request is targeting a specific dataset (ECMWF data), for a 
 
 Parameters are often specified after a ? symbol in the access request. In the example, the parameters request temperature data for the time range between September 11, 2024, 06:00 UTC, and September 12, 2024, 09:00 UTC. The data should be returned in GeoJSON format, using CRS:84 as the coordinate system.
 
-#### How to find the API
+#### How to Find the API
 
 First, it is necessary to identify the API from which the data will be retrieved. The collection metadata for the API in question specify how the access request should be formulated. For example, it specifies which collections (datasets) and parameters are available.
 
@@ -141,7 +141,7 @@ The API base URL looks like this, for example: ```apisixdev.eumetnet-femdi.eumet
 
 > Bulk download? different link?
 
-#### How formulate the access request
+#### How Formulate the Access Request
 
 There are several ways to formulate the access request:
 
@@ -158,7 +158,7 @@ There are several ways to formulate the access request:
 
 > follow formats specified in metadata, e.g. date and time
 
-#### How to send the access request
+#### How to Send the Access Request
 
 Data can be accessed with a web browser, a specialised software program, or programmatically (i.e. from software code). Data access happens behind the scenes. There is no UI for the MeteoGate API Gateway.
 
@@ -170,19 +170,19 @@ In addition, there are specialised software programs that can be used to access 
 
 > add examples. code libraries mentioned?
 
-#### How to use data
+#### How to Use Data
 
-Use data according to terms and conditions and license.
+Use data according to terms and conditions and license referred to in the discovery metadata.
 
 > reference to terms of use. what else? how to use in code etc.)
 
-#### How to access Data Supply components requiring authentication
+#### How to Access Data Supply Components Requiring Authentication
 
 For API endpoints that require authentication using API Key, the API Key is appended to the HTTP header of the data access request or alternatively provided as an URL parameter. Metadata should state whether the endpoint requires authentication.
 
-### Accessing data directly from through Data Supply APIs
+### Accessing Data Sirectly From Through Data Supply APIs
 
-Some Data Supply APIs are not accessed through the MeteoGate API Gateway(s), but directly. You can still find these APIs by the same means as the APIs that are accessed through the MeteoGate API Gateway(s), for example using the Data Explorer or WIS 2.0 Global Discovery Catalogue.
+Some Data Supply APIs are not accessed through the MeteoGate API Gateway(s), but directly. You can still find these APIs by the same means as the APIs that are accessed through the MeteoGate API Gateway(s) (except route list on Developer Portal), for example using the Data Explorer or WIS 2.0 Global Discovery Catalogue.
 
 Follow the instructions and documentation available from the particular Data Provider to access these APIs. You should find the required links or information on the Data Provider from the metadata or a landing page available from the API base URL. Some Data Supply components may require authentication.
 
