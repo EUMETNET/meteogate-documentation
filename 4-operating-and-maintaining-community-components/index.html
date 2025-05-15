@@ -1,0 +1,1656 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Guidance and instructions for MeteoGate Stakeholders – Data Consumers, Data Publishers and Community Capability Operators">
+      
+      
+        <meta name="author" content="EUMETNET">
+      
+      
+      
+        <link rel="prev" href="../3-publishing-data/">
+      
+      
+        <link rel="next" href="../technical-architecture/">
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.14">
+    
+    
+      
+        <title>4. OPERATING SHARED COMPONENTS - MeteoGate Documentation</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.342714a4.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Open Sans";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="black" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#4-operating-shared-components" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="MeteoGate Documentation" class="md-header__button md-logo" aria-label="MeteoGate Documentation" data-md-component="logo">
+      
+  <img src="../images/meteogate-logo.svg" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            MeteoGate Documentation
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              4. OPERATING SHARED COMPONENTS
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/EUMETNET/meteogate-documentation" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href=".." class="md-tabs__link">
+        
+  
+  
+    
+  
+  HOME
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../1-overview/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  1. OVERVIEW
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../2-discovering-and-accessing-data/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  2. DISCOVERING AND ACCESSING DATA
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../3-publishing-data/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  3. PUBLISHING DATA
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    <li class="md-tabs__item md-tabs__item--active">
+      <a href="./" class="md-tabs__link">
+        
+  
+  
+    
+  
+  4. OPERATING SHARED COMPONENTS
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../technical-architecture/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  ARCHITECTURE
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../glossary/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  GLOSSARY
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../references/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  REFERENCES
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="MeteoGate Documentation" class="md-nav__button md-logo" aria-label="MeteoGate Documentation" data-md-component="logo">
+      
+  <img src="../images/meteogate-logo.svg" alt="logo">
+
+    </a>
+    MeteoGate Documentation
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/EUMETNET/meteogate-documentation" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    HOME
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../1-overview/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    1. OVERVIEW
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2-discovering-and-accessing-data/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    2. DISCOVERING AND ACCESSING DATA
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../3-publishing-data/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    3. PUBLISHING DATA
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    4. OPERATING SHARED COMPONENTS
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    4. OPERATING SHARED COMPONENTS
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#community-components" class="md-nav__link">
+    <span class="md-ellipsis">
+      Community Components
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#responsibilities-by-role" class="md-nav__link">
+    <span class="md-ellipsis">
+      Responsibilities by Role
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#onboarding-and-offboarding" class="md-nav__link">
+    <span class="md-ellipsis">
+      Onboarding and Offboarding
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#managing-meteogate-it-services" class="md-nav__link">
+    <span class="md-ellipsis">
+      Managing MeteoGate IT Services
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#minimum-processes-for-community-capability-operators" class="md-nav__link">
+    <span class="md-ellipsis">
+      Minimum Processes for Community Capability Operators
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#quality-of-service" class="md-nav__link">
+    <span class="md-ellipsis">
+      Quality-of-Service
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#service-lifecycle" class="md-nav__link">
+    <span class="md-ellipsis">
+      Service Lifecycle
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Service Lifecycle">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#setting-up-infrastructure" class="md-nav__link">
+    <span class="md-ellipsis">
+      Setting Up Infrastructure
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#installations" class="md-nav__link">
+    <span class="md-ellipsis">
+      Installations
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#initial-configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      Initial Configuration
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#updates" class="md-nav__link">
+    <span class="md-ellipsis">
+      Updates
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#testing-and-quality-management" class="md-nav__link">
+    <span class="md-ellipsis">
+      Testing and Quality Management
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#logging-and-audit-trail" class="md-nav__link">
+    <span class="md-ellipsis">
+      Logging and Audit Trail
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#monitoring-and-observability" class="md-nav__link">
+    <span class="md-ellipsis">
+      Monitoring and Observability
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#continuity-and-disaster-recovery" class="md-nav__link">
+    <span class="md-ellipsis">
+      Continuity and Disaster Recovery
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#security" class="md-nav__link">
+    <span class="md-ellipsis">
+      Security
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Security">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#authentication-and-authorisation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Authentication and Authorisation
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#encryption" class="md-nav__link">
+    <span class="md-ellipsis">
+      Encryption
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#security-management" class="md-nav__link">
+    <span class="md-ellipsis">
+      Security Management
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#service-operations" class="md-nav__link">
+    <span class="md-ellipsis">
+      Service Operations
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Service Operations">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#managing-api-routes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Managing API Routes
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#configuring-api-routes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Configuring API Routes
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#naming-api-routes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Naming API Routes
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#managing-admin-users" class="md-nav__link">
+    <span class="md-ellipsis">
+      Managing Admin Users
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#managing-users" class="md-nav__link">
+    <span class="md-ellipsis">
+      Managing Users
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Managing Users">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#user-registration-and-provisioning" class="md-nav__link">
+    <span class="md-ellipsis">
+      User Registration and Provisioning
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#user-roles" class="md-nav__link">
+    <span class="md-ellipsis">
+      User Roles
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#manual-user-management" class="md-nav__link">
+    <span class="md-ellipsis">
+      Manual User Management
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#managing-api-keys" class="md-nav__link">
+    <span class="md-ellipsis">
+      Managing API Keys
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Managing API Keys">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#automated-management-via-developer-portal" class="md-nav__link">
+    <span class="md-ellipsis">
+      Automated Management via Developer Portal
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#manual-key-administration" class="md-nav__link">
+    <span class="md-ellipsis">
+      Manual Key Administration
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#api-key-validity-and-expiry" class="md-nav__link">
+    <span class="md-ellipsis">
+      API Key Validity and Expiry
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#managing-idps" class="md-nav__link">
+    <span class="md-ellipsis">
+      Managing IdPs
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#syncing-user-and-api-endpoint-data-between-environments" class="md-nav__link">
+    <span class="md-ellipsis">
+      Syncing User and API Endpoint Data Between Environments
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Syncing User and API Endpoint Data Between Environments">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#user-synchronisation" class="md-nav__link">
+    <span class="md-ellipsis">
+      User Synchronisation
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#route-synchronisation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Route Synchronisation
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#key-vault-service-token-renewals" class="md-nav__link">
+    <span class="md-ellipsis">
+      Key Vault Service Token Renewals
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#processes-and-reporting" class="md-nav__link">
+    <span class="md-ellipsis">
+      Processes and Reporting
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Processes and Reporting">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#incident-management" class="md-nav__link">
+    <span class="md-ellipsis">
+      Incident Management
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#support-requests-management" class="md-nav__link">
+    <span class="md-ellipsis">
+      Support Requests Management
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#change-management" class="md-nav__link">
+    <span class="md-ellipsis">
+      Change Management
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#performance-reporting" class="md-nav__link">
+    <span class="md-ellipsis">
+      Performance Reporting
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#data-management" class="md-nav__link">
+    <span class="md-ellipsis">
+      Data Management
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Data Management">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#personal-data" class="md-nav__link">
+    <span class="md-ellipsis">
+      Personal Data
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#meteorological-and-hydrological-data" class="md-nav__link">
+    <span class="md-ellipsis">
+      Meteorological and Hydrological Data
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../technical-architecture/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    ARCHITECTURE
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../glossary/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    GLOSSARY
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../references/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    REFERENCES
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="4-operating-shared-components">4. Operating Shared Components</h1>
+<p>This section provides technical guidance for MeteoGate <strong>Community Capability Operators</strong>, typically NMHSs or designated EUMETNET members, responsible for operating and maintaining MeteoGate's Community Components. </p>
+<p>It covers deploying, configuring, and managing shared platform services like Data Explorer, API Gateway, Developer Portal, and authentication components. </p>
+<p>These instructions will be updated as MeteoGate evolves, incorporating feedback, lessons learned, and improvements based on operational experience and new technical developments.</p>
+<hr />
+<h2 id="community-components">Community Components</h2>
+<p>The Community Components covered in this guide include: </p>
+<ul>
+<li><strong>Data Explorer</strong>: User interface for data discovery and visualisation.</li>
+<li><strong>API Gateway (APISIX)</strong>: Routes and secures external API traffic.</li>
+<li><strong>Developer Portal</strong>: User interface for registration and API key management.</li>
+<li><strong>Key Vault (HashiCorp Vault)</strong>: Stores and manages secrets such as API keys.</li>
+<li><strong>Identity &amp; Access Manager (Keycloak)</strong>: Handles identity federation and user group management.</li>
+<li><strong>Third-Party Configuration Management Tool (GitHub)</strong>: Automates API route deployment and configuration via the API Management Tool.</li>
+</ul>
+<h2 id="responsibilities-by-role">Responsibilities by Role</h2>
+<p>The agreed responsibilities of MeteoGate operators include:</p>
+<ul>
+<li><strong>MeteoGate Community Capability Operators</strong> provide IT services for MeteoGate environments (e.g., EWC, AWS) they host and operate the Community Components within those environments. They can use their own IT service management practices if they meet MeteoGate Quality of Service criteria and FEMDI Programme requirements. They collaborate with Data Providers, other Community Capability Operators, WMO WIS2 Capability Operators, FEMDI Solution Manager, and Programme Manager. Typically, they are NMHSs or designated EUMETNET members.</li>
+<li><strong>The MeteoGate Programme Manager</strong> is part of the Coordinating Member, which has delegated authority from the FEMDI Owner to operate the FEMDI Programme. The Coordinating Member, an EUMETNET member selected through a bidding process, coordinates and governs the FEMDI Programme.</li>
+<li><strong>MeteoGate Solution Manager</strong>: Oversees FEMDI Programme IT Service Management, providing Quality of Service criteria, guidance to Community Capability Operators, and monitoring compliance.</li>
+<li><strong>MeteoGate Service Desk</strong>: Acts as the first point of contact for stakeholders, offering first-level support, coordinating with other parties to address user requests, incidents, and problems. It is organized by a Consortium Member.</li>
+</ul>
+<h2 id="onboarding-and-offboarding">Onboarding and Offboarding</h2>
+<p>The onboarding and offboarding of MeteoGate Community Capability Operators is described in <a href="https://tlnt19059.sharepoint.com/:w:/r/sites/FEMDI/ET%20FEMDI/ET%20Working%20folder/Operating%20Model/Participation%20Management%20Policy.docx?d=waa4e55e149fb4560af56c8680d2fa26e&amp;csf=1&amp;web=1&amp;e=Z92DgA">MeteoGate Participation Management Policy</a>. </p>
+<h2 id="managing-meteogate-it-services">Managing MeteoGate IT Services</h2>
+<p>IT Service Management ensures MeteoGate Community Components meet user needs and Quality of Service criteria. It includes managing user requests, operating and monitoring technical components, ensuring system availability and performance, handling technical problems, and reporting on service provision.</p>
+<p>Designing and building new Community Components is not included. </p>
+<p>The FEMDI Programme recommends having mature IT service management capabilities but does not mandate specific frameworks or practices, with a few exceptions explained below. </p>
+<p>ITIL definitions will be used where required. These can be found here: <a href="https://wiki.en.it-processmaps.com/index.php/ITIL_Glossary/_ITIL_Terms_I">ITIL Glossary/ ITIL Terms I | IT Process Wiki</a>. </p>
+<h2 id="minimum-processes-for-community-capability-operators">Minimum Processes for Community Capability Operators</h2>
+<p>There are a few IT Service Management processes that Community Capability Operators need to implement and follow. </p>
+<p><strong>Support Request Management</strong></p>
+<ul>
+<li>Tracking, prioritizing, and resolving MeteoGate stakeholder inquiries and issues. </li>
+</ul>
+<p><strong>Incident &amp; Problem Management</strong></p>
+<ul>
+<li>Timely resolution of incidents to restore normal service operation as quickly as possible, in co-operation with relevant parties. </li>
+<li>Identifying and resolving underlying causes of recurring incidents and problems, in co-operation with relevant parties. </li>
+</ul>
+<p><strong>Change Management</strong></p>
+<ul>
+<li>Controlled and efficient handling of changes to IT services, systems, and infrastructure, in co-operation with relevant parties. </li>
+</ul>
+<p><strong>Performance Management and Reporting</strong></p>
+<ul>
+<li>Ensures that the performance of MeteoGate services is being monitored on an ongoing basis, with regular reports on functions like the availability and capacity.</li>
+</ul>
+<h2 id="quality-of-service">Quality-of-Service</h2>
+<p>MeteoGate Community Components must be operated in accordance with the Quality-of-Service (QoS) requirements defined by the FEMDI Programme. These requirements aim to ensure consistent service availability, performance, and resilience across the federated infrastructure. </p>
+<p>To meet these objectives, Community Capability Operators must: </p>
+<ul>
+<li>Leverage cloud-native scalability features, including autoscaling, node-level resource limits, and container orchestration (Kubernetes). </li>
+<li>Ensure that sufficient compute, memory, and storage resources are provisioned to support expected traffic volumes, performance requirements, and failover scenarios. </li>
+<li>Deploy core components across redundant availability zones or regions, where supported (e.g. in EWC across ECMWF and EUMETSAT sites). </li>
+<li>Use a cloud provider–specific or open-source load balancer (e.g. NGINX, Route 53) to distribute traffic across environments and ensure failover capability. </li>
+</ul>
+<p>The standard EWC deployment supports geographical redundancy using DNS-based load balancing (Route 53). As EWC infrastructure evolves, it may support cross-zone application-level availability and external failover, which should be adopted when feasible. </p>
+<p>QoS metrics and expectations—such as uptime, latency, and response time—will be specified in the final QoS documentation. Operators are expected to monitor performance and report monthly as part of operational governance. </p>
+<p>See also: Section about <a href="#monitoring-and-observability">Monitoring</a> and Reporting Performance.</p>
+<hr />
+<h2 id="service-lifecycle">Service Lifecycle</h2>
+<p>This section outlines the lifecycle of hosting and operating MeteoGate Community Components, including setup, configuration, testing, updates, and ongoing operations.</p>
+<p>The guidance covers infrastructure provisioning with Infrastructure as Code (IaC), component installation, initial setup (e.g., identity provider configuration), and practices for ensuring availability, security, performance, and disaster recovery.</p>
+<p>It aligns with MeteoGate Quality-of-Service and cybersecurity requirements and complements related documentation in GitHub repositories and GeoWeb platform.</p>
+<p><em>Data Explorer info to be added</em></p>
+<h3 id="setting-up-infrastructure">Setting Up Infrastructure</h3>
+<p>In MeteoGate, the API Gateway and Support Services are deployed using Infrastructure as Code (IaC) with Terraform. The infrastructure is designed to be cloud-platform agnostic, with a primary reference deployment on the European Weather Cloud (EWC). </p>
+<p>Currently supported environments: </p>
+<ul>
+<li>EWC (fully supported)</li>
+<li>AWS (Terraform support available; documentation to be updated) </li>
+</ul>
+<p>In the EWC environment: </p>
+<ul>
+<li>Kubernetes clusters are created within the Community Capability Operator’s EWC tenant. </li>
+<li>Identical mirrored environments can be deployed across ECMWF and EUMETSAT availability zones to ensure redundancy and high availability. A shared DNS-based load balancing setup using Route 53 distributes traffic between the two environments. This setup ensures failover and geographical redundancy, with Route 53 automatically directing requests to an available instance. </li>
+<li>All core components (API Gateway, Developer Portal, Vault, Keycloak, etc.) are then automatically installed and configured via Terraform into these Kubernetes clusters. Most installation and configuration steps are automated. Manual tasks are limited to injecting required secrets and managing access credentials. </li>
+<li>The deployed services are placed behind a load balancer and accessed through a Nginx reverse proxy. </li>
+<li>Each Kubernetes node runs Ubuntu 22 LTS.</li>
+</ul>
+<p>Terraform modules and technical instructions are available at: <a href="https://github.com/EURODEO/femdi-gateway-iac">GitHub – EURODEO/femdi-gateway-iac</a> </p>
+<p>Resource recommendations (e.g. for Kubernetes clusters, VM sizes) are available in the repository <em>Link TBA</em></p>
+<h3 id="installations">Installations</h3>
+<p>The following MeteoGate Community Components are automatically installed and pre-configured using Terraform as part of the infrastructure deployment process. This ensures consistent and reproducible setup across environments. </p>
+<p>Some manual actions (such as registering new API Gateway instances and injecting sensitive secrets) are still required. These are described in the following section. </p>
+<p><strong>API Gateway (APISIX)</strong></p>
+<ul>
+<li>Deployment and basic configuration handled by Terraform. </li>
+<li>To activate a new API Gateway instance, it must be manually registered in the API Management Tool (GitHub-based). Integration instructions for new instances are available in the API Management Tool repository: EUMETNET/api-management-tool-poc. (See section 4 for more on the API Management Tool). </li>
+<li>Routes are managed using the API Management Tool in GitHub (see section 4). <add link> </li>
+<li>Secrets for API Gateway admin access must be added to Vault during setup. </li>
+</ul>
+<p><strong>Developer Portal</strong></p>
+<ul>
+<li>Deployed as custom UI and backend components via a Helm chart. </li>
+<li>Terraform handles installation and initial configuration. </li>
+<li>See: EURODEO/Dev-portal – Helm chart </li>
+</ul>
+<p><strong>Key Vault (HashiCorp Vault)</strong></p>
+<ul>
+<li>Installed in HA mode (cluster) by Terraform. </li>
+<li>Secrets used in route configuration should be added via GitHub-managed configurations. </li>
+</ul>
+<p><strong>Identity &amp; Access Manager (Keycloak)</strong></p>
+<ul>
+<li>Installed and initially configured by Terraform. </li>
+<li>Some IdPs (e.g. GitHub, Google) are pre-registered; secrets such as client IDs and passwords must be provided as parameters. </li>
+<li>Additional setup can be done via the Keycloak UI. </li>
+<li>Documentation pending. </li>
+</ul>
+<p><strong>Third-Party Configuration Management Tool</strong></p>
+<ul>
+<li>GitHub-based tool for managing API Gateway route configuration. </li>
+<li>Operators must be granted access to manage route YAML files and trigger CI/CD workflows.</li>
+</ul>
+<h3 id="initial-configuration">Initial Configuration</h3>
+<p>Most installation and configuration steps are automated. Manual tasks are limited to injecting required secrets and managing access credentials. After provisioning, the following initial tasks may be required: </p>
+<ul>
+<li>Identity Provider Setup: Some IdPs (such as GitHub or Google) are pre-configured via Terraform. Credentials (e.g. client secrets) must be provided securely before deployment. Additional IdPs must be added manually. See section 5.2 for managing IdPs in Keycloak. <add link> </li>
+<li>Key Vault Bootstrapping: Vault is initialised by Terraform. Secrets used for configuring API Gateway admin access and CI/CD credentials must be added via GitHub. </li>
+</ul>
+<h3 id="updates">Updates</h3>
+<p>Updates to MeteoGate Community Components use the same Terraform-based IaC approach as the initial deployment, enabling operators to manage updates consistently with version-controlled configurations and reproducible pipelines.</p>
+<p>Applying updates is the responsibility of the Community Capability Operator hosting the environment. </p>
+<p>Update needs include: </p>
+<ul>
+<li>Security patches and version upgrades for the API Gateway, Vault, and Keycloak. </li>
+<li>Regular updates to underlying infrastructure (e.g., Kubernetes, operating systems). </li>
+<li>Synchronisation of configuration or deployment changes introduced in the GitHub repositories. </li>
+</ul>
+<p>In EWC environments, Community Capability Operators are expected to coordinate with EUMETSAT and ECMWF as infrastructure providers regarding updates that impact shared platform services. </p>
+<p>More detailed update instructions, including versioning recommendations and rollback procedures, will be provided in the GitHub repository. (<em>not yet documented</em>)</p>
+<h3 id="testing-and-quality-management">Testing and Quality Management</h3>
+<p>All new deployments of MeteoGate Community Components must be tested to verify that services are correctly installed, configured, and reachable. Existing deployments should also be re-tested after updates or configuration changes to ensure continuity and stability. </p>
+<p>Testing should cover the following areas:</p>
+<ul>
+<li>Basic availability checks for each component (e.g., API Gateway routes, Developer Portal access). </li>
+<li>Authentication and authorisation flows via configured Identity Providers. </li>
+<li>Secret management and API key issuance. </li>
+<li>End-to-end functional testing, where feasible. A dedicated test script for verifying component readiness is planned and tracked in the FEMDI backlog. </li>
+</ul>
+<p>Integration or end-to-end test automation is recommended when possible, although unit testing for Terraform-managed infrastructure remains limited in practice. </p>
+<p>You can use the <a href="https://tlnt19059.sharepoint.com/:w:/r/sites/FEMDI/ET%20FEMDI/ET%20Working%20folder/RODEO_FEMDI_test_plan.docx?d=w510c36cc158f4dc18044cd4c072dea39&amp;csf=1&amp;web=1&amp;e=AimA5j">Test plan from the FEMDI Programme</a> as a reference when planning or executing tests. </p>
+<h3 id="logging-and-audit-trail">Logging and Audit Trail</h3>
+<p>Logging is an essential part of operating MeteoGate Community Components. It supports system observability, incident investigation, auditing, and performance monitoring. All core components—including the API Gateway, Developer Portal, Vault, and Identity &amp; Access Manager—should have logging enabled. </p>
+<p>Community Capability Operators are responsible for configuring, maintaining, and securing logging mechanisms in their environments. </p>
+<p><strong>Logging Requirements</strong> </p>
+<p>The logging setup should capture at minimum:</p>
+<ul>
+<li>Authentication and authorisation events (e.g., login attempts, group assignments, API key usage) </li>
+<li>API request metadata and error responses </li>
+<li>Component health and operational status </li>
+<li>Administrative actions and configuration changes </li>
+<li>System warnings and failures </li>
+</ul>
+<p><strong>Responsibilities of Operators</strong> </p>
+<p>Operators must ensure that:</p>
+<ul>
+<li>Logs are retained securely and in accordance with applicable compliance or internal policy requirements. </li>
+<li>Access to logs is restricted to authorised personnel. </li>
+<li>Logs are collected and made available for use in incident response, performance analysis, and system audits. </li>
+<li>Centralised logging tools (e.g., ELK stack, Loki, or cloud-native logging solutions) are used where possible to streamline access and analysis.</li>
+</ul>
+<p>Logging also supports processes defined in Chapter 5 (e.g., Incident Management and Problem Management) by providing the necessary data for troubleshooting and post-incident review. <em><links></em> </p>
+<p>Further logging configuration examples and integrations (e.g., with Prometheus or Alertmanager) will be available in the GitHub repository: <a href="https://github.com/EUMETNET/femdi-gateway-iac">EUMETNET/femdi-gateway-iac</a> </p>
+<p><em>TBA</em></p>
+<h3 id="monitoring-and-observability">Monitoring and Observability</h3>
+<p>Monitoring and observability are essential for maintaining reliable operations, detecting issues early, and supporting performance analysis across MeteoGate Community Components. </p>
+<p>Each deployment should include:</p>
+<ul>
+<li>Basic service health and resource monitoring. </li>
+<li>Performance metrics collection. </li>
+<li>Alerting for critical failures or degraded service.</li>
+</ul>
+<p><strong>Tools and setup</strong> </p>
+<ul>
+<li>
+<p><strong>Prometheus</strong> is used as the primary monitoring solution to collect metrics from components such as the API Gateway and Kubernetes infrastructure. Prometheus-based setup is not yet fully documented. Configuration examples will be provided in the GitHub repository. </p>
+</li>
+<li>
+<p><strong>Alertmanager</strong> is used to trigger notifications based on defined rules (e.g. service downtime, resource limits). The default Alertmanager configuration, including email-based alerting setup and instructions for extending it (e.g. Slack notifications, grouping), is described in the GitHub repository: EUMETNET/femdi-gateway-iac </p>
+</li>
+</ul>
+<p>A central <strong>Insights Service</strong> is planned as part of MeteoGate to provide shared usage metrics and operational dashboards. Further information will be added as the service becomes available. </p>
+<h3 id="continuity-and-disaster-recovery">Continuity and Disaster Recovery</h3>
+<p>To ensure service continuity and enable recovery from system failures or data loss, each MeteoGate Community Component deployment must implement a disaster recovery plan. This includes regular backups of application data and configuration, as well as defined restore procedures. </p>
+<p>Community Capability Operators are responsible for implementing and maintaining the backup and disaster recovery solutions in their respective environments. This includes verifying that backups are functional, accessible, and restorable when needed. </p>
+<p>All core components, including: </p>
+<ul>
+<li>API Gateway (APISIX): etcd database </li>
+<li>Identity &amp; Access Manager (Keycloak): PostgreSQL database </li>
+<li>Key Vault (Vault): Raft storage are configured with scheduled Cron jobs to perform backups. These jobs are defined using Terraform and store encrypted backup files in an AWS S3 bucket by default. The setup supports adaptation to other cloud environments. </li>
+</ul>
+<p>Backups are retained according to the policies defined by the Community Capability Operator. The backup frequency can be customised; a recommended baseline is: <em><to be confirmed></em> </p>
+<ul>
+<li>Daily backups of all stateful components. </li>
+<li>Retention period of at least 7–14 days for critical data. </li>
+<li>Full restore test at least every 6 months. </li>
+</ul>
+<p>Restore operations are executed manually using predefined command templates. These templates are included in the infrastructure codebase and support consistent restoration across environments. </p>
+<p><strong>Example: Cron Job for Vault Backup</strong></p>
+<p>cron_schedule: “0 2 * * *”  # Every day at 2 AM</p>
+<p>backup_command: “/vault/scripts/backup.sh” </p>
+<p>storage_target: “s3://meteogate-backups/vault/” </p>
+<p><em><to be verified></em></p>
+<p>See the <a href="EURODEO/femdi-gateway-iac">GitHub repository</a> for backup and restore configuration and instructions. </p>
+<h3 id="security">Security</h3>
+<p>"Security is crucial for MeteoGate Community Components. Each operator must ensure their deployment environment meets MeteoGate Quality-of-Service requirements, Cyber Security Policy, and regulatory frameworks like the EU’s NIS2 Directive.</p>
+<p>MeteoGate uses built-in security features such as access control, encryption, and secret management, but secure operations also require hardening, secure configurations, and regular monitoring at both infrastructure and application levels."</p>
+<p>Operators must ensure protection against: </p>
+<ul>
+<li>Unauthorised access to administrative interfaces and user data. </li>
+<li>Denial-of-service (DoS) attacks and traffic spikes. </li>
+<li>Misconfigurations that could expose APIs or internal components. </li>
+<li>Credential or token leakage (e.g. admin passwords, service tokens). </li>
+</ul>
+<h4 id="authentication-and-authorisation">Authentication and Authorisation</h4>
+<ul>
+<li>Authentication is handled via third-party Identity Providers (IdPs), federated through Keycloak. </li>
+<li>User registration and login are managed by the Developer Portal, which interacts with Keycloak and creates consumer records in the API Gateway (APISIX). </li>
+<li>Access to APIs can be restricted via API Keys, which are issued by the Developer Portal and stored securely in the Key Vault (Vault). </li>
+<li>Admins can manage user roles and disable access through backend scripts (see Section 4.3).</li>
+</ul>
+<h4 id="encryption">Encryption</h4>
+<ul>
+<li>All communication between MeteoGate components and users is encrypted using HTTPS/TLS. </li>
+<li>Internal traffic between Vault instances in HA mode is also encrypted. </li>
+<li>Encrypted storage and secure access are used for backups, secrets, and API credentials.</li>
+</ul>
+<p>Important: Ensure all public endpoints use valid TLS certificates and that internal service communication is encrypted and authenticated. </p>
+<h4 id="security-management">Security Management</h4>
+<p>Community Capability Operators must ensure that: </p>
+<ul>
+<li>Access to sensitive infrastructure (e.g. Kubernetes clusters, GitHub secrets, Vault root tokens) is limited and auditable. </li>
+<li>Logs are retained and regularly reviewed (see Section 5.5). </li>
+<li>System components are patched in a timely manner (see Section 3.4 Updates). </li>
+<li>Security incidents are managed according to the incident process (see Section 5.1). <links></li>
+</ul>
+<p>For more information, refer to the <strong>MeteoGate Cybersecurity Policy</strong> <em>[link to be added]</em>.</p>
+<hr />
+<h2 id="service-operations">Service Operations</h2>
+<p>This section provides operational guidance for Community Capability Operators to maintain MeteoGate Community Components. Tasks ensure shared services like the API Gateway, Developer Portal, Key Vault, and Identity &amp; Access Management remain available, secure, and efficient.</p>
+<p>Service operations include configuring API routes, managing user authentication and authorization, handling API keys, and synchronizing environments. The goal is to maintain a reliable, scalable foundation for exposing APIs and supporting secure access to meteorological and hydrological data.</p>
+<p>The section covers API Gateway tasks (e.g., onboarding new APIs, managing routes and rate limits) and support services (e.g., handling user groups, IdP configurations, and secrets management). Many operations are implemented through configuration as code and automated workflows in GitHub repositories</p>
+<h3 id="managing-api-routes">Managing API Routes</h3>
+<p>API Gateway configuration—including available Data Supply API endpoints (i.e. upstream APIs), rate limiting, and authentication settings—is managed through the API Management Tool at <a href="https://github.com/EUMETNET/api-management-tool-poc">EUMETNET/api-management-tool-poc</a> </p>
+<h3 id="configuring-api-routes">Configuring API Routes</h3>
+<p>Configuration is defined in YAML files and maintained in version control. API Gateway route configuration (API endpoints) is stored in GitHub in YAML. Admins can update endpoints, rate limiting, and authentication settings in the file. Upon commit and push, an updated route configuration is generated, which is simpler than the APISIX configuration file.</p>
+<p>A GitHub action workflow (Python code) generates a detailed APISIX configuration (YAML) and publishes it to selected API Gateway instances via APISIX REST API, updating the APISIX instance on the target platform.</p>
+<p>Instructions for using the API Management Tool, including defining new routes, applying rate limits, and controlling access, are available in the GitHub repository’s README and examples.</p>
+<p><em>Note</em>: Some upstream APIs may require a dedicated API key for the API Gateway to access the backend service. Instructions for including upstream credentials securely are available in the API Management Tool repository. </p>
+<p>Onboarding an API follows the below process:</p>
+<ol>
+<li>
+<p>Create a Pull Request </p>
+<ul>
+<li>Navigate to the <a href="https://github.com/EURODEO/api-management-tool-poc/">designated repository</a></li>
+<li>Create a new branch for your changes</li>
+<li>Add the necessary code to onboard the API. </li>
+</ul>
+</li>
+<li>
+<p>Gateway Configuration - YAML File </p>
+<ul>
+<li>Add the following configuration to the YAML file: 
+```
+id: xxx                         #replace with your own descriptive and unique id 
+version: 1.0.0 
+platform: EWC  <br />
+routes: </li>
+</ul>
+</li>
+<li>Route: 
+      id:                       #add descriptive and unique id for API endpoint here 
+      endpoint: https://api...  # add API endpoint URL here, needs to be a static URL 
+      rateLimitAuth:            #add your rate limit values for authenticated user 
+        count:                  #add rate limit here<br />
+        time_window:            #add time window here 
+      rateLimitAnon:            #add your rate limit values for anonymous user 
+        count:                  #add rate limit here 
+        time_window:            #add time window here 
+      cors: true   </li>
+</ol>
+<p>```</p>
+<ol>
+<li>
+<p>Commit &amp; Merge </p>
+<ul>
+<li>Commit your changes to the branch. </li>
+<li>Create a pull request and request a review. </li>
+<li>Once approved, merge the pull request into the main branch. </li>
+</ul>
+</li>
+<li>
+<p>Check on Development Portal </p>
+<ul>
+<li>Verify that the new route is listed in the Developer Portal.</li>
+</ul>
+</li>
+</ol>
+<h3 id="naming-api-routes">Naming API Routes</h3>
+<p>API routes configured through the MeteoGate API Gateway must follow a consistent and descriptive naming scheme to ensure clarity, discoverability, and alignment across the Developer Portal and Data Explorer. 
+Routes are defined in the API Management Tool (GitHub) and are:</p>
+<ul>
+<li>Exposed through structured URLs, such as: https://meteogate.api.eu/{service}/{dataset} </li>
+<li>Visible to end users in the Developer Portal and Data Explorer. </li>
+<li>Identified using a parameter:id in the YAML configuration. </li>
+</ul>
+<p>A formal naming scheme and hierarchy for API routes will be defined and published by the Programme team. This will ensure alignment across services such as E-SOH, radar data, and climate data APIs. </p>
+<p>Until then, route paths should be:</p>
+<ul>
+<li>Descriptive and human-readable. </li>
+<li>Consistent across environments. </li>
+<li>Designed to reflect the data service, collection, or domain. </li>
+</ul>
+<p>Further guidance and examples will be added to the API Management Tool documentation as the scheme is finalized. </p>
+<p><em>Route names / naming schemes / hierarchy &lt;- guidance needed on the naming scheme: The URL that someone will use to access e.g. E-SOH data via MeteoGate GW. i.e. meteogate.api.eu/XXX<br />
+Stuart and Vegar to make a proposal</em></p>
+<h3 id="managing-admin-users">Managing Admin Users</h3>
+<p>Administration credentials for MeteoGate Community Components must be handled securely and consistently across all environments. Each component has its own method for managing admin-level access, and some share credentials with automation tools used for deployment and configuration. </p>
+<p>Admin credentials must be securely stored and rotated according to the hosting organisation’s security policy. Only authorised personnel should have access. Integration with Vault and GitHub secret management is strongly recommended. </p>
+<p><strong>API Gateway (APISIX)</strong></p>
+<ul>
+<li>Admin access is handled via a single administrator account per instance. </li>
+<li>Credentials are defined during initial configuration and stored as GitHub repository secrets. </li>
+<li>The same credentials are used for both manual administration and automation (e.g., GitHub workflows). </li>
+<li>APISIX supports only one admin account per instance. </li>
+</ul>
+<p><strong>Identity &amp; Access Manager (Keycloak)</strong></p>
+<ul>
+<li>Admin credentials are defined during the Terraform-based initial deployment. </li>
+<li>Credentials may be updated manually or via Vault integration. </li>
+<li>No per-user interface for managing admin roles is currently in use; role mapping is managed internally within Keycloak. <is that so> </li>
+</ul>
+<p><strong>Developer Portal</strong></p>
+<ul>
+<li>The Developer Portal does not have a dedicated admin account. </li>
+<li>Admin-level operations (e.g. disabling users, resetting keys) are performed using backend scripts and service tokens. </li>
+</ul>
+<p><strong>Key Vault (HashiCorp Vault)</strong></p>
+<ul>
+<li>Vault admin access is configured during initial setup. </li>
+<li>Currently, access is based on a root token, which should be used with caution. </li>
+<li>The setup supports integration with other IdPs in future to enable more granular admin access and auditing. </li>
+</ul>
+<h3 id="managing-users">Managing Users</h3>
+<p>User management in MeteoGate is largely automated through the Developer Portal and requires minimal manual intervention from admins under normal circumstances. </p>
+<h4 id="user-registration-and-provisioning">User Registration and Provisioning</h4>
+<ul>
+<li>When a user authenticates for the first time (e.g. via GitHub or another IdP), a user account is automatically created in the Identity &amp; Access Manager (Keycloak). </li>
+<li>Upon requesting an API Key, the Developer Portal: <ul>
+<li>Creates a user account in the Key Vault </li>
+<li>Registers the user as a consumer in each API Gateway instance </li>
+</ul>
+</li>
+<li>Each user can have one API Key at a time. The Developer Portal checks for existing API Key and consumer status before issuing a new key. </li>
+<li>Users are initially assigned to the USER group. </li>
+</ul>
+<h4 id="user-roles">User Roles</h4>
+<p>There are three types of users in the system:</p>
+<ul>
+<li><strong>USER</strong>: Default group with standard access and rate limits. </li>
+<li><strong>EUMETNET_USER</strong>: Granted higher rate limits via API Gateway policies. </li>
+<li><strong>ADMIN</strong>: Has rights to manage users and system settings via backend tools. </li>
+</ul>
+<p>Rate limit configuration:</p>
+<ul>
+<li>For <strong>USERs</strong>, rate limits are defined per API route in the API Gateway configuration. </li>
+<li>For <strong>EUMETNET_USERs</strong>, a global enhanced rate limit is applied using the API Management</li>
+<li>Tool configuration file (YAML). This setting overrides route-specific limits to allow higher throughput.</li>
+</ul>
+<h4 id="manual-user-management">Manual User Management</h4>
+<p>Although automated, user accounts can be managed manually by administrators using backend scripts provided in the <a href="https://github.com/EUMETNET/Dev-portal/tree/main/backend">Developer Portal backend</a></p>
+<p>Available admin operations include:</p>
+<ul>
+<li>Enable / disable a user (disabling works by revoking the user’s API Key). </li>
+<li>Remove a user account. </li>
+<li>Promote or demote a user to/from the <strong>EUMETNET_USER</strong> group. </li>
+</ul>
+<p>These operations are handled in the correct technical order to avoid inconsistencies and are intended for exceptional cases or support situations. </p>
+<p>Admins performing these operations must use a valid admin token to authenticate with the backend. </p>
+<h3 id="managing-api-keys">Managing API Keys</h3>
+<p>API Key management in MeteoGate is primarily automated through the <strong>Developer Portal</strong>. End users can request and manage their API Key without administrative intervention. </p>
+<h4 id="automated-management-via-developer-portal">Automated Management via Developer Portal</h4>
+<ul>
+<li>When a registered user requests an API Key, the Developer Portal: <ol>
+<li>Creates a new API Key in the Key Vault</li>
+<li>Associates the key with the user’s account</li>
+<li>Registers the key in all relevant API Gateway instances as part of the consumer configuration </li>
+</ol>
+</li>
+<li>Each user may hold only one API Key at a time. The system checks for existing keys before issuing a new one. </li>
+</ul>
+<h4 id="manual-key-administration">Manual Key Administration</h4>
+<p>In exceptional cases (e.g. security incidents or support actions), admins can:</p>
+<ul>
+<li>View, revoke, or delete API Keys manually. </li>
+<li>Use Vault’s web UI or backend scripts available in GitHub to manage keys.</li>
+</ul>
+<p>Scripts for key management and automation are available in: <a href="https://github.com/EURODEO/Dev-portal">EURODEO/Dev-portal GitHub repository</a></p>
+<h3 id="api-key-validity-and-expiry">API Key Validity and Expiry</h3>
+<p>Currently, API Keys do not expire automatically. Support for configurable key validity periods is planned for future updates and will be defined in the Developer Portal and Key Vault integration settings. </p>
+<p>API Key lifecycle policies (e.g. renewal, expiration, and deactivation) should follow the Programme’s security requirements and be documented accordingly. </p>
+<h3 id="managing-idps">Managing IdPs</h3>
+<p>Admins can manage the set of trusted IdPs in the Identity &amp; Access Manager (Keycloak) UI. Keycloak supports an extensive list of IdPs out-of-the-box. It also supports any OpenId Connect or SAML 2.0 IdP.  </p>
+<p>In Keycloak, the configuration is done in “Identity Providers” in the left pane of the UI. Setting up an IdP also requires setup on the IdP side. </p>
+<p>To add or configure a new Identity Provider, refer to the official Keycloak documentation: <a href="https://www.keycloak.org/docs/latest/server_admin/index.html#_identity_broker">Keycloak Server Admin Guide – Identity Brokering</a> </p>
+<p><em><to be updated; what is the policy for managing IdPs, e.g. approval?></em></p>
+<h3 id="syncing-user-and-api-endpoint-data-between-environments">Syncing User and API Endpoint Data Between Environments</h3>
+<p>In deployments where MeteoGate API Gateway instances are hosted in multiple cloud environments (e.g. EWC at ECMWF and EUMETSAT), configuration consistency across instances is essential. </p>
+<h4 id="user-synchronisation">User Synchronisation</h4>
+<ul>
+<li>When a user registers via the Developer Portal, they are automatically registered as a consumer in each deployed API Gateway instance. </li>
+<li>This ensures that the same API Key can be used across all environments. </li>
+<li>The Developer Portal backend handles this synchronisation logic. </li>
+</ul>
+<p>See technical implementation in: <a href="https://github.com/EURODEO/Dev-portal">EURODEO/Dev-portal GitHub repository</a> </p>
+<h4 id="route-synchronisation">Route Synchronisation</h4>
+<ul>
+<li>All Data Supply routes (API endpoints) are defined and maintained using the API Management Tool in GitHub: EUMETNET/api-management-tool-poc </li>
+<li>By default, routes are added to all Gateway instances, but the system is flexible: routes can also be configured per platform using the platform: field in the YAML configuration. </li>
+<li>Once committed, a GitHub Actions workflow generates APISIX-compatible configuration files and applies them across environments via the Admin API. </li>
+</ul>
+<p>The entire sync and deployment process is containerised, runs in Kubernetes, and is designed for reliable operation across federated platforms. This architecture ensures seamless multi-cloud availability and simplifies the onboarding of new APIs and users across the MeteoGate federation.</p>
+<h3 id="key-vault-service-token-renewals">Key Vault Service Token Renewals</h3>
+<p>API Gateway and Developer Portal use service tokens to communicate with Key Vault. These tokens have a maximum TTL of 768 hours (32 days). To prevent token revocation, a Cron job is scheduled to run on the 1st and 15th of each month to reset the token period. </p>
+<hr />
+<h2 id="processes-and-reporting">Processes and Reporting</h2>
+<p>This chapter defines the shared operational processes that all MeteoGate Community Capability Operators must follow to ensure a consistent level of service, regulatory compliance, and operational accountability.</p>
+<p>These processes form the foundation of coordinated service delivery and support the federated nature of the system. They are aligned with the FEMDI Programme’s Quality-of-Service (QoS) objectives and provide common expectations for how issues are resolved, changes managed, and performance monitored. </p>
+<p>Community Capability Operators may use their own internal IT service management frameworks (e.g. ITIL). However, all processes must meet the minimum requirements defined by MeteoGate to ensure interoperability and oversight across environments. </p>
+<p>Possibly amend with relevant common process diagrams from <a href="https://tlnt19059.sharepoint.com/:w:/r/sites/FEMDI/ET%20FEMDI/ET%20Working%20folder/Documentation%20working%20area/42%20Common%20Processes%20and%20Ways%20of%20Working%20-%20MeteoGate.docx?d=w34e1ef2e9e3c46f280165abff29f429c&amp;csf=1&amp;web=1&amp;e=CUSvDF">42 Common Processes and Ways of Working - MeteoGate.docx</a></p>
+<h3 id="incident-management">Incident Management</h3>
+<p>Community Capability Operators must ensure timely identification, logging, communication, and resolution of service incidents. This includes: </p>
+<ul>
+<li>Coordinating with the MeteoGate Service Desk, which acts as the first point of contact for all stakeholders. </li>
+<li>Following agreed escalation procedures for high-impact or unresolved issues. </li>
+<li>Documenting incident resolution steps and timelines. </li>
+<li>Ensuring lessons learned are recorded and shared if applicable. </li>
+</ul>
+<p>MeteoGate includes custom error pages to improve user experience during service failures. </p>
+<p><strong>Problem Management</strong> </p>
+<p>In addition to resolving individual incidents, Community Capability Operators are expected to:</p>
+<ul>
+<li>Identify recurring incidents or systemic issues that indicate underlying problems. </li>
+<li>Perform root cause analysis and propose long-term corrective actions. </li>
+<li>Coordinate fixes or infrastructure changes that reduce the likelihood of recurrence. </li>
+<li>Document known issues and mitigation strategies to support future troubleshooting. </li>
+</ul>
+<p>Problem resolution efforts should be tracked and reported where appropriate, especially for issues affecting multiple environments or stakeholders. </p>
+<h3 id="support-requests-management">Support Requests Management</h3>
+<p>The MeteoGate Service Desk, operated by a FEMDI consortium member, is the central contact for all stakeholders. It handles receiving, triaging, and coordinating support requests, ensuring consistent issue management.</p>
+<p><strong>The Service Desk is responsible for:</strong></p>
+<ul>
+<li>Receiving and logging support requests from users. </li>
+<li>Performing initial triage and assigning requests to the appropriate Community Capability Operator, Data Publisher, or other responsible party. </li>
+<li>Coordinating the resolution process and maintaining case oversight. </li>
+<li>Communicating with end users throughout the support lifecycle. </li>
+</ul>
+<p><strong>Community Capability Operators are responsible for:</strong></p>
+<ul>
+<li>Responding to support requests escalated by the Service Desk that fall within their operational domain (e.g. API Gateway, Developer Portal, Vault). </li>
+<li>Troubleshooting and resolving technical issues related to the Community Components they host. </li>
+<li>Tracking the progress and status of support cases, and reporting on response or resolution times if required. </li>
+<li>Collaborating with Data Publishers, other operators, or technical teams as needed to resolve incidents.</li>
+</ul>
+<h3 id="change-management">Change Management</h3>
+<p>Changes to infrastructure or configuration (e.g., new routes, IdPs, or platform updates) must follow a documented and controlled change process. </p>
+<p>Community Capability Operators must:</p>
+<ul>
+<li>Plan and test changes before applying them in production. </li>
+<li>Use version-controlled configuration (e.g., via GitHub) for transparency. </li>
+<li>Coordinate with other operators and the MeteoGate Solution Manager for changes that impact shared services.</li>
+</ul>
+<h3 id="performance-reporting">Performance Reporting</h3>
+<p>Operators must submit regular reports (e.g., monthly) to the MeteoGate Programme Manager. These reports enable performance tracking against QoS targets and support transparency across MeteoGate. </p>
+<p>Reports may include:</p>
+<ul>
+<li>Availability and uptime metrics </li>
+<li>API Gateway usage statistics </li>
+<li>Incident and support request summaries </li>
+<li>Capacity and resource usage </li>
+</ul>
+<p>Guidelines and templates will be provided by the Programme team. Reports are compiled using monitoring tools and logs (see section: <a href="#monitoring-and-observability">Monitoring</a>)</p>
+<p><em>To be updated with any further requirements/guidance from EUMETNET</em></p>
+<h3 id="data-management">Data Management</h3>
+<p>This section outlines the Operator's data management related responsibilities. </p>
+<h4 id="personal-data">Personal Data</h4>
+<p>Personal data is handled according to <a href="https://tlnt19059.sharepoint.com/:w:/r/sites/FEMDI/ET%20FEMDI/ET%20Working%20folder/Operating%20Model/FEMDI%20Privacy%20policy.docx?d=w86090b46ea1642dfbdf40e2bc483e503&amp;csf=1&amp;web=1&amp;e=RVrHSQ">MeteoGate Privacy Policy</a>, EU’s General Data Protection Regulation (GDPR), and other relevant legislation. </p>
+<p>Personal data processed includes: </p>
+<ul>
+<li>Registered user identities (managed by the Identity &amp; Access Manager) </li>
+<li>API key metadata (managed by the Key Vault) </li>
+<li>User access control metadata, stored as consumer objects (managed by API Gateway) </li>
+<li>Contact information in dataset metadata (provided and managed by the Data Publisher) </li>
+</ul>
+<p>GDPR-related requests (e.g., deletion or correction) should be directed to the MeteoGate Service Desk, which coordinates resolution with responsible parties. </p>
+<p>Community Capability Operators are responsible for: </p>
+<ul>
+<li>Ensuring that personal data processed by the Community Components they operate (e.g. in Identity and Access Manager, Key Vault, and API Gateway) is stored securely and only accessible by authorised personnel. </li>
+<li>Supporting GDPR-related processes in their hosted environment (e.g. deletion of user data upon request). </li>
+<li>Implementing technical and organisational measures to protect personal data in accordance with MeteoGate’s security and privacy requirements.</li>
+</ul>
+<h4 id="meteorological-and-hydrological-data">Meteorological and Hydrological Data</h4>
+<p>Community Capability Operators provide the technical platform for publishing and accessing data but are not responsible for the content or quality of the datasets. Responsibility for the accuracy, structure, and compliance of data and metadata lies with the respective Data Owners and Publishers. </p>
+<p>Community Capability Operators must:</p>
+<ul>
+<li>Ensure reliable and secure API access to published datasets. </li>
+<li>Refrain from altering, filtering, or interpreting the published content in any way. </li>
+</ul>
+<p>For more detailed definitions of roles and responsibilities related to data handling, publication, and ownership, refer to the <a href="https://tlnt19059.sharepoint.com/:w:/r/sites/FEMDI/ET%20FEMDI/ET%20Working%20folder/Operating%20Model/Data%20governance%20policy.docx?d=wb938b06e5b694bf1914c4202ee6aaa8a&amp;csf=1&amp;web=1&amp;e=AH2lgh">MeteoGate Data Governance Policy</a>.</p>
+<blockquote>
+<p>to be updated</p>
+</blockquote>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "..", "features": ["navigation.instant", "navigation.tabs", "navigation.sections", "navigation.top", "toc.integrate", "search.highlight", "content.code.copy"], "search": "../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.13a4f30d.min.js"></script>
+      
+    
+  </body>
+</html>
