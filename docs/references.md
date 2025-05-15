@@ -1,5 +1,8 @@
 # References
 
+
+---
+
 ## Policies relating to MeteoGate development and use
 
 The approach for MeteoGate is to use appropriate policies and standards which are already established, only creating new ones where necessary. For example, existing EUMETNET governance patterns and structures will be used where available. In addition, there are several MeteoGate-specific policies and other documentation.
@@ -35,16 +38,16 @@ This section includes links to MeteoGate GUIs, support, and information pages.
 
 This section lists useful references related to MeteoGate.
 
-_To be completed, including e.g. HVD services repositories._
+> _To be completed, including e.g. HVD services repositories. All links to be checked and updated._
 
 ### EU Directives and Policies
 
-  - [EU Commission Implementing Regulation 2023/138 on High Value Datasets]()
-  - [EU INSPIRE Directive (2007/2)]()
-  - [EU Open Data Directive (2019/1024)]()
+  - [EU Commission Implementing Regulation 2023/138 on High Value Datasets](https://eur-lex.europa.eu/eli/reg_impl/2023/138/oj)
+  - [EU INSPIRE Directive (2007/2)](http://data.europa.eu/eli/dir/2007/2/oj)
+  - [EU Open Data Directive (2019/1024)](http://data.europa.eu/eli/dir/2019/1024/oj)
   - [Data Governance Act?]()
   - [Interoperable Europe Act?]()
-  - [Design Principles for Data Spaces]()
+  - [Design Principles for Data Spaces](https://design-principles-for-data-spaces.org/)
 
 ### MeteoGate Community Component Repositories and Developer Docs
 
@@ -52,28 +55,29 @@ _To be completed, including e.g. HVD services repositories._
   - [API Gateway]()
   - [Developer Portal]()
   - [Infrastructure]()
-  - [MeteoGate HVD Services]()
-  - [E-SOH Requirements Document]()
+
+### MeteoGate HVD Services
+
+  - [E-SOH Requirements document](https://github.com/EURODEO/e-soh-requirements)
 
 ### External Solutions
 
-  - [WMO Guide to WIS 2.0 (WMO No. 1061)]()
-  - [WMO Manual on WIS 2.0 (WMO No. 1060)]()
-  - [WIS2 Cookbook]()
-  - [WIS2 in a box]()
-  - [WIS 2.0 Discovery Metadata Project Report]()
+  - [WMO Guide to WIS 2.0 (WMO No. 1061)](https://wmoomm.sharepoint.com/:b:/s/wmocpdb/EY_UYn8jVgVOkgXmDZGWr5cB8cb4XN4DlloVlzqcRMjaRA?e=itnKRd)
+  - [WMO Manual on WIS 2.0 (WMO No. 1060)](https://wmoomm.sharepoint.com/:b:/s/wmocpdb/ESzGibharYhDu5Gup6V1LDEBJXS1pJbBInb6kqv-GjZjfQ?e=eQi4jS)
+  - [WIS2 Cookbook](https://wmo-im.github.io/wis2-cookbook/cookbook/wis2-cookbook-DRAFT.html)
+  - [WIS2 in a box](https://community.wmo.int/en/wis2box)
+  - [WIS 2.0 Discovery Metadata Project Report](https://wmo-im.github.io/wis2-metadata-search)
 
 ### Relevant Standards
 
-  - [Discovery Metadata Vocabulary]()
-  - [FAIR Principles]()
-  - [MeteoGate Quality of Service]()
-  - [OpenAPI Specification]()
-  - [OGC API]()
-  - [OGC API – EDR]()
-  - [OGC API – Records]()
-  - [MQTT Specification]()
-  - [Restrictive EDR Profile]()
+  - [Discovery Metadata Vocabulary](https://wiki.esipfed.org/Attribute_Convention_for_Data_Discovery_1-3)
+  - [FAIR Principles](https://wiki.esipfed.org/Attribute_Convention_for_Data_Discovery_1-3%22%EF%B7%9FHYPERLINK %22https://www.go-fair.org/fair-principles/)
+  - [OpenAPI Specification](https://www.openapis.org/)
+  - [OGC API](https://ogcapi.ogc.org/)
+  - [OGC API – EDR](https://ogcapi.ogc.org/edr/)
+  - [OGC API – Records](https://ogcapi.ogc.org/records/)
+  - [MQTT Specification](https://mqtt.org/)
+  - [Restrictive EDR Profile](https://github.com/EURODEO/rodeo-edr-profile)
   - [SpatioTemporal Asset Catalog (STAC)]()
   - [WIS2 Notification Message Encoding]()
   - [WMO Core Metadata Profile 2 (WCMP2)]()
