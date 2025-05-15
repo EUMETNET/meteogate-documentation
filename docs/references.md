@@ -1,11 +1,14 @@
 # References
 
+This page provides a comprehensive overview of the key policies, reference materials, and technical standards that govern the development, usage, and integration of the MeteoGate system.
+
+MeteoGate is designed to align with existing EU directives, WMO regulations, EUMETNET governance structures, and applicable technical standards.
 
 ---
 
 ## Policies relating to MeteoGate development and use
 
-The approach for MeteoGate is to use appropriate policies and standards which are already established, only creating new ones where necessary. For example, existing EUMETNET governance patterns and structures will be used where available. In addition, there are several MeteoGate-specific policies and other documentation.
+The approach for MeteoGate is to use appropriate policies and standards which are already established, only creating new ones where necessary. For example, existing EUMETNET governance patterns and structures will be used where available. In addition, there are several MeteoGate-specific policies and guiding documentation.
 
 The following MeteoGate documents are available:
 
