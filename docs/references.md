@@ -27,7 +27,7 @@ This section includes links to MeteoGate GUIs, support, and information pages.
   - [MeteoGate Landing Page]()
   - [MeteoGate Documentation](https://github.com/EUMETNET/meteogate-documentation)
   
-_All links to be updated._
+> _All links to be updated._
 
 ---
 
