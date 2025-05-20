@@ -334,8 +334,7 @@ A GitHub action workflow (Python code) generates a detailed APISIX configuration
 
 Instructions for using the API Management Tool, including defining new routes, applying rate limits, and controlling access, are available in the GitHub repository’s README and examples.
 
-!!! note
-Some upstream APIs may require a dedicated API key for the API Gateway to access the backend service. Instructions for including upstream credentials securely are available in the API Management Tool repository. 
+> **_NOTE:_** Some upstream APIs may require a dedicated API key for the API Gateway to access the backend service. Instructions for including upstream credentials securely are available in the API Management Tool repository. 
 
 Onboarding an API follows the below process:
 
