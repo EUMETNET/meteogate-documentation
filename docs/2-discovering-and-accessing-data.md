@@ -58,7 +58,7 @@ You can subscribe to specific WIS2 topics to receive notifications on the data t
 See the Guide to WIS 2.0 for more information on subscribing to notifications.
 
 ---
- 
+
 ## Accessing Data
 
 Once you have found a dataset that fits your needs, you can access it either anonymously or as a registered user, depending on the data policy. This section explains how to register for API access (if required), use API Keys, and retrieve data through MeteoGate API Gateway or directly from Data Supply services.
