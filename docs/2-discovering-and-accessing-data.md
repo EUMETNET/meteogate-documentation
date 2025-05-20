@@ -23,7 +23,7 @@ Open data can be accessed freely, but consumers must follow data usage rights an
 
 ---
 
-## Discovering Data
+## 1 Discovering Data
 
 The first step in utilizing MeteoGate to access data is to find data that suits your needs.
 
@@ -59,7 +59,7 @@ See the Guide to WIS 2.0 for more information on subscribing to notifications.
 
 ---
 
-## Accessing Data
+## 2 Accessing Data
 
 Once you have found a dataset that fits your needs, you can access it either anonymously or as a registered user, depending on the data policy. This section explains how to register for API access (if required), use API Keys, and retrieve data through MeteoGate API Gateway or directly from Data Supply services.
 
@@ -170,20 +170,20 @@ In addition, there are specialised software programs that can be used to access 
 
 > [to be updated]  add examples. code libraries mentioned?
 
-#### How to Use Data
-
-Use data according to terms and conditions and license referred to in the discovery metadata.
-
-> [to be updated] reference to terms of use. what else? how to use in code etc.)
-
 #### How to Access Data Supply Components Requiring Authentication
 
 For API endpoints that require authentication using API Key, the API Key is appended to the HTTP header of the data access request or alternatively provided as an URL parameter. Metadata should state whether the endpoint requires authentication.
 
-### Accessing Data Sirectly From Through Data Supply APIs
+### Accessing Data Directly From Through Data Supply APIs
 
 Some Data Supply APIs are not accessed through the MeteoGate API Gateway(s), but directly. You can still find these APIs by the same means as the APIs that are accessed through the MeteoGate API Gateway(s) (except route list on Developer Portal), for example using the Data Explorer or WIS 2.0 Global Discovery Catalogue.
 
 Follow the instructions and documentation available from the particular Data Provider to access these APIs. You should find the required links or information on the Data Provider from the metadata or a landing page available from the API base URL. Some Data Supply components may require authentication.
 
-> [to be updated] to be updated
+> [to be updated]
+
+## 3 Use Data
+
+Use data according to terms and conditions and license referred to in the discovery metadata.
+
+> [to be updated] reference to terms of use. what else? how to use in code etc.)
