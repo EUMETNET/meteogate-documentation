@@ -12,7 +12,7 @@ In MeteoGate, a **Data Supply** is the technical component used to share, manage
   - API-based access
   - Data processing in line with regulations
   - Metadata management for discovery
-  - Notification services to the **WMO WIS2** components
+  - Notification services to the WMO WIS2 components
 
 A **Data Publisher** deploys a Data Supply to make datasets available through MeteoGate.
 
@@ -42,7 +42,7 @@ Data Publishers must ensure:
   - Maintenance of minimum data availability
   - Notification of disruptions
   - Incident response and support
-  - Reporting to **EUMETNET** as required
+  - Reporting to EUMETNET as required
 
 See full policy in the _MeteoGate Participation Management Policy_.
 
@@ -52,28 +52,28 @@ See full policy in the _MeteoGate Participation Management Policy_.
 
 MeteoGate aligns with:
 
-  - **WMO WIS 2.0**
-  - **EU Open Data policies**
+  - WMO WIS 2.0
+  - EU Open Data policies
 
 It integrates with:
 
-  - **WIS2 Global Broker**
-  - **Global Discovery Catalogue**
+  - WIS2 Global Broker
+  - Global Discovery Catalogue
 
 Compliance is ensured through:
 
-  - EU Commission Implementing Regulation **2023/138**
-  - EU Open Data Directive **(2019/1024)**
-  - EU INSPIRE Directive **(2007/2)**
+  - EU Commission Implementing Regulation 2023/138
+  - EU Open Data Directive (2019/1024)
+  - EU INSPIRE Directive (2007/2)
   - WMO Manual on WIS 2.0
   - Guide to WIS 2.0
-  - WMO Manual on Codes (**WMO No. 306**)
+  - WMO Manual on Codes (WMO No. 306)
 
 Recommended standards:
 
-  - **EUMETDAPS** definitions for European meteorological data-sharing policies
-  - Standardized vocabularies from **WMO**, **ECMWF**, **EUMETNET**, and **EUMETSAT**
-  - **[FAIR Principles](https://www.go-fair.org/fair-principles/)** for best practices in data consistency, accuracy, and compliance
+  - EUMETDAPS definitions for European meteorological data-sharing policies
+  - Standardized vocabularies from WMO, ECMWF, EUMETNET, and EUMETSAT
+  - [FAIR Principles](https://www.go-fair.org/fair-principles/) for best practices in data consistency, accuracy, and compliance
 
 ---
 
