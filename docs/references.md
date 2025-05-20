@@ -4,6 +4,8 @@ This page provides a comprehensive overview of the key policies, reference mater
 
 MeteoGate is designed to align with existing EU directives, WMO regulations, EUMETNET governance structures, and applicable technical standards.
 
+> [to be updated] All links to be checked/updated/added. Include e.g. published versions of policies and HVD services repositories.
+
 ---
 
 ## Policies relating to MeteoGate development and use
@@ -22,7 +24,7 @@ The following MeteoGate documents are available:
   - **[Quality of Service]()**: Defines the quality criteria for the MeteoGate service, Community Components, and relevant Local Components.
   - **[EUMETNET FEMDI Programme Decision]()**: The official agreement for MeteoGate operation and maintenance, covering governance, reporting, budgeting, legal matters, and termination.
 
-> _All links to be updated/added._
+
 
 ---
 
@@ -34,15 +36,11 @@ This section includes links to MeteoGate GUIs, support, and information pages.
   - [MeteoGate Documentation](https://github.com/EUMETNET/meteogate-documentation)
   - [MeteoGate Developer Portal]()
   
-> _All links to be updated._
-
 ---
 
 ## References
 
 This section lists useful references related to MeteoGate.
-
-> _To be completed, including e.g. HVD services repositories. All links to be checked and updated._
 
 ### EU Directives and Policies
 
@@ -87,4 +85,3 @@ This section lists useful references related to MeteoGate.
   - [WMO Core Metadata Profile 2 (WCMP2)](https://github.com/wmo-im/wcmp2)
   - [WCMP2 Specification](https://wmo-im.github.io/wcmp2/)
   - [WCMP2 Metadata Examples](http://github.com/wmo-im/wcmp2/tree/main/examples)
-
