@@ -35,7 +35,7 @@ The Data Explorer uses metadata and data from Global Discovery Catalogue and Met
 
 When you have found the data that you wish to use, you can copy the appropriate API endpoint URL from Data Explorer and use it to access the data.
 
-> [to be updated] authentication? API Key; add link
+> [to be updated] authentication? API Key; add link. Ref. to Data Explorer quick guide and documentation.
 
 ### Searching the Global Discovery Catalogue
 
@@ -184,6 +184,49 @@ Follow the instructions and documentation available from the particular Data Pro
 
 ## 3 Using Data
 
-Use data according to terms and conditions and license referred to in the discovery metadata.
+### 3. Using Data
 
-> [to be updated] reference to terms of use. what else? how to use in code etc.)
+Once data has been accessed or retrieved through the MeteoGate system—either via the API Gateway or directly from a Data Supply component—Data Consumers must ensure that it is used in accordance with applicable policies and licenses.
+
+#### Respect Usage Terms and Licenses
+
+- Each dataset includes discovery metadata that specifies its license, access policy, and permitted use.
+- Make sure to check the metadata for license type (e.g. Creative Commons, national open data license) and any conditions set by the Data Owner or Publisher.
+- You are responsible for complying with the stated license terms.
+
+#### Attribution and Reuse
+
+- Cite the data source where required by the license.
+- If modifications are made to the data (e.g., processing, reformatting), clearly indicate that changes have been made, if required by the license.
+
+#### Comply with MeteoGate Terms of Use
+
+- Follow the [Terms of Use](#) and [Data Governance Policy](#) that outline fair use and responsibilities of Data Consumers.
+- Avoid excessive or abusive automated queries.
+- Do not redistribute restricted data without permission from the Data Owner.
+
+#### Integration into Your Systems
+
+- Data retrieved via the API (e.g. in JSON, GeoJSON format) can be integrated into your workflows, applications, and databases.
+- You can automate periodic data pulls using scripts (e.g. Python, R)
+- Example use cases include:
+  - Visualising weather station data on a map
+  - Feeding weather data into weather or hydrological models
+  - Monitoring real-time observations (e.g. temperature, precipitation) for decision-making
+  - Supporting early warning systems with live data streams
+  - Performing climate trend analysis using historical datasets
+  - Integrating forecast data into agriculture decision support tools
+  - Powering smart city applications (e.g. air quality, urban flooding risk)
+  - Enhancing maritime or aviation planning with near real-time meteorological inputs
+  - Automating daily or hourly reports with scheduled API queries
+  - Combining data from multiple countries for cross-border analysis or research
+
+#### Developer Support
+
+- Use the Developer Portal to view available routes and manage your API Keys.
+- If you need technical guidance or encounter issues, contact the [MeteoGate Service Desk](#)
+- If you have questions about a specific dataset, contact the appropriate Data Publisher.
+
+> ℹ️ **Note:** Some datasets may be updated or deprecated over time. Always check for the latest metadata and availability status.
+
+> [to be updated] if required, e.g. more detaield instructions.)

@@ -4,27 +4,25 @@ This page provides a comprehensive overview of the key policies, reference mater
 
 MeteoGate is designed to align with existing EU directives, WMO regulations, EUMETNET governance structures, and applicable technical standards.
 
-> [to be updated] All links to be checked/updated/added. Include e.g. published versions of policies and HVD services repositories.
+> [to be updated] All links to be checked/updated/added. Include e.g. published versions of policies and HVD services repositories. Documentation links to point to web page instead of repo.
 
 ---
 
-## Policies relating to MeteoGate development and use
+## Policies Relating to MeteoGate Development and Use
 
 The approach for MeteoGate is to use appropriate policies and standards which are already established, only creating new ones where necessary. For example, existing EUMETNET governance patterns and structures will be used where available. In addition, there are several MeteoGate-specific policies and guiding documentation.
 
 The following MeteoGate documents are available:
 
-  - **[Terms of Use]()**: Terms and conditions MeteoGate users must approve to access data through MeteoGate.
-  - **[Privacy Policy]()**: Ensures that MeteoGate users’ data is handled in compliance with GDPR.
-  - **[Data Governance Policy]()**: Top-level policy to ensure that the data shared through MeteoGate is consistent, trustworthy, and not misused. It guides data publishing and consumption practices.
-  - **[Cyber Security Policy]()**: Outlines EUMETNET’s approach to protecting MeteoGate, its technology assets, and data.
-  - **[Participation Management Policy]()**: Management approach for each category of MeteoGate stakeholders (Data Publishers, Data Consumers, Community Capability Operators).
-  - **[Incident and Problem Management Policy]()**: Approach for managing incidents and problems across MeteoGate by the Solution Manager and Community Capability Operators.
-  - **[MeteoGate Manual]()** (this document): Comprehensive guidance on how to access, share, and operate with MeteoGate, including implementation of policies.
-  - **[Quality of Service]()**: Defines the quality criteria for the MeteoGate service, Community Components, and relevant Local Components.
-  - **[EUMETNET FEMDI Programme Decision]()**: The official agreement for MeteoGate operation and maintenance, covering governance, reporting, budgeting, legal matters, and termination.
-
-
+  - [Terms of Use](): Terms and conditions MeteoGate users must approve to access data through MeteoGate.
+  - [Privacy Policy](): Ensures that MeteoGate users’ data is handled in compliance with GDPR.
+  - [Data Governance Policy](): Top-level policy to ensure that the data shared through MeteoGate is consistent, trustworthy, and not misused. It guides data publishing and consumption practices.
+  - [Cyber Security Policy](): Outlines EUMETNET’s approach to protecting MeteoGate, its technology assets, and data.
+  - [Participation Management Policy](): Management approach for each category of MeteoGate stakeholders (Data Publishers, Data Consumers, Community Capability Operators).
+  - [Incident and Problem Management Policy](): Approach for managing incidents and problems across MeteoGate by the Solution Manager and Community Capability Operators.
+  - [MeteoGate Documentation](https://github.com/EUMETNET/meteogate-documentation) (this document): Comprehensive guidance on how to access, share, and operate with MeteoGate, including implementation of policies.
+  - [Quality of Service](): Defines the quality criteria for the MeteoGate service, Community Components, and relevant Local Components.
+  - [EUMETNET FEMDI Programme Decision](): The official agreement for MeteoGate operation and maintenance, covering governance, reporting, budgeting, legal matters, and termination.
 
 ---
 
@@ -33,9 +31,11 @@ The following MeteoGate documents are available:
 This section includes links to MeteoGate GUIs, support, and information pages.
 
   - [MeteoGate Landing Page]()
-  - [MeteoGate Documentation](https://github.com/EUMETNET/meteogate-documentation)
+  - [MeteoGate Documentation](https://github.com/EUMETNET/meteogate-documentation) (this document)
+  - [MeteoGate Data Explorer]()
   - [MeteoGate Developer Portal]()
-  
+  - [MeteoGate Service Desk]()
+
 ---
 
 ## References
@@ -53,10 +53,11 @@ This section lists useful references related to MeteoGate.
 
 ### MeteoGate Community Component Repositories and Developer Docs
 
-  - [MeteoGate Documentation](https://github.com/EUMETNET/meteogate-documentation)
-  - [API Gateway](https://github.com/EURODEO/api-management-tool-poc)
-  - [Developer Portal](https://github.com/EURODEO/Dev-portal)
-  - [Infrastructure](https://github.com/EURODEO/femdi-gateway-iac)
+  - [MeteoGate Documentation repository](https://github.com/EUMETNET/meteogate-documentation)
+  - [Data Explorer repository]()
+  - [API Gateway repository](https://github.com/EURODEO/api-management-tool-poc)
+  - [Developer Portal repository](https://github.com/EURODEO/Dev-portal)
+  - [Infrastructure repository](https://github.com/EURODEO/femdi-gateway-iac)
 
 ### MeteoGate HVD Services
 
