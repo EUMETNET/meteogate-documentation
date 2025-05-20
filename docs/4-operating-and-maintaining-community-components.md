@@ -216,7 +216,7 @@ Logging also supports processes defined in Chapter 5 (e.g., Incident Management 
 
 Further logging configuration examples and integrations (e.g., with Prometheus or Alertmanager) will be available in the GitHub repository: [EUMETNET/femdi-gateway-iac](https://github.com/EUMETNET/femdi-gateway-iac) 
 
-_TBA_
+> _TBA_
 
 ### Monitoring and Observability 
 
@@ -257,14 +257,15 @@ Backups are retained according to the policies defined by the Community Capabili
 Restore operations are executed manually using predefined command templates. These templates are included in the infrastructure codebase and support consistent restoration across environments. 
 
 **Example: Cron Job for Vault Backup**
-
-'''cron_schedule: “0 2 * * *”  # Every day at 2 AM
+```
+cron_schedule: “0 2 * * *”  # Every day at 2 AM
 
 backup_command: “/vault/scripts/backup.sh” 
 
-storage_target: “s3://meteogate-backups/vault/”'''
+storage_target: “s3://meteogate-backups/vault/”
+```
 
-_<to be verified>_
+> _<to be verified>_
 
 
 See the [GitHub repository](EURODEO/femdi-gateway-iac) for backup and restore configuration and instructions. 
@@ -306,7 +307,8 @@ Community Capability Operators must ensure that:
   - System components are patched in a timely manner (see Section 3.4 Updates). 
   - Security incidents are managed according to the incident process (see Section 5.1). <links>
 
-For more information, refer to the **MeteoGate Cybersecurity Policy** _[link to be added]_.
+For more information, refer to the **MeteoGate Cybersecurity Policy** 
+> _[link to be added]_.
 
 ---
 
@@ -330,7 +332,7 @@ A GitHub action workflow (Python code) generates a detailed APISIX configuration
 
 Instructions for using the API Management Tool, including defining new routes, applying rate limits, and controlling access, are available in the GitHub repository’s README and examples.
 
-_Note_: Some upstream APIs may require a dedicated API key for the API Gateway to access the backend service. Instructions for including upstream credentials securely are available in the API Management Tool repository. 
+> _Note_: Some upstream APIs may require a dedicated API key for the API Gateway to access the backend service. Instructions for including upstream credentials securely are available in the API Management Tool repository. 
 
 Onboarding an API follows the below process:
 
