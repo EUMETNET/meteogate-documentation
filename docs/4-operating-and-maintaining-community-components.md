@@ -536,7 +536,7 @@ These processes form the foundation of coordinated service delivery and support 
 
 Community Capability Operators may use their own internal IT service management frameworks (e.g. ITIL). However, all processes must meet the minimum requirements defined by MeteoGate to ensure interoperability and oversight across environments. 
 
-Possibly amend with relevant common process diagrams from [42 Common Processes and Ways of Working - MeteoGate.docx](https://tlnt19059.sharepoint.com/:w:/r/sites/FEMDI/ET%20FEMDI/ET%20Working%20folder/Documentation%20working%20area/42%20Common%20Processes%20and%20Ways%20of%20Working%20-%20MeteoGate.docx?d=w34e1ef2e9e3c46f280165abff29f429c&csf=1&web=1&e=CUSvDF)
+> _[to be updated] Possibly amend with relevant common process diagrams from [42 Common Processes and Ways of Working - MeteoGate.docx](https://tlnt19059.sharepoint.com/:w:/r/sites/FEMDI/ET%20FEMDI/ET%20Working%20folder/Documentation%20working%20area/42%20Common%20Processes%20and%20Ways%20of%20Working%20-%20MeteoGate.docx?d=w34e1ef2e9e3c46f280165abff29f429c&csf=1&web=1&e=CUSvDF)_
 
 ### Incident Management 
 
