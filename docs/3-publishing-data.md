@@ -248,7 +248,7 @@ Both EDR and STAC improve data usability but serve different purposes. EDR is op
     - Ensuring that data includes a time axis (domain.axes.t) for temporal queries. 
   - Optimize data indexing for fast and reliable API queries. 
 
-### Data formats
+### Data Formats
 
 To ensure interoperability, usability, and performance across MeteoGate, data format should be chosen based on the type of data, the user community, and technical compatibility with MeteoGate services. 
 
@@ -324,7 +324,7 @@ In MeteoGate, metadata is categorized into three levels:
   - Collection Metadata 
   - Resource/File-level Metadata 
 
-**Discovery metadata**
+#### Discovery Metadata
 
 Discovery metadata enables users to find and access datasets through MeteoGate’s Data Explorer, WMO WIS2 Global Discovery Catalogue, WIS2 Global Broker notifications, external search engines, and generative AI solutions. It provides a high-level description of the dataset, including title, description, keywords, and licensing information. 
 
@@ -339,7 +339,7 @@ Recommendations
   - Consider end-user needs by structuring metadata to support different user groups, including researchers, meteorologists, and public data consumers. 
   - Validate discovery metadata using the PYWCMP tool provided by WMO. There are also additional validation methods outlined in the [WIS2 Cookbook](https://wmo-im.github.io/wis2-cookbook/cookbook/wis2-cookbook-DRAFT.html#_validate_a_wmo_core_metadata_profile_record). 
 
-**Collection metadata**
+#### Collection Metadata
 
 Collection metadata provides essential contextual information, such as dataset structure, temporal and spatial coverage, and relationships between resources, enabling users to browse, discover, and retrieve specific resources of interest.  
 
@@ -353,13 +353,13 @@ To align with the data structuring requirements outlined earlier, collection met
   - Expose observation locations in GeoJSON format (collections/<collection_name>/locations), supporting geospatial queries and visualization in MeteoGate’s Data Explorer. 
   - Contain a time axis (domain.axes.t), ensuring compatibility with spatiotemporal queries, particularly for datasets structured according to the EDR restricted profile.
 
-**Resource/File-level Metadata**
+#### Resource/File-level Metadata
 
 Resource or file-level metadata describes individual resources, such as data files, and provides essential context, such as the physical variable encoded and its units of measurement. Well-structured file-level metadata also facilitates the automatic generation of discovery and collection-level metadata. 
 
 Metadata should clearly define key attributes to avoid misinterpretation. For example, simply stating “temperature” is insufficient – specifying whether it refers to air temperature, screen temperature, or instantaneous 2 m above-ground temperature provides the necessary precision. 
 
-Recommendations 
+**Recommendations**
 
 To enhance metadata clarity and usability:
 
@@ -547,7 +547,6 @@ WMO members are expected to meet relevant data quality standards, including:
 
 Data governance policies ensure structured data management, compliance, and interoperability. The [MeteoGate Data Governance Policy](https://tlnt19059.sharepoint.com/:w:/r/sites/FEMDI/_layouts/15/Doc.aspx?sourcedoc=%7BB938B06E-5B69-4BF1-914C-4202EE6AAA8A%7D&file=Data%20governance%20policy.docx&action=default&mobileredirect=true) defines the requirements for data documentation and publication. 
 
-
 ### Incident Response and Support Requests 
 
 MeteoGate's centralized helpdesk will handle inquiries, technical issues, and incident reports related to data publication. Data Publishers may receive support requests and incident notifications through this helpdesk.
@@ -555,7 +554,6 @@ MeteoGate's centralized helpdesk will handle inquiries, technical issues, and in
 Per HVD regulation, Data Publishers must designate a contact point for incident notifications and support requests. Clear communication channels are crucial for data reliability, efficient issue resolution, and user support in the federated system. Data Publishers share the contact information as part of the onboarding process. 
 
 Data Publishers will manage incidents related to their data services, including establishing IT service management processes, responding to issues promptly, and coordinating with MeteoGate’s helpdesk to resolve incidents.
-
 
 ### Monitoring and Insights 
 
