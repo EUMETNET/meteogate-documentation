@@ -193,7 +193,7 @@ Logging is an essential part of operating MeteoGate Community Components. It sup
 
 Community Capability Operators are responsible for configuring, maintaining, and securing logging mechanisms in their environments. 
 
-> _to be updated - logging capabilities in Community Components_
+> _[to be updated] - logging capabilities in Community Components_
 
 **Logging Requirements** 
 
@@ -500,7 +500,7 @@ In Keycloak, the configuration is done in “Identity Providers” in the left p
 
 To add or configure a new Identity Provider, refer to the official Keycloak documentation: [Keycloak Server Admin Guide – Identity Brokering](https://www.keycloak.org/docs/latest/server_admin/index.html#_identity_broker) 
 
-> _<to be updated; what is the policy for managing IdPs, e.g. approval?>_
+> _[to be updated]; what is the policy for managing IdPs, e.g. approval?>_
 
 ### Syncing User and API Endpoint Data Between Environments 
 
@@ -601,7 +601,7 @@ Reports may include:
 
 Guidelines and templates will be provided by the Programme team. Reports are compiled using monitoring tools and logs (see section: [Monitoring](#monitoring-and-observability))
 
-> _<To be updated> with any further requirements/guidance from EUMETNET_
+> _[To be updated] with any further requirements/guidance from EUMETNET_
 
 ### Data Management 
 
@@ -637,4 +637,4 @@ Community Capability Operators must:
 
 For more detailed definitions of roles and responsibilities related to data handling, publication, and ownership, refer to the [MeteoGate Data Governance Policy](https://tlnt19059.sharepoint.com/:w:/r/sites/FEMDI/ET%20FEMDI/ET%20Working%20folder/Operating%20Model/Data%20governance%20policy.docx?d=wb938b06e5b694bf1914c4202ee6aaa8a&csf=1&web=1&e=AH2lgh).
 
-> _to be updated_
+> _[to be updated]_
