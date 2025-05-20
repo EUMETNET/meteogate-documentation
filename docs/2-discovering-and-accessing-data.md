@@ -35,7 +35,7 @@ The Data Explorer uses metadata and data from Global Discovery Catalogue and Met
 
 When you have found the data that you wish to use, you can copy the appropriate API endpoint URL from Data Explorer and use it to access the data.
 
-> [to be updated] authentication? API Key; add link
+> [to be updated] authentication? API Key; add link. Ref. to Data Explorer quick guide and documentation.
 
 ### Searching the Global Discovery Catalogue
 
@@ -196,8 +196,8 @@ Once data has been accessed or retrieved through the MeteoGate system—either v
 
 #### Attribution and Reuse
 
-- Cite the data source where required.
-- If modifications are made to the data (e.g., processing, reformatting), clearly indicate that changes have been made.
+- Cite the data source where required by the license.
+- If modifications are made to the data (e.g., processing, reformatting), clearly indicate that changes have been made, if required by the license.
 
 #### Comply with MeteoGate Terms of Use
 
@@ -207,13 +207,13 @@ Once data has been accessed or retrieved through the MeteoGate system—either v
 
 #### Integration into Your Systems
 
-- Data retrieved via the API (e.g. in JSON, GeoJSON format) can be integrated into your workflows, applications, or databases.
+- Data retrieved via the API (e.g. in JSON, GeoJSON format) can be integrated into your workflows, applications, and databases.
+- You can automate periodic data pulls using scripts (e.g. Python, R)
 - Example use cases include:
   - Visualising weather station data on a map
-  - Feeding numerical weather data into hydrological models
-  - Automating periodic data pulls using scripts (e.g. Python, R)
+  - Feeding weather data into weather models
 
-#### 🛠️ Developer Support
+#### Developer Support
 
 - Use the Developer Portal to view available routes and manage your API Keys.
 - If you need technical guidance or encounter issues, contact the [MeteoGate Service Desk](#)
