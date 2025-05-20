@@ -4,7 +4,6 @@ This section describes how to publish open meteorological and hydrological data 
 
 These instructions are intended for **National Meteorological and Hydrological Services (NMHSs)** and other entities publishing data via MeteoGate, referred to as **Data Publishers** in MeteoGate.
 
-
 ## What is a Data Supply?
 
 In MeteoGate, a **Data Supply** is the technical component used to share, manage, and publish data and metadata. It enables:
@@ -45,8 +44,9 @@ Data Publishers must ensure:
   - Incident response and support
   - Reporting to **EUMETNET** as required
 
-See full policy in the _MeteoGate Participation Management Policy_.  
-> _(link to be updated)_
+See full policy in the _MeteoGate Participation Management Policy_.
+
+> [link to be updated]
 
 ## Fulfilling EU and WMO Obligations
 
@@ -101,7 +101,9 @@ The following are real-world examples of successful data publication within Mete
 
 [KNMI’s EDR API](https://developer.dataplatform.knmi.nl/edr-api)  
 
-[MeteoSwiss STAC API](https://github.com/MeteoSwiss/opendata) 
+[MeteoSwiss STAC API](https://github.com/MeteoSwiss/opendata)
+
+  > [to be updated] Add more exampled, ref. to API workshop materials?
 
 ---
 
@@ -120,7 +122,7 @@ The Data Supply must be deployed according to the chosen publishing pattern. Thi
 
 ---
 
-## 1. Select Data Publishing Pattern 
+## 1 Select Data Publishing Pattern 
 
 The Data Publisher and/or Data Owner will decide how they want their data to be made available. Data can be published through MeteoGate in three different patterns. The choice should be based on the data type, existing technical solutions and runtime environments already used for sharing open data (if any), and specific requirements for access control, cost, and performance. Data Publishers and/or Owners can choose different options for different datasets and APIs. 
 
@@ -217,7 +219,7 @@ The access restrictions are implemented in different ways depending on the Data 
   
 ---
 
-## 2. Structure and Prepare Data 
+## 2 Structure and Prepare Data 
 
 Datasets should be structured in a way that ensures efficient access, consistency, interoperability, and discoverability within MeteoGate and WMO WIS2. Key aspects of structuring include defining dataset boundaries, standardizing parameters, optimizing metadata, ensuring proper indexing, and selecting suitable API technologies for data retrieval. 
 
@@ -384,7 +386,7 @@ Effective linking enhances discoverability and navigation. In MeteoGate, links s
   - Implement X-Forwarded and X-Prefix Headers for correct URL resolution when using the MeteoGate API Gateway. 
   - Ensure consistent and intuitive navigation by maintaining a clear and logical link structure throughout the API. 
 
-## 3. Deploy and Integrate Data Supply 
+## 3 Deploy and Integrate Data Supply 
 
 ### Choosing a Deployment Framework 
 
@@ -508,7 +510,8 @@ The integration process depends on the chosen Data Publishing Pattern and involv
 
   - **Pattern 1**: Using MeteoGate HVD Service
     - Integrate the APIs with the relevant HVD service by following the service-specific integration instructions available at _HVD service repository/links to be added_ 
-    - Ensure metadata and notifications are configured according to HVD service requirements. _to be updated_ 
+    - Ensure metadata and notifications are configured according to HVD service requirements.
+  > [to be updated] 
   - **Pattern 2**: Managed and Proxied Access Through MeteoGate API Gateway 
     - Register the APIs with the MeteoGate API Gateway. This can be done via:
        - Self-service (preferred): Ask the MeteoGate Service Desk for permissions to the designated repository (https://github.com/EURODEO/api-management-tool-poc/) Complete the YAML configuration and create a pull request to onboard the API 
@@ -528,8 +531,7 @@ MeteoGate has been established to deliver the target quality of service outlined
  
 MeteoGate will monitor the availability of the APIs and notify the Data Supplier in case any inactive or low performing APIs are detected. 
 
-_Outstanding question: Should data publishers be given minimum QoS thresholds for their API that need to be met before being onboarded, or will we accept any quality of API? 
-Guidance/rule on minimum “quality” for upstream data services, e.g. minimum requests/sec … and how this is validated during the on-boarding process; Or… review performance logs after 6 months and give feedback if needed._ 
+> [to be updated] Outstanding question: Should data publishers be given minimum QoS thresholds for their API that need to be met before being onboarded, or will we accept any quality of API? Guidance/rule on minimum “quality” for upstream data services, e.g. minimum requests/sec … and how this is validated during the on-boarding process; Or… review performance logs after 6 months and give feedback if needed._ 
 
 ### Data Quality and Data Governance 
 
@@ -562,7 +564,8 @@ Effective monitoring and logging are essential for ensuring API health, performa
 In MeteoGate, logging and monitoring occur at three levels:
 
   - Individual API Level (Data Publisher Responsibility): Each Data Publisher’s API is responsible for logging request details, errors, and performance metrics. This includes structured logs (e.g., JSON-based logging) that provide visibility into API behaviour, response times, and error rates. 
-  - HVD Service Level (Data Publishing Pattern 1): MeteoGate’s centralised data services log request details, errors, and performance metrics. _to be updated_ 
+  - HVD Service Level (Data Publishing Pattern 1): MeteoGate’s centralised data services log request details, errors, and performance metrics.
+> [to be updated] 
   - MeteoGate API Gateway Level (Data Publishing Pattern 2): MeteoGate API Gateway provides centralised logging, monitoring, and traffic analysis. It collects logs for all requests passing through the gateway, including request origins, response times, error rates, and usage metrics.
 
 MeteoGate includes an insights service and provides the following metrics that can be used for API performance reporting, when using Data Publishing Patterns 1 or 2:
