@@ -193,7 +193,7 @@ Logging is an essential part of operating MeteoGate Community Components. It sup
 
 Community Capability Operators are responsible for configuring, maintaining, and securing logging mechanisms in their environments. 
 
-> _<to be updated> logging capabilities in Community Components_
+> _to be updated - logging capabilities in Community Components_
 
 **Logging Requirements** 
 
@@ -267,7 +267,7 @@ backup_command: “/vault/scripts/backup.sh”
 storage_target: “s3://meteogate-backups/vault/”
 ```
 
-> _<to be verified>_
+> _[to be verified]_
 
 
 See the [GitHub repository](EURODEO/femdi-gateway-iac) for backup and restore configuration and instructions. 
@@ -307,10 +307,10 @@ Community Capability Operators must ensure that:
   - Access to sensitive infrastructure (e.g. Kubernetes clusters, GitHub secrets, Vault root tokens) is limited and auditable. 
   - Logs are retained and regularly reviewed (see Section 5.5). 
   - System components are patched in a timely manner (see Section 3.4 Updates). 
-  - Security incidents are managed according to the incident process (see Section 5.1). <links>
+  - Security incidents are managed according to the incident process (see Section 5.1).
 
 For more information, refer to the **MeteoGate Cybersecurity Policy** 
-> _[link to be added]_.
+> _[link to be updated/added]_.
 
 ---
 
@@ -392,7 +392,7 @@ Until then, route paths should be:
 
 Further guidance and examples will be added to the API Management Tool documentation as the scheme is finalized. 
 
-> _<to be updated> Route names / naming schemes / hierarchy <- guidance needed on the naming scheme: The URL that someone will use to access e.g. E-SOH data via MeteoGate GW. i.e. meteogate.api.eu/XXX - Stuart and Vegar to make a proposal_
+> _[to be updated] - Route names / naming schemes / hierarchy <- guidance needed on the naming scheme: The URL that someone will use to access e.g. E-SOH data via MeteoGate GW. i.e. meteogate.api.eu/XXX - Stuart and Vegar to make a proposal_
 
 ### Managing Admin Users 
 
