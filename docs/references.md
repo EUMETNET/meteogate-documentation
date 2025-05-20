@@ -36,7 +36,8 @@ This section includes links to MeteoGate GUIs, support, and information pages.
   - [MeteoGate Documentation](https://github.com/EUMETNET/meteogate-documentation)
   - [MeteoGate Data Explorer]()
   - [MeteoGate Developer Portal]()
-  
+  - [MeteoGate Service Desk]()
+
 ---
 
 ## References
