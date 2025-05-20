@@ -13,7 +13,7 @@ MeteoGate helps NMHSs make their data and data products discoverable and accessi
   - EU High Value Datasets Regulation
   - National Open Data requirements
 
-MeteoGate in an EUMETNET Programme.  Delivery responsibility is delegated to a Member who will act as the Programme Manager.
+MeteoGate in an [EUMETNET](https://www.eumetnet.eu/) Programme.  Delivery responsibility is delegated to a Member who will act as the Programme Manager.
 
 ---
 
