@@ -258,11 +258,11 @@ Restore operations are executed manually using predefined command templates. The
 
 **Example: Cron Job for Vault Backup**
 
-cron_schedule: “0 2 * * *”  # Every day at 2 AM
+'''cron_schedule: “0 2 * * *”  # Every day at 2 AM
 
 backup_command: “/vault/scripts/backup.sh” 
 
-storage_target: “s3://meteogate-backups/vault/” 
+storage_target: “s3://meteogate-backups/vault/”'''
 
 _<to be verified>_
 
