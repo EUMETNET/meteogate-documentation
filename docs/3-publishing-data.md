@@ -1,4 +1,4 @@
-# Publishing Data Guidelines
+# 3. Publishing Data
 
 This section describes how to publish open meteorological and hydrological data through MeteoGate, ensuring compliance with EU High-Value Datasets (HVD) regulations and WMO WIS 2.0 obligations.  
 
