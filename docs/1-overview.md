@@ -142,11 +142,11 @@ viii.	**Proxied access**: The API Gateway proxies access to connected Data Suppl
 MeteoGate is responsible for the common data sharing infrastructure but does not specify data quality. Data Owners and Data Publishers are responsible for ensuring data quality.
 However, Data Owners that are WMO members still need to fulfil WHO data quality requirements.
 
-< [to be updated]
+> [to be updated]
 
 ---
 
 ## Quality of Service
 
-< [to be updated]
+> [to be updated]
 
