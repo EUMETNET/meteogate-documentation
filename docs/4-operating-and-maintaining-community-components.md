@@ -111,7 +111,9 @@ In the EWC environment:
 
 Terraform modules and technical instructions are available at: [GitHub – EURODEO/femdi-gateway-iac](https://github.com/EURODEO/femdi-gateway-iac) 
 
-Resource recommendations (e.g. for Kubernetes clusters, VM sizes) are available in the repository _Link TBA_
+Resource recommendations (e.g. for Kubernetes clusters, VM sizes) are available in the repository
+
+> [Link TBA]
 
 ### Installations
 
@@ -218,7 +220,7 @@ Logging also supports processes defined in Chapter 5 (e.g., Incident Management 
 
 Further logging configuration examples and integrations (e.g., with Prometheus or Alertmanager) will be available in the GitHub repository: [EUMETNET/femdi-gateway-iac](https://github.com/EUMETNET/femdi-gateway-iac) 
 
-> _TBA_
+> [TBA]
 
 ### Monitoring and Observability 
 
