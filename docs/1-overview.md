@@ -143,11 +143,24 @@ viii.	**Proxied access**: The API Gateway proxies access to connected Data Suppl
 MeteoGate is responsible for the common data sharing infrastructure but does not specify data quality. Data Owners and Data Publishers are responsible for ensuring data quality.
 However, Data Owners that are WMO members still need to fulfil WHO data quality requirements.
 
-> [to be updated]
+> [to be updated if required]
 
 ---
 
 ## Quality of Service
 
-> [to be updated]
+MeteoGate is committed to ensuring a high-quality user experience across its components and services. The concept of Quality of Service (QoS) in MeteoGate refers to measurable and agreed-upon service levels that apply to both Community and Local Components.
+
+Quality of Service aspects cover:
+
+- **Availability**: Ensuring API Gateways, Developer Portals, and Data Explorer remain operational with high uptime.
+- **Performance**: Data access endpoints should return responses within acceptable timeframes, even under load.
+- **Scalability**: System components are designed to handle varying data volumes and request loads without degradation.
+- **Support and incident response**: MeteoGate provides centralised support through the Service Desk and follows defined escalation procedures.
+- **Monitoring and metrics**: Usage statistics and performance data are collected through the Insights Service to proactively identify issues.
+- **Service differentiation**: Authenticated users and EUMETNET Member users may receive enhanced QoS, including higher rate limits or data prioritisation.
+
+Minimum acceptable service levels for MeteoGate components are described in the **Quality of Service Policy**.
+
+> [to be updated if required]
 
