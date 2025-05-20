@@ -4,7 +4,7 @@ This page provides a comprehensive overview of the key policies, reference mater
 
 MeteoGate is designed to align with existing EU directives, WMO regulations, EUMETNET governance structures, and applicable technical standards.
 
-> [to be updated] All links to be checked/updated/added. Include e.g. published versions of policies and HVD services repositories. Documentation links to point to web page.
+> [to be updated] All links to be checked/updated/added. Include e.g. published versions of policies and HVD services repositories. Documentation links to point to web page instead of repo.
 
 ---
 
@@ -53,7 +53,7 @@ This section lists useful references related to MeteoGate.
 
 ### MeteoGate Community Component Repositories and Developer Docs
 
-  - [MeteoGate Documentation repository](https://github.com/EUMETNET/meteogate-documentation) (this document)
+  - [MeteoGate Documentation repository](https://github.com/EUMETNET/meteogate-documentation)
   - [Data Explorer repository]()
   - [API Gateway repository](https://github.com/EURODEO/api-management-tool-poc)
   - [Developer Portal repository](https://github.com/EURODEO/Dev-portal)
