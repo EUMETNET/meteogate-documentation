@@ -143,6 +143,20 @@ viii.	**Proxied access**: The API Gateway proxies access to connected Data Suppl
 MeteoGate is responsible for the common data sharing infrastructure but does not specify data quality. Data Owners and Data Publishers are responsible for ensuring data quality.
 However, Data Owners that are WMO members still need to fulfil WHO data quality requirements.
 
+## Data Quality
+
+MeteoGate ensures that data can be discovered and accessed in a reliable and consistent way — but it does not define or enforce the quality of the underlying data itself.
+
+Responsibility for data quality lies with the **Data Owners** and **Data Publishers**, who are expected to follow their own national standards and any applicable WMO and EU regulations.
+
+Key points regarding data quality:
+
+- **Data Quality Responsibility**: Each Data Publisher is responsible for the accuracy, completeness, timeliness, and consistency of the data they share via MeteoGate.
+- **Compliance with Standards**: WMO Members must ensure that their data complies with WMO regulations, including quality requirements defined in the WMO WIS 2.0 framework.
+- **Metadata Transparency**: Discovery and provenance metadata should clearly indicate any known data limitations or quality issues.
+- **No Central Validation**: MeteoGate does not centrally validate or cleanse data — it acts as an access and discovery platform.
+- **Consumer Responsibility**: Data Consumers are encouraged to evaluate data quality based on metadata, provenance information, and known standards.
+
 > [to be updated if required]
 
 ---
