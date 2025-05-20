@@ -111,7 +111,9 @@ In the EWC environment:
 
 Terraform modules and technical instructions are available at: [GitHub – EURODEO/femdi-gateway-iac](https://github.com/EURODEO/femdi-gateway-iac) 
 
-Resource recommendations (e.g. for Kubernetes clusters, VM sizes) are available in the repository _Link TBA_
+Resource recommendations (e.g. for Kubernetes clusters, VM sizes) are available in the repository
+
+> [Link TBA]
 
 ### Installations
 
@@ -193,6 +195,8 @@ Logging is an essential part of operating MeteoGate Community Components. It sup
 
 Community Capability Operators are responsible for configuring, maintaining, and securing logging mechanisms in their environments. 
 
+> _[to be updated] - logging capabilities in Community Components_
+
 **Logging Requirements** 
 
 The logging setup should capture at minimum:
@@ -216,7 +220,7 @@ Logging also supports processes defined in Chapter 5 (e.g., Incident Management 
 
 Further logging configuration examples and integrations (e.g., with Prometheus or Alertmanager) will be available in the GitHub repository: [EUMETNET/femdi-gateway-iac](https://github.com/EUMETNET/femdi-gateway-iac) 
 
-_TBA_
+> [TBA]
 
 ### Monitoring and Observability 
 
@@ -257,14 +261,15 @@ Backups are retained according to the policies defined by the Community Capabili
 Restore operations are executed manually using predefined command templates. These templates are included in the infrastructure codebase and support consistent restoration across environments. 
 
 **Example: Cron Job for Vault Backup**
-
+```
 cron_schedule: “0 2 * * *”  # Every day at 2 AM
 
 backup_command: “/vault/scripts/backup.sh” 
 
-storage_target: “s3://meteogate-backups/vault/” 
+storage_target: “s3://meteogate-backups/vault/”
+```
 
-_<to be verified>_
+> _[to be verified]_
 
 
 See the [GitHub repository](EURODEO/femdi-gateway-iac) for backup and restore configuration and instructions. 
@@ -304,9 +309,10 @@ Community Capability Operators must ensure that:
   - Access to sensitive infrastructure (e.g. Kubernetes clusters, GitHub secrets, Vault root tokens) is limited and auditable. 
   - Logs are retained and regularly reviewed (see Section 5.5). 
   - System components are patched in a timely manner (see Section 3.4 Updates). 
-  - Security incidents are managed according to the incident process (see Section 5.1). <links>
+  - Security incidents are managed according to the incident process (see Section 5.1).
 
-For more information, refer to the **MeteoGate Cybersecurity Policy** _[link to be added]_.
+For more information, refer to the **MeteoGate Cybersecurity Policy** 
+> _[link to be updated/added]_.
 
 ---
 
@@ -330,7 +336,7 @@ A GitHub action workflow (Python code) generates a detailed APISIX configuration
 
 Instructions for using the API Management Tool, including defining new routes, applying rate limits, and controlling access, are available in the GitHub repository’s README and examples.
 
-_Note_: Some upstream APIs may require a dedicated API key for the API Gateway to access the backend service. Instructions for including upstream credentials securely are available in the API Management Tool repository. 
+> ℹ️ **Note:** Some upstream APIs may require a dedicated API key for the API Gateway to access the backend service. Instructions for including upstream credentials securely are available in the API Management Tool repository. 
 
 Onboarding an API follows the below process:
 
@@ -366,13 +372,15 @@ routes:
  
   4. Check on Development Portal 
     - Verify that the new route is listed in the Developer Portal.
+
+More information is available at: [EUMETNET/api-management-tool-poc](https://github.com/EUMETNET/api-management-tool-poc)
   
 ### Naming API Routes 
 
 API routes configured through the MeteoGate API Gateway must follow a consistent and descriptive naming scheme to ensure clarity, discoverability, and alignment across the Developer Portal and Data Explorer. 
 Routes are defined in the API Management Tool (GitHub) and are:
 
-  - Exposed through structured URLs, such as: https://meteogate.api.eu/{service}/{dataset} 
+  - Exposed through structured URLs, such as: ```https://meteogate.api.eu/{service}/{dataset}```
   - Visible to end users in the Developer Portal and Data Explorer. 
   - Identified using a parameter:id in the YAML configuration. 
 
@@ -386,8 +394,7 @@ Until then, route paths should be:
 
 Further guidance and examples will be added to the API Management Tool documentation as the scheme is finalized. 
 
-_Route names / naming schemes / hierarchy <- guidance needed on the naming scheme: The URL that someone will use to access e.g. E-SOH data via MeteoGate GW. i.e. meteogate.api.eu/XXX  
-Stuart and Vegar to make a proposal_
+> _[to be updated] - Route names / naming schemes / hierarchy <- guidance needed on the naming scheme: The URL that someone will use to access e.g. E-SOH data via MeteoGate GW. i.e. meteogate.api.eu/XXX - Stuart and Vegar to make a proposal_
 
 ### Managing Admin Users 
 
@@ -495,7 +502,7 @@ In Keycloak, the configuration is done in “Identity Providers” in the left p
 
 To add or configure a new Identity Provider, refer to the official Keycloak documentation: [Keycloak Server Admin Guide – Identity Brokering](https://www.keycloak.org/docs/latest/server_admin/index.html#_identity_broker) 
 
-_<to be updated; what is the policy for managing IdPs, e.g. approval?>_
+> _[to be updated]; what is the policy for managing IdPs, e.g. approval?>_
 
 ### Syncing User and API Endpoint Data Between Environments 
 
@@ -531,7 +538,7 @@ These processes form the foundation of coordinated service delivery and support 
 
 Community Capability Operators may use their own internal IT service management frameworks (e.g. ITIL). However, all processes must meet the minimum requirements defined by MeteoGate to ensure interoperability and oversight across environments. 
 
-Possibly amend with relevant common process diagrams from [42 Common Processes and Ways of Working - MeteoGate.docx](https://tlnt19059.sharepoint.com/:w:/r/sites/FEMDI/ET%20FEMDI/ET%20Working%20folder/Documentation%20working%20area/42%20Common%20Processes%20and%20Ways%20of%20Working%20-%20MeteoGate.docx?d=w34e1ef2e9e3c46f280165abff29f429c&csf=1&web=1&e=CUSvDF)
+> _[to be updated] Possibly amend with relevant common process diagrams from [42 Common Processes and Ways of Working - MeteoGate.docx](https://tlnt19059.sharepoint.com/:w:/r/sites/FEMDI/ET%20FEMDI/ET%20Working%20folder/Documentation%20working%20area/42%20Common%20Processes%20and%20Ways%20of%20Working%20-%20MeteoGate.docx?d=w34e1ef2e9e3c46f280165abff29f429c&csf=1&web=1&e=CUSvDF)_
 
 ### Incident Management 
 
@@ -596,7 +603,7 @@ Reports may include:
 
 Guidelines and templates will be provided by the Programme team. Reports are compiled using monitoring tools and logs (see section: [Monitoring](#monitoring-and-observability))
 
-_To be updated with any further requirements/guidance from EUMETNET_
+> _[To be updated] with any further requirements/guidance from EUMETNET_
 
 ### Data Management 
 
@@ -632,4 +639,4 @@ Community Capability Operators must:
 
 For more detailed definitions of roles and responsibilities related to data handling, publication, and ownership, refer to the [MeteoGate Data Governance Policy](https://tlnt19059.sharepoint.com/:w:/r/sites/FEMDI/ET%20FEMDI/ET%20Working%20folder/Operating%20Model/Data%20governance%20policy.docx?d=wb938b06e5b694bf1914c4202ee6aaa8a&csf=1&web=1&e=AH2lgh).
 
-> to be updated
+> _[to be updated]_

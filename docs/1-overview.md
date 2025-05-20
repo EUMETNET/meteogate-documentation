@@ -132,7 +132,7 @@ vii.	**Request data**: Using information provided in the discovery metadata, the
 
 viii.	**Proxied access**: The API Gateway proxies access to connected Data Supply services. The user can then utilise the data in their own applications. 
 
-_Note_: Using the API Gateway is optional for the Data Publisher. They can also publish the data directly from the Data Supply (for example, if the dataset is very large or if the Data Publisher already has API Management implemented as part of their Data Supply capability).
+> ℹ️ **Note:** Using the API Gateway is optional for the Data Publisher. They can also publish the data directly from the Data Supply (for example, if the dataset is very large or if the Data Publisher already has API Management implemented as part of their Data Supply capability).
 
   ix.	**Insights service**: Community Capability Operators and other stakeholders can use the Insights service in the API Gateway to monitor data discovery and use. For example, they can observe how the data is passing through the system to be able to address any issues.
 
@@ -142,11 +142,11 @@ _Note_: Using the API Gateway is optional for the Data Publisher. They can also 
 MeteoGate is responsible for the common data sharing infrastructure but does not specify data quality. Data Owners and Data Publishers are responsible for ensuring data quality.
 However, Data Owners that are WMO members still need to fulfil WHO data quality requirements.
 
-_...TBA_
-
-## Quality of Service
+> [to be updated]
 
 ---
 
-_...TBA_
+## Quality of Service
+
+> [to be updated]
 
