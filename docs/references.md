@@ -4,7 +4,7 @@ This page provides a comprehensive overview of the key policies, reference mater
 
 MeteoGate is designed to align with existing EU directives, WMO regulations, EUMETNET governance structures, and applicable technical standards.
 
-> [to be updated] All links to be checked/updated/added. Include e.g. published versions of policies and HVD services repositories.
+> [to be updated] All links to be checked/updated/added. Include e.g. published versions of policies and HVD services repositories. Documentation links to point to web page.
 
 ---
 
