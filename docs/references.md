@@ -31,7 +31,7 @@ The following MeteoGate documents are available:
 This section includes links to MeteoGate GUIs, support, and information pages.
 
   - [MeteoGate Landing Page]()
-  - [MeteoGate Documentation](https://github.com/EUMETNET/meteogate-documentation)
+  - [MeteoGate Documentation](https://github.com/EUMETNET/meteogate-documentation) (this document)
   - [MeteoGate Data Explorer]()
   - [MeteoGate Developer Portal]()
   - [MeteoGate Service Desk]()
@@ -53,7 +53,7 @@ This section lists useful references related to MeteoGate.
 
 ### MeteoGate Community Component Repositories and Developer Docs
 
-  - [MeteoGate Documentation](https://github.com/EUMETNET/meteogate-documentation)
+  - [MeteoGate Documentation](https://github.com/EUMETNET/meteogate-documentation) (this document)
   - [MeteoGate Data Explorer documentation](https://github.com/EUMETNET/meteogate-documentation)
   - [API Gateway repository](https://github.com/EURODEO/api-management-tool-poc)
   - [Developer Portal repository](https://github.com/EURODEO/Dev-portal)
