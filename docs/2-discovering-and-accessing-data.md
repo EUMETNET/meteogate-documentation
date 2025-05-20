@@ -182,7 +182,7 @@ Follow the instructions and documentation available from the particular Data Pro
 
 > [to be updated]
 
-## 3 Use Data
+## 3 Using Data
 
 Use data according to terms and conditions and license referred to in the discovery metadata.
 
