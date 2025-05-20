@@ -376,7 +376,7 @@ More information is available at: [EUMETNET/api-management-tool-poc](https://git
 API routes configured through the MeteoGate API Gateway must follow a consistent and descriptive naming scheme to ensure clarity, discoverability, and alignment across the Developer Portal and Data Explorer. 
 Routes are defined in the API Management Tool (GitHub) and are:
 
-  - Exposed through structured URLs, such as: https://meteogate.api.eu/{service}/{dataset} 
+  - Exposed through structured URLs, such as: ```https://meteogate.api.eu/{service}/{dataset}```
   - Visible to end users in the Developer Portal and Data Explorer. 
   - Identified using a parameter:id in the YAML configuration. 
 
@@ -390,7 +390,7 @@ Until then, route paths should be:
 
 Further guidance and examples will be added to the API Management Tool documentation as the scheme is finalized. 
 
-_Route names / naming schemes / hierarchy <- guidance needed on the naming scheme: The URL that someone will use to access e.g. E-SOH data via MeteoGate GW. i.e. meteogate.api.eu/XXX  
+> _Route names / naming schemes / hierarchy <- guidance needed on the naming scheme: The URL that someone will use to access e.g. E-SOH data via MeteoGate GW. i.e. meteogate.api.eu/XXX  
 Stuart and Vegar to make a proposal_
 
 ### Managing Admin Users 
@@ -499,7 +499,7 @@ In Keycloak, the configuration is done in “Identity Providers” in the left p
 
 To add or configure a new Identity Provider, refer to the official Keycloak documentation: [Keycloak Server Admin Guide – Identity Brokering](https://www.keycloak.org/docs/latest/server_admin/index.html#_identity_broker) 
 
-_<to be updated; what is the policy for managing IdPs, e.g. approval?>_
+> _<to be updated; what is the policy for managing IdPs, e.g. approval?>_
 
 ### Syncing User and API Endpoint Data Between Environments 
 
@@ -600,7 +600,7 @@ Reports may include:
 
 Guidelines and templates will be provided by the Programme team. Reports are compiled using monitoring tools and logs (see section: [Monitoring](#monitoring-and-observability))
 
-_To be updated with any further requirements/guidance from EUMETNET_
+> _To be updated with any further requirements/guidance from EUMETNET_
 
 ### Data Management 
 
@@ -636,4 +636,4 @@ Community Capability Operators must:
 
 For more detailed definitions of roles and responsibilities related to data handling, publication, and ownership, refer to the [MeteoGate Data Governance Policy](https://tlnt19059.sharepoint.com/:w:/r/sites/FEMDI/ET%20FEMDI/ET%20Working%20folder/Operating%20Model/Data%20governance%20policy.docx?d=wb938b06e5b694bf1914c4202ee6aaa8a&csf=1&web=1&e=AH2lgh).
 
-> to be updated
+> _to be updated_
