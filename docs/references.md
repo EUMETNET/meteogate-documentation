@@ -34,6 +34,7 @@ This section includes links to MeteoGate GUIs, support, and information pages.
 
   - [MeteoGate Landing Page]()
   - [MeteoGate Documentation](https://github.com/EUMETNET/meteogate-documentation)
+  - [MeteoGate Data Explorer]()
   - [MeteoGate Developer Portal]()
   
 ---
@@ -54,9 +55,10 @@ This section lists useful references related to MeteoGate.
 ### MeteoGate Community Component Repositories and Developer Docs
 
   - [MeteoGate Documentation](https://github.com/EUMETNET/meteogate-documentation)
-  - [API Gateway]()
-  - [Developer Portal]()
-  - [Infrastructure]()
+  - [MeteoGate Data Explorer documentation](https://github.com/EUMETNET/meteogate-documentation)
+  - [API Gateway repository](https://github.com/EURODEO/api-management-tool-poc)
+  - [Developer Portal repository](https://github.com/EURODEO/Dev-portal)
+  - [Infrastructure repository](https://github.com/EURODEO/femdi-gateway-iac)
 
 ### MeteoGate HVD Services
 
