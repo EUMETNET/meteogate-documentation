@@ -82,7 +82,7 @@ See also: Section about [Monitoring](#monitoring-and-observability) and Reportin
 
 ---
 
-## Service Lifecycle 
+## 1 Service Lifecycle 
 
 This section outlines the lifecycle of hosting and operating MeteoGate Community Components, including setup, configuration, testing, updates, and ongoing operations.
 
@@ -316,7 +316,7 @@ For more information, refer to the **MeteoGate Cybersecurity Policy**
 
 ---
 
-## Service Operations 
+## 2 Service Operations 
 
 This section provides operational guidance for Community Capability Operators to maintain MeteoGate Community Components. Tasks ensure shared services like the API Gateway, Developer Portal, Key Vault, and Identity & Access Management remain available, secure, and efficient.
 
@@ -530,7 +530,7 @@ API Gateway and Developer Portal use service tokens to communicate with Key Vaul
 
 ---
 
-## Processes and Reporting 
+## 3 Processes and Reporting 
 
 This chapter defines the shared operational processes that all MeteoGate Community Capability Operators must follow to ensure a consistent level of service, regulatory compliance, and operational accountability.
 
