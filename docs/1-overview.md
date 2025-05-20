@@ -40,6 +40,7 @@ Currently, there is an API Gateway running on the [European Weather Cloud](https
   - Send update notifications via a Local Broker to the WIS 2.0 Global Broker.
 
 In MeteoGate, there are two main types of Data Supply components. The first are centrally operated HVD Services, which provide access to EU High-Value Datasets such as E-SOH (land-based surface observations), radar data, and climate datasets. The second type consists of locally maintained Data Supplies operated by (NMHSs).
+
 In addition, the **Insights Service** provides shared monitoring and analytics capabilities across the system. It collects usage statistics, performance metrics, and operational health data from core components such as the API Gateway.
 
 MeteoGate builds on the following [WMO WIS 2.0](https://community.wmo.int/en/activity-areas/wis) components:
