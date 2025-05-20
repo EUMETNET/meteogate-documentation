@@ -139,7 +139,7 @@ EUMETNET currently has the following HVD services available:
   - [Climate](https://github.com/EUMETNET/ogc-edr-workshop) 
   - [Warnings](https://meteoalarm.org/en/live/page/redistribution-hub#list)
 
-_Check specific integration requirements and instructions from the respective HVD service links._
+> ℹ️ **Note:** Check specific integration requirements and instructions from the respective HVD service links.
 
 This pattern is appropriate for the following situations​: 
 
@@ -158,7 +158,7 @@ The data is requested from and goes through the MeteoGate API Gateway allowing:
   - Managed data requests and data flow e.g., authorization, access control, and rate limiting
   - Collection of insights on data requests and access​.
 
-Read more about the MeteoGate API Gateway features on [MeteoGate Architecture](https://eumetnet.github.io/meteogate-documentation/technical-architecture/) and GitHub _link TBA_
+Read more about the MeteoGate API Gateway features on [MeteoGate Architecture](https://eumetnet.github.io/meteogate-documentation/technical-architecture).
 
 This pattern is appropriate for the following situations​: 
 
