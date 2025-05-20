@@ -14,15 +14,15 @@ The approach for MeteoGate is to use appropriate policies and standards which ar
 
 The following MeteoGate documents are available:
 
-  - **[Terms of Use]()**: Terms and conditions MeteoGate users must approve to access data through MeteoGate.
-  - **[Privacy Policy]()**: Ensures that MeteoGate users’ data is handled in compliance with GDPR.
-  - **[Data Governance Policy]()**: Top-level policy to ensure that the data shared through MeteoGate is consistent, trustworthy, and not misused. It guides data publishing and consumption practices.
-  - **[Cyber Security Policy]()**: Outlines EUMETNET’s approach to protecting MeteoGate, its technology assets, and data.
-  - **[Participation Management Policy]()**: Management approach for each category of MeteoGate stakeholders (Data Publishers, Data Consumers, Community Capability Operators).
-  - **[Incident and Problem Management Policy]()**: Approach for managing incidents and problems across MeteoGate by the Solution Manager and Community Capability Operators.
-  - **[MeteoGate Manual]()** (this document): Comprehensive guidance on how to access, share, and operate with MeteoGate, including implementation of policies.
-  - **[Quality of Service]()**: Defines the quality criteria for the MeteoGate service, Community Components, and relevant Local Components.
-  - **[EUMETNET FEMDI Programme Decision]()**: The official agreement for MeteoGate operation and maintenance, covering governance, reporting, budgeting, legal matters, and termination.
+  - [Terms of Use](): Terms and conditions MeteoGate users must approve to access data through MeteoGate.
+  - [Privacy Policy](): Ensures that MeteoGate users’ data is handled in compliance with GDPR.
+  - [Data Governance Policy](): Top-level policy to ensure that the data shared through MeteoGate is consistent, trustworthy, and not misused. It guides data publishing and consumption practices.
+  - [Cyber Security Policy](): Outlines EUMETNET’s approach to protecting MeteoGate, its technology assets, and data.
+  - [Participation Management Policy](): Management approach for each category of MeteoGate stakeholders (Data Publishers, Data Consumers, Community Capability Operators).
+  - [Incident and Problem Management Policy](): Approach for managing incidents and problems across MeteoGate by the Solution Manager and Community Capability Operators.
+  - [MeteoGate Manual]() (this document): Comprehensive guidance on how to access, share, and operate with MeteoGate, including implementation of policies.
+  - [Quality of Service](): Defines the quality criteria for the MeteoGate service, Community Components, and relevant Local Components.
+  - [EUMETNET FEMDI Programme Decision](): The official agreement for MeteoGate operation and maintenance, covering governance, reporting, budgeting, legal matters, and termination.
 
 
 
