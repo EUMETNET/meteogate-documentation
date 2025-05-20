@@ -184,6 +184,41 @@ Follow the instructions and documentation available from the particular Data Pro
 
 ## 3 Using Data
 
-Use data according to terms and conditions and license referred to in the discovery metadata.
+### 3. Using Data
 
-> [to be updated] reference to terms of use. what else? how to use in code etc.)
+Once data has been accessed or retrieved through the MeteoGate system—either via the API Gateway or directly from a Data Supply component—Data Consumers must ensure that it is used in accordance with applicable policies and licenses.
+
+#### Respect Usage Terms and Licenses
+
+- Each dataset includes discovery metadata that specifies its license, access policy, and permitted use.
+- Make sure to check the metadata for license type (e.g. Creative Commons, national open data license) and any conditions set by the Data Owner or Publisher.
+- You are responsible for complying with the stated license terms.
+
+#### Attribution and Reuse
+
+- Cite the data source where required.
+- If modifications are made to the data (e.g., processing, reformatting), clearly indicate that changes have been made.
+
+#### Comply with MeteoGate Terms of Use
+
+- Follow the [Terms of Use](#) and [Data Governance Policy](#) that outline fair use and responsibilities of Data Consumers.
+- Avoid excessive or abusive automated queries.
+- Do not redistribute restricted data without permission from the Data Owner.
+
+#### Integration into Your Systems
+
+- Data retrieved via the API (e.g. in JSON, GeoJSON format) can be integrated into your workflows, applications, or databases.
+- Example use cases include:
+  - Visualising weather station data on a map
+  - Feeding numerical weather data into hydrological models
+  - Automating periodic data pulls using scripts (e.g. Python, R)
+
+#### 🛠️ Developer Support
+
+- Use the Developer Portal to view available routes and manage your API Keys.
+- If you need technical guidance or encounter issues, contact the [MeteoGate Service Desk](#)
+- If you have questions about a specific dataset, contact the appropriate Data Publisher.
+
+> ℹ️ **Note:** Some datasets may be updated or deprecated over time. Always check for the latest metadata and availability status.
+
+> [to be updated] if required, e.g. more detaield instructions.)
