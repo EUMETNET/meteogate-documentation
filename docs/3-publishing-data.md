@@ -2,7 +2,7 @@
 
 This section describes how to publish open meteorological and hydrological data through MeteoGate, ensuring compliance with EU High-Value Datasets (HVD) regulations and WMO WIS 2.0 obligations.  
 
-These instructions are intended for **National Meteorological and Hydrological Services (NMHSs)** and other entities publishing data via MeteoGate, referred to as **Data Publishers** in MeteoGate.
+These instructions are intended for **NMHSs** and other entities publishing data via MeteoGate, referred to as **Data Publishers** in MeteoGate.
 
 ## What is a Data Supply?
 

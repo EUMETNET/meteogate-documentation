@@ -13,7 +13,7 @@ MeteoGate helps NMHSs make their data and data products discoverable and accessi
   - EU High Value Datasets Regulation
   - National Open Data requirements
 
-MeteoGate in an EUMETNET Programme.  Delivery responsibility is delegated to a Member who will act as the Programme Manager.
+MeteoGate in an [EUMETNET](https://www.eumetnet.eu/) Programme.  Delivery responsibility is delegated to a Member who will act as the Programme Manager.
 
 ---
 
@@ -40,6 +40,7 @@ Currently, there is an API Gateway running on the [European Weather Cloud](https
   - Send update notifications via a Local Broker to the WIS 2.0 Global Broker.
 
 In MeteoGate, there are two main types of Data Supply components. The first are centrally operated HVD Services, which provide access to EU High-Value Datasets such as E-SOH (land-based surface observations), radar data, and climate datasets. The second type consists of locally maintained Data Supplies operated by (NMHSs).
+
 In addition, the **Insights Service** provides shared monitoring and analytics capabilities across the system. It collects usage statistics, performance metrics, and operational health data from core components such as the API Gateway.
 
 MeteoGate builds on the following [WMO WIS 2.0](https://community.wmo.int/en/activity-areas/wis) components:
@@ -139,14 +140,37 @@ viii.	**Proxied access**: The API Gateway proxies access to connected Data Suppl
 ---
 
 ## Data Quality
-MeteoGate is responsible for the common data sharing infrastructure but does not specify data quality. Data Owners and Data Publishers are responsible for ensuring data quality.
-However, Data Owners that are WMO members still need to fulfil WHO data quality requirements.
 
-> [to be updated]
+MeteoGate ensures that data can be discovered and accessed in a reliable and consistent way — but it does not define or enforce the quality of the underlying data itself.
+
+Responsibility for data quality lies with the **Data Owners** and **Data Publishers**, who are expected to follow their own national standards and any applicable WMO and EU regulations.
+
+Key points regarding data quality:
+
+- **Data Quality Responsibility**: Each Data Publisher is responsible for the accuracy, completeness, timeliness, and consistency of the data they share via MeteoGate.
+- **Compliance with Standards**: WMO Members must ensure that their data complies with WMO regulations, including quality requirements defined in the WMO WIS 2.0 framework.
+- **Metadata Transparency**: Discovery and provenance metadata should clearly indicate any known data limitations or quality issues.
+- **No Central Validation**: MeteoGate does not centrally validate or cleanse data — it acts as an access and discovery platform.
+- **Consumer Responsibility**: Data Consumers are encouraged to evaluate data quality based on metadata, provenance information, and known standards.
+
+> [to be updated if required]
 
 ---
 
 ## Quality of Service
 
-> [to be updated]
+MeteoGate is committed to ensuring a high-quality user experience across its components and services. The concept of Quality of Service (QoS) in MeteoGate refers to measurable and agreed-upon service levels that apply to both Community and Local Components.
+
+Quality of Service aspects cover:
+
+- **Availability**: Ensuring API Gateways, Developer Portals, and Data Explorer remain operational with high uptime.
+- **Performance**: Data access endpoints should return responses within acceptable timeframes, even under load.
+- **Scalability**: System components are designed to handle varying data volumes and request loads without degradation.
+- **Support and incident response**: MeteoGate provides centralised support through the Service Desk and follows defined escalation procedures.
+- **Monitoring and metrics**: Usage statistics and performance data are collected through the Insights Service to proactively identify issues.
+- **Service differentiation**: Authenticated users and EUMETNET Member users may receive enhanced QoS, including higher rate limits or data prioritisation.
+
+Minimum acceptable service levels for MeteoGate components are described in the **Quality of Service Policy**.
+
+> [to be updated if required]
 
