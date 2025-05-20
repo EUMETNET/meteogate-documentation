@@ -193,6 +193,8 @@ Logging is an essential part of operating MeteoGate Community Components. It sup
 
 Community Capability Operators are responsible for configuring, maintaining, and securing logging mechanisms in their environments. 
 
+> _<to be updated> logging capabilities in Community Components_
+
 **Logging Requirements** 
 
 The logging setup should capture at minimum:
@@ -390,8 +392,7 @@ Until then, route paths should be:
 
 Further guidance and examples will be added to the API Management Tool documentation as the scheme is finalized. 
 
-> _Route names / naming schemes / hierarchy <- guidance needed on the naming scheme: The URL that someone will use to access e.g. E-SOH data via MeteoGate GW. i.e. meteogate.api.eu/XXX  
-Stuart and Vegar to make a proposal_
+> _<to be updated> Route names / naming schemes / hierarchy <- guidance needed on the naming scheme: The URL that someone will use to access e.g. E-SOH data via MeteoGate GW. i.e. meteogate.api.eu/XXX - Stuart and Vegar to make a proposal_
 
 ### Managing Admin Users 
 
@@ -600,7 +601,7 @@ Reports may include:
 
 Guidelines and templates will be provided by the Programme team. Reports are compiled using monitoring tools and logs (see section: [Monitoring](#monitoring-and-observability))
 
-> _To be updated with any further requirements/guidance from EUMETNET_
+> _<To be updated> with any further requirements/guidance from EUMETNET_
 
 ### Data Management 
 
