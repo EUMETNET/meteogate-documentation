@@ -19,7 +19,7 @@ Open data can be accessed freely, but consumers must follow data usage rights an
   -	Any attempt to gain entry to locked or restricted areas will result in a permanent ban
   -	Any unlawful activity on the website may result in referral to law enforcement agencies.
 
-> Add link. Include data access on API Gateway, Data Supply and Data Explorer.
+> [to be updated] Add link. Include data access on API Gateway, Data Supply and Data Explorer.
 
 ---
 
@@ -35,7 +35,7 @@ The Data Explorer uses metadata and data from Global Discovery Catalogue and Met
 
 When you have found the data that you wish to use, you can copy the appropriate API endpoint URL from Data Explorer and use it to access the data.
 
-> authentication? API Key; add link
+> [to be updated] authentication? API Key; add link
 
 ### Searching the Global Discovery Catalogue
 
@@ -45,7 +45,7 @@ You can search for datasets using keywords, geographic area of interest, tempora
 
 See the Guide to WIS 2.0 for more information on using the Global Discovery Catalogue.
 
-> add link
+> [to be updated]  add link
 
 ### Subscribing to Notifications About Availability of New Data
 
@@ -139,7 +139,7 @@ There are several ways to find the API that can provide data for your needs:
 
 The API base URL looks like this, for example: ```apisixdev.eumetnet-femdi.eumetsat.ewcloud.host/fi/edr```
 
-> Bulk download? different link?
+> [to be updated] Bulk download? different link?
 
 #### How Formulate the Access Request
 
@@ -156,7 +156,7 @@ There are several ways to formulate the access request:
     3. Decide what data you want to get (e.g. collection type, collection, type of data, time, geographic extent, output formats, other parameters)
     4. Formulate the access request by combining the API base URL, collection, and parameters.
 
-> follow formats specified in metadata, e.g. date and time
+> [to be updated] follow formats specified in metadata, e.g. date and time
 
 #### How to Send the Access Request
 
@@ -168,13 +168,13 @@ You can also access data from software code using e.g. Python by sending the acc
 
 In addition, there are specialised software programs that can be used to access and display data. MeteoGate Data Explorer is an example of such a solution.
 
-> add examples. code libraries mentioned?
+> [to be updated]  add examples. code libraries mentioned?
 
 #### How to Use Data
 
 Use data according to terms and conditions and license referred to in the discovery metadata.
 
-> reference to terms of use. what else? how to use in code etc.)
+> [to be updated] reference to terms of use. what else? how to use in code etc.)
 
 #### How to Access Data Supply Components Requiring Authentication
 
@@ -186,4 +186,4 @@ Some Data Supply APIs are not accessed through the MeteoGate API Gateway(s), but
 
 Follow the instructions and documentation available from the particular Data Provider to access these APIs. You should find the required links or information on the Data Provider from the metadata or a landing page available from the API base URL. Some Data Supply components may require authentication.
 
-> to be updated
+> [to be updated] to be updated
