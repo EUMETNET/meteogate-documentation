@@ -211,7 +211,15 @@ Once data has been accessed or retrieved through the MeteoGate system—either v
 - You can automate periodic data pulls using scripts (e.g. Python, R)
 - Example use cases include:
   - Visualising weather station data on a map
-  - Feeding weather data into weather models
+  - Feeding weather data into weather or hydrological models
+  - Monitoring real-time observations (e.g. temperature, precipitation) for decision-making
+  - Supporting early warning systems with live data streams
+  - Performing climate trend analysis using historical datasets
+  - Integrating forecast data into agriculture decision support tools
+  - Powering smart city applications (e.g. air quality, urban flooding risk)
+  - Enhancing maritime or aviation planning with near real-time meteorological inputs
+  - Automating daily or hourly reports with scheduled API queries
+  - Combining data from multiple countries for cross-border analysis or research
 
 #### Developer Support
 
