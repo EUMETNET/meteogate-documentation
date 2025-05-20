@@ -2,7 +2,7 @@
 
 **MeteoGate is a ‘One-Stop Shop’ for discovering and accessing meteorological and hydrological data across Europe.**
   
-It enables National Meteorological and Hydrological Services (NMHSs) to share data openly while retaining full control and ownership. Through a common technical and policy framework, MeteoGate supports both public data access and obligations under EU legislation and the WMO WIS 2.0 initiative. MeteoGate is provided by [EUMETNET](https://www.eumetnet.eu/).
+It enables National Meteorological and Hydrological Services (NMHSs) to share data openly while retaining full control and ownership. Through a common technical and policy framework, MeteoGate supports both public data access and obligations under EU legislation and the WMO WIS 2.0 initiative. MeteoGate is run by [EUMETNET](https://www.eumetnet.eu/).
 
 MeteoGate makes open meteorological and hydrological data freely accessible to all. **Anyone—researchers, developers, institutions, or the general public—can use the data provided through MeteoGate.** Some datasets may require registration, but high-value datasets (HVDs) are accessible without barriers.
 
