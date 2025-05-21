@@ -29,7 +29,7 @@ Data Consumers must agree to the following MeteoGate Terms of Use:
 
 The first step in utilizing MeteoGate to access data is to find data that suits your needs.
 
-###	Using the Data Explorer to discover data
+###	Using the Data Explorer to Discover Data
 
 You can browse and search for datasets available through MeteoGate using the MeteoGate Data Explorer. It is a lightweight web application that can be used to explore the available API endpoints, and the datasets and parameters available through them. The Data Explorer supports both anonymous and authenticated access to data.
 
