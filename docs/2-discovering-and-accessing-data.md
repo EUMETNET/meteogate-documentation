@@ -4,7 +4,7 @@ This section explains how to find and access meteorological and hydrological dat
 
 It describes the tools available for discovering datasets, subscribing to notifications, and retrieving data via APIs. The section also provides guidance on registering as a MeteoGate user, authentication, API Keys, and how to use the data in your own systems or workflows. Whether accessing data through the API Gateway or directly from a Data Supply component, this section will help you to make effective use of MeteoGate’s services.
 
-These instructions are meant for anyone interested in discovering and accessign data through MeteoGate, collectively referred to as **Data Consumers** in MeteoGate terminology.
+These instructions are meant for anyone interested in discovering and accessing data through MeteoGate, collectively referred to as **Data Consumers** in MeteoGate terminology.
 
 ---
 
@@ -184,30 +184,30 @@ Follow the instructions and documentation available from the particular Data Pro
 
 > [to be updated]
 
-## 3 Using Data
+---
 
-### 3. Using Data
+## 3 Using Data
 
 Once data has been accessed or retrieved through the MeteoGate system—either via the API Gateway or directly from a Data Supply component—Data Consumers must ensure that it is used in accordance with applicable policies and licenses.
 
-#### Respect Usage Terms and Licenses
+### Respect Usage Terms and Licenses
 
 - Each dataset includes discovery metadata that specifies its license, access policy, and permitted use.
 - Make sure to check the metadata for license type (e.g. Creative Commons, national open data license) and any conditions set by the Data Owner or Publisher.
 - You are responsible for complying with the stated license terms.
 
-#### Attribution and Reuse
+### Attribution and Reuse
 
 - Cite the data source where required by the license.
 - If modifications are made to the data (e.g., processing, reformatting), clearly indicate that changes have been made, if required by the license.
 
-#### Comply with MeteoGate Terms of Use
+### Comply with MeteoGate Terms of Use
 
 - Follow the [Terms of Use](#) and [Data Governance Policy](#) that outline fair use and responsibilities of Data Consumers.
 - Avoid excessive or abusive automated queries.
 - Do not redistribute restricted data without permission from the Data Owner.
 
-#### Integration into Your Systems
+### Integration into Your Systems
 
 - Data retrieved via the API (e.g. in JSON, GeoJSON format) can be integrated into your workflows, applications, and databases.
 - You can automate periodic data pulls using scripts (e.g. Python, R)
@@ -223,7 +223,7 @@ Once data has been accessed or retrieved through the MeteoGate system—either v
   - Automating daily or hourly reports with scheduled API queries
   - Combining data from multiple countries for cross-border analysis or research
 
-#### Developer Support
+### Developer Support
 
 - Use the Developer Portal to view available routes and manage your API Keys.
 - If you need technical guidance or encounter issues, contact the [MeteoGate Service Desk](#)
