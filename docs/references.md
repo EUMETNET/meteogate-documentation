@@ -63,8 +63,13 @@ This section lists useful references related to MeteoGate.
 
   - [E-SOH Requirements document](https://github.com/EURODEO/e-soh-requirements)
 
+### API Implementation Examples
+
+- [OGC EDR Workshop repository (given as part of the EUMETNET project RODEO)](https://github.com/EUMETNET/ogc-edr-workshop)
+
 ### External Solutions
 
+  - [WMO WIS 2.0 Global Discovery Catalogue]()
   - [WMO Guide to WIS 2.0 (WMO No. 1061)](https://wmoomm.sharepoint.com/:b:/s/wmocpdb/EY_UYn8jVgVOkgXmDZGWr5cB8cb4XN4DlloVlzqcRMjaRA?e=itnKRd)
   - [WMO Manual on WIS 2.0 (WMO No. 1060)](https://wmoomm.sharepoint.com/:b:/s/wmocpdb/ESzGibharYhDu5Gup6V1LDEBJXS1pJbBInb6kqv-GjZjfQ?e=eQi4jS)
   - [WIS2 Cookbook](https://wmo-im.github.io/wis2-cookbook/cookbook/wis2-cookbook-DRAFT.html)
