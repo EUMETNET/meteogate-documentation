@@ -4,7 +4,7 @@ This section explains how to find and access meteorological and hydrological dat
 
 It describes the tools available for discovering datasets, subscribing to notifications, and retrieving data via APIs. The section also provides guidance on registering as a MeteoGate user, authentication, API Keys, and how to use the data in your own systems or workflows. Whether accessing data through the API Gateway or directly from a Data Supply component, this section will help you to make effective use of MeteoGate’s services.
 
-These instructions are meant for anyone interested in discovering and accessign data through MeteoGate, collectively referred to as **Data Consumers** in MeteoGate terminology.
+These instructions are meant for anyone interested in discovering and accessing data through MeteoGate, collectively referred to as **Data Consumers** in MeteoGate terminology.
 
 ---
 
