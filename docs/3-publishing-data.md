@@ -102,7 +102,7 @@ The following are real-world examples of data publication within MeteoGate.
 
   - [OGC EDR Workshop repository (given as part of the EUMETNET project RODEO)](https://github.com/EUMETNET/ogc-edr-workshop) contains example implementations, configuration files, and test data that demonstrate how to publish data using the OGC API - Environmental Data Retrieval (EDR) standard.
 
-  > [to be updated] Add more exampled, ref. to API workshop materials?
+  > [to be updated] Add more examples?
 
 ---
 
