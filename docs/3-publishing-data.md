@@ -79,7 +79,7 @@ Recommended standards:
 
 ## Examples 
 
-The following are real-world examples of successful data publication within MeteoGate.
+The following are real-world examples of data publication within MeteoGate.
 
 <b>Metadata</b> 
 
@@ -407,7 +407,9 @@ MeteoGate does not enforce a specific technical implementation for APIs but prov
 
 Existing APIs implemented with other than MeteoGate-recommended technologies can still be valid if they include the necessary metadata and notification mechanisms. 
 
-For further API implementation guidance, refer to [OGC Developer Portal](https://developer.ogc.org), [OGC E-learning materials](https://opengeospatial.github.io/e-learning/index.html) and [OGC EDR tutorial](https://ogcapi-workshop.ogc.org/api-deep-dive/environmental-data-retrieval/), which provide documentation., tutorials, examples, and best practices for OGC API standards, including OGC API-EDR. Also, the [STAC website](https://stacspec.org/en/) provides tutorials and other developer resources. 
+For further API implementation guidance, refer to [OGC Developer Portal](https://developer.ogc.org), [OGC E-learning materials](https://opengeospatial.github.io/e-learning/index.html) and [OGC EDR tutorial](https://ogcapi-workshop.ogc.org/api-deep-dive/environmental-data-retrieval/), which provide documentation, tutorials, examples, and best practices for OGC API standards, including OGC API-EDR. Also, the [STAC website](https://stacspec.org/en/) provides tutorials and other developer resources.
+
+The [OGC EDR Workshop repository](https://github.com/EUMETNET/ogc-edr-workshop) contains example implementations, configuration files, and test data that demonstrate how to publish data using the OGC API - Environmental Data Retrieval (EDR) standard.  It is recommended for Data Publishers looking to understand and test EDR-based APIs in a MeteoGate-compatible setup.
 
 **Recommendations**
 
