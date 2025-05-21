@@ -8,7 +8,7 @@ This section introduces MeteoGate and provides a high-level understanding of the
 MeteoGate is a ‘One-Stop Shop’ for meteorological and hydrological products and data. It provides an integrated view of all data available through MeteoGate, and the ability to access it in a simple, consistent way.
 MeteoGate helps NMHSs make their data and data products discoverable and accessible while complying with:
 
-  - WMO WIS2.0 inter-governmental agreements
+  - WMO WIS 2.0 inter-governmental agreements
   - EU’s Open Data Directive
   - EU High Value Datasets Regulation
   - National Open Data requirements
