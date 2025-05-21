@@ -63,6 +63,10 @@ This section lists useful references related to MeteoGate.
 
   - [E-SOH Requirements document](https://github.com/EURODEO/e-soh-requirements)
 
+### API Implementation Examples
+
+- [OGC EDR Workshop repository (given as part of the EUMETNET project RODEO)](https://github.com/EUMETNET/ogc-edr-workshop)
+
 ### External Solutions
 
   - [WMO WIS 2.0 Global Discovery Catalogue]()
