@@ -81,27 +81,26 @@ Recommended standards:
 
 The following are real-world examples of data publication within MeteoGate.
 
-<b>Metadata</b> 
+### Metadata
 
-[E-SOH discovery metadata](https://observations.eumetnet.eu/collections/observations/dataset)
+  - [E-SOH discovery metadata](https://observations.eumetnet.eu/collections/observations/dataset)
+  - [KNMI discovery metadata](https://tlnt19059.sharepoint.com/sites/FEMDI/_layouts/15/download.aspx?UniqueId=6a0407399d65402b8d18c2ef82ac1c06&e=UFaGwI) 
 
-[KNMI discovery metadata](https://tlnt19059.sharepoint.com/sites/FEMDI/_layouts/15/download.aspx?UniqueId=6a0407399d65402b8d18c2ef82ac1c06&e=UFaGwI) 
+### Notifications
 
-<b>Notifications</b>
+  - [WMO notification examples](https://schemas.wmo.int/wnm/1.0.0/examples) 
 
-[WMO notification examples](https://schemas.wmo.int/wnm/1.0.0/examples) 
+### APIs
 
-<b>APIs</b> 
+  - [DMI’s EDR API](https://opendatadocs.dmi.govcloud.dk/en/APIs/Forecast_Data_EDR_API) 
+  - [DMI’s STAC API](https://opendatadocs.dmi.govcloud.dk/en/APIs/Forecast_Data_STAC-API) 
+  - [FMI’s EDR API](https://opendata.fmi.fi/edr/collections) 
+  - [KNMI’s EDR API](https://developer.dataplatform.knmi.nl/edr-api)  
+  - [MeteoSwiss STAC API](https://github.com/MeteoSwiss/opendata)
 
-[DMI’s EDR API](https://opendatadocs.dmi.govcloud.dk/en/APIs/Forecast_Data_EDR_API) 
+### Additional Resources
 
-[DMI’s STAC API](https://opendatadocs.dmi.govcloud.dk/en/APIs/Forecast_Data_STAC-API) 
-
-[FMI’s EDR API](https://opendata.fmi.fi/edr/collections) 
-
-[KNMI’s EDR API](https://developer.dataplatform.knmi.nl/edr-api)  
-
-[MeteoSwiss STAC API](https://github.com/MeteoSwiss/opendata)
+  - [OGC EDR Workshop repository (given as part of the EUMETNET project RODEO)](https://github.com/EUMETNET/ogc-edr-workshop) contains example implementations, configuration files, and test data that demonstrate how to publish data using the OGC API - Environmental Data Retrieval (EDR) standard.
 
   > [to be updated] Add more exampled, ref. to API workshop materials?
 
@@ -409,7 +408,7 @@ Existing APIs implemented with other than MeteoGate-recommended technologies can
 
 For further API implementation guidance, refer to [OGC Developer Portal](https://developer.ogc.org), [OGC E-learning materials](https://opengeospatial.github.io/e-learning/index.html) and [OGC EDR tutorial](https://ogcapi-workshop.ogc.org/api-deep-dive/environmental-data-retrieval/), which provide documentation, tutorials, examples, and best practices for OGC API standards, including OGC API-EDR. Also, the [STAC website](https://stacspec.org/en/) provides tutorials and other developer resources.
 
-The [OGC EDR Workshop repository](https://github.com/EUMETNET/ogc-edr-workshop) contains example implementations, configuration files, and test data that demonstrate how to publish data using the OGC API - Environmental Data Retrieval (EDR) standard.  It is recommended for Data Publishers looking to understand and test EDR-based APIs in a MeteoGate-compatible setup.
+The [OGC EDR Workshop repository (given as part of the EUMETNET project RODEO)](https://github.com/EUMETNET/ogc-edr-workshop) contains example implementations, configuration files, and test data that demonstrate how to publish data using the OGC API - Environmental Data Retrieval (EDR) standard.  It is recommended for Data Publishers looking to understand and test EDR-based APIs in a MeteoGate-compatible setup.
 
 **Recommendations**
 
