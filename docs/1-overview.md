@@ -133,8 +133,7 @@ vii.	**Request data**: Using information provided in the discovery metadata, the
 
 viii.	**Proxied access**: The API Gateway proxies access to connected Data Supply services. The user can then utilise the data in their own applications. 
 
-> [!NOTE]  
-> Using the API Gateway is optional for the Data Publisher. They can also publish the data directly from the Data Supply (for example, if the dataset is very large or if the Data Publisher already has API Management implemented as part of their Data Supply capability).
+ℹ️ **Note:** Using the API Gateway is optional for the Data Publisher. They can also publish the data directly from the Data Supply (for example, if the dataset is very large or if the Data Publisher already has API Management implemented as part of their Data Supply capability).
 
   ix.	**Insights service**: Community Capability Operators and other stakeholders can use the Insights service in the API Gateway to monitor data discovery and use. For example, they can observe how the data is passing through the system to be able to address any issues.
 
