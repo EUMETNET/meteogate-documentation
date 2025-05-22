@@ -74,7 +74,7 @@ This section lists useful references related to MeteoGate.
 ### WMO Solutions
 
   - [WMO WIS 2.0 Global Discovery Catalogue]()
-  - [WMO Guide to WIS 2.0 (WMO No. 1061)][(https://community.wmo.int/en/activity-areas/wis/publications/1061-vII)
+  - [WMO Guide to WIS 2.0 (WMO No. 1061)](https://community.wmo.int/en/activity-areas/wis/publications/1061-vII)
   - [WMO Manual on WIS 2.0 (WMO No. 1060)](https://community.wmo.int/en/activity-areas/wis/publications/1060-vII)
   - [WIS2 Cookbook](https://wmo-im.github.io/wis2-cookbook/cookbook/wis2-cookbook-DRAFT.html)
   - [WIS2 in a box](https://community.wmo.int/en/activity-areas/wis/wis2box)
