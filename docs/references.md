@@ -47,8 +47,8 @@ This section lists useful references related to MeteoGate.
   - [EU Commission Implementing Regulation 2023/138 on High Value Datasets](https://eur-lex.europa.eu/eli/reg_impl/2023/138/oj)
   - [EU INSPIRE Directive (2007/2)](http://data.europa.eu/eli/dir/2007/2/oj)
   - [EU Open Data Directive (2019/1024)](http://data.europa.eu/eli/dir/2019/1024/oj)
-  - [Data Governance Act?]()
-  - [Interoperable Europe Act?]()
+  - [EU Data Governance Act (2022/868)](http://data.europa.eu/eli/reg/2022/868/oj)
+  - [EU Interoperable Europe Act (2024/903)](http://data.europa.eu/eli/reg/2024/903/oj)
   - [Design Principles for Data Spaces](https://design-principles-for-data-spaces.org/)
 
 ### MeteoGate Community Component Repositories and Developer Docs
