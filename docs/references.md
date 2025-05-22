@@ -71,7 +71,7 @@ This section lists useful references related to MeteoGate.
 
 - [OGC EDR Workshop repository (given as part of the EUMETNET project RODEO)](https://github.com/EUMETNET/ogc-edr-workshop)
 
-### External Solutions
+### WMO Solutions
 
   - [WMO WIS 2.0 Global Discovery Catalogue]()
   - [WMO Guide to WIS 2.0 (WMO No. 1061)](https://wmoomm.sharepoint.com/:b:/s/wmocpdb/EY_UYn8jVgVOkgXmDZGWr5cB8cb4XN4DlloVlzqcRMjaRA?e=itnKRd)
