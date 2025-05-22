@@ -66,7 +66,7 @@ Compliance is ensured through:
   - [EU Open Data Directive (2019/1024)](http://data.europa.eu/eli/dir/2019/1024/oj)
   - [EU INSPIRE Directive (2007/2)](http://data.europa.eu/eli/dir/2007/2/oj)
   - [WMO Manual on WIS 2.0 (WMO No. 1060)](https://community.wmo.int/en/activity-areas/wis/publications/1060-vII)
-  - [WMO Guide to WIS 2.0 (WMO No. 1061)][(https://community.wmo.int/en/activity-areas/wis/publications/1061-vII)
+  - [WMO Guide to WIS 2.0 (WMO No. 1061)](https://community.wmo.int/en/activity-areas/wis/publications/1061-vII)
   - [WMO Manual on Codes (WMO No. 306)](https://community.wmo.int/en/activity-areas/wis/publications/306-vI.2)
 
 Recommended standards:
