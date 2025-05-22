@@ -75,9 +75,9 @@ This section lists useful references related to MeteoGate.
 
   - [WMO WIS 2.0 Global Discovery Catalogue]()
   - [WMO Guide to WIS 2.0 (WMO No. 1061)](https://wmoomm.sharepoint.com/:b:/s/wmocpdb/EY_UYn8jVgVOkgXmDZGWr5cB8cb4XN4DlloVlzqcRMjaRA?e=itnKRd)
-  - [WMO Manual on WIS 2.0 (WMO No. 1060)](https://wmoomm.sharepoint.com/:b:/s/wmocpdb/ESzGibharYhDu5Gup6V1LDEBJXS1pJbBInb6kqv-GjZjfQ?e=eQi4jS)
+  - [WMO Manual on WIS 2.0 (WMO No. 1060)](https://library.wmo.int/viewer/68731/download?file=WMO-1060-vII-2023-Upd-2024_en.pdf&type=pdf&navigator=1)
   - [WIS2 Cookbook](https://wmo-im.github.io/wis2-cookbook/cookbook/wis2-cookbook-DRAFT.html)
-  - [WIS2 in a box](https://community.wmo.int/en/wis2box)
+  - [WIS2 in a box](https://community.wmo.int/en/activity-areas/wis/wis2box)
   - [WIS 2.0 Discovery Metadata Project Report](https://wmo-im.github.io/wis2-metadata-search)
 
 ### Relevant Standards
