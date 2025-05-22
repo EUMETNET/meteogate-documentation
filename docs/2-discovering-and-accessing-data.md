@@ -229,6 +229,6 @@ Once data has been accessed or retrieved through the MeteoGate system—either v
 - If you need technical guidance or encounter issues, contact the [MeteoGate Service Desk](#)
 - If you have questions about a specific dataset, contact the appropriate Data Publisher.
 
-> ℹ️ **Note:** Some datasets may be updated or deprecated over time. Always check for the latest metadata and availability status.
+ℹ️ ***Note:*** Some datasets may be updated or deprecated over time. Always check for the latest metadata and availability status.
 
 > [to be updated] if required, e.g. more detaield instructions.)
