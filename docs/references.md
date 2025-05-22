@@ -61,7 +61,11 @@ This section lists useful references related to MeteoGate.
 
 ### MeteoGate HVD Services
 
-  - [E-SOH Requirements document](https://github.com/EURODEO/e-soh-requirements)
+  - [Land-based surface observations](https://observations.eumetnet.eu/) (E-SOH)
+  - [E-SOH Requirements document](https://github.com/EURODEO/e-soh-requirements)  
+  - [Radar](https://github.com/EURODEO/openradardata-requirements/blob/main/Deliverable_Requirements.md)    
+  - [Climate](https://github.com/EUMETNET/ogc-edr-workshop) 
+  - [Warnings](https://meteoalarm.org/en/live/page/redistribution-hub#list)
 
 ### API Implementation Examples
 
