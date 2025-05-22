@@ -58,16 +58,16 @@ MeteoGate aligns with:
 It integrates with:
 
   - WIS2 Global Broker
-  - Global Discovery Catalogue
+  - WIS2 Global Discovery Catalogue
 
 Compliance is ensured through:
 
-  - EU Commission Implementing Regulation 2023/138
-  - EU Open Data Directive (2019/1024)
-  - EU INSPIRE Directive (2007/2)
-  - WMO Manual on WIS 2.0
-  - Guide to WIS 2.0
-  - WMO Manual on Codes (WMO No. 306)
+  - [EU Commission Implementing Regulation 2023/138 on High Value Datasets](http://data.europa.eu/eli/reg_impl/2023/138/oj)
+  - [EU Open Data Directive (2019/1024)](http://data.europa.eu/eli/dir/2019/1024/oj)
+  - [EU INSPIRE Directive (2007/2)](http://data.europa.eu/eli/dir/2007/2/oj)
+  - [WMO Manual on WIS 2.0 (WMO No. 1060)](https://community.wmo.int/en/activity-areas/wis/publications/1060-vII)
+  - [WMO Guide to WIS 2.0 (WMO No. 1061)][(https://community.wmo.int/en/activity-areas/wis/publications/1061-vII)
+  - [WMO Manual on Codes (WMO No. 306)](https://community.wmo.int/en/activity-areas/wis/publications/306-vI.2)
 
 Recommended standards:
 
@@ -329,7 +329,7 @@ Discovery metadata enables users to find and access datasets through MeteoGate�
 
 Recommendations
 
-  - Comply with WMO Core Metadata Profile (WCMP2), GeoJSON, [OGC API – Records](https://ogcapi.ogc.org/records/), and WMO-specific attributes. Refer to Appendix F of the [WIS2 Manual](https://library.wmo.int/viewer/68731/) for more details on WCMP2 compliance 
+  - Comply with WMO Core Metadata Profile (WCMP2), GeoJSON, [OGC API – Records](https://ogcapi.ogc.org/records/), and WMO-specific attributes. Refer to Appendix F of the [WIS2 Manual](https://community.wmo.int/en/activity-areas/wis/publications/1060-vII) for more details on WCMP2 compliance 
   - Clearly describe the dataset by defining its content, purpose, and scope, including data collection and processing methods. 
   - Provide essential metadata elements, such as title, author, creation date, and keywords, to improve searchability and user understanding. 
   - Ensure accuracy and consistency by maintaining a standard terminology and formatting approach. 
@@ -396,7 +396,7 @@ Beyond facilitating data access, Data Supply includes functionalities such as me
 **Recommendations** 
 
 A free and open-source reference implementation, [WIS2 in a Box](https://community.wmo.int/en/activity-areas/wis/wis2box), is available for WIS2-compliant Data Supply and is fully compatible with MeteoGate. 
-See the [WMO Manual on WIS 2.0](https://library.wmo.int/records/item/68731-manual-on-the-wmo-information-system-volume-ii-wmo-information-system-2-0) and [Guide to WIS 2.0](https://community.wmo.int/en/activity-areas/wis/publications/1061-vII) for more information on publishing data according to the WMO requirements. 
+See the [WMO Manual on WIS 2.0](https://community.wmo.int/en/activity-areas/wis/publications/1060-vII) and [Guide to WIS 2.0](https://community.wmo.int/en/activity-areas/wis/publications/1061-vII) for more information on publishing data according to the WMO requirements. 
 
 ### Deploying APIs  
 
@@ -413,7 +413,7 @@ The [OGC EDR Workshop repository (given as part of the EUMETNET project RODEO)](
 **Recommendations**
 
   - Use [OGC API - Environmental Data Retrieval (EDR)](https://ogcapi.ogc.org/edr/) for interactive APIs. Enables seamless visualisation in MeteoGate Data Explorer, integration with HVD services, and interoperability across MeteoGate users. 
-  - Use the restrictive [EDR profile](https://github.com/EURODEO/rodeo-edr-profile) to ensure consistency across implementations.  
+  - Use the [restrictive EDR profile](https://github.com/EURODEO/rodeo-edr-profile) to ensure consistency across implementations.  
   - Use SpatioTemporal Asset Catalog (STAC) for pre-packaged data. STAC provides a standardised approach for organising and cataloguing spatiotemporal datasets, making data more discoverable and accessible. STAC API enables structured access to metadata and assets, allowing users to efficiently browse, query, and retrieve datasets. This is particularly useful for satellite data, climate archives, and other large geospatial datasets. 
   - Support RESTful API principles with resource-based URL structures and appropriate HTTP methods (GET, POST, etc.). 
   - Ensure compatibility with WMO WIS2 metadata standards (WCMP2), including embedding metadata in API responses where needed. 
@@ -447,7 +447,7 @@ Data Publishers shall generate and publish notifications, first on the Data Supp
 
 Notifications use the Message Broker Protocol (MQTT 3.1 or MQTT 5) and follow the WMO Notification Message Format (GeoJSON) with a structured topic hierarchy. Event-driven triggers, like data updates or file arrivals, can automate notification publishing. 
 
-For implementation guidance and examples, refer to Appendix E in the[ Manual on WIS 2.0](https://library.wmo.int/idurl/4/68731) or [WMO WIS2 Notification Message Encoding](https://wmo-im.github.io/wis2-notification-message/standard/wis2-notification-message-STABLE.html), and the [WIS2 Cookbook](https://wmo-im.github.io/wis2-cookbook/cookbook/wis2-cookbook-DRAFT.html) for validation and access control instructions. Notifications can be published using existing infrastructure or open-source message brokers like [Eclipse Mosquitto](https://mosquitto.org/). 
+For implementation guidance and examples, refer to Appendix E in the[ Manual on WIS 2.0](https://community.wmo.int/en/activity-areas/wis/publications/1060-vII) or [WMO WIS2 Notification Message Encoding](https://wmo-im.github.io/wis2-notification-message/standard/wis2-notification-message-STABLE.html), and the [WIS2 Cookbook](https://wmo-im.github.io/wis2-cookbook/cookbook/wis2-cookbook-DRAFT.html) for validation and access control instructions. Notifications can be published using existing infrastructure or open-source message brokers like [Eclipse Mosquitto](https://mosquitto.org/). 
 
 ### Testing and Validating Data Supply 
 
@@ -475,11 +475,11 @@ The first step to on-board a Data Supply service in MeteoGate is to register the
 
 As an example, if MetNorway want to publish data on snow depth, with the technical components hosted on the ECMWF’s European Weather Cloud region in Bologna, the relevant country is Norway rather than Italy. 
 
-Full details of that process are described in the [Guide to WIS 2.0, section 2.6 Implementation and operation of a WIS2 Node](https://library.wmo.int/viewer/69130/?offset=#page=28&viewer=picture&o=bookmark&n=0&q=).  
+Full details of that process are described in the [Guide to WIS 2.0, section 2.6 Implementation and operation of a WIS2 Node](https://community.wmo.int/en/activity-areas/wis/publications/1061-vII).  
 
 **Registering a centre-id** 
 
-Registration of a WIS2 Node requires the designation of a “centre-id” - a mandatory field in the discovery metadata. A centre-id is proposed by the provider of the MeteoGate Data Supply service and endorsed by the WMO Secretariat. It is a single identifier consisting of a top-level domain (TLD) and a centre name and represents the data publisher, distributor or issuing centre of a given dataset or data product/granule (see the [Manual on WIS](https://library.wmo.int/idurl/4/68731), Volume II – Appendix D. WIS2 Topic Hierarchy).  
+Registration of a WIS2 Node requires the designation of a “centre-id” - a mandatory field in the discovery metadata. A centre-id is proposed by the provider of the MeteoGate Data Supply service and endorsed by the WMO Secretariat. It is a single identifier consisting of a top-level domain (TLD) and a centre name and represents the data publisher, distributor or issuing centre of a given dataset or data product/granule (see the [Manual on WIS](https://community.wmo.int/en/activity-areas/wis/publications/1060-vII), Volume II – Appendix D. WIS2 Topic Hierarchy).  
  
 For example, **uk-metoffice-nmc** would represent the National Meteorological Centre (NMC) operated by Met Office, the United Kingdom’s National Meteorological service.   
 When providing a Data Supply service on behalf of a EUMETNET Programme (HVD Service), a new center_id can be registered which may include all underlying topics without having to move or change anything.  
@@ -491,7 +491,7 @@ This way searching for topics in all *.eumetnet centers will give the same resul
 
 Complex Data Supply services using multiple message brokers may require more than one centre-id to be registered. In such cases, please get in touch with the MeteoGate Service Desk or the WIS NFP for more guidance. 
 
-For more information, please refer to the [WIS2 Guide, section 2.6.1.2](https://library.wmo.int/viewer/69130/?offset=#page=31&viewer=picture&o=bookmark&n=0&q=) Guidance on assigning a centre identifier for a WIS2 Node. 
+For more information, please refer to the [WIS2 Guide, section 2.6.1.2](https://community.wmo.int/en/activity-areas/wis/publications/1061-vII) Guidance on assigning a centre identifier for a WIS2 Node. 
 
 ### Assessing and accepting the WIS2 Node 
 
@@ -503,7 +503,7 @@ The WIS NFP should coordinate with the relevant GISC when registering the WIS2 N
   - **GISC-Toulouse**: France (& Clipperton, French Guyana, Guadeloupe, St Martin, St Barthelemy, Kerguelen Islands, La Reunion, Martinique, St Pierre & Miquelon, Wallis & Futuna) + Algeria, Belgium, Luxemberg, Monaco, Portugal, Spain  
   - **GISC-Exeter**: UK (& British Antarctic Survey, Ascension, Bermuda, Gibraltar, Pitcairn Islands, St Helena) + ECMWF, Ireland, Iceland, Netherlands, Tanzania 
 
-The GISC will also be able to provide guidance on choosing the right WMO Data Policy (Core or Recommended), and if needed, the WIS2 topic(s) for notification messages. For more info, see [Manual on WIS, Volume II – Appendix D. WIS2 Topic Hierarchy](https://library.wmo.int/idurl/4/68731). 
+The GISC will also be able to provide guidance on choosing the right WMO Data Policy (Core or Recommended), and if needed, the WIS2 topic(s) for notification messages. For more info, see [Manual on WIS, Volume II – Appendix D. WIS2 Topic Hierarchy](https://community.wmo.int/en/activity-areas/wis/publications/1060-vII). 
 
 ### Integrating the Data Supply with MeteoGate and WIS2 components 
 
@@ -515,10 +515,11 @@ The integration process depends on the chosen Data Publishing Pattern and involv
   > [to be updated] 
   - **Pattern 2**: Managed and Proxied Access Through MeteoGate API Gateway 
     - Register the APIs with the MeteoGate API Gateway. This can be done via:
-       - Self-service (preferred): Ask the MeteoGate Service Desk for permissions to the designated repository (https://github.com/EURODEO/api-management-tool-poc/) Complete the YAML configuration and create a pull request to onboard the API 
+       - Self-service (preferred): Ask the MeteoGate Service Desk for permissions to the [designated repository](https://github.com/EURODEO/api-management-tool-poc) Complete the YAML configuration and create a pull request to onboard the API 
       - Service: Send your API root URL to the MeteoGate Service Desk and request to onboard the API. _Contact details TBA_ 
       - Once the configuration is complete, this will provide the URL for accessing the Data Supply service. This URL will be included in the discovery metadata describing the Data Supply service.
-    - Create the discovery metadata and publish into WIS2 - _More instructions TBA_
+    - Create the discovery metadata and publish into WIS2
+  > [to be updated ] More instructions TBA
   - **Pattern 3**: Direct Access
     - Ensure integration with WMO WIS2 components, including metadata sharing and notifications, by repeating the WIS2 related steps above. 
 
@@ -542,7 +543,8 @@ WMO members are expected to meet relevant data quality standards, including:
 
   - [WMO Integrated Global Observing System (WIGOS) Manual (2023)](https://community.wmo.int/en/activity-areas/WIGOS)  
   - [WMO Integrated Processing and Prediction System (WIPPS) Manual (2023)](https://community.wmo.int/en/activity-areas/wmo-integrated-processing-and-prediction-system-wipps)   
-  - EUCOS Performance Standards _<link?>_
+  - EUCOS Performance Standards
+> [to be uodated] <link?>
 
 **Data Governance** 
 
