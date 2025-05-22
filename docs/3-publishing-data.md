@@ -138,7 +138,7 @@ EUMETNET currently has the following HVD services available:
   - [Climate](https://github.com/EUMETNET/ogc-edr-workshop) 
   - [Warnings](https://meteoalarm.org/en/live/page/redistribution-hub#list)
 
-> ℹ️ **Note:** Check specific integration requirements and instructions from the respective HVD service links.
+ℹ️ ***Note:*** Check specific integration requirements and instructions from the respective HVD service links.
 
 This pattern is appropriate for the following situations​: 
 
