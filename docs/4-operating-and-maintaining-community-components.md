@@ -347,6 +347,7 @@ Onboarding an API follows the below process:
  
   2. Gateway Configuration - YAML File 
     - Add the following configuration to the YAML file:
+
 ```
 id: xxx                         #replace with your own descriptive and unique id 
 version: 1.0.0 
@@ -639,6 +640,7 @@ Community Capability Operators must:
 For more detailed definitions of roles and responsibilities related to data handling, publication, and ownership, refer to the [MeteoGate Data Governance Policy](https://tlnt19059.sharepoint.com/:w:/r/sites/FEMDI/ET%20FEMDI/ET%20Working%20folder/Operating%20Model/Data%20governance%20policy.docx?d=wb938b06e5b694bf1914c4202ee6aaa8a&csf=1&web=1&e=AH2lgh).
 
 > _[to be updated]_
+
 
 
 
