@@ -44,11 +44,11 @@ This section lists useful references related to MeteoGate.
 
 ### EU Directives and Policies
 
-  - [EU Commission Implementing Regulation 2023/138 on High Value Datasets](https://eur-lex.europa.eu/eli/reg_impl/2023/138/oj)
-  - [EU INSPIRE Directive (2007/2)](http://data.europa.eu/eli/dir/2007/2/oj)
+  - [EU Commission Implementing Regulation 2023/138 on High Value Datasets](http://data.europa.eu/eli/reg_impl/2023/138/oj)
   - [EU Open Data Directive (2019/1024)](http://data.europa.eu/eli/dir/2019/1024/oj)
-  - [Data Governance Act?]()
-  - [Interoperable Europe Act?]()
+  - [EU INSPIRE Directive (2007/2)](http://data.europa.eu/eli/dir/2007/2/oj)
+  - [EU Data Governance Act (2022/868)](http://data.europa.eu/eli/reg/2022/868/oj)
+  - [EU Interoperable Europe Act (2024/903)](http://data.europa.eu/eli/reg/2024/903/oj)
   - [Design Principles for Data Spaces](https://design-principles-for-data-spaces.org/)
 
 ### MeteoGate Community Component Repositories and Developer Docs
@@ -61,25 +61,30 @@ This section lists useful references related to MeteoGate.
 
 ### MeteoGate HVD Services
 
-  - [E-SOH Requirements document](https://github.com/EURODEO/e-soh-requirements)
+  - [Land-based surface observations](https://observations.eumetnet.eu/) (E-SOH)
+  - [E-SOH Requirements document](https://github.com/EURODEO/e-soh-requirements)  
+  - [Radar](https://github.com/EURODEO/openradardata-requirements/blob/main/Deliverable_Requirements.md)    
+  - [Climate](https://github.com/EUMETNET/ogc-edr-workshop) 
+  - [Warnings](https://meteoalarm.org/en/live/page/redistribution-hub#list)
 
 ### API Implementation Examples
 
 - [OGC EDR Workshop repository (given as part of the EUMETNET project RODEO)](https://github.com/EUMETNET/ogc-edr-workshop)
 
-### External Solutions
+### WMO Solutions
 
   - [WMO WIS 2.0 Global Discovery Catalogue]()
-  - [WMO Guide to WIS 2.0 (WMO No. 1061)](https://wmoomm.sharepoint.com/:b:/s/wmocpdb/EY_UYn8jVgVOkgXmDZGWr5cB8cb4XN4DlloVlzqcRMjaRA?e=itnKRd)
-  - [WMO Manual on WIS 2.0 (WMO No. 1060)](https://wmoomm.sharepoint.com/:b:/s/wmocpdb/ESzGibharYhDu5Gup6V1LDEBJXS1pJbBInb6kqv-GjZjfQ?e=eQi4jS)
+  - [WMO Guide to WIS 2.0 (WMO No. 1061)](https://community.wmo.int/en/activity-areas/wis/publications/1061-vII)
+  - [WMO Manual on WIS 2.0 (WMO No. 1060)](https://community.wmo.int/en/activity-areas/wis/publications/1060-vII)
   - [WIS2 Cookbook](https://wmo-im.github.io/wis2-cookbook/cookbook/wis2-cookbook-DRAFT.html)
-  - [WIS2 in a box](https://community.wmo.int/en/wis2box)
+  - [WIS2 in a box](https://community.wmo.int/en/activity-areas/wis/wis2box)
   - [WIS 2.0 Discovery Metadata Project Report](https://wmo-im.github.io/wis2-metadata-search)
 
 ### Relevant Standards
 
   - [Discovery Metadata Vocabulary](https://wiki.esipfed.org/Attribute_Convention_for_Data_Discovery_1-3)
   - [FAIR Principles](https://www.go-fair.org/fair-principles/)
+  - [JSON-LD](https://www.w3.org/TR/json-ld11/)
   - [OpenAPI Specification](https://www.openapis.org/)
   - [OGC API](https://ogcapi.ogc.org/)
   - [OGC API – EDR](https://ogcapi.ogc.org/edr/)
@@ -89,5 +94,8 @@ This section lists useful references related to MeteoGate.
   - [SpatioTemporal Asset Catalog (STAC)](https://stacspec.org/en/)
   - [WIS2 Notification Message Encoding](https://github.com/wmo-im/wis2-notification-message)
   - [WMO Core Metadata Profile 2 (WCMP2)](https://github.com/wmo-im/wcmp2)
+  - [WMO Integrated Global Observing System (WIGOS) Manual (2023)](https://community.wmo.int/en/activity-areas/WIGOS)  
+  - [WMO Integrated Processing and Prediction System (WIPPS) Manual (2023)](https://community.wmo.int/en/activity-areas/wmo-integrated-processing-and-prediction-system-wipps)
+  - [WMO Manual on Codes (WMO No. 306)](https://community.wmo.int/en/activity-areas/wis/publications/306-vI.2)
   - [WCMP2 Specification](https://wmo-im.github.io/wcmp2/)
   - [WCMP2 Metadata Examples](http://github.com/wmo-im/wcmp2/tree/main/examples)
