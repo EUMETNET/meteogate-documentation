@@ -90,7 +90,7 @@ The guidance covers infrastructure provisioning with Infrastructure as Code (IaC
 
 It aligns with MeteoGate Quality-of-Service and cybersecurity requirements and complements related documentation in GitHub repositories and GeoWeb platform.
 
-_Data Explorer info to be added_
+> [Data Explorer info to be added]
 
 ### Setting Up Infrastructure 
 
@@ -640,3 +640,4 @@ Community Capability Operators must:
 For more detailed definitions of roles and responsibilities related to data handling, publication, and ownership, refer to the [MeteoGate Data Governance Policy](https://tlnt19059.sharepoint.com/:w:/r/sites/FEMDI/ET%20FEMDI/ET%20Working%20folder/Operating%20Model/Data%20governance%20policy.docx?d=wb938b06e5b694bf1914c4202ee6aaa8a&csf=1&web=1&e=AH2lgh).
 
 > _[to be updated]_
+
