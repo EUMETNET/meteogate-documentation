@@ -31,8 +31,8 @@ The following MeteoGate documents are available:
 This section includes links to MeteoGate GUIs, support, and information pages.
 
   - [MeteoGate Landing Page]()
-  - [MeteoGate Documentation](https://github.com/EUMETNET/meteogate-documentation) (this document)
-  - [MeteoGate Data Explorer]()
+  - [MeteoGate Documentation](https://eumetnet.github.io/meteogate-documentation) (this document)
+  - [MeteoGate Data Explorer](https://explorer.meteogate.eu)
   - [MeteoGate Developer Portal]()
   - [MeteoGate Service Desk]()
 
