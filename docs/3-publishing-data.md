@@ -16,7 +16,7 @@ In MeteoGate, a **Data Supply** is the technical component used to share, manage
 
 A **Data Publisher** deploys a Data Supply to make datasets available through MeteoGate.
 
-More details on architecture and integration options can be found in the [MeteoGate Overview](../1-overview/).
+More details on architecture and integration options can be found in the [MeteoGate Overview](1-overview.md).
 
 ## Roles in the Data Publishing Process
 
@@ -102,7 +102,7 @@ _<to be updated>_
 
 ---
 
-## Start Here—Steps to Publish Data Through MeteoGate
+## Start Here – Steps to Publish Data Through MeteoGate
 
 ### Step 1: Select data publishing pattern(s) and deployment environment
 The choice between using a MeteoGate HVD service, the API Gateway, or direct access affects design choices and deployment. The deployment platform – whether EWC, public cloud, or on-premises – should align with data access needs and cost considerations. Establish rate limits and potentially access control to ensure efficient resource use and fair access. 
@@ -514,12 +514,9 @@ The integration process depends on the chosen Data Publishing Pattern and involv
       - Onboarding to E-SOH
       - Onboarding to Radar
       - Onboarding to Climate
-    - Ensure metadata and notifications are configured according to HVD service requirements.
   > [to be updated] 
   - **Pattern 2**: Managed and Proxied Access Through MeteoGate API Gateway 
-    - Register the APIs with the MeteoGate API Gateway. This can be done via:
-      - Self-service (preferred): Ask the MeteoGate Service Desk for permissions to the [designated repository](https://github.com/EURODEO/api-management-tool-poc) Complete the YAML configuration and create a pull request to onboard the API 
-      - Service: Send your API root URL to the MeteoGate Service Desk and request to onboard the API. _Contact details TBA_ 
+    - Register the APIs with the MeteoGate API Gateway. This can be done via Service Desk. Send your API root URL to the MeteoGate Service Desk and request to onboard the API. _Contact details TBA_ 
       - Once the configuration is complete, this will provide the URL for accessing the Data Supply service. This URL will be included in the discovery metadata describing the Data Supply service.
     - Create the discovery metadata and publish into WIS2
   > [to be updated ] More instructions TBA
