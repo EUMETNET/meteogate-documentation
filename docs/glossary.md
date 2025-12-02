@@ -46,7 +46,7 @@ Environmental Data Retrieval – an OGC API standard for accessing environmental
 European Meteorological Infrastructure.
 
 **E-SOH**  
-EUMETNET Supplementary Observations dataHub – system for sharing real-time observations in line with WIS 2.0 and EU regulation on Meteorological High Value Data (HVD).
+EUMETNET Supplementary Observations dataHub – system for sharing high temporal and spatial resolution near real-time observations from land surface weather stations in line with WIS 2.0 and EU regulation on Meteorological High Value Data (HVD).
 
 **EUMETNET**  
 A network of 31 European NMHSs.
@@ -85,4 +85,4 @@ Graphical User Interface – visual interface to interact with information syste
 High Value Datasets – EU-defined meteorological datasets including observations, climate, radar, NWP, and warnings.
 
 **HVD Services**  
-Centrally operated MeteoGate services for distributing EU High Value Datasets (e.g. E-SOH, Radar, Climate). *<To be further defined>*
+Centrally operated MeteoGate services for distributing EU High Value Datasets (e.g. Land surface stations (E-SOH), Weather Radar, Climate). *<To be further defined>*
