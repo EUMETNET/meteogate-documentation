@@ -134,7 +134,7 @@ Data Publishers integrate their Data Supply components to a MeteoGate HVD servic
 EUMETNET currently has the following HVD services available:  
 
   - [Land-based surface observations](https://observations.eumetnet.eu/) (E-SOH)  
-  - [Radar](https://github.com/EURODEO/openradardata-requirements/blob/main/Deliverable_Requirements.md)    
+  - [EUMETNET OPERA weather radar](https://api.meteogate.eu/documentation/eu-eumetnet-weather-radar)   
   - [Climate](https://github.com/EUMETNET/ogc-edr-workshop) 
   - [Warnings](https://meteoalarm.org/en/live/page/redistribution-hub#list)
 
