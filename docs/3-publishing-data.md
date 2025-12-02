@@ -510,12 +510,15 @@ The GISC will also be able to provide guidance on choosing the right WMO Data Po
 The integration process depends on the chosen Data Publishing Pattern and involves technical integration with HVD services or API Gateway, and WMO WIS2 components. 
 
   - **Pattern 1**: Using MeteoGate HVD Service
-    - Integrate the APIs with the relevant HVD service by following the service-specific integration instructions available at _HVD service repository/links to be added_ 
+    - Integrate the APIs with the relevant HVD service by following the service-specific integration instructions available at _HVD service repository/links to be added_
+      - Onboarding to E-SOH
+      - Onboarding to Radar
+      - Onboarding to Climate
     - Ensure metadata and notifications are configured according to HVD service requirements.
   > [to be updated] 
   - **Pattern 2**: Managed and Proxied Access Through MeteoGate API Gateway 
     - Register the APIs with the MeteoGate API Gateway. This can be done via:
-       - Self-service (preferred): Ask the MeteoGate Service Desk for permissions to the [designated repository](https://github.com/EURODEO/api-management-tool-poc) Complete the YAML configuration and create a pull request to onboard the API 
+      - Self-service (preferred): Ask the MeteoGate Service Desk for permissions to the [designated repository](https://github.com/EURODEO/api-management-tool-poc) Complete the YAML configuration and create a pull request to onboard the API 
       - Service: Send your API root URL to the MeteoGate Service Desk and request to onboard the API. _Contact details TBA_ 
       - Once the configuration is complete, this will provide the URL for accessing the Data Supply service. This URL will be included in the discovery metadata describing the Data Supply service.
     - Create the discovery metadata and publish into WIS2
