@@ -145,12 +145,12 @@ The API base URL looks like this, for example: ```api.eumetnet.eu/fi-fmi/edr```
 
 There are several ways to formulate the access request:
 
-  1.	Use an API query tool (e.g. Swagger), if available
+  - Use an API query tool (e.g. Swagger), if available
     - Browse available collections and parameters from an API using specialist software, which formulates access request according to your preferences
     - Copy the resulting access request
-  2.	Copy the URL link from a notification message
+  - Copy the URL link from a notification message
     - In case you have subscribed to notifications about particular data from the Global Broker, the notification message includes a direct URL link to the data you have subscribed to
-  3.	Formulate manually using metadata from API (for expert users)
+  - Formulate manually using metadata from API (for expert users)
     a. Access the API collection URL to get collection metadata, which provides information on available data query types, parameters, spatial extents, and temporal extents (e.g. ```https://api.eumetnet.eu/fi-fmi/edr/collections```)
     b. Browse collection metadata to find collections and parameters to data that are available from that API.
     c. Decide what data you want to get (e.g. collection type, collection, type of data, time, geographic extent, output formats, other parameters)
