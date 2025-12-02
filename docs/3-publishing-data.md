@@ -104,24 +104,24 @@ _<to be updated>_
 
 ## Start Here—Steps to Publish Data Through MeteoGate
 
-### 1. Select data publishing pattern(s) and deployment environment
+### Step 1: Select data publishing pattern(s) and deployment environment
 The choice between using a MeteoGate HVD service, the API Gateway, or direct access affects design choices and deployment. The deployment platform – whether EWC, public cloud, or on-premises – should align with data access needs and cost considerations. Establish rate limits and potentially access control to ensure efficient resource use and fair access. 
 
-### 2. Structure and Prepare Data
+### Step 2: Structure and Prepare Data
 
 Data must be structured into well-organised datasets and collections, ensuring compatibility with MeteoGate and WMO standards. High data quality is essential, and discovery metadata must be created to enable searchability in MeteoGate, WMO WIS2, and external search engines. 
 
-### 3. Deploy and Integrate Data Supply  
+### Step 3: Deploy and Integrate Data Supply  
 
 The Data Supply must be deployed according to the chosen publishing pattern. This involves setting up and validating API endpoints, publishing metadata and notifications, and ensuring security, scalability, and compliance.
 
-### 4. Onboard Data Supply  
+### Step 4: Onboard Data Supply  
 
 Once ready, Data Publishers must onboard the Data Supply with MeteoGate and WIS2 components. 
 
 ---
 
-## 1 Select Data Publishing Pattern 
+## Step 1: Select Data Publishing Pattern 
 
 The Data Publisher and/or Data Owner will decide how they want their data to be made available. Data can be published through MeteoGate in three different patterns. The choice should be based on the data type, existing technical solutions and runtime environments already used for sharing open data (if any), and specific requirements for access control, cost, and performance. Data Publishers and/or Owners can choose different options for different datasets and APIs. 
 
@@ -218,7 +218,7 @@ The access restrictions are implemented in different ways depending on the Data 
   
 ---
 
-## 2 Structure and Prepare Data 
+## Step 2: Structure and Prepare Data 
 
 Datasets should be structured in a way that ensures efficient access, consistency, interoperability, and discoverability within MeteoGate and WMO WIS2. Key aspects of structuring include defining dataset boundaries, standardizing parameters, optimizing metadata, ensuring proper indexing, and selecting suitable API technologies for data retrieval. 
 
@@ -385,7 +385,7 @@ Effective linking enhances discoverability and navigation. In MeteoGate, links s
   - Implement X-Forwarded and X-Prefix Headers for correct URL resolution when using the MeteoGate API Gateway. 
   - Ensure consistent and intuitive navigation by maintaining a clear and logical link structure throughout the API. 
 
-## 3 Deploy and Integrate Data Supply 
+## Step 3: Deploy and Integrate Data Supply 
 
 ### Choosing a Deployment Framework 
 
@@ -465,7 +465,7 @@ For Data Publishing Patterns 1 and 2, the MeteoGate Solution Manager performs ad
   - Use standard validation tools such as schema validation and data integrity checks to confirm format compliance.  
   - Document all test cases, results, and known issues to support troubleshooting and future improvements.
 
-## 4 Onboarding Data Supply to MeteoGate and WMO WIS 2 
+## Step 4: Onboarding Data Supply to MeteoGate and WMO WIS 2 
 
 Once the data is prepared, the publishing pattern is selected, and the Data Supply is deployed, the next step is to onboard it to WIS2 and MeteoGate. This process ensures that all registered Data Supply components function with MeteoGate and WMO WIS2 requirements, making them discoverable and accessible through MeteoGate. 
 
