@@ -128,8 +128,7 @@ vi.	**Find data**: Data Consumers can be made aware about available data in vari
 vii.	**Request data**: Using information provided in the discovery metadata, the Data Consumer can:
 
   -	Make anonymous requests for shared data through the API Gateway. 
-  -	When required by a data policy and in line with EU regulation, the API Gateway requires authentication from the user using an API Key. A Data Consumer can obtain an API Key by registering to MeteoGate using a trusted Third-Party Identity Provider. 
-  -	Bulk download data. 
+  -	When required by a data policy and in line with EU regulation, the API Gateway requires authentication from the user using an API Key. A Data Consumer can obtain an API Key by registering to MeteoGate using a trusted Third-Party Identity Provider.
 
 viii.	**Proxied access**: The API Gateway proxies access to connected Data Supply services. The user can then utilise the data in their own applications. 
 
