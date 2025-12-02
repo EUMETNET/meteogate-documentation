@@ -85,4 +85,4 @@ Graphical User Interface – visual interface to interact with information syste
 High Value Datasets – EU-defined meteorological datasets including observations, climate, radar, NWP, and warnings.
 
 **HVD Services**  
-Centrally operated MeteoGate services for distributing EU High Value Datasets (e.g. E-SOH, Radar, Climate). *<To be further defined>*
+Centrally operated MeteoGate services for distributing EU High Value Datasets (e.g. Land surface stations (E-SOH), Weather Radar, Climate). *<To be further defined>*
