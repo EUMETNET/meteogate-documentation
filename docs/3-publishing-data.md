@@ -91,7 +91,7 @@ _<to be updated>_
 ### APIs
 
    - [FMI’s EDR API](https://api.meteogate.eu/fi-fmi/edr)
-   - [Open Radar Data API](https://radar.eumetnet.eu/)
+   - [Open Radar Data API](https://api.meteogate.eu/eu-eumetnet-weather-radar)
    - [Surface Observations API](https://api.meteogate.eu/eu-eumetnet-surface-observations)
 
 ### Additional Resources
