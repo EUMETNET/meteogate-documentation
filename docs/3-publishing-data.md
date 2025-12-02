@@ -82,20 +82,19 @@ The following are real-world examples of data publication within MeteoGate.
 
 ### Metadata
 
+  - _<to be updated>_
   - [Observations discovery metadata](https://observations.meteogate.eu/)
   - [KNMI discovery metadata](https://tlnt19059.sharepoint.com/sites/FEMDI/_layouts/15/download.aspx?UniqueId=6a0407399d65402b8d18c2ef82ac1c06&e=UFaGwI) 
 
 ### Notifications
 
-  - [WMO notification examples](https://schemas.wmo.int/wnm/1.0.0/examples) 
+  - [WMO notification examples](https://schemas.wmo.int/wnm/1.1.0/) 
 
 ### APIs
 
-  - [DMI’s EDR API](https://opendatadocs.dmi.govcloud.dk/en/APIs/Forecast_Data_EDR_API) 
-  - [DMI’s STAC API](https://opendatadocs.dmi.govcloud.dk/en/APIs/Forecast_Data_STAC-API) 
-  - [FMI’s EDR API](https://opendata.fmi.fi/edr/collections) 
-  - [KNMI’s EDR API](https://developer.dataplatform.knmi.nl/edr-api)  
-  - [MeteoSwiss STAC API](https://github.com/MeteoSwiss/opendata)
+   - [FMI’s EDR API](https://api.meteogate.eu/fi-fmi/edr)
+   - [Open Radar Data]()
+   - [Surface Observations]()
 
 ### Additional Resources
 
@@ -105,7 +104,7 @@ The following are real-world examples of data publication within MeteoGate.
 
 ---
 
-## Steps to Publish Data Through MeteoGate
+## Start Here—Steps to Publish Data Through MeteoGate
 
 ### 1. Select data publishing pattern(s) and deployment environment
 The choice between using a MeteoGate HVD service, the API Gateway, or direct access affects design choices and deployment. The deployment platform – whether EWC, public cloud, or on-premises – should align with data access needs and cost considerations. Establish rate limits and potentially access control to ensure efficient resource use and fair access. 
@@ -116,7 +115,11 @@ Data must be structured into well-organised datasets and collections, ensuring c
 
 ### 3. Deploy and Integrate Data Supply  
 
-The Data Supply must be deployed according to the chosen publishing pattern. This involves setting up and validating API endpoints, publishing metadata and notifications, and ensuring security, scalability, and compliance. Once ready, Data Publishers must integrate the Data Supply with MeteoGate and WIS2 components. 
+The Data Supply must be deployed according to the chosen publishing pattern. This involves setting up and validating API endpoints, publishing metadata and notifications, and ensuring security, scalability, and compliance.
+
+### 4. Onboard Data Supply  
+
+Once ready, Data Publishers must onboard the Data Supply with MeteoGate and WIS2 components. 
 
 ---
 
@@ -464,7 +467,7 @@ For Data Publishing Patterns 1 and 2, the MeteoGate Solution Manager performs ad
   - Use standard validation tools such as schema validation and data integrity checks to confirm format compliance.  
   - Document all test cases, results, and known issues to support troubleshooting and future improvements.
 
-## Onboarding Data Supply to MeteoGate and WMO WIS 2 
+## 4 Onboarding Data Supply to MeteoGate and WMO WIS 2 
 
 Once the data is prepared, the publishing pattern is selected, and the Data Supply is deployed, the next step is to onboard it to WIS2 and MeteoGate. This process ensures that all registered Data Supply components function with MeteoGate and WMO WIS2 requirements, making them discoverable and accessible through MeteoGate. 
 
