@@ -66,7 +66,7 @@ This section describes MeteoGate stakeholders and their mutual interaction.
 
 ### Governance
  
-MeteoGate is run by a Programme at EUMETNET, called FEMDI, with responsibility for delivery delegated to a EUMETNET Member as the ‘Programme Manager’.
+MeteoGate is run by a Programme at EUMETNET, called FEMDI, with responsibility for delivery delegated to a EUMETNET Member as the ‘Coordinating Member’.
 
   - **MeteoGate Owner:** The organisation responsible for development, operation, maintenance, and funding of the MeteoGate system. EUMETNET is the owner of MeteoGate. EUMETNET Assembly will be the topmost governing body with overarching governance for strategic, technical, financial, and legal aspects of MeteoGate.
   - **FEMDI Programme Manager:** This role sits within the Coordinating Member, which has delegated authority from the MeteoGate Owner for the operation of the whole of the FEMDI Programme. The Coordinating Member is a Member of EUMETNET, selected through a robust bidding and assessment process. This organisation will coordinate and govern the FEMDI Programme.
@@ -77,7 +77,7 @@ MeteoGate is run by a Programme at EUMETNET, called FEMDI, with responsibility f
 ### Community Component Roles
 
   -	**MeteoGate Community Capability Operators**: Provide, operate, and maintain the infrastructure to allow for data to be discovered and shared through MeteoGate. They provide support services and manage access to the services they are responsible for. Community Capability Operators are selected from EUMETNET Members, ECMWF and EUMETSAT using standard EUMETNET processes.
-  -	**Dependency on: WMO WIS 2.0 Capability Operator**: Provides and operates the common infrastructure for the WIS 2.0 system. There are Local capability operators that operate a WMO WIS 2.0 compliant Data Supply Component. In addition, there are Global capability operators that operate shared WMO 2.0 components, some of which are also used in MeteoGate.
+  -	**Dependency on: WMO WIS 2.0 Global Service Operators**: Provides and operates the common infrastructure for the WIS 2.0 system. There are Local capability operators that operate a WMO WIS 2.0 compliant Data Supply Component. In addition, there are Global capability operators that operate shared WMO 2.0 components, some of which are also used in MeteoGate.
 
 ### Data Supply Roles
 
@@ -153,8 +153,6 @@ Key points regarding data quality:
 - **No Central Validation**: MeteoGate does not centrally validate or cleanse data — it acts as an access and discovery platform.
 - **Consumer Responsibility**: Data Consumers are encouraged to evaluate data quality based on metadata, provenance information, and known standards.
 
-> [to be updated if required]
-
 ---
 
 ## Quality of Service
@@ -170,7 +168,4 @@ Quality of Service aspects cover:
 - **Monitoring and metrics**: Usage statistics and performance data are collected through the Insights Service to proactively identify issues.
 - **Service differentiation**: Authenticated users and EUMETNET Member users may receive enhanced QoS, including higher rate limits or data prioritisation.
 
-Minimum acceptable service levels for MeteoGate components are described in the **Quality of Service Policy**.
-
-> [to be updated if required]
-
+Minimum acceptable service levels for MeteoGate components are agreed by EUMETNET.
