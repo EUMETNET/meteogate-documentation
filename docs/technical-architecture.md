@@ -1,12 +1,11 @@
 # Architecture
 
-This section provides an overview of the architecture of the MeteoGate system. It describes the system's key components and explains how they are deployed across cloud environments.
+This section provides an overview of the architecture of the MeteoGate system, describing the system's key components.
 
 The page covers:
 
   - A high-level architecture diagram showing the major components and information flows.
   - A brief description of each Community, Local, WMO WIS 2.0, and Third-Party component.
-  - Technical deployment diagram, illustrating how the components are deployed and interconnected.
 
 ---
 
