@@ -156,6 +156,7 @@ There are several ways to formulate the access request:
      c. Decide what data you want to get (e.g. collection type, collection, type of data, time, geographic extent, output formats, other parameters)
      d. Formulate the access request by combining the API base URL, collection, and parameters.
 
+
 EDR requests must follow the [specification](https://ogcapi.ogc.org/edr).
 
 > [to be updated] follow formats specified in metadata, e.g. date and time
