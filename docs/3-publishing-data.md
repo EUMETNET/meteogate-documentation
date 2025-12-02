@@ -94,10 +94,6 @@ _<to be updated>_
    - [Open Radar Data API](https://api.meteogate.eu/eu-eumetnet-weather-radar)
    - [Surface Observations API](https://api.meteogate.eu/eu-eumetnet-surface-observations)
 
-### Additional Resources
-
-  - [OGC EDR Workshop repository (given as part of the EUMETNET project RODEO)](https://github.com/EUMETNET/ogc-edr-workshop) contains example implementations, configuration files, and test data that demonstrate how to publish data using the OGC API - Environmental Data Retrieval (EDR) standard.
-
   > [to be updated] Add more examples?
 
 ---
