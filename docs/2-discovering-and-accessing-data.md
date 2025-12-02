@@ -10,9 +10,9 @@ These instructions are meant for anyone interested in discovering and accessing 
 
 ## Terms and Conditions on Using Data
 
-The MeteoGate [Participation Management Policy](../references/) outlines the agreements Data Consumers must respect. In addition, the MeteoGate Data Governance Policy includes Data Consumer Acceptable Use.
+The MeteoGate [Participation Management Policy](../references/) outlines the agreements Data Consumers must respect. In addition, the MeteoGate [Data Governance Policy](../references/) includes Data Consumer Acceptable Use.
 
-Open data can be accessed freely, but consumers must follow data usage rights and use data within terms of the licenses as specified in the metadata for each data set. In addition, consumers must comply with the Data Governance Policy on fair use.
+Open data can be accessed freely, but consumers must follow data usage rights and use data within terms of the licenses as specified in the metadata for each data set. In addition, consumers must comply with the Data Governance Policy on acceptable use.
 
 Data Consumers must agree to the following MeteoGate Terms of Use:
 
@@ -20,8 +20,6 @@ Data Consumers must agree to the following MeteoGate Terms of Use:
   -	Users must comply with the law of their country when using MeteoGate.
   -	Any attempt to gain entry to locked or restricted areas will result in a permanent ban.
   -	Any unlawful activity on the website may result in referral to law enforcement agencies.
-
-> [to be updated] Add link. Include data access on API Gateway, Data Supply and Data Explorer.
 
 ---
 
@@ -31,7 +29,7 @@ The first step in utilizing MeteoGate to access data is to find data that suits 
 
 ###	Using the Data Explorer to Discover Data
 
-You can browse and search for datasets available through MeteoGate using the MeteoGate Data Explorer. It is a lightweight web application that can be used to explore the available API endpoints, and the datasets and parameters available through them. The Data Explorer supports both anonymous and authenticated access to data.
+You can browse and search for datasets available through MeteoGate using the MeteoGate [Data Explorer](https://explorer.meteogate.eu). It is a lightweight web application that can be used to explore the available API endpoints, and the datasets and parameters available through them. The Data Explorer supports both anonymous and authenticated access to data.
 
 The Data Explorer uses metadata and data from Global Discovery Catalogue and MeteoGate-compliant Data Supply components to provide detailed information on what data is available through MeteoGate. It also pulls in supplementary station information from OSCAR/Surface. This allows you to evaluate the suitability of data.
 

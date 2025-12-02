@@ -16,8 +16,7 @@ In MeteoGate, a **Data Supply** is the technical component used to share, manage
 
 A **Data Publisher** deploys a Data Supply to make datasets available through MeteoGate.
 
-More details on architecture and integration options can be found in the [MeteoGate Overview](https://eumetnet.github.io/meteogate-documentation/1-overview/).  
-
+More details on architecture and integration options can be found in the [MeteoGate Overview](../1-overview/).
 
 ## Roles in the Data Publishing Process
 
@@ -30,7 +29,7 @@ The data publishing process involves several roles:
   - **Community Capability Operators**: Maintain MeteoGate data discovery and sharing infrastructure.
   - **FEMDI Coordinating Member**: Oversees system-level governance.
 
-See full description of roles and responsibilities in the [MeteoGate Overview](https://eumetnet.github.io/meteogate-documentation/1-overview/).  
+See full description of roles and responsibilities in the [MeteoGate Overview](../1-overview/).
 
 ## Data Publishers’ Responsibilities
 
@@ -44,7 +43,7 @@ Data Publishers must ensure:
   - Incident response and support
   - Reporting to EUMETNET as required
 
-See full policy in the _MeteoGate Participation Management Policy_.
+See full policy in the [MeteoGate Participation Management Policy](../references/).
 
 > [link to be updated]
 
