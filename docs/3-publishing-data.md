@@ -113,7 +113,11 @@ Data must be structured into well-organised datasets and collections, ensuring c
 
 ### 3. Deploy and Integrate Data Supply  
 
-The Data Supply must be deployed according to the chosen publishing pattern. This involves setting up and validating API endpoints, publishing metadata and notifications, and ensuring security, scalability, and compliance. Once ready, Data Publishers must integrate the Data Supply with MeteoGate and WIS2 components. 
+The Data Supply must be deployed according to the chosen publishing pattern. This involves setting up and validating API endpoints, publishing metadata and notifications, and ensuring security, scalability, and compliance.
+
+### 4. Onboard Data Supply  
+
+Once ready, Data Publishers must onboard the Data Supply with MeteoGate and WIS2 components. 
 
 ---
 
@@ -461,7 +465,7 @@ For Data Publishing Patterns 1 and 2, the MeteoGate Solution Manager performs ad
   - Use standard validation tools such as schema validation and data integrity checks to confirm format compliance.  
   - Document all test cases, results, and known issues to support troubleshooting and future improvements.
 
-## Onboarding Data Supply to MeteoGate and WMO WIS 2 
+## 4 Onboarding Data Supply to MeteoGate and WMO WIS 2 
 
 Once the data is prepared, the publishing pattern is selected, and the Data Supply is deployed, the next step is to onboard it to WIS2 and MeteoGate. This process ensures that all registered Data Supply components function with MeteoGate and WMO WIS2 requirements, making them discoverable and accessible through MeteoGate. 
 
