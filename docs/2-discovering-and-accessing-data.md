@@ -21,8 +21,6 @@ Data Consumers must agree to the following MeteoGate Terms of Use:
   -	Any attempt to gain entry to locked or restricted areas will result in a permanent ban.
   -	Any unlawful activity on the website may result in referral to law enforcement agencies.
 
-> [to be updated] Add link. Include data access on API Gateway, Data Supply and Data Explorer.
-
 ---
 
 ## 1 Discovering Data
