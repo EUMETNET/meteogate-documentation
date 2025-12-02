@@ -154,9 +154,7 @@ There are several ways to formulate the access request:
     a. Access the API collection URL to get collection metadata, which provides information on available data query types, parameters, spatial extents, and temporal extents (e.g. ```https://api.eumetnet.eu/fi-fmi/edr/collections```)
     b. Browse collection metadata to find collections and parameters to data that are available from that API.
     c. Decide what data you want to get (e.g. collection type, collection, type of data, time, geographic extent, output formats, other parameters)
-    d. Formulate the access request by combining the API base URL, collection, and parameters according to the OGC-API EDR [specification](https://ogcapi.ogc.org/edr).
-
-> [to be updated] follow formats specified in metadata, e.g. date and time
+    d. Formulate the access request by combining the API base URL, collection, and parameters according to the OGC-API EDR [specification](https://ogcapi.ogc.org/edr)
 
 #### How to Send the Access Request
 
@@ -168,13 +166,11 @@ You can also access data from software code using e.g. Python by sending the acc
 
 In addition, there are specialised software programs that can be used to access and display data. MeteoGate Data Explorer is an example of such a solution.
 
-> [to be updated]  add examples. code libraries mentioned?
-
 #### How to Access Data Supply Components Requiring Authentication
 
 For API endpoints that require authentication using API Key, the API Key is appended to the HTTP header of the data access request or alternatively provided as an URL parameter. Metadata should state whether the endpoint requires authentication.
 
-### Accessing Data Directly From Through Data Supply APIs
+### Accessing Data Directly From Data Supply APIs
 
 Some Data Supply APIs are not accessed through the MeteoGate API Gateway(s), but directly. You can still find these APIs by the same means as the APIs that are accessed through the MeteoGate API Gateway(s) (except route list on Developer Portal), for example using the Data Explorer or WIS 2.0 Global Discovery Catalogue.
 
@@ -228,5 +224,3 @@ Once data has been accessed or retrieved through the MeteoGate system—either v
 - If you have questions about a specific dataset, contact the appropriate Data Publisher.
 
 ℹ️ ***Note:*** Some datasets may be updated or deprecated over time. Always check for the latest metadata and availability status.
-
-> [to be updated] if required, e.g. more detaield instructions.)
