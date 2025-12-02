@@ -543,7 +543,6 @@ WMO members are expected to meet relevant data quality standards, including:
   - [WMO Integrated Global Observing System (WIGOS) Manual (2023)](https://community.wmo.int/en/activity-areas/WIGOS)  
   - [WMO Integrated Processing and Prediction System (WIPPS) Manual (2023)](https://community.wmo.int/en/activity-areas/wmo-integrated-processing-and-prediction-system-wipps)   
   - EUCOS Performance Standards
-> [to be uodated] <link?>
 
 **Data Governance** 
 
