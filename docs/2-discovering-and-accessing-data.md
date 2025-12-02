@@ -10,7 +10,7 @@ These instructions are meant for anyone interested in discovering and accessing 
 
 ## Terms and Conditions on Using Data
 
-The MeteoGate [Participation Management Policy](./references/) outlines the agreements Data Consumers must respect. In addition, the MeteoGate Data Governance Policy includes Data Consumer Fair Use.
+The MeteoGate [Participation Management Policy](../references/) outlines the agreements Data Consumers must respect. In addition, the MeteoGate Data Governance Policy includes Data Consumer Fair Use.
 
 Open data can be accessed freely, but consumers must follow data usage rights and use data within terms of the licenses as specified in the metadata for each data set. In addition, consumers must comply with the Data Governance Policy on fair use.
 
