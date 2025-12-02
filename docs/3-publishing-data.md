@@ -91,8 +91,8 @@ _<to be updated>_
 ### APIs
 
    - [FMI’s EDR API](https://api.meteogate.eu/fi-fmi/edr)
-   - [Open Radar Data](https://radar.eumetnet.eu/)
-   - [Surface Observations](https://observations.eumetnet.eu)
+   - [Open Radar Data API](https://radar.eumetnet.eu/)
+   - [Surface Observations API](https://observations.eumetnet.eu)
 
 ### Additional Resources
 
@@ -511,16 +511,21 @@ The integration process depends on the chosen Data Publishing Pattern and involv
 
   - **Pattern 1**: Using MeteoGate HVD Service
     - Integrate the APIs with the relevant HVD service by following the service-specific integration instructions available at _HVD service repository/links to be added_
-      - Onboarding to E-SOH
-      - Onboarding to Radar
+      - Onboarding surface observations to E-SOH
+      - Onboarding weather radar to EUMETNET OPERA
+      - Onboarding national weather radar products to Open Radar Data API
       - Onboarding to Climate
       - Onboarding to Warnings
-  > [to be updated] 
+    
+  > [to be updated]
+
   - **Pattern 2**: Managed and Proxied Access Through MeteoGate API Gateway 
     - Register the APIs with the MeteoGate API Gateway. This can be done via Service Desk. Send your API root URL to the MeteoGate Service Desk and request to onboard the API. _Contact details TBA_ 
     - Once the configuration is complete, this will provide the URL for accessing the Data Supply service. This URL will be included in the discovery metadata describing the Data Supply service.
     - Create the discovery metadata and publish into WIS2
+    
   > [to be updated ] More instructions TBA
+
   - **Pattern 3**: Direct Access
     - Ensure integration with WMO WIS2 components, including metadata sharing and notifications, by repeating the WIS2 related steps above. 
 
