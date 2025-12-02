@@ -117,10 +117,10 @@ A data access request may like this, for example:
 
 In the example, the parts of the access request are as follows:
 
-  - API endpoint: ```https://apisixdev.eumetnet-femdi.eumetsat.ewcloud.host/fi/edr/collections/ecmwf/instances/20240911T000000/locations/100683```
+  - API endpoint: ```https://api.eumetnet.eu/fi-fmi/edr/collections/ecmwf/instances/20240911T000000/locations/100683```
   - Parameters: ```&datetime=2024-09-11T06:00Z/2024-09-12T09:00Z&parameter-name=Temperature&crs=CRS:84&f=GeoJSON```
 
-In the example, the request is targeting a specific dataset (ECMWF data), for a particular date and time (```2024-09-11T00:00:00```) and at a specific location (```100683```). The API endpoint specifies the API base URL including the type of API (```https://apisixdev.eumetnet-femdi.eumetsat.ewcloud.host/fi/edr```), collection or dataset (```ecmwf```), instance of a collection (in this case, data taken at a particular time: ```20240911T000000```), specific location within the collection instance (in this case, a station id: ```100683```). You can see from the base URL, that it point to the MeteoGate API Gateway.
+In the example, the request is targeting a specific dataset (ECMWF data), for a particular date and time (```2024-09-11T00:00:00```) and at a specific location (```100683```). The API endpoint specifies the API base URL including the type of API (```https://api.eumetnet.eu/fi-fmi/edr```), collection or dataset (```ecmwf```), instance of a collection (in this case, data taken at a particular time: ```20240911T000000```), specific location within the collection instance (in this case, a station id: ```100683```). You can see from the base URL, that it point to the MeteoGate API Gateway.
 
 Parameters are often specified after a ? symbol in the access request. In the example, the parameters request temperature data for the time range between September 11, 2024, 06:00 UTC, and September 12, 2024, 09:00 UTC. The data should be returned in GeoJSON format, using CRS:84 as the coordinate system.
 
@@ -137,9 +137,7 @@ There are several ways to find the API that can provide data for your needs:
   6.	Search for datasets on a web search engine, e.g. Google Dataset Search
   7.	Data Supply web landing page (e.g. WIS2Box UI)
 
-The API base URL looks like this, for example: ```apisixdev.eumetnet-femdi.eumetsat.ewcloud.host/fi/edr```
-
-> [to be updated] Bulk download? different link?
+The API base URL looks like this, for example: ```api.eumetnet.eu/fi-fmi/edr```
 
 #### How Formulate the Access Request
 
