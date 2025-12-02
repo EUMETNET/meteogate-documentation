@@ -153,8 +153,6 @@ Key points regarding data quality:
 - **No Central Validation**: MeteoGate does not centrally validate or cleanse data — it acts as an access and discovery platform.
 - **Consumer Responsibility**: Data Consumers are encouraged to evaluate data quality based on metadata, provenance information, and known standards.
 
-> [to be updated if required]
-
 ---
 
 ## Quality of Service
@@ -170,7 +168,4 @@ Quality of Service aspects cover:
 - **Monitoring and metrics**: Usage statistics and performance data are collected through the Insights Service to proactively identify issues.
 - **Service differentiation**: Authenticated users and EUMETNET Member users may receive enhanced QoS, including higher rate limits or data prioritisation.
 
-Minimum acceptable service levels for MeteoGate components are described in the **Quality of Service Policy**.
-
-> [to be updated if required]
-
+Minimum acceptable service levels for MeteoGate components are agreed by EUMETNET.
