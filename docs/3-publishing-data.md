@@ -91,8 +91,8 @@ _<to be updated>_
 ### APIs
 
    - [FMI’s EDR API](https://api.meteogate.eu/fi-fmi/edr)
-   - [Open Radar Data](https://radar.eumetnet.eu/)
-   - [Surface Observations](https://observations.eumetnet.eu)
+   - [Open Radar Data API](https://radar.eumetnet.eu/)
+   - [Surface Observations API](https://observations.eumetnet.eu)
 
 ### Additional Resources
 
@@ -512,7 +512,7 @@ The integration process depends on the chosen Data Publishing Pattern and involv
   - **Pattern 1**: Using MeteoGate HVD Service
     - Integrate the APIs with the relevant HVD service by following the service-specific integration instructions available at _HVD service repository/links to be added_
       - Onboarding to E-SOH
-      - Onboarding to Radar
+      - Onboarding to Open Radar Data API
       - Onboarding to Climate
       - Onboarding to Warnings
   > [to be updated] 
