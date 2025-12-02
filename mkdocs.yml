@@ -14,7 +14,6 @@ theme:
   features:
     - navigation.instant
     - navigation.tabs
-    - navigation.sections
     - navigation.top
     - toc.integrate
     - search.highlight
@@ -29,5 +28,6 @@ nav:
   - ARCHITECTURE: technical-architecture.md
   - GLOSSARY: glossary.md
   - REFERENCES: references.md
+
 
 
