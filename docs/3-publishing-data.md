@@ -92,7 +92,7 @@ _<to be updated>_
 
    - [FMI’s EDR API](https://api.meteogate.eu/fi-fmi/edr)
    - [Open Radar Data API](https://radar.eumetnet.eu/)
-   - [Surface Observations API](https://observations.eumetnet.eu)
+   - [Surface Observations API](https://api.meteogate.eu/eu-eumetnet-surface-observations)
 
 ### Additional Resources
 
@@ -133,10 +133,10 @@ Data Publishers integrate their Data Supply components to a MeteoGate HVD servic
 
 EUMETNET currently has the following HVD services available:  
 
-  - [Land-based surface observations](https://observations.eumetnet.eu/) (E-SOH)  
+  - [Land-based surface observations](https://api.meteogate.eu/eu-eumetnet-surface-observations) (E-SOH)  
   - [EUMETNET OPERA weather radar](https://api.meteogate.eu/documentation/eu-eumetnet-weather-radar)   
   - [EUMETNET Climate Aggregator](https://github.com/EUMETNET/ogc-edr-workshop) 
-  - [Warnings](https://meteoalarm.org/en/live/page/redistribution-hub#list)
+  - [EUMETNET Warnings API](https://meteoalarm.org/en/live/page/redistribution-hub#list)
 
 ℹ️ ***Note:*** Check specific integration requirements and instructions from the respective HVD service links.
 
@@ -510,14 +510,13 @@ The GISC will also be able to provide guidance on choosing the right WMO Data Po
 The integration process depends on the chosen Data Publishing Pattern and involves technical integration with HVD services or API Gateway, and WMO WIS2 components. 
 
   - **Pattern 1**: Using MeteoGate HVD Service
-    - Integrate the APIs with the relevant HVD service by following the service-specific integration instructions available at _HVD service repository/links to be added_
-      - Onboarding surface observations to E-SOH
-      - Onboarding weather radar to EUMETNET OPERA
-      - Onboarding national weather radar products to Open Radar Data API
-      - Onboarding climate observations to EUMETNET Climate Aggregator
-      - Onboarding to Warnings
+    - Onboarding surface observations to E-SOH API
+    - Onboarding weather radar to EUMETNET OPERA
+    - Onboarding national weather radar products to Open Radar Data API
+    - Onboarding climate observations to EUMETNET Climate Aggregator
+    - Onboarding weather warnings to EUMETNET Warnings API
     
-  > [to be updated]
+  > [links to be updated]
 
   - **Pattern 2**: Managed and Proxied Access Through MeteoGate API Gateway 
     - Register the APIs with the MeteoGate API Gateway. This can be done via Service Desk. Send your API root URL to the MeteoGate Service Desk and request to onboard the API. _Contact details TBA_ 
