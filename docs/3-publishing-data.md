@@ -93,8 +93,8 @@ The following are real-world examples of data publication within MeteoGate.
 ### APIs
 
    - [FMI’s EDR API](https://api.meteogate.eu/fi-fmi/edr)
-   - [Open Radar Data]()
-   - [Surface Observations]()
+   - [Open Radar Data](https://radar.eumetnet.eu/)
+   - [Surface Observations](https://observations.eumetnet.eu)
 
 ### Additional Resources
 
