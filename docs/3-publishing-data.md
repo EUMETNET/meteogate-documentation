@@ -87,7 +87,7 @@ The following are real-world examples of data publication within MeteoGate.
 
 ### Notifications
 
-  - [WMO notification examples](https://schemas.wmo.int/wnm/1.0.0/examples) 
+  - [WMO notification examples](https://schemas.wmo.int/wnm/1.1.0/) 
 
 ### APIs
 
