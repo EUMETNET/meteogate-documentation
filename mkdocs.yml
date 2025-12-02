@@ -16,6 +16,7 @@ theme:
     - navigation.tabs
     - navigation.sections
     - navigation.top
+    - navigation.expand
     - toc.integrate
     - search.highlight
     - content.code.copy
@@ -29,3 +30,4 @@ nav:
   - ARCHITECTURE: technical-architecture.md
   - GLOSSARY: glossary.md
   - REFERENCES: references.md
+
