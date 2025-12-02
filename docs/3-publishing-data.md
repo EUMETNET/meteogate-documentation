@@ -532,9 +532,7 @@ MeteoGate Community Capability Operators and WMO WIS2 Capability Operators are r
 
 MeteoGate has been established to deliver the target quality of service outlined in the Quality-of-Service agreement. This may vary depending on which data is being requested, with operational data and products generally being at a higher service than non-operational data and products. In general, a reasonable level of QoS is recommended for the supplied data.   
  
-MeteoGate will monitor the availability of the APIs and notify the Data Supplier in case any inactive or low performing APIs are detected. 
-
-> [to be updated] Outstanding question: Should data publishers be given minimum QoS thresholds for their API that need to be met before being onboarded, or will we accept any quality of API? Guidance/rule on minimum “quality” for upstream data services, e.g. minimum requests/sec … and how this is validated during the on-boarding process; Or… review performance logs after 6 months and give feedback if needed._ 
+MeteoGate will monitor the availability of the APIs and notify the Data Supplier in case any inactive or low performing APIs are detected.
 
 ### Data Quality and Data Governance 
 
