@@ -132,12 +132,12 @@ First, it is necessary to identify the API from which the data will be retrieved
 
 There are several ways to find the API that can provide data for your needs:
 
-  1.	MeteoGate Data Explorer (recommended, see above)
-  2.	WMO WIS2 Global Discovery Catalogue (see above)
-  3.	Route list in MeteoGate Developer Portal (see above). Note that the route list includes only Data Supply components that are accessed through MeteoGate API Gateway(s).
-  5.	Notification message (see above)
-  6.	Search for datasets on a web search engine, e.g. Google Dataset Search
-  7.	Data Supply web landing page (e.g. WIS2Box UI)
+  - MeteoGate Data Explorer (recommended, see above)
+  - WMO WIS2 Global Discovery Catalogue (see above)
+  - Route list in MeteoGate Developer Portal (see above). Note that the route list includes only Data Supply components that are accessed through MeteoGate API Gateway(s).
+  - Notification message (see above)
+  - Search for datasets on a web search engine, e.g. Google Dataset Search
+  - Data Supply web landing page (e.g. WIS2Box UI)
 
 The API base URL looks like this, for example: ```api.eumetnet.eu/fi-fmi/edr```
 
