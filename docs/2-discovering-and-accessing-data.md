@@ -29,7 +29,7 @@ The first step in utilizing MeteoGate to access data is to find data that suits 
 
 ###	Using the Data Explorer to Discover Data
 
-You can browse and search for datasets available through MeteoGate using the MeteoGate Data Explorer. It is a lightweight web application that can be used to explore the available API endpoints, and the datasets and parameters available through them. The Data Explorer supports both anonymous and authenticated access to data.
+You can browse and search for datasets available through MeteoGate using the MeteoGate [Data Explorer](https://explorer.meteogate.eu). It is a lightweight web application that can be used to explore the available API endpoints, and the datasets and parameters available through them. The Data Explorer supports both anonymous and authenticated access to data.
 
 The Data Explorer uses metadata and data from Global Discovery Catalogue and MeteoGate-compliant Data Supply components to provide detailed information on what data is available through MeteoGate. It also pulls in supplementary station information from OSCAR/Surface. This allows you to evaluate the suitability of data.
 
