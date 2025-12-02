@@ -77,7 +77,7 @@ MeteoGate is run by a Programme at EUMETNET, called FEMDI, with responsibility f
 ### Community Component Roles
 
   -	**MeteoGate Community Capability Operators**: Provide, operate, and maintain the infrastructure to allow for data to be discovered and shared through MeteoGate. They provide support services and manage access to the services they are responsible for. Community Capability Operators are selected from EUMETNET Members, ECMWF and EUMETSAT using standard EUMETNET processes.
-  -	**Dependency on: WMO WIS 2.0 Global Service Operator**: Provides and operates the common infrastructure for the WIS 2.0 system. There are Local capability operators that operate a WMO WIS 2.0 compliant Data Supply Component. In addition, there are Global capability operators that operate shared WMO 2.0 components, some of which are also used in MeteoGate.
+  -	**Dependency on: WMO WIS 2.0 Global Service Operators**: Provides and operates the common infrastructure for the WIS 2.0 system. There are Local capability operators that operate a WMO WIS 2.0 compliant Data Supply Component. In addition, there are Global capability operators that operate shared WMO 2.0 components, some of which are also used in MeteoGate.
 
 ### Data Supply Roles
 
