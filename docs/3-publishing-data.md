@@ -16,7 +16,7 @@ In MeteoGate, a **Data Supply** is the technical component used to share, manage
 
 A **Data Publisher** deploys a Data Supply to make datasets available through MeteoGate.
 
-More details on architecture and integration options can be found in the [MeteoGate Overview](../1-overview/).
+More details on architecture and integration options can be found in the [MeteoGate Overview](1-overview.md).
 
 ## Roles in the Data Publishing Process
 
