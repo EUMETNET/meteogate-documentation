@@ -102,7 +102,7 @@ The following are real-world examples of data publication within MeteoGate.
 
 ---
 
-## Steps to Publish Data Through MeteoGate
+## Start Here—Steps to Publish Data Through MeteoGate
 
 ### 1. Select data publishing pattern(s) and deployment environment
 The choice between using a MeteoGate HVD service, the API Gateway, or direct access affects design choices and deployment. The deployment platform – whether EWC, public cloud, or on-premises – should align with data access needs and cost considerations. Establish rate limits and potentially access control to ensure efficient resource use and fair access. 
