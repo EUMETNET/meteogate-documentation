@@ -82,9 +82,7 @@ The following are real-world examples of data publication within MeteoGate.
 
 ### Metadata
 
-  - _<to be updated>_
-  - [Observations discovery metadata](https://observations.meteogate.eu/)
-  - [KNMI discovery metadata](https://tlnt19059.sharepoint.com/sites/FEMDI/_layouts/15/download.aspx?UniqueId=6a0407399d65402b8d18c2ef82ac1c06&e=UFaGwI) 
+_<to be updated>_
 
 ### Notifications
 
@@ -93,8 +91,8 @@ The following are real-world examples of data publication within MeteoGate.
 ### APIs
 
    - [FMI’s EDR API](https://api.meteogate.eu/fi-fmi/edr)
-   - [Open Radar Data]()
-   - [Surface Observations]()
+   - [Open Radar Data](https://radar.eumetnet.eu/)
+   - [Surface Observations](https://observations.eumetnet.eu)
 
 ### Additional Resources
 
