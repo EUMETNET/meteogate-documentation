@@ -514,7 +514,6 @@ The integration process depends on the chosen Data Publishing Pattern and involv
       - Onboarding to E-SOH
       - Onboarding to Radar
       - Onboarding to Climate
-    - Ensure metadata and notifications are configured according to HVD service requirements.
   > [to be updated] 
   - **Pattern 2**: Managed and Proxied Access Through MeteoGate API Gateway 
     - Register the APIs with the MeteoGate API Gateway. This can be done via:
