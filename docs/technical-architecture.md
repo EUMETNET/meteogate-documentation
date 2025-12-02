@@ -88,15 +88,3 @@ MeteoGate doesn't manage passwords or user accounts. The Developer Portal requir
 #### Third-Party Configuration Management Tool
 
 MeteoGate administrators use a GitHub Configuration Management Tool to register local Data Supply components and configure API Gateways.
-
----
-
-## MeteoGate Technical Deployment Diagram
-
-This section focuses on the technical architecture of the MeteoGate Community Components operated by Community Capability Operators. It provides an overview of the runtime environments and how the key components are deployed and managed across different cloud platforms.
-
-A detailed description of each component’s role in the system and a high-level architecture diagram are presented in the above section.
-
-The diagram below illustrates the primary deployment setup in the European Weather Cloud (EWC), with mirrored environments hosted across the ECMWF and EUMETSAT sites to ensure redundancy and availability. Additional environments, such as public cloud deployments (e.g. AWS), are not part of the current reference setup but may be supported in the future as the MeteoGate expands.
-
-![MeteoGate technical deployment diagram](images/meteogate-technical-deployment.png)
