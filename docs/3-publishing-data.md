@@ -94,10 +94,6 @@ _<to be updated>_
    - [Open Radar Data API](https://api.meteogate.eu/eu-eumetnet-weather-radar)
    - [Surface Observations API](https://api.meteogate.eu/eu-eumetnet-surface-observations)
 
-### Additional Resources
-
-  - [OGC EDR Workshop repository (given as part of the EUMETNET project RODEO)](https://github.com/EUMETNET/ogc-edr-workshop) contains example implementations, configuration files, and test data that demonstrate how to publish data using the OGC API - Environmental Data Retrieval (EDR) standard.
-
   > [to be updated] Add more examples?
 
 ---
@@ -536,9 +532,7 @@ MeteoGate Community Capability Operators and WMO WIS2 Capability Operators are r
 
 MeteoGate has been established to deliver the target quality of service outlined in the Quality-of-Service agreement. This may vary depending on which data is being requested, with operational data and products generally being at a higher service than non-operational data and products. In general, a reasonable level of QoS is recommended for the supplied data.   
  
-MeteoGate will monitor the availability of the APIs and notify the Data Supplier in case any inactive or low performing APIs are detected. 
-
-> [to be updated] Outstanding question: Should data publishers be given minimum QoS thresholds for their API that need to be met before being onboarded, or will we accept any quality of API? Guidance/rule on minimum “quality” for upstream data services, e.g. minimum requests/sec … and how this is validated during the on-boarding process; Or… review performance logs after 6 months and give feedback if needed._ 
+MeteoGate will monitor the availability of the APIs and notify the Data Supplier in case any inactive or low performing APIs are detected.
 
 ### Data Quality and Data Governance 
 
@@ -549,7 +543,6 @@ WMO members are expected to meet relevant data quality standards, including:
   - [WMO Integrated Global Observing System (WIGOS) Manual (2023)](https://community.wmo.int/en/activity-areas/WIGOS)  
   - [WMO Integrated Processing and Prediction System (WIPPS) Manual (2023)](https://community.wmo.int/en/activity-areas/wmo-integrated-processing-and-prediction-system-wipps)   
   - EUCOS Performance Standards
-> [to be uodated] <link?>
 
 **Data Governance** 
 
@@ -571,7 +564,6 @@ In MeteoGate, logging and monitoring occur at three levels:
 
   - Individual API Level (Data Publisher Responsibility): Each Data Publisher’s API is responsible for logging request details, errors, and performance metrics. This includes structured logs (e.g., JSON-based logging) that provide visibility into API behaviour, response times, and error rates. 
   - HVD Service Level (Data Publishing Pattern 1): MeteoGate’s centralised data services log request details, errors, and performance metrics.
-> [to be updated] 
   - MeteoGate API Gateway Level (Data Publishing Pattern 2): MeteoGate API Gateway provides centralised logging, monitoring, and traffic analysis. It collects logs for all requests passing through the gateway, including request origins, response times, error rates, and usage metrics.
 
 MeteoGate includes an insights service and provides the following metrics that can be used for API performance reporting, when using Data Publishing Patterns 1 or 2:
