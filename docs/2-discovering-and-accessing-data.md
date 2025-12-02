@@ -151,10 +151,10 @@ There are several ways to formulate the access request:
   2.	Copy the URL link from a notification message
     - In case you have subscribed to notifications about particular data from the Global Broker, the notification message includes a direct URL link to the data you have subscribed to
   3.	Formulate manually using metadata from API (for expert users)
-    a. Access the API collection URL to get collection metadata, which provides information on available data query types, parameters, spatial extents, and temporal extents (e.g. ```https://api.eumetnet.eu/fi-fmi/edr/collections```)
-    b. Browse collection metadata to find collections and parameters to data that are available from that API.
-    c. Decide what data you want to get (e.g. collection type, collection, type of data, time, geographic extent, output formats, other parameters)
-    d. Formulate the access request by combining the API base URL, collection, and parameters according to the OGC-API EDR [specification](https://ogcapi.ogc.org/edr).
+    - Access the API collection URL to get collection metadata, which provides information on available data query types, parameters, spatial extents, and temporal extents (e.g. ```https://api.eumetnet.eu/fi-fmi/edr/collections```)
+    - Browse collection metadata to find collections and parameters to data that are available from that API.
+    - Decide what data you want to get (e.g. collection type, collection, type of data, time, geographic extent, output formats, other parameters)
+    - Formulate the access request by combining the API base URL, collection, and parameters according to the OGC-API EDR [specification](https://ogcapi.ogc.org/edr).
 
 > [to be updated] follow formats specified in metadata, e.g. date and time
 
