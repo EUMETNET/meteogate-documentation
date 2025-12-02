@@ -517,14 +517,17 @@ The integration process depends on the chosen Data Publishing Pattern and involv
     - Ensure metadata and notifications are configured according to HVD service requirements.
   > [to be updated] 
   - **Pattern 2**: Managed and Proxied Access Through MeteoGate API Gateway 
-    - Register the APIs with the MeteoGate API Gateway. This can be done via:
-      - Self-service (preferred): Ask the MeteoGate Service Desk for permissions to the [designated repository](https://github.com/EURODEO/api-management-tool-poc) Complete the YAML configuration and create a pull request to onboard the API 
-      - Service: Send your API root URL to the MeteoGate Service Desk and request to onboard the API. _Contact details TBA_ 
-      - Once the configuration is complete, this will provide the URL for accessing the Data Supply service. This URL will be included in the discovery metadata describing the Data Supply service.
-    - Create the discovery metadata and publish into WIS2
-  > [to be updated ] More instructions TBA
+    - Register the APIs with the MeteoGate API Gateway. This can be done via contacting the Meteogate service dask (to add contact details) and providing the following information (if you are unsure discuss with service desk)
+      - your API root URL
+      - any rate limit restrictions
+      - possible api key necessary to use the API (Meteogate system will need api key)
+    - Create the discovery metadata and publish it into WIS
+    - (Optional) setup a WIS2 broker and publish notifications.
+    - (Optional) add keyword meteogate to your metadata for the data to show up in the Meteogate Explorer
   - **Pattern 3**: Direct Access
-    - Ensure integration with WMO WIS2 components, including metadata sharing and notifications, by repeating the WIS2 related steps above. 
+    - Create the WIS2 discovery metadata and publish it into WIS
+    - (Optional) setup a WIS2 broker and publish notifications.
+    - (Optional) add keyword meteogate to your metadata for the data to show up in the Meteogate Explorer
 
 MeteoGate Community Capability Operators and WMO WIS2 Capability Operators are responsible for performing the necessary technical configurations in MeteoGate HVD services, MeteoGate API Gateway, and WMO WIS2 components. 
 
