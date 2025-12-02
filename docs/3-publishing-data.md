@@ -135,7 +135,7 @@ EUMETNET currently has the following HVD services available:
 
   - [Land-based surface observations](https://observations.eumetnet.eu/) (E-SOH)  
   - [EUMETNET OPERA weather radar](https://api.meteogate.eu/documentation/eu-eumetnet-weather-radar)   
-  - [Climate](https://github.com/EUMETNET/ogc-edr-workshop) 
+  - [EUMETNET Climate Aggregator](https://github.com/EUMETNET/ogc-edr-workshop) 
   - [Warnings](https://meteoalarm.org/en/live/page/redistribution-hub#list)
 
 ℹ️ ***Note:*** Check specific integration requirements and instructions from the respective HVD service links.
@@ -514,7 +514,7 @@ The integration process depends on the chosen Data Publishing Pattern and involv
       - Onboarding surface observations to E-SOH
       - Onboarding weather radar to EUMETNET OPERA
       - Onboarding national weather radar products to Open Radar Data API
-      - Onboarding to Climate
+      - Onboarding climate observations to EUMETNET Climate Aggregator
       - Onboarding to Warnings
     
   > [to be updated]
