@@ -35,7 +35,12 @@ This guide is designed for:
 
   - This documentation is actively maintained and version-controlled.  
   - The documentation source is maintained in GitHub: [MeteoGate Documentation GitHub](https://github.com/EUMETNET/meteogate-documentation) 
-  - For questions or issues, please contact the documentation team or submit a GitHub issue.
+  - For questions or issues, please contact the documentation team.
+
+---
+
+## Community Discussion
+For questions, feedback, and conversations, you are welcome to join the [MeteoGate community discussion group](https://github.com/orgs/Meteogate/discussions).
 
 ---
 
