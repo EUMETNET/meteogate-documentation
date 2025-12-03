@@ -86,3 +86,30 @@ High Value Datasets – EU-defined meteorological datasets including observation
 
 **HVD Services**  
 Centrally operated MeteoGate services for distributing EU High Value Datasets (e.g. Land surface stations (E-SOH), Weather Radar, Climate). *<To be further defined>*
+
+**Identity & Access Manager**  
+A MeteoGate Community Component to control user and system access to platforms and platform services. 
+
+**Insights service**  
+A MeteoGate Community Component for reporting on data discovery and publication transactions for Data Publishers to derive management information. 
+
+**Local Component**  
+MeteoGate infrastructure owned and operated by Data publishers. Data Supply is a typical example of a Local Component. 
+
+**NMHS**  
+National Meteorological and Hydrological Service. Often used interchangeably with ‘NMS’. 
+
+**NMS**  
+National Meteorological Service. Often used interchangeably with ‘NMHS’. 
+
+**OGC**  
+Open Geospatial Consortium. Develops open API standards for providing and using geospatial data. 
+
+**OSCAR**  
+WMO application operated by MeteoSwiss that provides detailed information on observing capabilities, such as automatic weather stations. 
+
+**WIS 2.0**  
+WMO Information System version 2.0. This provides a framework for WMO data sharing in the 21st century, for all WMO Members and WMO programmes to embrace the Earth system approach, enable the WMO unified data policy, and support the WMO global basic observing network. 
+
+**WMO**  
+World Meteorological Organisation – a UN Agency with 193 Members.
