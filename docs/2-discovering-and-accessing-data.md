@@ -197,7 +197,7 @@ Once data has been accessed or retrieved through the MeteoGate system—either v
 
 ### Comply with MeteoGate Terms of Use
 
-- Follow the [Terms of Use](#) and [Data Governance Policy](#) that outline fair use and responsibilities of Data Consumers.
+- Follow the [Terms of Use](../references/) and [Data Governance Policy](../references/) that outline fair use and responsibilities of Data Consumers.
 - Avoid excessive or abusive automated queries.
 - Do not redistribute restricted data without permission from the Data Owner.
 
