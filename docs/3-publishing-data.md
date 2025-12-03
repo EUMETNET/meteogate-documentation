@@ -78,15 +78,15 @@ Recommended standards:
 
 The following are real-world examples of data publication within MeteoGate.
 
-### Metadata
+### Metadata Examples
 
-_<to be updated>_
+  > [to be updated]
 
-### Notifications
+### Notification Examples
 
   - [WMO notification examples](https://schemas.wmo.int/wnm/1.1.0/) 
 
-### APIs
+### API Examples
 
    - [FMI’s EDR API](https://api.meteogate.eu/fi-fmi/edr)
    - [Open Radar Data API](https://api.meteogate.eu/eu-eumetnet-weather-radar)
