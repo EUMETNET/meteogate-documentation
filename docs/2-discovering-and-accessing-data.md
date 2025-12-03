@@ -35,6 +35,8 @@ The Data Explorer uses metadata and data from Global Discovery Catalogue and Met
 
 When you have found the data that you wish to use, you can copy the appropriate API endpoint URL from Data Explorer and use it to access the data.
 
+See the [Data Explorer User Guide] for more information on usig the Data Explorer. For more detail, consult the [GeoWeb User Manual](https://gitlab.com/groups/opengeoweb/-/wikis/Documentation/User-Manual).
+
 > [to be updated] Ref. to Data Explorer quick guide and documentation.
 
 ### Searching the Global Discovery Catalogue
