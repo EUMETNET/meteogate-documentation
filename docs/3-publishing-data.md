@@ -16,7 +16,7 @@ In MeteoGate, a **Data Supply** is the technical component used to share, manage
 
 A **Data Publisher** deploys a Data Supply to make datasets available through MeteoGate.
 
-More details on architecture and integration options can be found in the [MeteoGate Overview](1-overview.md).
+More details on architecture and integration options can be found in the [MeteoGate Overview](../1-overview/).
 
 ## Roles in the Data Publishing Process
 
@@ -44,8 +44,6 @@ Data Publishers must ensure:
   - Reporting to EUMETNET as required
 
 See full policy in the [MeteoGate Participation Management Policy](../references/).
-
-> [link to be updated]
 
 ## Fulfilling EU and WMO Obligations
 
@@ -433,7 +431,7 @@ Publishing discovery metadata is straightforward. At a minimum, Data Publishers 
 
 Discovery metadata records only need updates when there are changes to the dataset’s scope (size, extent, format, license, or content)  
 
-For details, read more on [metadata structure and formatting](#Metadata).
+For details, read more on [metadata structure and formatting](#metadata).
 
 ### Publishing Notifications 
 
@@ -546,7 +544,7 @@ WMO members are expected to meet relevant data quality standards, including:
 
 **Data Governance** 
 
-Data governance policies ensure structured data management, compliance, and interoperability. The [MeteoGate Data Governance Policy](https://tlnt19059.sharepoint.com/:w:/r/sites/FEMDI/_layouts/15/Doc.aspx?sourcedoc=%7BB938B06E-5B69-4BF1-914C-4202EE6AAA8A%7D&file=Data%20governance%20policy.docx&action=default&mobileredirect=true) defines the requirements for data documentation and publication. 
+Data governance policies ensure structured data management, compliance, and interoperability. The [MeteoGate Data Governance Policy](../references/) defines the requirements for data documentation and publication. 
 
 ### Incident Response and Support Requests 
 
