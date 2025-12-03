@@ -59,6 +59,7 @@ This section lists useful references related to MeteoGate.
   - [API Gateway repository](https://github.com/EURODEO/api-management-tool-poc)
   - [Developer Portal repository](https://github.com/EURODEO/Dev-portal)
   - [Infrastructure repository](https://github.com/EURODEO/femdi-gateway-iac)
+  - [GeoWeb User Manual](https://gitlab.com/groups/opengeoweb/-/wikis/Documentation/User-Manual)
 
 ### MeteoGate HVD Services
 
