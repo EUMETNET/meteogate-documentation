@@ -134,7 +134,7 @@ First, it is necessary to identify the API from which the data will be retrieved
 
 There are several ways to find the API that can provide data for your needs:
 
-  - MeteoGate Data Explorer (recommended, see above)
+  - MeteoGate [Data Explorer](https://explorer.meteogate.eu) (recommended, see above)
   - WMO WIS2 Global Discovery Catalogue (see above)
   - Route list in MeteoGate Developer Portal (see above). Note that the route list includes only Data Supply components that are accessed through MeteoGate API Gateway(s).
   - Notification message (see above)
@@ -166,7 +166,7 @@ If using a web browser, just input the access request to the address bar and pre
 
 You can also access data from software code using e.g. Python by sending the access request as a GET request to the API.
 
-In addition, there are specialised software programs that can be used to access and display data. MeteoGate Data Explorer is an example of such a solution.
+In addition, there are specialised software programs that can be used to access and display data. MeteoGate [Data Explorer](https://explorer.meteogate.eu) is an example of such a solution.
 
 #### How to Access Data Supply Components Requiring Authentication
 
@@ -174,7 +174,7 @@ For API endpoints that require authentication using API Key, the API Key is appe
 
 ### Accessing Data Directly From Data Supply APIs
 
-Some Data Supply APIs are not accessed through the MeteoGate API Gateway(s), but directly. You can still find these APIs by the same means as the APIs that are accessed through the MeteoGate API Gateway(s) (except route list on Developer Portal), for example using the Data Explorer or WIS 2.0 Global Discovery Catalogue.
+Some Data Supply APIs are not accessed through the MeteoGate API Gateway(s), but directly. You can still find these APIs by the same means as the APIs that are accessed through the MeteoGate API Gateway(s) (except route list on Developer Portal), for example using the [Data Explorer](https://explorer.meteogate.eu) or WIS 2.0 Global Discovery Catalogue.
 
 Follow the instructions and documentation available from the particular Data Provider to access these APIs. You should find the required links or information on the Data Provider from the metadata or a landing page available from the API base URL. Some Data Supply components may require authentication.
 
