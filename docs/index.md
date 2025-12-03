@@ -40,7 +40,7 @@ This guide is designed for:
 ---
 
 ## Community Discussion
-For questions, feedback, and conversations, you are welcome to join the [MeteoGate community discussion group](https://github.com/orgs/Meteogate/discussions).
+For questions, feedback, and conversations, you are welcome to join the [MeteoGate Community Discussion Group](https://github.com/orgs/Meteogate/discussions).
 
 ---
 
