@@ -54,7 +54,7 @@ There are two main types of Data Supply in MeteoGate:
   - HVD Services: Centrally operated services for sharing EU High-Value Datasets (e.g. E-SOH, Radar, Climate).
   - NMHS Data Supplies: Locally maintained by National Meteorological and Hydrological Services.
 
-Data Supply components can be integrated into MeteoGate in three different ways. Publishers may connect to an HVD service, expose APIs through the central MeteoGate API Gateway, or allow direct access to their APIs. See the [Data Publishing guide](3-publishing-data.md) for details.
+Data Supply components can be integrated into MeteoGate in three different ways. Publishers may connect to an HVD service, expose APIs through the central MeteoGate API Gateway, or allow direct access to their APIs. See the [Data Publishing guide](./3-publishing-data/) for details.
 Each Data Supply shall support the following core capabilities:
 
   - Data Access: Provides interactive API access to datasets (collections), using MeteoGate-compliant standards such as OGC API – EDR.
@@ -69,12 +69,12 @@ Data Supply implementations can be based on the technology of the Data Publisher
 
 #### WMO WIS 2.0 Global Discovery Catalogue
 
-The [Global Discovery Catalogue](https://github.com/wmo-im/wis2-gdc) is a web application for data search and discovery, describing data from WIS 2.0 and MeteoGate. It subscribes to notifications from the Global Broker to update discovery metadata. 
+The [Global Discovery Catalogue](https://wmo-im.github.io/wis2-guide/guide/wis2-guide-APPROVED.html#_2_4_4_global_discovery_catalogue) is a web application for data search and discovery, describing data from WIS 2.0 and MeteoGate. It subscribes to notifications from the Global Broker to update discovery metadata. 
 The catalogue provides summary descriptions and URLs for accessing shared data via the API Gateway or directly.
 
 #### WMO WIS 2.0 Global Broker
 
-The [Global Broker](https://community.wmo.int/en/activity-areas/wis/WIS2-overview) is an application that provides subscription-based notifications about discovery metadata and data changes. It subscribes to notifications from the Data Supply and republishes them to Data Consumer applications. These notifications enable real-time data sharing. WIS 2.0 includes several Global Brokers."
+The [Global Broker](https://wmo-im.github.io/wis2-guide/guide/wis2-guide-APPROVED.html#_2_4_2_global_broker) is an application that provides subscription-based notifications about discovery metadata and data changes. It subscribes to notifications from the Data Supply and republishes them to Data Consumer applications. These notifications enable real-time data sharing. WIS 2.0 includes several Global Brokers."
 
 ### Third-Party Components
 
