@@ -22,7 +22,7 @@ This guide is designed for:
 
 | Section | Description |
 |--------|-------------|
-| [1. Overview](./overview/) | Introduction to MeteoGate and its components |
+| [1. Overview](./1-overview/) | Introduction to MeteoGate and its components |
 | [2. Discovering and Accessing Data](./2-discovering-and-accessing-data/) | How users can search for, preview, and retrieve data |
 | [3. Publishing Data](./3-publishing-data/) | How NMHSs can publish datasets and APIs via MeteoGate |
 | [Architecture](./technical-architecture/) | Overview of the architecture of the MeteoGate system |
