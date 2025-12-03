@@ -54,7 +54,7 @@ There are two main types of Data Supply in MeteoGate:
   - HVD Services: Centrally operated services for sharing EU High-Value Datasets (e.g. E-SOH, Radar, Climate).
   - NMHS Data Supplies: Locally maintained by National Meteorological and Hydrological Services.
 
-Data Supply components can be integrated into MeteoGate in three different ways. Publishers may connect to an HVD service, expose APIs through the central MeteoGate API Gateway, or allow direct access to their APIs. See the [Data Publishing guide](./3-publishing-data/) for details.
+Data Supply components can be integrated into MeteoGate in three different ways. Publishers may connect to an HVD service, expose APIs through the central MeteoGate API Gateway, or allow direct access to their APIs. See the [Data Publishing guide](../3-publishing-data/) for details.
 Each Data Supply shall support the following core capabilities:
 
   - Data Access: Provides interactive API access to datasets (collections), using MeteoGate-compliant standards such as OGC API – EDR.
