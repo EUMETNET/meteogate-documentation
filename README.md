@@ -53,9 +53,6 @@ Documentation is written, updated and reviewed in [`docs-dev`](https://github.co
    The site is automatically built and deployed using a GitHub Actions workflow. 
    The MkDocs tool is used to generate static HTML pages from the Markdown files, and GitHub Pages hosts the final published site.
    No manual building or deployment is required — changes are automatically published once merged.
- 
-The live site is available at:  
-🔗 https://eumetnet.github.io/meteogate-documentation/
 
 ---
 
@@ -80,7 +77,7 @@ All documentation source files are located in the `docs/` directory, organized b
 
 ## Need Help?
 
-Let a maintainer know or open an issue!
+For questions, feedback, and conversations, you are welcome to join the [MeteoGate Community Discussion Group](https://github.com/orgs/Meteogate/discussions).
 
 ---
 

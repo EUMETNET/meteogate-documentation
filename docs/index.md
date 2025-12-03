@@ -31,11 +31,17 @@ This guide is designed for:
 
 ---
 
+## Community Discussion
+
+For questions, feedback, and conversations, you are welcome to join the [MeteoGate Community Discussion Group](https://github.com/orgs/Meteogate/discussions).
+
+---
+
 ## About This Documentation
 
   - This documentation is actively maintained and version-controlled.  
   - The documentation source is maintained in GitHub: [MeteoGate Documentation GitHub](https://github.com/EUMETNET/meteogate-documentation) 
-  - For questions or issues, please contact the documentation team or submit a GitHub issue.
+  - For questions or issues, please contact the documentation team.
 
 ---
 
