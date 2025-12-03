@@ -4,7 +4,7 @@
   
 It enables National Meteorological and Hydrological Services (NMHSs) to share data openly while retaining full control and ownership. Through a common technical and policy framework, MeteoGate supports both public data access and obligations under EU legislation and the WMO WIS 2.0 initiative. MeteoGate is run by [EUMETNET](https://www.eumetnet.eu/).
 
-MeteoGate makes open meteorological and hydrological data freely accessible to all. **Anyone—researchers, developers, institutions, or the general public—can use the data provided through MeteoGate.** Some datasets may require registration, but high-value datasets (HVDs) are accessible without barriers.
+MeteoGate makes open meteorological and hydrological data freely accessible to all. **Anyone – researchers, developers, institutions, or the general public – can use the data provided through MeteoGate.** Some datasets may require registration, but high-value datasets (HVDs) are accessible without barriers.
 
 ---
 
@@ -22,12 +22,12 @@ This guide is designed for:
 
 | Section | Description |
 |--------|-------------|
-| [1. Overview](/overview/) | Introduction to MeteoGate and its components |
-| [2. Discovering and Accessing Data](/2-discovering-and-accessing-data/) | How users can search for, preview, and retrieve data |
-| [3. Publishing Data](/3-publishing-data/) | How NMHSs can publish datasets and APIs via MeteoGate |
-| [Architecture](/technical-architecture/) | Overview of the architecture of the MeteoGate system |
-| [Glossary](/glossary/) | Definitions of key concepts |
-| [References](/references/) | Relevant policies, tools, and resources |
+| [1. Overview](./overview/) | Introduction to MeteoGate and its components |
+| [2. Discovering and Accessing Data](./2-discovering-and-accessing-data/) | How users can search for, preview, and retrieve data |
+| [3. Publishing Data](./3-publishing-data/) | How NMHSs can publish datasets and APIs via MeteoGate |
+| [Architecture](./technical-architecture/) | Overview of the architecture of the MeteoGate system |
+| [Glossary](./glossary/) | Definitions of key concepts |
+| [References](./references/) | Relevant policies, tools, and resources |
 
 ---
 
