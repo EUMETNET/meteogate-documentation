@@ -74,28 +74,6 @@ Recommended standards:
 
 ---
 
-## Examples 
-
-The following are real-world examples of data publication within MeteoGate.
-
-### Metadata Examples
-
-  > [to be updated]
-
-### Notification Examples
-
-  - [WMO notification examples](https://schemas.wmo.int/wnm/1.1.0/) 
-
-### API Examples
-
-   - [FMI’s EDR API](https://api.meteogate.eu/fi-fmi/edr)
-   - [Open Radar Data API](https://api.meteogate.eu/eu-eumetnet-weather-radar)
-   - [Surface Observations API](https://api.meteogate.eu/eu-eumetnet-surface-observations)
-
-  > [to be updated] Add more examples?
-
----
-
 ## Start Here – Steps to Publish Data Through MeteoGate
 
 ### Step 1: Select data publishing pattern(s) and deployment environment
@@ -191,7 +169,6 @@ The MeteoGate API Gateway is currently deployed on EWC. There is no MeteoGate AP
 
   - All Members providing High-Value Datasets (HVD) should connect to an appropriate HVD service or the MeteoGate API Gateway instance on EWC. 
   - If providing data or APIs that are hosted on-premises or in a public cloud, assess whether it makes sense to use HVD services, the MeteoGate API Gateway, or provide direct access. Members hosting data services on a public cloud should consider potential egress costs, as these depend on individual cloud service providers’ pricing models. Carefully evaluate whether the benefits of the MeteoGate API Gateway – such as access control, rate limiting, and monitoring – justify the additional data transfer costs. 
-
 
 ### Decide on Authentication and Rate Limits 
 
@@ -346,7 +323,7 @@ To align with the data structuring requirements outlined earlier, collection met
   - Expose observation locations in GeoJSON format (collections/<collection_name>/locations), supporting geospatial queries and visualization in MeteoGate’s Data Explorer. 
   - Contain a time axis (domain.axes.t), ensuring compatibility with spatiotemporal queries, particularly for datasets structured according to the EDR restricted profile.
 
-#### Resource/File-level Metadata
+#### Resource/File-Level Metadata
 
 Resource or file-level metadata describes individual resources, such as data files, and provides essential context, such as the physical variable encoded and its units of measurement. Well-structured file-level metadata also facilitates the automatic generation of discovery and collection-level metadata. 
 
@@ -366,7 +343,7 @@ File-level metadata can be included in various ways:
   - Referenced externally (e.g., linked via HTTP headers using the describedBy Link Relation type). 
   - A combination of these methods, depending on the dataset. 
 
-Using qualified terms with unique URLs enhances metadata discoverability and interoperability. This [Linked Data](https://www.w3.org/TR/sdw-bp/#dfn-linked-data) approach enables better understanding across different formats and domains, making data more accessible and increasing its usability. 
+Using qualified terms with unique URLs enhances metadata discoverability and interoperability. This [Linked Data](https://www.w3.org/TR/sdw-bp/#dfn-linked-data) approach enables better understanding across different formats and domains, making data more accessible and increasing its usability.
 
 ### Links
 
@@ -402,7 +379,9 @@ Existing APIs implemented with other than MeteoGate-recommended technologies can
 
 For further API implementation guidance, refer to [OGC Developer Portal](https://developer.ogc.org), [OGC E-learning materials](https://opengeospatial.github.io/e-learning/index.html) and [OGC EDR tutorial](https://ogcapi-workshop.ogc.org/api-deep-dive/environmental-data-retrieval/), which provide documentation, tutorials, examples, and best practices for OGC API standards, including OGC API-EDR. Also, the [STAC website](https://stacspec.org/en/) provides tutorials and other developer resources.
 
-The [OGC EDR Workshop repository (given as part of the EUMETNET project RODEO)](https://github.com/EUMETNET/ogc-edr-workshop) contains example implementations, configuration files, and test data that demonstrate how to publish data using the OGC API - Environmental Data Retrieval (EDR) standard.  It is recommended for Data Publishers looking to understand and test EDR-based APIs in a MeteoGate-compatible setup.
+For implementation examples, refer to e.g. [FMI’s EDR API](https://api.meteogate.eu/fi-fmi/edr), [Open Radar Data API](https://api.meteogate.eu/eu-eumetnet-weather-radar) and [Surface Observations API](https://api.meteogate.eu/eu-eumetnet-surface-observations).
+
+The [OGC EDR Workshop repository (given as part of the EUMETNET project RODEO)](https://github.com/EUMETNET/ogc-edr-workshop) contains example implementations, configuration files, and test data that demonstrate how to publish data using the OGC API - Environmental Data Retrieval (EDR) standard. It is recommended for Data Publishers looking to understand and test EDR-based APIs in a MeteoGate-compatible setup.
 
 **Recommendations**
 
@@ -420,28 +399,212 @@ The [OGC EDR Workshop repository (given as part of the EUMETNET project RODEO)](
 
 ### Publishing Discovery Metadata 
 
-MeteoGate and WMO WIS2 require discovery metadata to be included in the Data Supply. This helps Data Consumers identify relevant datasets based on scope, coverage, format, and licensing. 
+A dataset is only considered to be part of MeteoGate (and WMO WIS 2.0) once discovery metadata about it has been published into the WIS 2.0 Global Discovery Catalogue. Data Consumers can then find and use a dataset via the Data Explorer (or the Global Discovery Catalogue itself). This enables Data Consumers to identify relevant datasets based on scope, coverage, format, licensing, etc.
 
-**Recommendations**
+This section explains how you should publish discovery metadata to the Global Discovery Catalogue using your Data Supply Capability.
 
-Publishing discovery metadata is straightforward. At a minimum, Data Publishers must provide a metadata record for each dataset in a compliant format, either:
+Here’s how it works:
 
-  - As a file hosted on a web server (static metadata record). 
-  - Through an OGC API - Records Web-service endpoint, which allows structured and dynamic metadata access via an API.
-
-Discovery metadata records only need updates when there are changes to the dataset’s scope (size, extent, format, license, or content)  
-
-For details, read more on [metadata structure and formatting](#metadata).
+  1.	Create discovery metadata for your dataset. For more information about discovery metadata, see [Discovery Metadata](#discovery-metadata).
+  2.	The Global Discovery Catalogue needs to download the metadata record, so you need to publish it via an HTTP server. This may be as a simple file hosted on a web server (i.e., a static metadata record), or through an API (e.g., an OGC API - Records Web-service endpoint). Discovery metadata needs to be published so that it’s openly accessible (no access controls). Discovery metadata should be re-published daily (i.e., every 24-hours) even if there are no changes. This helps ensure that the discovery metadata in the Global Discovery Catalogue stays fresh.
+  3.	Publishing discovery metadata uses the same mechanisms in WIS2 used for telling users about new data: real-time notifications via MQTT. Publish a WIS2 Notification Message to the Local Broker of your Data Supply Component (remember to use access control to ensure only you can publish!). This notification message includes the URL of the discovery metadata record published in step (2). For more information see [Publishing Notifications](#publishing-notifications). Notifications about discovery metadata must be published to topic ```origin/a/wis2/{centre-id}/metadata```. For more information on the WIS2 topic hierarchy see [Topic Hierarchy for Message Publication](#topic-hierarchy-for-message-publication).
+  4.	The WIS2 Global Broker subscribes to the Local Broker on the Data Supply Capability.
+  5.	The WIS2 Global Discovery Catalogue subscribes to the WIS2 Global Broker.
+  6.	The notification message is pushed to the WIS2 Global Broker and validated.
+  7.	If the notification message is valid, the Global Broker republishes it on the same topic.
+  8.	The notification message is pushed to the WIS2 Global Discovery Catalogue.
+  9.	The WIS2 Global Discovery Catalogue parses the WIS Notification Message and –
+  10.	Downloads the linked discovery metadata record from the HTTP server.
+  11.	The WIS2 Global Discovery Catalogue parses the discovery metadata record; it gets added to the catalogue if valid (note that the Global Discovery Catalogue also supports update and delete operations for discovery metadata records). The Global Discovery Catalogue also assesses the quality of the discovery metadata record against predefined KPIs and generates a report.
+  12.	The Global Discovery Catalogue publishes WIS2 Monitoring Event Messages ([draft spec](https://wmo-im.github.io/wis2-monitoring-events/standard/wis2-monitoring-events-DRAFT.html), based on [CloudEvents](https://cloudevents.io)) on topic “monitor/a/wis2/{centre-id}” for validation ([metadata validation report - ETS](https://wmo-im.github.io/wis2-monitoring-events/standard/wis2-monitoring-events-DRAFT.html)) and KPI assessment ([metadata quality report - KPI](https://wmo-im.github.io/wis2-monitoring-events/standard/wis2-monitoring-events-DRAFT.html)).
+  13.	The Global Broker subscribes to these monitoring event messages and re-publishes them for Data Publishers. These messages are useful in determining whether you have successfully published discovery metadata. Data Publishers can tools like [SonataFlow](https://sonataflow.org/serverlessworkflow/latest/index.html) to trigger workflows based on receiving these monitoring events.
+  14.	Now that the metadata is published to the Global Discovery Catalogue, users can browse the catalogue and discover data using the Data Explorer.  
 
 ### Publishing Notifications 
 
-MeteoGate and WMO WIS 2.0 require notifications at the Data Supply to announce new or updated data and metadata. These notifications enable real-time data sharing and keep Data Consumers informed about dataset changes. 
+MeteoGate and WMO WIS 2.0 use real-time notifications to inform Data Consumers in near real-time about new or updated data and metadata.
 
-Data Publishers shall generate and publish notifications, first on the Data Supply and then at the WMO WIS 2.0 Global Broker. Data Consumers can subscribe to notifications from Global Brokers for updates. 
+Notifications are GeoJSON objects published using the Message Broker Protocol (MQTT 3.1 or MQTT 5). Notifications must conform to the [WIS2 Notification Message](https://wmo-im.github.io/wis2-notification-message/standard/wis2-notification-message-STABLE.html) specification. 
 
-Notifications use the Message Broker Protocol (MQTT 3.1 or MQTT 5) and follow the WMO Notification Message Format (GeoJSON) with a structured topic hierarchy. Event-driven triggers, like data updates or file arrivals, can automate notification publishing. 
+Data Publishers generate notifications and publish them from the MQTT broker within their Data Supply Component (“Local Broker”). Event-driven triggers, like data updates or file arrivals, can automate notification publishing.
 
-For implementation guidance and examples, refer to Appendix E in the[ Manual on WIS 2.0](https://community.wmo.int/en/activity-areas/wis/publications/1060-vII) or [WMO WIS2 Notification Message Encoding](https://wmo-im.github.io/wis2-notification-message/standard/wis2-notification-message-STABLE.html), and the [WIS2 Cookbook](https://wmo-im.github.io/wis2-cookbook/cookbook/wis2-cookbook-DRAFT.html) for validation and access control instructions. Notifications can be published using existing infrastructure or open-source message brokers like [Eclipse Mosquitto](https://mosquitto.org/). 
+WIS 2.0 Global Brokers subscribe to those notifications and redistribute them at scale. Notifications must be published to the correct topic, as defined in the WIS2 Topic Hierarchy specification (also see section <<topic-hierarchy for message publication>>).
+
+Data Consumers subscribe to the WIS 2.0 Global Brokers to receive notifications about new and updated data and metadata. WIS 2.0 recommends that Data Consumer subscribe to at least two Global Brokers for resilience.
+
+Here’s how it works:
+
+  1.	Publish a notification message to the Local Broker advertising availability of new data
+  2.	Global Broker subscribes to the Local Broker; it validates received messages and republishes them
+  3.	Data Consumer subscribes to the Global Broker and receives notifications about the availability of new data
+  4.	Data Consumer downloads data from the Data Supply Capability (aka. WIS2 Node) using the link in the notification message
+
+![Publishing notifications](images/meteogate-publishing-notification.png)
+ 
+To illustrate what you need to know about WIS2 Notification Messages for data, let’s take a look at a fictional example [notification message](https://github.com/6a6d74/wis2-notification-examples/blob/main/nl-knmi-nmc-Actuele10mindata-KNMIstations-2--notification-91c694b9-f811-4017-837b-2f19febdea58--draft-apr2024 1.json) providing a notification advertising availability of new data from WIGOS Station 0-20000-0-06344 (ROTTERDAM THE HAGUE AP, Netherlands) as part of KNMI’s current 10-minute observation dataset (Actuele10mindataKNMIstations-2).
+
+Notification identifier id must always be unique – use a UUID.
+
+```"id": "91c694b9-f811-4017-837b-2f19febdea58"```
+ 
+Including geometry for the data item is good practice – it helps Data Consumers decide if this particular data item is one they want.
+
+```
+"geometry": {
+    "type": "Point",
+    "coordinates": [
+        4.4469,
+        51.9606
+    ]
+}
+```
+
+Identifier for the data item data_id must always be unique; you can decide how to do this, but most people are appending a local identifier (i.e., file/object name) to the topic.
+
+```"data_id": "nl-knmi-nmc/data/recommended/weather/surface-based-observations/synop/WIGOS_0-20000-0-06344_20240411T130000"```
+
+datetime is the time associated with the data (i.e., the observation time) – also useful for users to determine if this is data they need.
+
+```"datetime": "2024-04-11T13:00:00Z"```
+
+pubtime is the time when the notification message was sent; a CORRECTION must always have a later pubtime than the original message _and_ have a link with rel=update (see more on links later).
+
+```"pubtime": "2024-04-11T13:15:06Z"```
+
+Discovery metadata for the dataset must exist before the data is shared. The Global Broker will discard messages for which there is no associated metadata record. This is also useful for Data Consumers – they find more context about this data item by searching in the Global Discovery Catalogue (or maybe their favourite search engine).
+
+```"metadata_id": "urn:wmo:md:nl-knmi-nmc:Actuele10mindataKNMIstations-2"```
+
+The properties section in a GeoJSON record can contain anything. Here we’ve added the property wigos_station_identifier; given that KNMI’s 10-minute observations dataset contains 10s if not 100s of stations, this is a really easy way to help Data Consumers find the data items they need without them needing to download the data and unpack it to see if it’s what they need. This is called “client-side filtering”. See WIS2 Cookbook §3.6 Advertising client-side filters for data subscriptions in WCMP2 and WNM for details on this.
+
+```"wigos_station_identifier": "0-20000-0-06344"```
+
+We shouldn’t assume that Data Consumers know what they’re allowed to do with the data. Yes, they could look this up in the metadata record, but is does no harm to remind them in the notification message itself – at the point of data use.
+"rights": "Users are granted free and unrestricted access to this data, without charge and with no conditions on use. Users are requested to attribute the producer of this data. WMO Unified Data Policy (Resolution 1 (Cg-Ext 2021))"
+
+And also providing a link to a license. 
+
+```
+{
+    "rel": "license",
+    "type": "text/html",
+    "href": "https://creativecommons.org/licenses/by/4.0/",
+    "title": "CC BY 4.0 Deed | Attribution 4.0 International | Creat..."
+}
+```
+
+Here’s the crucial part of the notification message: the link to the data! Each link follows a similar structure. rel is the “link relation” type. A link with rel=canonical is always the default one to look at. Other link types include update and license (mentioned earlier), item and station (coming next), and more. A table (albeit incomplete) of link types is provided in the WCMP2 specification.
+
+type provides the media type (MIME type) of the resource. length enables a simple integrity check. href provides the URL for the resource – in this case an observation for The Hague encoded in BUFR4. For Core data, it’s the URL in the canonical link that Global Caches will download from. For Core data, the URL in the canonical link _must_ be directly resolvable – i.e., no access controls or URL templates.
+
+```
+"links": [
+    {
+        "rel": "canonical",
+        "type": "application/x-bufr",
+        "href": "https://api.dataplatform.knmi.nl/open-data/v1/datasets/Actuele10mindataKNMIstations/versions/2/files/WIGOS_0-20000-0-06344_20240411T130000.bufr4",
+        "length": 199
+    },
+…
+]
+```
+
+KNMI also provide access to this data via an OGC-API EDR endpoint that requires an API key to access. The link relation item is used here to say that this link points to a resource that is a single item within the dataset (i.e., an observation at given place and time). The security block must follow one of the [OpenAPI Security Schemes](https://learn.openapis.org/specification/security.html). In this case, we’re indicating the API key must be added to the API call using the query parameter api-key, and where you can request an API key. More information about providing resources with access control can be found in the WIS2 Cookbook.
+
+```
+{
+    "rel": "item",
+    "type": "application/vnd.coverage+json",
+    "href": "https://api.dataplatform.knmi.nl/edr/v1/collections/observations/instances/unvalidated/locations/06344?datetime=2024-04-11T13%3A00%3A00Z",
+    "security": {
+        "default": {
+            "type": "apiKey",
+            "name": "AUTHORIZATION",
+            "in": “header",
+            "description": "Please request an API key via https://developer.dataplatform.knmi.nl/open-data-api#token"
+        }
+    }
+}
+```
+
+We can also use links to point to other useful information – such as a details of the observing platform where the data was collected. Here we use link relation station to indicate we’re referring to only one station. The resource we’re linking to is the description in OSCAR Surface.
+
+```
+{
+    "rel": "station",
+    "type": "text/html",
+    "href": "https://oscar.wmo.int/surface/#/search/station/stationReportDetails/0-20000-0-06344",
+    "title": "WIGOS Station 0-20000-0-06344, ROTTERDAM THE HAGUE ..."
+}
+```
+
+For implementation guidance and more examples, refer to [Manual on WIS, Volume II](), Appendix E or [WMO WIS2 Notification Message Encoding](https://wmo-im.github.io/wis2-notification-message/standard/wis2-notification-message-STABLE.html), and the [WIS2 Cookbook](https://wmo-im.github.io/wis2-cookbook/cookbook/wis2-cookbook-DRAFT.html) (recipes [3.1. Validating a WIS2 Notification Message](https://wmo-im.github.io/wis2-cookbook/cookbook/wis2-cookbook-DRAFT.html#_validating_a_wis2_notification_message), [3.2. Publishing a WIS2 Notification Message with access control](https://wmo-im.github.io/wis2-cookbook/cookbook/wis2-cookbook-DRAFT.html#_publishing_a_wis2_notification_message_with_access_control), [3.3. Publishing a WIS2 Notification Message with embedded data](https://wmo-im.github.io/wis2-cookbook/cookbook/wis2-cookbook-DRAFT.html#_publishing_a_wis2_notification_message_with_embedded_data), and [3.4. Publishing a WIS2 Notification Message for resource deletion](https://wmo-im.github.io/wis2-cookbook/cookbook/wis2-cookbook-DRAFT.html#_publishing_a_wis2_notification_message_for_resource_deletion)).
+
+There are many options for implementing WIS 2.0 Notification messaging:
+
+  1.	Homebrew: Build your own application for notification message publication. Leverage one of many open-source or commercially available MQTT broker solutions
+      - [Mosquitto](https://mosquitto.org): simple open-source MQTT broker
+      - [EMQX](https://www.emqx.com): more sophisticated open-source MQTT broker, supports clustering, also available as a managed service (SaaS)
+      - [VerneMQ](https://vernemq.com): a scaleable, enterprise-ready MQTT broker
+      - [Solace](https://solace.com/products/platform): event-driven integration and streaming, deployable and available as a managed service (SaaS)
+      - [HiveMQ](https://www.hivemq.com): event-driven IoT data streaming platform, available as a managed service (SaaS) 
+  2.	Open-source: WIS2box ([GitHub](https://github.com/World-Meteorological-Organization/wis2box), [documentation](https://docs.wis2box.wis.wmo.int)), developed with coordination from WMO as a reference implementation of a WIS2 Node and building on many other open-source projects, including [pygeoapi](https://pygeoapi.io), [paho-mqtt](https://pypi.org/project/paho-mqtt) and [mosquitto](https://mosquitto.org).
+  3.	Commercial: For example, [IBL Moving Weather](https://www.iblsoft.com/products/moving-weather) – turn-key solution from a commercial provider with support and services.
+  4.	Interactive / scripted: Script it in the terminal or use a Jupyter notebook. Leverage open-source utilities like [pywis-pubsub](https://github.com/World-Meteorological-Organization/pywis-pubsub) to do the heavy lifting; a utility carved out from WIS2box. Publish via cloud-based broker, e.g., HiveMQ.
+
+#### Topic Hierarchy for Message Publication
+
+MeteoGate layers on top of WMO WIS 2.0. Consequently, data exchange in MeteoGate must comply with WIS 2.0 specifications. As described in [Publishing Notifications ](#publishing-notifications), notification messages must be published to the correct topics.
+
+Given that WIS 2.0 has hundreds of (meta)data publishers – how do we keep the notifications organised? Notifications in WIS 2.0 are published on specific **topics** according to the [WIS2 Topic Hierarchy specification](https://wmo-im.github.io/wis2-topic-hierarchy/standard/wis2-topic-hierarchy-STABLE.html).
+
+Valid terms for each level in the topic hierarchy are published on the [WMO Codes Registry](http://codes.wmo.int/wis/topic-hierarchy).
+
+WIS 2.0 Global Brokers will discard messages published on unregistered topics (i.e., not in the spec).
+
+The topic hierarchy follows the pattern below with 9 levels:
+
+```{1:channel}/{2:version}/{3:system}/{4:centre-id}/{5:notification-type}/{6:data-policy}/{7:earth-system-discipline}/{8:sub-discipline}/{9:sub-sub-discipline}```
+
+  1. channel
+      - ```origin``` for messages coming from WIS2 Nodes, or ```cache``` for messages coming from Global Caches. Global Caches are part of the WIS 2.0 infrastructure – MeteoGate doesn’t use them directly, but see the [Guide to WIS, Volume II](https://wmo-im.github.io/wis2-guide/guide/wis2-guide-APPROVED.html#_2_4_3_global_cache) if you’d like to know more. 
+  2. version
+      - Just ```a``` for now – but we’re ready for breaking changes in years to come such as modifying the structure of the topic hierarchy.
+  3. system
+      - Just ```wis2``` for now – but WMO may reuse this mechanism for other initiatives?
+      - You’re free to re-use this messaging pattern, and the infrastructure you’ve deployed, for other purposes; just use a different value for {system} and the WIS2 Global Services will ignore the messages
+  4. centre-id
+      -	The centre identifier of your WIS2 Node agreed with WMO Secretariat. For information on registering your Data Supply Component as a WIS2 Node see <<registering-a-wis2-node>>.
+      - The official list is published on WMO Codes Registry at http://codes.wmo.int/wis/topic-hierarchy/centre-id.
+  5. notification-type
+      -	```data``` or ```metadata```; we want don’t want to mix these resources because we use them in different ways / at different times.
+  6. data-policy
+      -	```core``` or ```recommended```, based on the terminology described in the [WMO Unified Data Policy, Resolution 1 (Cg-Ext(2021))](https://library.wmo.int/idurl/4/58009). 
+      -	Use the data-policy value you put in your discovery metadata record.
+  7. earth-system-discipline
+      - Based on the set of disciplines described in the WMO Unified Data Policy:
+        -	atmospheric-composition
+        -	climate
+        -	cryosphere
+        -	hydrology
+        -	ocean
+        -	space-weather
+        -	weather
+  8. sub-discipline
+      - Each Earth-system discipline has sub-disciplines defined by subject matter experts. Full details, refer to the [WMO Codes Registry](http://codes.wmo.int/wis/topic-hierarchy). 
+      - Sub-disciplines for “weather” are:
+        - advisories-warnings
+        - aviation
+        - prediction
+        - space-based-observations
+        - surface-based-observations
+        - experimental
+      - ```space-based-observations``` means those taken from orbiting satellite platforms; ```surface-based-observations``` is for everything else – including upper-air observations because the observing platforms are either on the surface (wind-profiler) or launched from the surface (radio-sonde).
+      - Sub-topics on ```experimental``` aren’t validated by the Global Brokers, so you can use what you like. However, Data Consumers shouldn’t expect these terms to be long-lasting, nor provide quality data at an operational SLA. 
+  9. sub-sub-discipline
+      - Refer to the [WMO Codes Registry](http://codes.wmo.int/wis/topic-hierarchy) for sub-sub-disciplines.
+
+![Publishing discovery metadata](images/meteogate-publishing-discovery-metadata.png)
 
 ### Testing and Validating Data Supply 
 
@@ -463,41 +626,58 @@ For Data Publishing Patterns 1 and 2, the MeteoGate Solution Manager performs ad
 
 Once the data is prepared, the publishing pattern is selected, and the Data Supply is deployed, the next step is to onboard it to WIS2 and MeteoGate. This process ensures that all registered Data Supply components function with MeteoGate and WMO WIS2 requirements, making them discoverable and accessible through MeteoGate. 
 
-### Registering a WIS2 Node  
+### Registering a WIS2 Node
 
-The first step to on-board a Data Supply service in MeteoGate is to register the service with the WMO as a WIS2 Node. Registration and decommissioning of a WIS2 Node must be approved by the Permanent Representative (PR) of the country or territory from where the WIS2 Node is operated. In a cloud-based environment, where the service is operated isn’t necessary where the service is deployed.  
+MeteoGate Data Supply Capabilities must be registered on WIS 2.0 as a WIS2 Node.
 
-As an example, if MetNorway want to publish data on snow depth, with the technical components hosted on the ECMWF’s European Weather Cloud region in Bologna, the relevant country is Norway rather than Italy. 
+This is required so that you can publish discovery metadata about your datasets, so they can be discovered using the Data Explorer and, consequently, considered to be part of MeteoGate.
 
-Full details of that process are described in the [Guide to WIS 2.0, section 2.6 Implementation and operation of a WIS2 Node](https://community.wmo.int/en/activity-areas/wis/publications/1061-vII).  
+If your organization already has a WIS2 Node and you are planning to publish your notifications via the Local Broker of that WIS2 Node, then you do not need to register a separate WIS2 Node (you may do so – but it is not required). In this case, your Data Supply Capability will be treated as part of the existing WIS2 Node and you should use the Node’s “centre-id”.
 
-**Registering a centre-id** 
+ℹ️ ***Note:*** Note: If the operation of your Data Supply Capability might transition to another organisation at some point in the future (and hence use a different Local Broker) you should register a separate WIS2 Node. Unfortunately, a WIS2 Node can only have single Local Broker and is not possible to split publication of notifications between multiple brokers. This is why EUMETNET operated Data Supply Capabilities are registered as independent WIS2 Nodes from those of their Host Member.
 
-Registration of a WIS2 Node requires the designation of a “centre-id” - a mandatory field in the discovery metadata. A centre-id is proposed by the provider of the MeteoGate Data Supply service and endorsed by the WMO Secretariat. It is a single identifier consisting of a top-level domain (TLD) and a centre name and represents the data publisher, distributor or issuing centre of a given dataset or data product/granule (see the [Manual on WIS](https://community.wmo.int/en/activity-areas/wis/publications/1060-vII), Volume II – Appendix D. WIS2 Topic Hierarchy).  
- 
-For example, **uk-metoffice-nmc** would represent the National Meteorological Centre (NMC) operated by Met Office, the United Kingdom’s National Meteorological service.   
-When providing a Data Supply service on behalf of a EUMETNET Programme (HVD Service), a new center_id can be registered which may include all underlying topics without having to move or change anything.  
+If you do not have an existing WIS2 Node, or you are not able to use the Local Broker from an existing WIS2 Node, you must start the on-boarding of your Data Supply Capability by registering a new WIS2 Node – as described below.
 
-The centre-id should follow a similar pattern: [country id]-[met center name] + the descriptor ‘eumetnet’   
+A WIS2 “centre-id” is allocated to your Data Supply capability during this registration process. The “centre-id” is used when identifying datasets (e.g., in their discovery metadata) and when publishing notifications about new or updated data and metadata.
 
-Following the above example, the centre-id for the UK NMC supplying data via an EUMETNET HVD service would then be **uk-metoffice-eumetnet**
-This way searching for topics in all *.eumetnet centers will give the same result. 
+Instructions for registering a WIS2 Node are in the [Guide to WIS (WMO No. 1061), Volume II: §2.6.1.1 Registration and decommissioning of a WIS2 Node](https://wmo-im.github.io/wis2-guide/guide/wis2-guide-APPROVED.html). The summary version is:
 
-Complex Data Supply services using multiple message brokers may require more than one centre-id to be registered. In such cases, please get in touch with the MeteoGate Service Desk or the WIS NFP for more guidance. 
+  1.	You are ready to run a WIS2 Node and your **Permanent Representative to WMO** (PR, usually the head of the National Meteorological Service) has given approval. PR approval ensures that only datasets and services that conform to WMO Technical Regulations are added to WIS2.  
+  2.	Choose a “centre-id” based on the [specification](https://wmo-im.github.io/wis2-topic-hierarchy/standard/wis2-topic-hierarchy-STABLE.html) and [guidance](https://wmo-im.github.io/wis2-guide/guide/wis2-guide-APPROVED.html). See the [WMO Codes Registry](http://codes.wmo.int/wis/topic-hierarchy/centre-id) for the current list.
+  3.	Via your **WIS National Focal Point** (NFP, see list here) propose your “centre-id” to **WMO Secretariat** who will validate against the specification.
+  4.	Once “centre-id” is agreed, the **NFP** completes the **WIS2 register** with details of your WIS2 Node, including the address of your Local Broker and the credentials required for Global Services to subscribe.
+  5.	Your **GISC** then assesses that your WIS2 Node meets all the WIS2 requirements (see [Assessing and accepting the WIS2 Node](#assessing-and-accepting-the-wis2-node)).
+  6.	If all OK, your WIS2 Node is connected to the WIS2 Global Services and you can begin publishing notifications about data and metadata.
 
-For more information, please refer to the [WIS2 Guide, section 2.6.1.2](https://community.wmo.int/en/activity-areas/wis/publications/1061-vII) Guidance on assigning a centre identifier for a WIS2 Node. 
+#### Which PR should I contact?
 
-### Assessing and accepting the WIS2 Node 
+A PR is responsible for all data publication within their country or territory – not only that of the National Meteorological Service. For international organisations, contact the PR of the country or territory where the WIS2 Node is operated.
+It’s not always clear where your WIS2 Node is operated – especially in a cloud environment. For example, if Met Norway want to publish data on snow depth, with the technical components hosted on the ECMWF’s European Weather Cloud region in Bologna, the relevant PR from whom to seek approval is Norwegian rather than Italian. The criterion is where the people managing the service are based, rather than where the data-servers are situated.
 
-WMO designates Global Information System Centres (GISC) to coordinate and manage data sharing within WIS2. As part of the WIS2 Node registration, the relevant GISC will assess readiness of the WIS2 Node for inclusion in WIS2. 
+#### Registering a centre-id
 
-The WIS NFP should coordinate with the relevant GISC when registering the WIS2 Node. GISCs in Europe with their areas of responsibility are:
+Registration of a WIS2 Node requires the designation of a “centre-id” - a mandatory element in the identifier of a dataset (property “metadata-id” in the discovery metadata). A centre-id is proposed by the provider of the MeteoGate Data Supply service and endorsed by the WMO Secretariat. It is a single identifier consisting of a top-level domain (TLD) and a centre name and represents the data publisher, distributor or issuing centre of a given dataset (see the [Manual on WIS, Volume II – Appendix D. WIS2 Topic Hierarchy](https://wmo-im.github.io/wis2-topic-hierarchy/standard/wis2-topic-hierarchy-STABLE.html)).
 
-  - **GISC-Offenbach**: Germany + Austria, Bosnia & Herzegovina, Bulgaria, Croatia, Cyprus, Czechia, Denmark, Estonia, EUMETSAT, Finland, Greece, Hungary, Israel, Italy, Jordan, Kenya, Latvia, Lithuania, Montenegro, North Macedonia, Norway, Poland, Romania, Serbia, Slovakia, Sweden, Switzerland, Turkey 
-  - **GISC-Toulouse**: France (& Clipperton, French Guyana, Guadeloupe, St Martin, St Barthelemy, Kerguelen Islands, La Reunion, Martinique, St Pierre & Miquelon, Wallis & Futuna) + Algeria, Belgium, Luxemberg, Monaco, Portugal, Spain  
-  - **GISC-Exeter**: UK (& British Antarctic Survey, Ascension, Bermuda, Gibraltar, Pitcairn Islands, St Helena) + ECMWF, Ireland, Iceland, Netherlands, Tanzania 
+For example, “uk-metoffice-nmc” represents the National Meteorological Centre (NMC) operated by Met Office, the United Kingdom’s National Meteorological service. 
 
-The GISC will also be able to provide guidance on choosing the right WMO Data Policy (Core or Recommended), and if needed, the WIS2 topic(s) for notification messages. For more info, see [Manual on WIS, Volume II – Appendix D. WIS2 Topic Hierarchy](https://community.wmo.int/en/activity-areas/wis/publications/1060-vII). 
+When providing a Data Supply service on behalf of a EUMETNET Programme (e.g., for an HVD Service), the “centre-id” should begin “eu-eumetnet-”, followed by a token that distinguishes the type of data, e.g., “eu-eumetnet-surface-observations”.
+
+For more information, please refer to the [Guide to WIS, Volume II, Section 2.6.1.2](https://wmo-im.github.io/wis2-guide/guide/wis2-guide-APPROVED.html#_2_6_1_2_guidance_on_assigning_a_centre_identifier_for_a_wis2_node).
+
+#### Assessing and accepting the WIS2 Node
+
+WMO designates Global Information System Centres (GISC) to coordinate and manage data sharing within WIS 2.0. When you register your Data Supply Component as a WIS2 Node registration, your GISC will assess its readiness for inclusion into WIS 2.0.
+
+Areas of responsibility for European GISCs are given below:
+  -	**GISC-Offenbach**: Germany + Austria, Bosnia & Herzegovina, Bulgaria, Croatia, Cyprus, Czechia, Denmark, Estonia, EUMETSAT, Finland, Greece, Hungary, Israel, Italy, Jordan, Kenya, Latvia, Lithuania, Montenegro, North Macedonia, Norway, Poland, Romania, Serbia, Slovakia, Sweden, Switzerland, Türkiye. 
+  -	**GISC-Toulouse**: France (& Clipperton, French Guyana, Guadeloupe, St Martin, St Barthelemy, Kerguelen Islands, La Reunion, Martinique, St Pierre & Miquelon, Wallis & Futuna) + Algeria, Belgium, Luxemburg, Monaco, Portugal, Spain.
+  -	**GISC-Exeter**: UK (& British Antarctic Survey, Ascension, Bermuda, Gibraltar, Pitcairn Islands, St Helena) + ECMWF, Ireland, Iceland, Netherlands.
+
+The GISC will also be able to provide guidance on choosing the right WMO Data Policy (Core or Recommended), and the correct WIS2 Topic Hierarchy on which to publish Notifications (see <<topic-hierarchy-for-message-publication>> for details).
+
+Once you have been approved by your GISC, the WMO Secretariat will request that all Global Brokers subscribe to the Local Broker in your Data Supply Component. 
+
+After at least one Global Broker has confirmed that their subscription is configured, you can publish notifications to upload metadata to the Global Discovery Catalogue which completes the process of getting your dataset visible within MeteoGate. 
 
 ### Integrating the Data Supply with MeteoGate and WIS2 components 
 
