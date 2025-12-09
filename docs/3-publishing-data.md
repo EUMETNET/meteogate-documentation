@@ -406,21 +406,21 @@ This section explains how you should publish discovery metadata to the Global Di
 
 Here’s how it works:
 
-  1.	Create discovery metadata for your dataset. For more information about discovery metadata, see <<discovery-metadata>>.
-    - testi
+  1.	Create discovery metadata for your dataset. For more information about discovery metadata, see [Discovery Metadata](#discovery-metadata).
   2.	The Global Discovery Catalogue needs to download the metadata record, so you need to publish it via an HTTP server. This may be as a simple file hosted on a web server (i.e., a static metadata record), or through an API (e.g., an OGC API - Records Web-service endpoint). Discovery metadata needs to be published so that it’s openly accessible (no access controls). Discovery metadata should be re-published daily (i.e., every 24-hours) even if there are no changes. This helps ensure that the discovery metadata in the Global Discovery Catalogue stays fresh.
-4.	Publishing discovery metadata uses the same mechanisms in WIS2 used for telling users about new data: real-time notifications via MQTT. Publish a WIS2 Notification Message to the Local Broker of your Data Supply Component (remember to use access control to ensure only you can publish!). This notification message includes the URL of the discovery metadata record published in step (2). For more information see <<publishing-notifications>>. Notifications about discovery metadata must be published to topic “origin/a/wis2/{centre-id}/metadata”. For more information on the WIS2 topic hierarchy see <<topic-hierarchy-for-message-publication>>.
-5.	The WIS2 Global Broker subscribes to the Local Broker on the Data Supply Capability.
-6.	The WIS2 Global Discovery Catalogue subscribes to the WIS2 Global Broker.
-7.	The notification message is pushed to the WIS2 Global Broker and validated.
-8.	If the notification message is valid, the Global Broker republishes it on the same topic.
-9.	The notification message is pushed to the WIS2 Global Discovery Catalogue. 
-10.	The WIS2 Global Discovery Catalogue parses the WIS Notification Message and – 
-11.	Downloads the linked discovery metadata record from the HTTP server.
-12.	The WIS2 Global Discovery Catalogue parses the discovery metadata record; it gets added to the catalogue if valid (note that the Global Discovery Catalogue also supports update and delete operations for discovery metadata records). The Global Discovery Catalogue also assesses the quality of the discovery metadata record against predefined KPIs and generates a report.
-13.	The Global Discovery Catalogue publishes WIS2 Monitoring Event Messages (draft spec, based on CloudEvents) on topic “monitor/a/wis2/{centre-id}” for validation (metadata validation report - ETS) and KPI assessment (metadata quality report - KPI). 
-14.	The Global Broker subscribes to these monitoring event messages and re-publishes them for Data Publishers. These messages are useful in determining whether you have successfully published discovery metadata. Data Publishers can tools like SonataFlow to trigger workflows based on receiving these monitoring events.
-15.	Now that the metadata is published to the Global Discovery Catalogue, users can browse the catalogue and discover data using the Data Explorer.  
+  3.	Publishing discovery metadata uses the same mechanisms in WIS2 used for telling users about new data: real-time notifications via MQTT. Publish a WIS2 Notification Message to the Local Broker of your Data Supply Component (remember to use access control to ensure only you can publish!). This notification message includes the URL of the discovery metadata record published in step (2). For more information see [Publishing Notifications](#publishing-notifications). Notifications about discovery metadata must be published to topic “origin/a/wis2/{centre-id}/metadata”. For more information on the WIS2 topic hierarchy see [Topic Hierarchy for Message Publication](#topic-hierarchy-for-message-publication).
+  4.	The WIS2 Global Broker subscribes to the Local Broker on the Data Supply Capability.
+  5.	The WIS2 Global Discovery Catalogue subscribes to the WIS2 Global Broker.
+  6.	The notification message is pushed to the WIS2 Global Broker and validated.
+  7.	If the notification message is valid, the Global Broker republishes it on the same topic.
+  8.	The notification message is pushed to the WIS2 Global Discovery Catalogue.
+  9.	The WIS2 Global Discovery Catalogue parses the WIS Notification Message and –
+  10.	Downloads the linked discovery metadata record from the HTTP server.
+  11.	The WIS2 Global Discovery Catalogue parses the discovery metadata record; it gets added to the catalogue if valid (note that the Global Discovery Catalogue also supports update and delete operations for discovery metadata records). The Global Discovery Catalogue also assesses the quality of the discovery metadata record against predefined KPIs and generates a report.
+  12.	The Global Discovery Catalogue publishes WIS2 Monitoring Event Messages ([draft spec](https://wmo-im.github.io/wis2-monitoring-events/standard/wis2-monitoring-events-DRAFT.html), based on [CloudEvents](https://cloudevents.io)) on topic “monitor/a/wis2/{centre-id}” for validation ([metadata validation report - ETS](https://wmo-im.github.io/wis2-monitoring-events/standard/wis2-monitoring-events-DRAFT.html)) and KPI assessment ([metadata quality report - KPI](https://wmo-im.github.io/wis2-monitoring-events/standard/wis2-monitoring-events-DRAFT.html)).
+  13.	The Global Broker subscribes to these monitoring event messages and re-publishes them for Data Publishers. These messages are useful in determining whether you have successfully published discovery metadata. Data Publishers can tools like [SonataFlow](https://sonataflow.org/serverlessworkflow/latest/index.html) to trigger workflows based on receiving these monitoring events.
+  14.	Now that the metadata is published to the Global Discovery Catalogue, users can browse the catalogue and discover data using the Data Explorer.  
+
 
 ### Publishing Notifications 
 
@@ -434,7 +434,7 @@ For implementation guidance, refer to [WMO schema repository](https://schemas.wm
 
 #### Topic Hierarchy for Message Publication
 
-MeteoGate layers on top of WMO WIS 2.0. Consequently, data exchange in MeteoGate must comply with WIS 2.0 specifications. As described in <<publishing-notifications>>, notification messages must be published to the correct topics.
+MeteoGate layers on top of WMO WIS 2.0. Consequently, data exchange in MeteoGate must comply with WIS 2.0 specifications. As described in [Publishing Notifications ](#publishing-notifications), notification messages must be published to the correct topics.
 
 Given that WIS 2.0 has hundreds of (meta)data publishers – how do we keep the notifications organised? Notifications in WIS 2.0 are published on specific **topics** according to the [WIS2 Topic Hierarchy specification](https://wmo-im.github.io/wis2-topic-hierarchy/standard/wis2-topic-hierarchy-STABLE.html).
 
