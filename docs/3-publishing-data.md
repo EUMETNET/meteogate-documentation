@@ -379,8 +379,7 @@ Existing APIs implemented with other than MeteoGate-recommended technologies can
 
 For further API implementation guidance, refer to [OGC Developer Portal](https://developer.ogc.org), [OGC E-learning materials](https://opengeospatial.github.io/e-learning/index.html) and [OGC EDR tutorial](https://ogcapi-workshop.ogc.org/api-deep-dive/environmental-data-retrieval/), which provide documentation, tutorials, examples, and best practices for OGC API standards, including OGC API-EDR. Also, the [STAC website](https://stacspec.org/en/) provides tutorials and other developer resources.
 
-For implementation example, refer to e.g. [FMI’s EDR API](https://api.meteogate.eu/fi-fmi/edr), [Open Radar Data API](https://api.meteogate.eu/eu-eumetnet-weather-radar) and [Surface Observations API](https://api.meteogate.eu/eu-eumetnet-surface-observations).
-
+For implementation examples, refer to e.g. [FMI’s EDR API](https://api.meteogate.eu/fi-fmi/edr), [Open Radar Data API](https://api.meteogate.eu/eu-eumetnet-weather-radar) and [Surface Observations API](https://api.meteogate.eu/eu-eumetnet-surface-observations).
 
 The [OGC EDR Workshop repository (given as part of the EUMETNET project RODEO)](https://github.com/EUMETNET/ogc-edr-workshop) contains example implementations, configuration files, and test data that demonstrate how to publish data using the OGC API - Environmental Data Retrieval (EDR) standard. It is recommended for Data Publishers looking to understand and test EDR-based APIs in a MeteoGate-compatible setup.
 
@@ -423,13 +422,121 @@ Here’s how it works:
 
 ### Publishing Notifications 
 
-MeteoGate and WMO WIS 2.0 require notifications at the Data Supply to announce new or updated data and metadata. These notifications enable real-time data sharing and keep Data Consumers informed about dataset changes. 
+MeteoGate and WMO WIS 2.0 use real-time notifications to inform Data Consumers in near real-time about new or updated data and metadata.
 
-Data Publishers shall generate and publish notifications, first on the Data Supply and then at the WMO WIS 2.0 Global Broker. Data Consumers can subscribe to notifications from Global Brokers for updates. 
+Notifications are GeoJSON objects published using the Message Broker Protocol (MQTT 3.1 or MQTT 5). Notifications must conform to the [WIS2 Notification Message](https://wmo-im.github.io/wis2-notification-message/standard/wis2-notification-message-STABLE.html) specification. 
 
-Notifications use the Message Broker Protocol (MQTT 3.1 or MQTT 5) and follow the WMO Notification Message Format (GeoJSON) with a structured topic hierarchy. Event-driven triggers, like data updates or file arrivals, can automate notification publishing. 
+Data Publishers generate notifications and publish them from the MQTT broker within their Data Supply Component (“Local Broker”). Event-driven triggers, like data updates or file arrivals, can automate notification publishing.
 
-For implementation guidance, refer to [WMO schema repository](https://schemas.wmo.int/wnm/1.1.0/examples) for examples, Appendix E in the[ Manual on WIS 2.0](https://community.wmo.int/en/activity-areas/wis/publications/1060-vII) or [WMO WIS2 Notification Message Encoding](https://wmo-im.github.io/wis2-notification-message/standard/wis2-notification-message-STABLE.html) for schema, and the [WIS2 Cookbook](https://wmo-im.github.io/wis2-cookbook/cookbook/wis2-cookbook-DRAFT.html) for validation and access control instructions. Notifications can be published using existing infrastructure or open-source message brokers like [Eclipse Mosquitto](https://mosquitto.org/).
+WIS 2.0 Global Brokers subscribe to those notifications and redistribute them at scale. Notifications must be published to the correct topic, as defined in the WIS2 Topic Hierarchy specification (also see section <<topic-hierarchy for message publication>>).
+
+Data Consumers subscribe to the WIS 2.0 Global Brokers to receive notifications about new and updated data and metadata. WIS 2.0 recommends that Data Consumer subscribe to at least two Global Brokers for resilience.
+
+Here’s how it works:
+
+  1.	Publish a notification message to the Local Broker advertising availability of new data
+  2.	Global Broker subscribes to the Local Broker; it validates received messages and republishes them
+  3.	Data Consumer subscribes to the Global Broker and receives notifications about the availability of new data
+  4.	Data Consumer downloads data from the Data Supply Capability (aka. WIS2 Node) using the link in the notification message 
+ 
+To illustrate what you need to know about WIS2 Notification Messages for data, let’s take a look at a fictional example [notification message](https://github.com/6a6d74/wis2-notification-examples/blob/main/nl-knmi-nmc-Actuele10mindata-KNMIstations-2--notification-91c694b9-f811-4017-837b-2f19febdea58--draft-apr2024 1.json) providing a notification advertising availability of new data from WIGOS Station 0-20000-0-06344 (ROTTERDAM THE HAGUE AP, Netherlands) as part of KNMI’s current 10-minute observation dataset (Actuele10mindataKNMIstations-2).
+
+Notification identifier id must always be unique – use a UUID.
+
+"id": "91c694b9-f811-4017-837b-2f19febdea58"
+ 
+Including geometry for the data item is good practice – it helps Data Consumers decide if this particular data item is one they want.
+
+"geometry": {
+    "type": "Point",
+    "coordinates": [
+        4.4469,
+        51.9606
+    ]
+}
+
+Identifier for the data item data_id must always be unique; you can decide how to do this, but most people are appending a local identifier (i.e., file/object name) to the topic.
+
+"data_id": "nl-knmi-nmc/data/recommended/weather/surface-based-observations/synop/WIGOS_0-20000-0-06344_20240411T130000"
+
+datetime is the time associated with the data (i.e., the observation time) – also useful for users to determine if this is data they need.
+
+"datetime": "2024-04-11T13:00:00Z"
+
+pubtime is the time when the notification message was sent; a CORRECTION must always have a later pubtime than the original message _and_ have a link with rel=update (see more on links later).
+
+"pubtime": "2024-04-11T13:15:06Z"
+
+Discovery metadata for the dataset must exist before the data is shared. The Global Broker will discard messages for which there is no associated metadata record. This is also useful for Data Consumers – they find more context about this data item by searching in the Global Discovery Catalogue (or maybe their favourite search engine).
+
+"metadata_id": "urn:wmo:md:nl-knmi-nmc:Actuele10mindataKNMIstations-2"
+
+The properties section in a GeoJSON record can contain anything. Here we’ve added the property wigos_station_identifier; given that KNMI’s 10-minute observations dataset contains 10s if not 100s of stations, this is a really easy way to help Data Consumers find the data items they need without them needing to download the data and unpack it to see if it’s what they need. This is called “client-side filtering”. See WIS2 Cookbook §3.6 Advertising client-side filters for data subscriptions in WCMP2 and WNM for details on this.
+
+"wigos_station_identifier": "0-20000-0-06344"
+
+We shouldn’t assume that Data Consumers know what they’re allowed to do with the data. Yes, they could look this up in the metadata record, but is does no harm to remind them in the notification message itself – at the point of data use.
+"rights": "Users are granted free and unrestricted access to this data, without charge and with no conditions on use. Users are requested to attribute the producer of this data. WMO Unified Data Policy (Resolution 1 (Cg-Ext 2021))"
+
+And also providing a link to a license. 
+
+{
+    "rel": "license",
+    "type": "text/html",
+    "href": "https://creativecommons.org/licenses/by/4.0/",
+    "title": "CC BY 4.0 Deed | Attribution 4.0 International | Creat..."
+}
+
+Here’s the crucial part of the notification message: the link to the data! Each link follows a similar structure. rel is the “link relation” type. A link with rel=canonical is always the default one to look at. Other link types include update and license (mentioned earlier), item and station (coming next), and more. A table (albeit incomplete) of link types is provided in the WCMP2 specification.
+
+type provides the media type (MIME type) of the resource. length enables a simple integrity check. href provides the URL for the resource – in this case an observation for The Hague encoded in BUFR4. For Core data, it’s the URL in the canonical link that Global Caches will download from. For Core data, the URL in the canonical link _must_ be directly resolvable – i.e., no access controls or URL templates.
+
+"links": [
+    {
+        "rel": "canonical",
+        "type": "application/x-bufr",
+        "href": "https://api.dataplatform.knmi.nl/open-data/v1/datasets/Actuele10mindataKNMIstations/versions/2/files/WIGOS_0-20000-0-06344_20240411T130000.bufr4",
+        "length": 199
+    },
+…
+]
+
+KNMI also provide access to this data via an OGC-API EDR endpoint that requires an API key to access. The link relation item is used here to say that this link points to a resource that is a single item within the dataset (i.e., an observation at given place and time). The security block must follow one of the [OpenAPI Security Schemes](https://learn.openapis.org/specification/security.html). In this case, we’re indicating the API key must be added to the API call using the query parameter api-key, and where you can request an API key. More information about providing resources with access control can be found in the WIS2 Cookbook.
+{
+    "rel": "item",
+    "type": "application/vnd.coverage+json",
+    "href": "https://api.dataplatform.knmi.nl/edr/v1/collections/observations/instances/unvalidated/locations/06344?datetime=2024-04-11T13%3A00%3A00Z",
+    "security": {
+        "default": {
+            "type": "apiKey",
+            "name": "AUTHORIZATION",
+            "in": “header",
+            "description": "Please request an API key via https://developer.dataplatform.knmi.nl/open-data-api#token"
+        }
+    }
+}
+
+We can also use links to point to other useful information – such as a details of the observing platform where the data was collected. Here we use link relation station to indicate we’re referring to only one station. The resource we’re linking to is the description in OSCAR Surface. 
+{
+    "rel": "station",
+    "type": "text/html",
+    "href": "https://oscar.wmo.int/surface/#/search/station/stationReportDetails/0-20000-0-06344",
+    "title": "WIGOS Station 0-20000-0-06344, ROTTERDAM THE HAGUE ..."
+}
+
+For implementation guidance and more examples, refer to [Manual on WIS, Volume II](), Appendix E or [WMO WIS2 Notification Message Encoding](https://wmo-im.github.io/wis2-notification-message/standard/wis2-notification-message-STABLE.html), and the [WIS2 Cookbook](https://wmo-im.github.io/wis2-cookbook/cookbook/wis2-cookbook-DRAFT.html) (recipes [3.1. Validating a WIS2 Notification Message](https://wmo-im.github.io/wis2-cookbook/cookbook/wis2-cookbook-DRAFT.html#_validating_a_wis2_notification_message), [3.2. Publishing a WIS2 Notification Message with access control](https://wmo-im.github.io/wis2-cookbook/cookbook/wis2-cookbook-DRAFT.html#_publishing_a_wis2_notification_message_with_access_control), [3.3. Publishing a WIS2 Notification Message with embedded data](https://wmo-im.github.io/wis2-cookbook/cookbook/wis2-cookbook-DRAFT.html#_publishing_a_wis2_notification_message_with_embedded_data), and [3.4. Publishing a WIS2 Notification Message for resource deletion](https://wmo-im.github.io/wis2-cookbook/cookbook/wis2-cookbook-DRAFT.html#_publishing_a_wis2_notification_message_for_resource_deletion)).
+
+There are many options for implementing WIS 2.0 Notification messaging:
+
+  1.	Homebrew: Build your own application for notification message publication. Leverage one of many open-source or commercially available MQTT broker solutions
+      - [Mosquitto](https://mosquitto.org): simple open-source MQTT broker
+      - [EMQX](https://www.emqx.com): more sophisticated open-source MQTT broker, supports clustering, also available as a managed service (SaaS)
+      - [VerneMQ](https://vernemq.com): a scaleable, enterprise-ready MQTT broker
+      - [Solace](https://solace.com/products/platform): event-driven integration and streaming, deployable and available as a managed service (SaaS)
+      - [HiveMQ](https://www.hivemq.com): event-driven IoT data streaming platform, available as a managed service (SaaS) 
+  2.	Open-source: WIS2box ([GitHub](https://github.com/World-Meteorological-Organization/wis2box), [documentation](https://docs.wis2box.wis.wmo.int)), developed with coordination from WMO as a reference implementation of a WIS2 Node and building on many other open-source projects, including [pygeoapi](https://pygeoapi.io), [paho-mqtt](https://pypi.org/project/paho-mqtt) and [mosquitto](https://mosquitto.org).
+  3.	Commercial: For example, [IBL Moving Weather](https://www.iblsoft.com/products/moving-weather) – turn-key solution from a commercial provider with support and services.
+  4.	Interactive / scripted: Script it in the terminal or use a Jupyter notebook. Leverage open-source utilities like [pywis-pubsub](https://github.com/World-Meteorological-Organization/pywis-pubsub) to do the heavy lifting; a utility carved out from WIS2box. Publish via cloud-based broker, e.g., HiveMQ.
 
 #### Topic Hierarchy for Message Publication
 
