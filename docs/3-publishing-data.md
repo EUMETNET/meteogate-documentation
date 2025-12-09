@@ -359,7 +359,8 @@ WIS 2.0 Global Brokers will discard messages published on unregistered topics (i
 The topic hierarchy follows the pattern below with 9 levels:
 {1:channel}/{2:version}/{3:system}/{4:centre-id}/{5:notification-type}/{6:data-policy}/{7:earth-system-discipline}/{8:sub-discipline}/{9:sub-sub-discipline} 
   1. channel
-  - “origin” for messages coming from WIS2 Nodes, or “cache” for messages coming from Global Caches. Global Caches are part of the WIS 2.0 infrastructure – MeteoGate doesn’t use them directly, but see the [Guide to WIS, Volume II](https://wmo-im.github.io/wis2-guide/guide/wis2-guide-APPROVED.html#_2_4_3_global_cache) if you’d like to know more. 
+
+    - “origin” for messages coming from WIS2 Nodes, or “cache” for messages coming from Global Caches. Global Caches are part of the WIS 2.0 infrastructure – MeteoGate doesn’t use them directly, but see the [Guide to WIS, Volume II](https://wmo-im.github.io/wis2-guide/guide/wis2-guide-APPROVED.html#_2_4_3_global_cache) if you’d like to know more. 
   2. version
     - Just “a” for now – but we’re ready for breaking changes in years to come such as modifying the structure of the topic hierarchy.
   3. system
