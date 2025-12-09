@@ -437,16 +437,19 @@ Here’s how it works:
   1.	Publish a notification message to the Local Broker advertising availability of new data
   2.	Global Broker subscribes to the Local Broker; it validates received messages and republishes them
   3.	Data Consumer subscribes to the Global Broker and receives notifications about the availability of new data
-  4.	Data Consumer downloads data from the Data Supply Capability (aka. WIS2 Node) using the link in the notification message 
+  4.	Data Consumer downloads data from the Data Supply Capability (aka. WIS2 Node) using the link in the notification message
+
+![Publishing notifications](images/meteogate-publishing-notification.png)
  
 To illustrate what you need to know about WIS2 Notification Messages for data, let’s take a look at a fictional example [notification message](https://github.com/6a6d74/wis2-notification-examples/blob/main/nl-knmi-nmc-Actuele10mindata-KNMIstations-2--notification-91c694b9-f811-4017-837b-2f19febdea58--draft-apr2024 1.json) providing a notification advertising availability of new data from WIGOS Station 0-20000-0-06344 (ROTTERDAM THE HAGUE AP, Netherlands) as part of KNMI’s current 10-minute observation dataset (Actuele10mindataKNMIstations-2).
 
 Notification identifier id must always be unique – use a UUID.
 
-"id": "91c694b9-f811-4017-837b-2f19febdea58"
+```"id": "91c694b9-f811-4017-837b-2f19febdea58"```
  
 Including geometry for the data item is good practice – it helps Data Consumers decide if this particular data item is one they want.
 
+```
 "geometry": {
     "type": "Point",
     "coordinates": [
@@ -454,43 +457,47 @@ Including geometry for the data item is good practice – it helps Data Consumer
         51.9606
     ]
 }
+```
 
 Identifier for the data item data_id must always be unique; you can decide how to do this, but most people are appending a local identifier (i.e., file/object name) to the topic.
 
-"data_id": "nl-knmi-nmc/data/recommended/weather/surface-based-observations/synop/WIGOS_0-20000-0-06344_20240411T130000"
+```"data_id": "nl-knmi-nmc/data/recommended/weather/surface-based-observations/synop/WIGOS_0-20000-0-06344_20240411T130000"```
 
 datetime is the time associated with the data (i.e., the observation time) – also useful for users to determine if this is data they need.
 
-"datetime": "2024-04-11T13:00:00Z"
+```"datetime": "2024-04-11T13:00:00Z"```
 
 pubtime is the time when the notification message was sent; a CORRECTION must always have a later pubtime than the original message _and_ have a link with rel=update (see more on links later).
 
-"pubtime": "2024-04-11T13:15:06Z"
+```"pubtime": "2024-04-11T13:15:06Z"```
 
 Discovery metadata for the dataset must exist before the data is shared. The Global Broker will discard messages for which there is no associated metadata record. This is also useful for Data Consumers – they find more context about this data item by searching in the Global Discovery Catalogue (or maybe their favourite search engine).
 
-"metadata_id": "urn:wmo:md:nl-knmi-nmc:Actuele10mindataKNMIstations-2"
+```"metadata_id": "urn:wmo:md:nl-knmi-nmc:Actuele10mindataKNMIstations-2"```
 
 The properties section in a GeoJSON record can contain anything. Here we’ve added the property wigos_station_identifier; given that KNMI’s 10-minute observations dataset contains 10s if not 100s of stations, this is a really easy way to help Data Consumers find the data items they need without them needing to download the data and unpack it to see if it’s what they need. This is called “client-side filtering”. See WIS2 Cookbook §3.6 Advertising client-side filters for data subscriptions in WCMP2 and WNM for details on this.
 
-"wigos_station_identifier": "0-20000-0-06344"
+```"wigos_station_identifier": "0-20000-0-06344"```
 
 We shouldn’t assume that Data Consumers know what they’re allowed to do with the data. Yes, they could look this up in the metadata record, but is does no harm to remind them in the notification message itself – at the point of data use.
 "rights": "Users are granted free and unrestricted access to this data, without charge and with no conditions on use. Users are requested to attribute the producer of this data. WMO Unified Data Policy (Resolution 1 (Cg-Ext 2021))"
 
 And also providing a link to a license. 
 
+```
 {
     "rel": "license",
     "type": "text/html",
     "href": "https://creativecommons.org/licenses/by/4.0/",
     "title": "CC BY 4.0 Deed | Attribution 4.0 International | Creat..."
 }
+```
 
 Here’s the crucial part of the notification message: the link to the data! Each link follows a similar structure. rel is the “link relation” type. A link with rel=canonical is always the default one to look at. Other link types include update and license (mentioned earlier), item and station (coming next), and more. A table (albeit incomplete) of link types is provided in the WCMP2 specification.
 
 type provides the media type (MIME type) of the resource. length enables a simple integrity check. href provides the URL for the resource – in this case an observation for The Hague encoded in BUFR4. For Core data, it’s the URL in the canonical link that Global Caches will download from. For Core data, the URL in the canonical link _must_ be directly resolvable – i.e., no access controls or URL templates.
 
+```
 "links": [
     {
         "rel": "canonical",
@@ -500,8 +507,11 @@ type provides the media type (MIME type) of the resource. length enables a simpl
     },
 …
 ]
+```
 
 KNMI also provide access to this data via an OGC-API EDR endpoint that requires an API key to access. The link relation item is used here to say that this link points to a resource that is a single item within the dataset (i.e., an observation at given place and time). The security block must follow one of the [OpenAPI Security Schemes](https://learn.openapis.org/specification/security.html). In this case, we’re indicating the API key must be added to the API call using the query parameter api-key, and where you can request an API key. More information about providing resources with access control can be found in the WIS2 Cookbook.
+
+```
 {
     "rel": "item",
     "type": "application/vnd.coverage+json",
@@ -515,14 +525,18 @@ KNMI also provide access to this data via an OGC-API EDR endpoint that requires 
         }
     }
 }
+```
 
-We can also use links to point to other useful information – such as a details of the observing platform where the data was collected. Here we use link relation station to indicate we’re referring to only one station. The resource we’re linking to is the description in OSCAR Surface. 
+We can also use links to point to other useful information – such as a details of the observing platform where the data was collected. Here we use link relation station to indicate we’re referring to only one station. The resource we’re linking to is the description in OSCAR Surface.
+
+```
 {
     "rel": "station",
     "type": "text/html",
     "href": "https://oscar.wmo.int/surface/#/search/station/stationReportDetails/0-20000-0-06344",
     "title": "WIGOS Station 0-20000-0-06344, ROTTERDAM THE HAGUE ..."
 }
+```
 
 For implementation guidance and more examples, refer to [Manual on WIS, Volume II](), Appendix E or [WMO WIS2 Notification Message Encoding](https://wmo-im.github.io/wis2-notification-message/standard/wis2-notification-message-STABLE.html), and the [WIS2 Cookbook](https://wmo-im.github.io/wis2-cookbook/cookbook/wis2-cookbook-DRAFT.html) (recipes [3.1. Validating a WIS2 Notification Message](https://wmo-im.github.io/wis2-cookbook/cookbook/wis2-cookbook-DRAFT.html#_validating_a_wis2_notification_message), [3.2. Publishing a WIS2 Notification Message with access control](https://wmo-im.github.io/wis2-cookbook/cookbook/wis2-cookbook-DRAFT.html#_publishing_a_wis2_notification_message_with_access_control), [3.3. Publishing a WIS2 Notification Message with embedded data](https://wmo-im.github.io/wis2-cookbook/cookbook/wis2-cookbook-DRAFT.html#_publishing_a_wis2_notification_message_with_embedded_data), and [3.4. Publishing a WIS2 Notification Message for resource deletion](https://wmo-im.github.io/wis2-cookbook/cookbook/wis2-cookbook-DRAFT.html#_publishing_a_wis2_notification_message_for_resource_deletion)).
 
