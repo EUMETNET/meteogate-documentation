@@ -444,41 +444,58 @@ For Data Publishing Patterns 1 and 2, the MeteoGate Solution Manager performs ad
 
 Once the data is prepared, the publishing pattern is selected, and the Data Supply is deployed, the next step is to onboard it to WIS2 and MeteoGate. This process ensures that all registered Data Supply components function with MeteoGate and WMO WIS2 requirements, making them discoverable and accessible through MeteoGate. 
 
-### Registering a WIS2 Node  
+### Registering a WIS2 Node
 
-The first step to on-board a Data Supply service in MeteoGate is to register the service with the WMO as a WIS2 Node. Registration and decommissioning of a WIS2 Node must be approved by the Permanent Representative (PR) of the country or territory from where the WIS2 Node is operated. In a cloud-based environment, where the service is operated isn’t necessary where the service is deployed.  
+MeteoGate Data Supply Capabilities must be registered on WIS 2.0 as a WIS2 Node.
 
-As an example, if MetNorway want to publish data on snow depth, with the technical components hosted on the ECMWF’s European Weather Cloud region in Bologna, the relevant country is Norway rather than Italy. 
+This is required so that you can publish discovery metadata about your datasets, so they can be discovered using the Data Explorer and, consequently, considered to be part of MeteoGate.
 
-Full details of that process are described in the [Guide to WIS 2.0, section 2.6 Implementation and operation of a WIS2 Node](https://community.wmo.int/en/activity-areas/wis/publications/1061-vII).  
+If your organization already has a WIS2 Node and you are planning to publish your notifications via the Local Broker of that WIS2 Node, then you do not need to register a separate WIS2 Node (you may do so – but it is not required). In this case, your Data Supply Capability will be treated as part of the existing WIS2 Node and you should use the Node’s “centre-id”.
 
-**Registering a centre-id** 
+*Note: If the operation of your Data Supply Capability might transition to another organisation at some point in the future (and hence use a different Local Broker) you should register a separate WIS2 Node. Unfortunately, a WIS2 Node can only have single Local Broker and is not possible to split publication of notifications between multiple brokers. This is why EUMETNET operated Data Supply Capabilities are registered as independent WIS2 Nodes from those of their Host Member.*
 
-Registration of a WIS2 Node requires the designation of a “centre-id” - a mandatory field in the discovery metadata. A centre-id is proposed by the provider of the MeteoGate Data Supply service and endorsed by the WMO Secretariat. It is a single identifier consisting of a top-level domain (TLD) and a centre name and represents the data publisher, distributor or issuing centre of a given dataset or data product/granule (see the [Manual on WIS](https://community.wmo.int/en/activity-areas/wis/publications/1060-vII), Volume II – Appendix D. WIS2 Topic Hierarchy).  
- 
-For example, **uk-metoffice-nmc** would represent the National Meteorological Centre (NMC) operated by Met Office, the United Kingdom’s National Meteorological service.   
-When providing a Data Supply service on behalf of a EUMETNET Programme (HVD Service), a new center_id can be registered which may include all underlying topics without having to move or change anything.  
+If you do not have an existing WIS2 Node, or you are not able to use the Local Broker from an existing WIS2 Node, you must start the on-boarding of your Data Supply Capability by registering a new WIS2 Node – as described below.
 
-The centre-id should follow a similar pattern: [country id]-[met center name] + the descriptor ‘eumetnet’   
+A WIS2 “centre-id” is allocated to your Data Supply capability during this registration process. The “centre-id” is used when identifying datasets (e.g., in their discovery metadata) and when publishing notifications about new or updated data and metadata.
 
-Following the above example, the centre-id for the UK NMC supplying data via an EUMETNET HVD service would then be **uk-metoffice-eumetnet**
-This way searching for topics in all *.eumetnet centers will give the same result. 
+Instructions for registering a WIS2 Node are in the [Guide to WIS (WMO No. 1061), Volume II: §2.6.1.1 Registration and decommissioning of a WIS2 Node](https://wmo-im.github.io/wis2-guide/guide/wis2-guide-APPROVED.html). The summary version is:
 
-Complex Data Supply services using multiple message brokers may require more than one centre-id to be registered. In such cases, please get in touch with the MeteoGate Service Desk or the WIS NFP for more guidance. 
+  1.	You are ready to run a WIS2 Node and your **Permanent Representative to WMO** (PR, usually the head of the National Meteorological Service) has given approval. PR approval ensures that only datasets and services that conform to WMO Technical Regulations are added to WIS2.  
+  2.	Choose a “centre-id” based on the [specification](https://wmo-im.github.io/wis2-topic-hierarchy/standard/wis2-topic-hierarchy-STABLE.html) and [guidance](https://wmo-im.github.io/wis2-guide/guide/wis2-guide-APPROVED.html). See the [WMO Codes Registry](http://codes.wmo.int/wis/topic-hierarchy/centre-id) for the current list.
+  3.	Via your **WIS National Focal Point** (NFP, see list here) propose your “centre-id” to **WMO Secretariat** who will validate against the specification.
+  4.	Once “centre-id” is agreed, the **NFP** completes the **WIS2 register** with details of your WIS2 Node, including the address of your Local Broker and the credentials required for Global Services to subscribe.
+  5.	Your **GISC** then assesses that your WIS2 Node meets all the WIS2 requirements (see [Assessing and accepting the WIS2 Node](#assessing-and-accepting-the-wis2-node)).
+  6.	If all OK, your WIS2 Node is connected to the WIS2 Global Services and you can begin publishing notifications about data and metadata.
 
-For more information, please refer to the [WIS2 Guide, section 2.6.1.2](https://community.wmo.int/en/activity-areas/wis/publications/1061-vII) Guidance on assigning a centre identifier for a WIS2 Node. 
+#### Which PR should I contact?
 
-### Assessing and accepting the WIS2 Node 
+A PR is responsible for all data publication within their country or territory – not only that of the National Meteorological Service. For international organisations, contact the PR of the country or territory where the WIS2 Node is operated.
+It’s not always clear where your WIS2 Node is operated – especially in a cloud environment. For example, if Met Norway want to publish data on snow depth, with the technical components hosted on the ECMWF’s European Weather Cloud region in Bologna, the relevant PR from whom to seek approval is Norwegian rather than Italian. The criterion is where the people managing the service are based, rather than where the data-servers are situated.
 
-WMO designates Global Information System Centres (GISC) to coordinate and manage data sharing within WIS2. As part of the WIS2 Node registration, the relevant GISC will assess readiness of the WIS2 Node for inclusion in WIS2. 
+#### Registering a centre-id
 
-The WIS NFP should coordinate with the relevant GISC when registering the WIS2 Node. GISCs in Europe with their areas of responsibility are:
+Registration of a WIS2 Node requires the designation of a “centre-id” - a mandatory element in the identifier of a dataset (property “metadata-id” in the discovery metadata). A centre-id is proposed by the provider of the MeteoGate Data Supply service and endorsed by the WMO Secretariat. It is a single identifier consisting of a top-level domain (TLD) and a centre name and represents the data publisher, distributor or issuing centre of a given dataset (see the [Manual on WIS, Volume II – Appendix D. WIS2 Topic Hierarchy](https://wmo-im.github.io/wis2-topic-hierarchy/standard/wis2-topic-hierarchy-STABLE.html)).
 
-  - **GISC-Offenbach**: Germany + Austria, Bosnia & Herzegovina, Bulgaria, Croatia, Cyprus, Czechia, Denmark, Estonia, EUMETSAT, Finland, Greece, Hungary, Israel, Italy, Jordan, Kenya, Latvia, Lithuania, Montenegro, North Macedonia, Norway, Poland, Romania, Serbia, Slovakia, Sweden, Switzerland, Turkey 
-  - **GISC-Toulouse**: France (& Clipperton, French Guyana, Guadeloupe, St Martin, St Barthelemy, Kerguelen Islands, La Reunion, Martinique, St Pierre & Miquelon, Wallis & Futuna) + Algeria, Belgium, Luxemberg, Monaco, Portugal, Spain  
-  - **GISC-Exeter**: UK (& British Antarctic Survey, Ascension, Bermuda, Gibraltar, Pitcairn Islands, St Helena) + ECMWF, Ireland, Iceland, Netherlands, Tanzania 
+For example, “uk-metoffice-nmc” represents the National Meteorological Centre (NMC) operated by Met Office, the United Kingdom’s National Meteorological service. 
 
-The GISC will also be able to provide guidance on choosing the right WMO Data Policy (Core or Recommended), and if needed, the WIS2 topic(s) for notification messages. For more info, see [Manual on WIS, Volume II – Appendix D. WIS2 Topic Hierarchy](https://community.wmo.int/en/activity-areas/wis/publications/1060-vII). 
+When providing a Data Supply service on behalf of a EUMETNET Programme (e.g., for an HVD Service), the “centre-id” should begin “eu-eumetnet-”, followed by a token that distinguishes the type of data, e.g., “eu-eumetnet-surface-observations”.
+
+For more information, please refer to the [Guide to WIS, Volume II, Section 2.6.1.2](https://wmo-im.github.io/wis2-guide/guide/wis2-guide-APPROVED.html#_2_6_1_2_guidance_on_assigning_a_centre_identifier_for_a_wis2_node).
+
+#### Assessing and accepting the WIS2 Node
+
+WMO designates Global Information System Centres (GISC) to coordinate and manage data sharing within WIS 2.0. When you register your Data Supply Component as a WIS2 Node registration, your GISC will assess its readiness for inclusion into WIS 2.0.
+
+Areas of responsibility for European GISCs are given below:
+  -	GISC-Offenbach: Germany + Austria, Bosnia & Herzegovina, Bulgaria, Croatia, Cyprus, Czechia, Denmark, Estonia, EUMETSAT, Finland, Greece, Hungary, Israel, Italy, Jordan, Kenya, Latvia, Lithuania, Montenegro, North Macedonia, Norway, Poland, Romania, Serbia, Slovakia, Sweden, Switzerland, Türkiye. 
+  -	GISC-Toulouse: France (& Clipperton, French Guyana, Guadeloupe, St Martin, St Barthelemy, Kerguelen Islands, La Reunion, Martinique, St Pierre & Miquelon, Wallis & Futuna) + Algeria, Belgium, Luxemberg, Monaco, Portugal, Spain.
+  -	GISC-Exeter: UK (& British Antarctic Survey, Ascension, Bermuda, Gibraltar, Pitcairn Islands, St Helena) + ECMWF, Ireland, Iceland, Netherlands.
+
+The GISC will also be able to provide guidance on choosing the right WMO Data Policy (Core or Recommended), and the correct WIS2 Topic Hierarchy on which to publish Notifications (see <<topic-hierarchy-for-message-publication>> for details).
+
+Once you have been approved by your GISC, the WMO Secretariat will request that all Global Brokers subscribe to the Local Broker in your Data Supply Component. 
+
+After at least one Global Broker has confirmed that their subscription is configured, you can publish notifications to upload metadata to the Global Discovery Catalogue which completes the process of getting your dataset visible within MeteoGate. 
 
 ### Integrating the Data Supply with MeteoGate and WIS2 components 
 
