@@ -74,28 +74,6 @@ Recommended standards:
 
 ---
 
-## Examples 
-
-The following are real-world examples of data publication within MeteoGate.
-
-### Metadata Examples
-
-  > [to be updated]
-
-### Notification Examples
-
-  - [WMO notification examples](https://schemas.wmo.int/wnm/1.1.0/) 
-
-### API Examples
-
-   - [FMI’s EDR API](https://api.meteogate.eu/fi-fmi/edr)
-   - [Open Radar Data API](https://api.meteogate.eu/eu-eumetnet-weather-radar)
-   - [Surface Observations API](https://api.meteogate.eu/eu-eumetnet-surface-observations)
-
-  > [to be updated] Add more examples?
-
----
-
 ## Start Here – Steps to Publish Data Through MeteoGate
 
 ### Step 1: Select data publishing pattern(s) and deployment environment
@@ -402,7 +380,10 @@ Existing APIs implemented with other than MeteoGate-recommended technologies can
 
 For further API implementation guidance, refer to [OGC Developer Portal](https://developer.ogc.org), [OGC E-learning materials](https://opengeospatial.github.io/e-learning/index.html) and [OGC EDR tutorial](https://ogcapi-workshop.ogc.org/api-deep-dive/environmental-data-retrieval/), which provide documentation, tutorials, examples, and best practices for OGC API standards, including OGC API-EDR. Also, the [STAC website](https://stacspec.org/en/) provides tutorials and other developer resources.
 
-The [OGC EDR Workshop repository (given as part of the EUMETNET project RODEO)](https://github.com/EUMETNET/ogc-edr-workshop) contains example implementations, configuration files, and test data that demonstrate how to publish data using the OGC API - Environmental Data Retrieval (EDR) standard.  It is recommended for Data Publishers looking to understand and test EDR-based APIs in a MeteoGate-compatible setup.
+For implementation example, refer to e.g. [FMI’s EDR API](https://api.meteogate.eu/fi-fmi/edr), [Open Radar Data API](https://api.meteogate.eu/eu-eumetnet-weather-radar) and [Surface Observations API](https://api.meteogate.eu/eu-eumetnet-surface-observations).
+
+
+The [OGC EDR Workshop repository (given as part of the EUMETNET project RODEO)](https://github.com/EUMETNET/ogc-edr-workshop) contains example implementations, configuration files, and test data that demonstrate how to publish data using the OGC API - Environmental Data Retrieval (EDR) standard. It is recommended for Data Publishers looking to understand and test EDR-based APIs in a MeteoGate-compatible setup.
 
 **Recommendations**
 
@@ -441,7 +422,7 @@ Data Publishers shall generate and publish notifications, first on the Data Supp
 
 Notifications use the Message Broker Protocol (MQTT 3.1 or MQTT 5) and follow the WMO Notification Message Format (GeoJSON) with a structured topic hierarchy. Event-driven triggers, like data updates or file arrivals, can automate notification publishing. 
 
-For implementation guidance and examples, refer to Appendix E in the[ Manual on WIS 2.0](https://community.wmo.int/en/activity-areas/wis/publications/1060-vII) or [WMO WIS2 Notification Message Encoding](https://wmo-im.github.io/wis2-notification-message/standard/wis2-notification-message-STABLE.html), and the [WIS2 Cookbook](https://wmo-im.github.io/wis2-cookbook/cookbook/wis2-cookbook-DRAFT.html) for validation and access control instructions. Notifications can be published using existing infrastructure or open-source message brokers like [Eclipse Mosquitto](https://mosquitto.org/). 
+For implementation guidance, refer to [WMO schema repository](https://schemas.wmo.int/wnm/1.1.0/examples) for examples, Appendix E in the[ Manual on WIS 2.0](https://community.wmo.int/en/activity-areas/wis/publications/1060-vII) or [WMO WIS2 Notification Message Encoding](https://wmo-im.github.io/wis2-notification-message/standard/wis2-notification-message-STABLE.html) for schema, and the [WIS2 Cookbook](https://wmo-im.github.io/wis2-cookbook/cookbook/wis2-cookbook-DRAFT.html) for validation and access control instructions. Notifications can be published using existing infrastructure or open-source message brokers like [Eclipse Mosquitto](https://mosquitto.org/).
 
 ### Testing and Validating Data Supply 
 
