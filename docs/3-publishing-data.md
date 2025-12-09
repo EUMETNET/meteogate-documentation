@@ -482,6 +482,8 @@ The topic hierarchy follows the pattern below with 9 levels:
   9. sub-sub-discipline
     - Refer to the [WMO Codes Registry](http://codes.wmo.int/wis/topic-hierarchy) for sub-sub-disciplines.
 
+![Publishing discovery metadata](images/meteogate-publishing-discovery-metadata.png)
+
 ### Testing and Validating Data Supply 
 
 Thorough API testing is needed to ensure reliability, performance, security, interoperability, data accuracy as well as compliance with MeteoGate and WMO standard.  
