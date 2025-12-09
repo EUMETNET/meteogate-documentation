@@ -406,9 +406,9 @@ This section explains how you should publish discovery metadata to the Global Di
 
 Here’s how it works:
 
-1.	Create discovery metadata for your dataset. For more information about discovery metadata, see <<discovery-metadata>>.
-  - testi
-2.	The Global Discovery Catalogue needs to download the metadata record, so you need to publish it via an HTTP server. This may be as a simple file hosted on a web server (i.e., a static metadata record), or through an API (e.g., an OGC API - Records Web-service endpoint). Discovery metadata needs to be published so that it’s openly accessible (no access controls). Discovery metadata should be re-published daily (i.e., every 24-hours) even if there are no changes. This helps ensure that the discovery metadata in the Global Discovery Catalogue stays fresh.
+  1.	Create discovery metadata for your dataset. For more information about discovery metadata, see <<discovery-metadata>>.
+    - testi
+  2.	The Global Discovery Catalogue needs to download the metadata record, so you need to publish it via an HTTP server. This may be as a simple file hosted on a web server (i.e., a static metadata record), or through an API (e.g., an OGC API - Records Web-service endpoint). Discovery metadata needs to be published so that it’s openly accessible (no access controls). Discovery metadata should be re-published daily (i.e., every 24-hours) even if there are no changes. This helps ensure that the discovery metadata in the Global Discovery Catalogue stays fresh.
 4.	Publishing discovery metadata uses the same mechanisms in WIS2 used for telling users about new data: real-time notifications via MQTT. Publish a WIS2 Notification Message to the Local Broker of your Data Supply Component (remember to use access control to ensure only you can publish!). This notification message includes the URL of the discovery metadata record published in step (2). For more information see <<publishing-notifications>>. Notifications about discovery metadata must be published to topic “origin/a/wis2/{centre-id}/metadata”. For more information on the WIS2 topic hierarchy see <<topic-hierarchy-for-message-publication>>.
 5.	The WIS2 Global Broker subscribes to the Local Broker on the Data Supply Capability.
 6.	The WIS2 Global Discovery Catalogue subscribes to the WIS2 Global Broker.
