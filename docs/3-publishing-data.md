@@ -324,7 +324,7 @@ To align with the data structuring requirements outlined earlier, collection met
   - Expose observation locations in GeoJSON format (collections/<collection_name>/locations), supporting geospatial queries and visualization in MeteoGate’s Data Explorer. 
   - Contain a time axis (domain.axes.t), ensuring compatibility with spatiotemporal queries, particularly for datasets structured according to the EDR restricted profile.
 
-#### Resource/File-level Metadata
+#### Resource/File-Level Metadata
 
 Resource or file-level metadata describes individual resources, such as data files, and provides essential context, such as the physical variable encoded and its units of measurement. Well-structured file-level metadata also facilitates the automatic generation of discovery and collection-level metadata. 
 
@@ -344,7 +344,57 @@ File-level metadata can be included in various ways:
   - Referenced externally (e.g., linked via HTTP headers using the describedBy Link Relation type). 
   - A combination of these methods, depending on the dataset. 
 
-Using qualified terms with unique URLs enhances metadata discoverability and interoperability. This [Linked Data](https://www.w3.org/TR/sdw-bp/#dfn-linked-data) approach enables better understanding across different formats and domains, making data more accessible and increasing its usability. 
+Using qualified terms with unique URLs enhances metadata discoverability and interoperability. This [Linked Data](https://www.w3.org/TR/sdw-bp/#dfn-linked-data) approach enables better understanding across different formats and domains, making data more accessible and increasing its usability.
+
+### Topic Hierarchy for Message Publication
+
+MeteoGate layers on top of WMO WIS 2.0. Consequently, data exchange in MeteoGate must comply with WIS 2.0 specifications. As described in <<publishing-notifications>>, notification messages must be published to the correct topics.
+
+Given that WIS 2.0 has hundreds of (meta)data publishers – how do we keep the notifications organised? Notifications in WIS 2.0 are published on specific **topics** according to the [WIS2 Topic Hierarchy specification](https://wmo-im.github.io/wis2-topic-hierarchy/standard/wis2-topic-hierarchy-STABLE.html).
+
+Valid terms for each level in the topic hierarchy are published on the [WMO Codes Registry](http://codes.wmo.int/wis/topic-hierarchy).
+
+WIS 2.0 Global Brokers will discard messages published on unregistered topics (i.e., not in the spec).
+
+The topic hierarchy follows the pattern below with 9 levels:
+{1:channel}/{2:version}/{3:system}/{4:centre-id}/{5:notification-type}/{6:data-policy}/{7:earth-system-discipline}/{8:sub-discipline}/{9:sub-sub-discipline} 
+  1. channel
+    - “origin” for messages coming from WIS2 Nodes, or “cache” for messages coming from Global Caches. Global Caches are part of the WIS 2.0 infrastructure – MeteoGate doesn’t use them directly, but see the [Guide to WIS, Volume II](https://wmo-im.github.io/wis2-guide/guide/wis2-guide-APPROVED.html#_2_4_3_global_cache) if you’d like to know more. 
+  2. version
+    - Just “a” for now – but we’re ready for breaking changes in years to come such as modifying the structure of the topic hierarchy.
+  3. system
+    - Just “wis2” for now – but WMO may reuse this mechanism for other initiatives?
+    - You’re free to re-use this messaging pattern, and the infrastructure you’ve deployed, for other purposes; just use a different value for {system} and the WIS2 Global Services will ignore the messages
+  4. centre-id
+    -	The centre identifier of your WIS2 Node agreed with WMO Secretariat. For information on registering your Data Supply Component as a WIS2 Node see <<registering-a-wis2-node>>.
+    - The official list is published on WMO Codes Registry at http://codes.wmo.int/wis/topic-hierarchy/centre-id.
+  5. notification-type
+    -	“data” or “metadata”; we want don’t want to mix these resources because we use them in different ways / at different times.
+  6. data-policy
+    -	“core” or “recommended”, based on the terminology described in the [WMO Unified Data Policy, Resolution 1 (Cg-Ext(2021))](https://library.wmo.int/idurl/4/58009). 
+    -	Use the data-policy value you put in your discovery metadata record.
+  7. earth-system-discipline
+    - Based on the set of disciplines described in the WMO Unified Data Policy:
+      -	atmospheric-composition
+      -	climate
+      -	cryosphere
+      -	hydrology
+      -	ocean
+      -	space-weather
+      -	weather
+  8. sub-discipline
+    - Each Earth-system discipline has sub-disciplines defined by subject matter experts. Full details, refer to the [WMO Codes Registry](http://codes.wmo.int/wis/topic-hierarchy). 
+    - Sub-disciplines for “weather” are:
+      - advisories-warnings
+      - aviation
+      - prediction
+      - space-based-observations
+      - surface-based-observations
+      - experimental
+    - “space-based-observations” means those taken from orbiting satellite platforms; “surface-based-observations” is for everything else – including upper-air observations because the observing platforms are either on the surface (wind-profiler) or launched from the surface (radio-sonde).
+    - Sub-topics on “experimental” aren’t validated by the Global Brokers, so you can use what you like. However, Data Consumers shouldn’t expect these terms to be long-lasting, nor provide quality data at an operational SLA. 
+  9. sub-sub-discipline
+    - Refer to the [WMO Codes Registry](http://codes.wmo.int/wis/topic-hierarchy) for sub-sub-disciplines.
 
 ### Links
 
@@ -452,7 +502,7 @@ This is required so that you can publish discovery metadata about your datasets,
 
 If your organization already has a WIS2 Node and you are planning to publish your notifications via the Local Broker of that WIS2 Node, then you do not need to register a separate WIS2 Node (you may do so – but it is not required). In this case, your Data Supply Capability will be treated as part of the existing WIS2 Node and you should use the Node’s “centre-id”.
 
-*ℹ️ Note: If the operation of your Data Supply Capability might transition to another organisation at some point in the future (and hence use a different Local Broker) you should register a separate WIS2 Node. Unfortunately, a WIS2 Node can only have single Local Broker and is not possible to split publication of notifications between multiple brokers. This is why EUMETNET operated Data Supply Capabilities are registered as independent WIS2 Nodes from those of their Host Member.*
+ℹ️ ***Note:*** Note: If the operation of your Data Supply Capability might transition to another organisation at some point in the future (and hence use a different Local Broker) you should register a separate WIS2 Node. Unfortunately, a WIS2 Node can only have single Local Broker and is not possible to split publication of notifications between multiple brokers. This is why EUMETNET operated Data Supply Capabilities are registered as independent WIS2 Nodes from those of their Host Member.
 
 If you do not have an existing WIS2 Node, or you are not able to use the Local Broker from an existing WIS2 Node, you must start the on-boarding of your Data Supply Capability by registering a new WIS2 Node – as described below.
 
