@@ -170,7 +170,6 @@ The MeteoGate API Gateway is currently deployed on EWC. There is no MeteoGate AP
   - All Members providing High-Value Datasets (HVD) should connect to an appropriate HVD service or the MeteoGate API Gateway instance on EWC. 
   - If providing data or APIs that are hosted on-premises or in a public cloud, assess whether it makes sense to use HVD services, the MeteoGate API Gateway, or provide direct access. Members hosting data services on a public cloud should consider potential egress costs, as these depend on individual cloud service providers’ pricing models. Carefully evaluate whether the benefits of the MeteoGate API Gateway – such as access control, rate limiting, and monitoring – justify the additional data transfer costs. 
 
-
 ### Decide on Authentication and Rate Limits 
 
 Together with the Data Owner the Data Publisher will define appropriate data access restrictions based on, for example, appropriate data policy, requirements on being able to identify users, performance and availability requirements, and the technical platform of the Data Supply and its limitations. 
@@ -346,57 +345,6 @@ File-level metadata can be included in various ways:
 
 Using qualified terms with unique URLs enhances metadata discoverability and interoperability. This [Linked Data](https://www.w3.org/TR/sdw-bp/#dfn-linked-data) approach enables better understanding across different formats and domains, making data more accessible and increasing its usability.
 
-### Topic Hierarchy for Message Publication
-
-MeteoGate layers on top of WMO WIS 2.0. Consequently, data exchange in MeteoGate must comply with WIS 2.0 specifications. As described in <<publishing-notifications>>, notification messages must be published to the correct topics.
-
-Given that WIS 2.0 has hundreds of (meta)data publishers – how do we keep the notifications organised? Notifications in WIS 2.0 are published on specific **topics** according to the [WIS2 Topic Hierarchy specification](https://wmo-im.github.io/wis2-topic-hierarchy/standard/wis2-topic-hierarchy-STABLE.html).
-
-Valid terms for each level in the topic hierarchy are published on the [WMO Codes Registry](http://codes.wmo.int/wis/topic-hierarchy).
-
-WIS 2.0 Global Brokers will discard messages published on unregistered topics (i.e., not in the spec).
-
-The topic hierarchy follows the pattern below with 9 levels:
-{1:channel}/{2:version}/{3:system}/{4:centre-id}/{5:notification-type}/{6:data-policy}/{7:earth-system-discipline}/{8:sub-discipline}/{9:sub-sub-discipline} 
-  1. channel
-
-    - “origin” for messages coming from WIS2 Nodes, or “cache” for messages coming from Global Caches. Global Caches are part of the WIS 2.0 infrastructure – MeteoGate doesn’t use them directly, but see the [Guide to WIS, Volume II](https://wmo-im.github.io/wis2-guide/guide/wis2-guide-APPROVED.html#_2_4_3_global_cache) if you’d like to know more. 
-  2. version
-    - Just “a” for now – but we’re ready for breaking changes in years to come such as modifying the structure of the topic hierarchy.
-  3. system
-    - Just “wis2” for now – but WMO may reuse this mechanism for other initiatives?
-    - You’re free to re-use this messaging pattern, and the infrastructure you’ve deployed, for other purposes; just use a different value for {system} and the WIS2 Global Services will ignore the messages
-  4. centre-id
-    -	The centre identifier of your WIS2 Node agreed with WMO Secretariat. For information on registering your Data Supply Component as a WIS2 Node see <<registering-a-wis2-node>>.
-    - The official list is published on WMO Codes Registry at http://codes.wmo.int/wis/topic-hierarchy/centre-id.
-  5. notification-type
-    -	“data” or “metadata”; we want don’t want to mix these resources because we use them in different ways / at different times.
-  6. data-policy
-    -	“core” or “recommended”, based on the terminology described in the [WMO Unified Data Policy, Resolution 1 (Cg-Ext(2021))](https://library.wmo.int/idurl/4/58009). 
-    -	Use the data-policy value you put in your discovery metadata record.
-  7. earth-system-discipline
-    - Based on the set of disciplines described in the WMO Unified Data Policy:
-      -	atmospheric-composition
-      -	climate
-      -	cryosphere
-      -	hydrology
-      -	ocean
-      -	space-weather
-      -	weather
-  8. sub-discipline
-    - Each Earth-system discipline has sub-disciplines defined by subject matter experts. Full details, refer to the [WMO Codes Registry](http://codes.wmo.int/wis/topic-hierarchy). 
-    - Sub-disciplines for “weather” are:
-      - advisories-warnings
-      - aviation
-      - prediction
-      - space-based-observations
-      - surface-based-observations
-      - experimental
-    - “space-based-observations” means those taken from orbiting satellite platforms; “surface-based-observations” is for everything else – including upper-air observations because the observing platforms are either on the surface (wind-profiler) or launched from the surface (radio-sonde).
-    - Sub-topics on “experimental” aren’t validated by the Global Brokers, so you can use what you like. However, Data Consumers shouldn’t expect these terms to be long-lasting, nor provide quality data at an operational SLA. 
-  9. sub-sub-discipline
-    - Refer to the [WMO Codes Registry](http://codes.wmo.int/wis/topic-hierarchy) for sub-sub-disciplines.
-
 ### Links
 
 Effective linking enhances discoverability and navigation. In MeteoGate, links should be designed to work seamlessly independent of the chosen Data Publishing Pattern. This is especially important when using the MeteoGate API Gateway to expose your API as the Gateway automatically transforms URLs provided in the metadata. 
@@ -452,18 +400,27 @@ The [OGC EDR Workshop repository (given as part of the EUMETNET project RODEO)](
 
 ### Publishing Discovery Metadata 
 
-MeteoGate and WMO WIS2 require discovery metadata to be included in the Data Supply. This helps Data Consumers identify relevant datasets based on scope, coverage, format, and licensing. 
+A dataset is only considered to be part of MeteoGate (and WMO WIS 2.0) once discovery metadata about it has been published into the WIS 2.0 Global Discovery Catalogue. Data Consumers can then find and use a dataset via the Data Explorer (or the Global Discovery Catalogue itself). This enables Data Consumers to identify relevant datasets based on scope, coverage, format, licensing, etc.
 
-**Recommendations**
+This section explains how you should publish discovery metadata to the Global Discovery Catalogue using your Data Supply Capability.
 
-Publishing discovery metadata is straightforward. At a minimum, Data Publishers must provide a metadata record for each dataset in a compliant format, either:
+Here’s how it works:
 
-  - As a file hosted on a web server (static metadata record). 
-  - Through an OGC API - Records Web-service endpoint, which allows structured and dynamic metadata access via an API.
-
-Discovery metadata records only need updates when there are changes to the dataset’s scope (size, extent, format, license, or content)  
-
-For details, read more on [metadata structure and formatting](#metadata).
+1.	Create discovery metadata for your dataset. For more information about discovery metadata, see <<discovery-metadata>>.
+  - testi
+2.	The Global Discovery Catalogue needs to download the metadata record, so you need to publish it via an HTTP server. This may be as a simple file hosted on a web server (i.e., a static metadata record), or through an API (e.g., an OGC API - Records Web-service endpoint). Discovery metadata needs to be published so that it’s openly accessible (no access controls). Discovery metadata should be re-published daily (i.e., every 24-hours) even if there are no changes. This helps ensure that the discovery metadata in the Global Discovery Catalogue stays fresh.
+4.	Publishing discovery metadata uses the same mechanisms in WIS2 used for telling users about new data: real-time notifications via MQTT. Publish a WIS2 Notification Message to the Local Broker of your Data Supply Component (remember to use access control to ensure only you can publish!). This notification message includes the URL of the discovery metadata record published in step (2). For more information see <<publishing-notifications>>. Notifications about discovery metadata must be published to topic “origin/a/wis2/{centre-id}/metadata”. For more information on the WIS2 topic hierarchy see <<topic-hierarchy-for-message-publication>>.
+5.	The WIS2 Global Broker subscribes to the Local Broker on the Data Supply Capability.
+6.	The WIS2 Global Discovery Catalogue subscribes to the WIS2 Global Broker.
+7.	The notification message is pushed to the WIS2 Global Broker and validated.
+8.	If the notification message is valid, the Global Broker republishes it on the same topic.
+9.	The notification message is pushed to the WIS2 Global Discovery Catalogue. 
+10.	The WIS2 Global Discovery Catalogue parses the WIS Notification Message and – 
+11.	Downloads the linked discovery metadata record from the HTTP server.
+12.	The WIS2 Global Discovery Catalogue parses the discovery metadata record; it gets added to the catalogue if valid (note that the Global Discovery Catalogue also supports update and delete operations for discovery metadata records). The Global Discovery Catalogue also assesses the quality of the discovery metadata record against predefined KPIs and generates a report.
+13.	The Global Discovery Catalogue publishes WIS2 Monitoring Event Messages (draft spec, based on CloudEvents) on topic “monitor/a/wis2/{centre-id}” for validation (metadata validation report - ETS) and KPI assessment (metadata quality report - KPI). 
+14.	The Global Broker subscribes to these monitoring event messages and re-publishes them for Data Publishers. These messages are useful in determining whether you have successfully published discovery metadata. Data Publishers can tools like SonataFlow to trigger workflows based on receiving these monitoring events.
+15.	Now that the metadata is published to the Global Discovery Catalogue, users can browse the catalogue and discover data using the Data Explorer.  
 
 ### Publishing Notifications 
 
@@ -474,6 +431,56 @@ Data Publishers shall generate and publish notifications, first on the Data Supp
 Notifications use the Message Broker Protocol (MQTT 3.1 or MQTT 5) and follow the WMO Notification Message Format (GeoJSON) with a structured topic hierarchy. Event-driven triggers, like data updates or file arrivals, can automate notification publishing. 
 
 For implementation guidance, refer to [WMO schema repository](https://schemas.wmo.int/wnm/1.1.0/examples) for examples, Appendix E in the[ Manual on WIS 2.0](https://community.wmo.int/en/activity-areas/wis/publications/1060-vII) or [WMO WIS2 Notification Message Encoding](https://wmo-im.github.io/wis2-notification-message/standard/wis2-notification-message-STABLE.html) for schema, and the [WIS2 Cookbook](https://wmo-im.github.io/wis2-cookbook/cookbook/wis2-cookbook-DRAFT.html) for validation and access control instructions. Notifications can be published using existing infrastructure or open-source message brokers like [Eclipse Mosquitto](https://mosquitto.org/).
+
+#### Topic Hierarchy for Message Publication
+
+MeteoGate layers on top of WMO WIS 2.0. Consequently, data exchange in MeteoGate must comply with WIS 2.0 specifications. As described in <<publishing-notifications>>, notification messages must be published to the correct topics.
+
+Given that WIS 2.0 has hundreds of (meta)data publishers – how do we keep the notifications organised? Notifications in WIS 2.0 are published on specific **topics** according to the [WIS2 Topic Hierarchy specification](https://wmo-im.github.io/wis2-topic-hierarchy/standard/wis2-topic-hierarchy-STABLE.html).
+
+Valid terms for each level in the topic hierarchy are published on the [WMO Codes Registry](http://codes.wmo.int/wis/topic-hierarchy).
+
+WIS 2.0 Global Brokers will discard messages published on unregistered topics (i.e., not in the spec).
+
+The topic hierarchy follows the pattern below with 9 levels:
+{1:channel}/{2:version}/{3:system}/{4:centre-id}/{5:notification-type}/{6:data-policy}/{7:earth-system-discipline}/{8:sub-discipline}/{9:sub-sub-discipline} 
+  1. channel
+    - “origin” for messages coming from WIS2 Nodes, or “cache” for messages coming from Global Caches. Global Caches are part of the WIS 2.0 infrastructure – MeteoGate doesn’t use them directly, but see the [Guide to WIS, Volume II](https://wmo-im.github.io/wis2-guide/guide/wis2-guide-APPROVED.html#_2_4_3_global_cache) if you’d like to know more. 
+  2. version
+    - Just “a” for now – but we’re ready for breaking changes in years to come such as modifying the structure of the topic hierarchy.
+  3. system
+    - Just “wis2” for now – but WMO may reuse this mechanism for other initiatives?
+    - You’re free to re-use this messaging pattern, and the infrastructure you’ve deployed, for other purposes; just use a different value for {system} and the WIS2 Global Services will ignore the messages
+  4. centre-id
+    -	The centre identifier of your WIS2 Node agreed with WMO Secretariat. For information on registering your Data Supply Component as a WIS2 Node see <<registering-a-wis2-node>>.
+    - The official list is published on WMO Codes Registry at http://codes.wmo.int/wis/topic-hierarchy/centre-id.
+  5. notification-type
+    -	“data” or “metadata”; we want don’t want to mix these resources because we use them in different ways / at different times.
+  6. data-policy
+    -	“core” or “recommended”, based on the terminology described in the [WMO Unified Data Policy, Resolution 1 (Cg-Ext(2021))](https://library.wmo.int/idurl/4/58009). 
+    -	Use the data-policy value you put in your discovery metadata record.
+  7. earth-system-discipline
+    - Based on the set of disciplines described in the WMO Unified Data Policy:
+      -	atmospheric-composition
+      -	climate
+      -	cryosphere
+      -	hydrology
+      -	ocean
+      -	space-weather
+      -	weather
+  8. sub-discipline
+    - Each Earth-system discipline has sub-disciplines defined by subject matter experts. Full details, refer to the [WMO Codes Registry](http://codes.wmo.int/wis/topic-hierarchy). 
+    - Sub-disciplines for “weather” are:
+      - advisories-warnings
+      - aviation
+      - prediction
+      - space-based-observations
+      - surface-based-observations
+      - experimental
+    - “space-based-observations” means those taken from orbiting satellite platforms; “surface-based-observations” is for everything else – including upper-air observations because the observing platforms are either on the surface (wind-profiler) or launched from the surface (radio-sonde).
+    - Sub-topics on “experimental” aren’t validated by the Global Brokers, so you can use what you like. However, Data Consumers shouldn’t expect these terms to be long-lasting, nor provide quality data at an operational SLA. 
+  9. sub-sub-discipline
+    - Refer to the [WMO Codes Registry](http://codes.wmo.int/wis/topic-hierarchy) for sub-sub-disciplines.
 
 ### Testing and Validating Data Supply 
 
