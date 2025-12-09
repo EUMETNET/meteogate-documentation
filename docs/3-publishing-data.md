@@ -421,7 +421,6 @@ Here’s how it works:
   13.	The Global Broker subscribes to these monitoring event messages and re-publishes them for Data Publishers. These messages are useful in determining whether you have successfully published discovery metadata. Data Publishers can tools like [SonataFlow](https://sonataflow.org/serverlessworkflow/latest/index.html) to trigger workflows based on receiving these monitoring events.
   14.	Now that the metadata is published to the Global Discovery Catalogue, users can browse the catalogue and discover data using the Data Explorer.  
 
-
 ### Publishing Notifications 
 
 MeteoGate and WMO WIS 2.0 require notifications at the Data Supply to announce new or updated data and metadata. These notifications enable real-time data sharing and keep Data Consumers informed about dataset changes. 
@@ -443,11 +442,13 @@ Valid terms for each level in the topic hierarchy are published on the [WMO Code
 WIS 2.0 Global Brokers will discard messages published on unregistered topics (i.e., not in the spec).
 
 The topic hierarchy follows the pattern below with 9 levels:
-{1:channel}/{2:version}/{3:system}/{4:centre-id}/{5:notification-type}/{6:data-policy}/{7:earth-system-discipline}/{8:sub-discipline}/{9:sub-sub-discipline} 
+
+{1:channel}/{2:version}/{3:system}/{4:centre-id}/{5:notification-type}/{6:data-policy}/{7:earth-system-discipline}/{8:sub-discipline}/{9:sub-sub-discipline}
+
   1. channel
-    - “origin” for messages coming from WIS2 Nodes, or “cache” for messages coming from Global Caches. Global Caches are part of the WIS 2.0 infrastructure – MeteoGate doesn’t use them directly, but see the [Guide to WIS, Volume II](https://wmo-im.github.io/wis2-guide/guide/wis2-guide-APPROVED.html#_2_4_3_global_cache) if you’d like to know more. 
+      - “origin” for messages coming from WIS2 Nodes, or “cache” for messages coming from Global Caches. Global Caches are part of the WIS 2.0 infrastructure – MeteoGate doesn’t use them directly, but see the [Guide to WIS, Volume II](https://wmo-im.github.io/wis2-guide/guide/wis2-guide-APPROVED.html#_2_4_3_global_cache) if you’d like to know more. 
   2. version
-    - Just “a” for now – but we’re ready for breaking changes in years to come such as modifying the structure of the topic hierarchy.
+      - Just “a” for now – but we’re ready for breaking changes in years to come such as modifying the structure of the topic hierarchy.
   3. system
     - Just “wis2” for now – but WMO may reuse this mechanism for other initiatives?
     - You’re free to re-use this messaging pattern, and the infrastructure you’ve deployed, for other purposes; just use a different value for {system} and the WIS2 Global Services will ignore the messages
