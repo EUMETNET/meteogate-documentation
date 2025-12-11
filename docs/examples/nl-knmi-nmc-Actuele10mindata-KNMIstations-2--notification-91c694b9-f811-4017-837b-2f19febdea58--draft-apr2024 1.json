@@ -1,0 +1,52 @@
+{
+    "id": "91c694b9-f811-4017-837b-2f19febdea58",
+    "type": "Feature",
+    "version": "v04",
+    "geometry": {
+        "type": "Point",
+        "coordinates": [
+            4.4469,
+            51.9606
+        ]
+    },
+    "properties": {
+        "data_id": "nl-knmi-nmc/data/core/weather/surface-based-observations/synop/WIGOS_0-20000-0-06344_20240411T130000",
+        "datetime": "2024-04-11T13:00:00Z",
+        "pubtime": "2024-04-11T13:15:06Z",
+        "integrity": {
+            "method": "sha512",
+            "value": "L5NPZaWMP7jzlZnkiWtGL4MUDrvA6Z/0h54O5KqxapsuqtHiWj8lKui2eqpgQK2Tyj4UrB3+vCA0jYTtHDtIdA=="
+        },
+        "metadata_id": "urn:wmo:md:nl-knmi-nmc:Actuele10mindataKNMIstations-2",
+        "wigos_station_identifier": "0-20000-0-06344",
+        "rights": "Users are granted free and unrestricted access to this data, without charge and with no conditions on use. Users are requested to attribute the producer of this data. WMO Unified Data Policy (Resolution 1 (Cg-Ext 2021))",
+        "license": "CC-BY-4.0"
+    },
+    "links": [
+        {
+            "rel": "canonical",
+            "type": "application/x-bufr",
+            "href": "https://api.dataplatform.knmi.nl/open-data/v1/datasets/Actuele10mindataKNMIstations/versions/2/files/WIGOS_0-20000-0-06344_20240411T130000.bufr4",
+            "length": 199
+        },
+        {
+            "rel": "alternate",
+            "type": "application/prs.coverage+json",
+            "href": "https://api.dataplatform.knmi.nl/edr/v1/collections/observations/instances/unvalidated/locations/06344?datetime=2024-04-11T13%3A00%3A00Z",
+            "security": {
+                "default": {
+                    "type": "http",
+                    "scheme": "basic",
+                    "description": "Please request an API key via https://developer.dataplatform.knmi.nl/open-data-api#token"
+                }
+            }
+        },
+        {
+            "rel": "via",
+            "type": "text/html",
+            "href": "https://oscar.wmo.int/surface/#/search/station/stationReportDetails/0-20000-0-06344",
+            "title": "WIGOS Station 0-20000-0-06344, ROTTERDAM THE HAGUE AP (Netherlands)"
+
+        }
+    ]
+}
