@@ -584,7 +584,7 @@ The topic hierarchy follows the pattern below with 9 levels:
       - Just ```wis2``` for now – but WMO may reuse this mechanism for other initiatives?
       - You’re free to re-use this messaging pattern, and the infrastructure you’ve deployed, for other purposes; just use a different value for {system} and the WIS2 Global Services will ignore the messages
   4. centre-id
-      -	The centre identifier of your WIS2 Node agreed with WMO Secretariat. For information on registering your Data Supply Component as a WIS2 Node see <<registering-a-wis2-node>>.
+      -	The centre identifier of your WIS2 Node agreed with WMO Secretariat. For information on registering your Data Supply Component as a WIS2 Node see [Registering a WIS2 Node](registering-a-wis2-node).
       - The official list is published on WMO Codes Registry at http://codes.wmo.int/wis/topic-hierarchy/centre-id.
   5. notification-type
       -	```data``` or ```metadata```; we want don’t want to mix these resources because we use them in different ways / at different times.
@@ -684,7 +684,7 @@ Areas of responsibility for European GISCs are given below:
   -	**GISC-Toulouse**: France (& Clipperton, French Guyana, Guadeloupe, St Martin, St Barthelemy, Kerguelen Islands, La Reunion, Martinique, St Pierre & Miquelon, Wallis & Futuna) + Algeria, Belgium, Luxemburg, Monaco, Portugal, Spain.
   -	**GISC-Exeter**: UK (& British Antarctic Survey, Ascension, Bermuda, Gibraltar, Pitcairn Islands, St Helena) + ECMWF, Ireland, Iceland, Netherlands.
 
-The GISC will also be able to provide guidance on choosing the right WMO Data Policy (Core or Recommended), and the correct WIS2 Topic Hierarchy on which to publish Notifications (see <<topic-hierarchy-for-message-publication>> for details).
+The GISC will also be able to provide guidance on choosing the right WMO Data Policy (Core or Recommended), and the correct WIS2 Topic Hierarchy on which to publish Notifications (see [Topic Hierarchy for Message Publication](#topic-hierarchy-for-message-publication) for details).
 
 Once you have been approved by your GISC, the WMO Secretariat will request that all Global Brokers subscribe to the Local Broker in your Data Supply Component. 
 
