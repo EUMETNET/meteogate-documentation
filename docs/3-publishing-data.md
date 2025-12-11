@@ -303,6 +303,16 @@ Recommendations
   - Comply with WMO Core Metadata Profile (WCMP2), GeoJSON, [OGC API – Records](https://ogcapi.ogc.org/records/), and WMO-specific attributes. Refer to Appendix F of the [WIS2 Manual](https://community.wmo.int/en/activity-areas/wis/publications/1060-vII) for more details on WCMP2 compliance 
   - Clearly describe the dataset by defining its content, purpose, and scope, including data collection and processing methods. 
   - Provide essential metadata elements, such as title, author, creation date, and keywords, to improve searchability and user understanding. 
+  - use the "resolution property to describe the frequency at which data notifications get published. For example, ```"resolution":"PT1H"```
+```
+    "time":{
+        "interval":[
+            "2025-12-08T09:00:00Z",
+            ".."
+        ],
+        "resolution":"PT1H"
+    }
+```
   - Ensure accuracy and consistency by maintaining a standard terminology and formatting approach. 
   - Regularly update metadata to reflect any changes in dataset scope, format, or availability. 
   - Make metadata accessible in a searchable format with clear instructions for users. 
@@ -439,7 +449,7 @@ Here’s how it works:
   3.	Data Consumer subscribes to the Global Broker and receives notifications about the availability of new data
   4.	Data Consumer downloads data from the Data Supply Capability (aka. WIS2 Node) using the link in the notification message
 
-![Publishing notifications](images/meteogate-publishing-notification.png)
+![Publishing notifications](images/meteogate-publishing-notifications.png)
  
 To illustrate what you need to know about WIS2 Notification Messages for data, let’s take a look at a fictional example [notification message](https://github.com/6a6d74/wis2-notification-examples/blob/main/nl-knmi-nmc-Actuele10mindata-KNMIstations-2--notification-91c694b9-f811-4017-837b-2f19febdea58--draft-apr2024 1.json) providing a notification advertising availability of new data from WIGOS Station 0-20000-0-06344 (ROTTERDAM THE HAGUE AP, Netherlands) as part of KNMI’s current 10-minute observation dataset (Actuele10mindataKNMIstations-2).
 
