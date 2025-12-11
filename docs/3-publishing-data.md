@@ -97,7 +97,7 @@ Once ready, Data Publishers must onboard the Data Supply with MeteoGate and WIS2
 
 The Data Publisher and/or Data Owner will decide how they want their data to be made available. Data can be published through MeteoGate in three different patterns. The choice should be based on the data type, existing technical solutions and runtime environments already used for sharing open data (if any), and specific requirements for access control, cost, and performance. Data Publishers and/or Owners can choose different options for different datasets and APIs. 
 
-The publishing pattern must be selected before designing the Data Supply and APIs as it influences design choices. All options will need MeteoGate-compliant metadata and notifications to be shared to WMO WIS2 (See registering a WIS2 Node). 
+The publishing pattern must be selected before designing the Data Supply and APIs as it influences design choices. All options will need MeteoGate-compliant metadata and notifications to be shared to WMO WIS2 (See [Registering a WIS2 Node](#registering-a-wis2-node). 
 
 ### Pattern 1: Using a MeteoGate HVD Service 
 
@@ -303,6 +303,16 @@ Recommendations
   - Comply with WMO Core Metadata Profile (WCMP2), GeoJSON, [OGC API – Records](https://ogcapi.ogc.org/records/), and WMO-specific attributes. Refer to Appendix F of the [WIS2 Manual](https://community.wmo.int/en/activity-areas/wis/publications/1060-vII) for more details on WCMP2 compliance 
   - Clearly describe the dataset by defining its content, purpose, and scope, including data collection and processing methods. 
   - Provide essential metadata elements, such as title, author, creation date, and keywords, to improve searchability and user understanding. 
+  - use the "resolution property to describe the frequency at which data notifications get published. For example, ```"resolution":"PT1H"```
+```
+    "time":{
+        "interval":[
+            "2025-12-08T09:00:00Z",
+            ".."
+        ],
+        "resolution":"PT1H"
+    }
+```
   - Ensure accuracy and consistency by maintaining a standard terminology and formatting approach. 
   - Regularly update metadata to reflect any changes in dataset scope, format, or availability. 
   - Make metadata accessible in a searchable format with clear instructions for users. 
@@ -428,7 +438,7 @@ Notifications are GeoJSON objects published using the Message Broker Protocol (M
 
 Data Publishers generate notifications and publish them from the MQTT broker within their Data Supply Component (“Local Broker”). Event-driven triggers, like data updates or file arrivals, can automate notification publishing.
 
-WIS 2.0 Global Brokers subscribe to those notifications and redistribute them at scale. Notifications must be published to the correct topic, as defined in the WIS2 Topic Hierarchy specification (also see section <<topic-hierarchy for message publication>>).
+WIS 2.0 Global Brokers subscribe to those notifications and redistribute them at scale. Notifications must be published to the correct topic, as defined in the WIS2 Topic Hierarchy specification (also see section [Topic Hierarchy for Message Publication](#topic-hierarchy-for-message-publication)).
 
 Data Consumers subscribe to the WIS 2.0 Global Brokers to receive notifications about new and updated data and metadata. WIS 2.0 recommends that Data Consumer subscribe to at least two Global Brokers for resilience.
 
@@ -439,9 +449,9 @@ Here’s how it works:
   3.	Data Consumer subscribes to the Global Broker and receives notifications about the availability of new data
   4.	Data Consumer downloads data from the Data Supply Capability (aka. WIS2 Node) using the link in the notification message
 
-![Publishing notifications](images/meteogate-publishing-notification.png)
+![Publishing notifications](images/meteogate-publishing-notifications.png)
  
-To illustrate what you need to know about WIS2 Notification Messages for data, let’s take a look at a fictional example [notification message](https://github.com/6a6d74/wis2-notification-examples/blob/main/nl-knmi-nmc-Actuele10mindata-KNMIstations-2--notification-91c694b9-f811-4017-837b-2f19febdea58--draft-apr2024 1.json) providing a notification advertising availability of new data from WIGOS Station 0-20000-0-06344 (ROTTERDAM THE HAGUE AP, Netherlands) as part of KNMI’s current 10-minute observation dataset (Actuele10mindataKNMIstations-2).
+To illustrate what you need to know about WIS2 Notification Messages for data, let’s take a look at a fictional [example notification message](../examples/nl-knmi-nmc-Actuele10mindata-KNMIstations-2--notification-91c694b9-f811-4017-837b-2f19febdea58--draft-apr2024-1.json) providing a notification advertising availability of new data from WIGOS Station 0-20000-0-06344 (ROTTERDAM THE HAGUE AP, Netherlands) as part of KNMI’s current 10-minute observation dataset (Actuele10mindataKNMIstations-2).
 
 Notification identifier id must always be unique – use a UUID.
 
@@ -543,11 +553,11 @@ For implementation guidance and more examples, refer to [Manual on WIS, Volume I
 There are many options for implementing WIS 2.0 Notification messaging:
 
   1.	Homebrew: Build your own application for notification message publication. Leverage one of many open-source or commercially available MQTT broker solutions
-      - [Mosquitto](https://mosquitto.org): simple open-source MQTT broker
-      - [EMQX](https://www.emqx.com): more sophisticated open-source MQTT broker, supports clustering, also available as a managed service (SaaS)
-      - [VerneMQ](https://vernemq.com): a scaleable, enterprise-ready MQTT broker
-      - [Solace](https://solace.com/products/platform): event-driven integration and streaming, deployable and available as a managed service (SaaS)
-      - [HiveMQ](https://www.hivemq.com): event-driven IoT data streaming platform, available as a managed service (SaaS) 
+        - [Mosquitto](https://mosquitto.org): simple open-source MQTT broker
+        - [EMQX](https://www.emqx.com): more sophisticated open-source MQTT broker, supports clustering, also available as a managed service (SaaS)
+        - [VerneMQ](https://vernemq.com): a scaleable, enterprise-ready MQTT broker
+        - [Solace](https://solace.com/products/platform): event-driven integration and streaming, deployable and available as a managed service (SaaS)
+        - [HiveMQ](https://www.hivemq.com): event-driven IoT data streaming platform, available as a managed service (SaaS) 
   2.	Open-source: WIS2box ([GitHub](https://github.com/World-Meteorological-Organization/wis2box), [documentation](https://docs.wis2box.wis.wmo.int)), developed with coordination from WMO as a reference implementation of a WIS2 Node and building on many other open-source projects, including [pygeoapi](https://pygeoapi.io), [paho-mqtt](https://pypi.org/project/paho-mqtt) and [mosquitto](https://mosquitto.org).
   3.	Commercial: For example, [IBL Moving Weather](https://www.iblsoft.com/products/moving-weather) – turn-key solution from a commercial provider with support and services.
   4.	Interactive / scripted: Script it in the terminal or use a Jupyter notebook. Leverage open-source utilities like [pywis-pubsub](https://github.com/World-Meteorological-Organization/pywis-pubsub) to do the heavy lifting; a utility carved out from WIS2box. Publish via cloud-based broker, e.g., HiveMQ.
@@ -574,7 +584,7 @@ The topic hierarchy follows the pattern below with 9 levels:
       - Just ```wis2``` for now – but WMO may reuse this mechanism for other initiatives?
       - You’re free to re-use this messaging pattern, and the infrastructure you’ve deployed, for other purposes; just use a different value for {system} and the WIS2 Global Services will ignore the messages
   4. centre-id
-      -	The centre identifier of your WIS2 Node agreed with WMO Secretariat. For information on registering your Data Supply Component as a WIS2 Node see <<registering-a-wis2-node>>.
+      -	The centre identifier of your WIS2 Node agreed with WMO Secretariat. For information on registering your Data Supply Component as a WIS2 Node see [Registering a WIS2 Node](#registering-a-wis2-node).
       - The official list is published on WMO Codes Registry at http://codes.wmo.int/wis/topic-hierarchy/centre-id.
   5. notification-type
       -	```data``` or ```metadata```; we want don’t want to mix these resources because we use them in different ways / at different times.
@@ -642,12 +652,13 @@ A WIS2 “centre-id” is allocated to your Data Supply capability during this r
 
 Instructions for registering a WIS2 Node are in the [Guide to WIS (WMO No. 1061), Volume II: §2.6.1.1 Registration and decommissioning of a WIS2 Node](https://wmo-im.github.io/wis2-guide/guide/wis2-guide-APPROVED.html). The summary version is:
 
-  1.	You are ready to run a WIS2 Node and your **Permanent Representative to WMO** (PR, usually the head of the National Meteorological Service) has given approval. PR approval ensures that only datasets and services that conform to WMO Technical Regulations are added to WIS2.  
+  1.	You are ready to run a WIS2 Node.
   2.	Choose a “centre-id” based on the [specification](https://wmo-im.github.io/wis2-topic-hierarchy/standard/wis2-topic-hierarchy-STABLE.html) and [guidance](https://wmo-im.github.io/wis2-guide/guide/wis2-guide-APPROVED.html). See the [WMO Codes Registry](http://codes.wmo.int/wis/topic-hierarchy/centre-id) for the current list.
-  3.	Via your **WIS National Focal Point** (NFP, see list here) propose your “centre-id” to **WMO Secretariat** who will validate against the specification.
-  4.	Once “centre-id” is agreed, the **NFP** completes the **WIS2 register** with details of your WIS2 Node, including the address of your Local Broker and the credentials required for Global Services to subscribe.
-  5.	Your **GISC** then assesses that your WIS2 Node meets all the WIS2 requirements (see [Assessing and accepting the WIS2 Node](#assessing-and-accepting-the-wis2-node)).
-  6.	If all OK, your WIS2 Node is connected to the WIS2 Global Services and you can begin publishing notifications about data and metadata.
+  3.	Via your **WIS National Focal Point** (NFP, see list [here](https://wmoomm.sharepoint.com/:x:/s/wmocpdb/EdzGYikWZspJi_0t-gqh4XMBdPOmDtERdGXCTdNU7nnQDw?rtime=eFHfk76k3Ug)), start the registration process with WMO Secretariat and provide your proposed  “centre-id”.
+  4.	If your Data Supply component provides national data or products it is a **National Centre** (NC) in WIS2 terms. WMO Secretariat will confirm approval from your **Permanent Representative to WMO** (PR, usually the head of the National Meteorological Service). If your Data Supply Component provides global or regional data, WIS2 calls this a **Data Collection or Production Centre** (DCPC). DCPCs need approval from the **president of WMO Infrastructure Commission** (p/INFCOM). **WMO Secretariat** will facilitate approval on your behalf. Approval ensures that only datasets and services that conform to WMO Technical Regulations are added to WIS2.
+  5.	Once “centre-id” is agreed, the **NFP** completes the **WIS2 register** with details of your WIS2 Node, including the address of your Local Broker and the credentials required for Global Services to subscribe.
+  6.	Your **GISC** then assesses that your WIS2 Node meets all the WIS2 requirements (see [Assessing and accepting the WIS2 Node](#assessing-and-accepting-the-wis2-node)).
+  7.	If all OK, your WIS2 Node is connected to the WIS2 Global Services and you can begin publishing notifications about data and metadata.
 
 #### Which PR should I contact?
 
@@ -673,7 +684,7 @@ Areas of responsibility for European GISCs are given below:
   -	**GISC-Toulouse**: France (& Clipperton, French Guyana, Guadeloupe, St Martin, St Barthelemy, Kerguelen Islands, La Reunion, Martinique, St Pierre & Miquelon, Wallis & Futuna) + Algeria, Belgium, Luxemburg, Monaco, Portugal, Spain.
   -	**GISC-Exeter**: UK (& British Antarctic Survey, Ascension, Bermuda, Gibraltar, Pitcairn Islands, St Helena) + ECMWF, Ireland, Iceland, Netherlands.
 
-The GISC will also be able to provide guidance on choosing the right WMO Data Policy (Core or Recommended), and the correct WIS2 Topic Hierarchy on which to publish Notifications (see <<topic-hierarchy-for-message-publication>> for details).
+The GISC will also be able to provide guidance on choosing the right WMO Data Policy (Core or Recommended), and the correct WIS2 Topic Hierarchy on which to publish Notifications (see [Topic Hierarchy for Message Publication](#topic-hierarchy-for-message-publication) for details).
 
 Once you have been approved by your GISC, the WMO Secretariat will request that all Global Brokers subscribe to the Local Broker in your Data Supply Component. 
 
