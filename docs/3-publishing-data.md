@@ -584,7 +584,7 @@ The topic hierarchy follows the pattern below with 9 levels:
       - Just ```wis2``` for now – but WMO may reuse this mechanism for other initiatives?
       - You’re free to re-use this messaging pattern, and the infrastructure you’ve deployed, for other purposes; just use a different value for {system} and the WIS2 Global Services will ignore the messages
   4. centre-id
-      -	The centre identifier of your WIS2 Node agreed with WMO Secretariat. For information on registering your Data Supply Component as a WIS2 Node see [Registering a WIS2 Node](registering-a-wis2-node).
+      -	The centre identifier of your WIS2 Node agreed with WMO Secretariat. For information on registering your Data Supply Component as a WIS2 Node see [Registering a WIS2 Node](#registering-a-wis2-node).
       - The official list is published on WMO Codes Registry at http://codes.wmo.int/wis/topic-hierarchy/centre-id.
   5. notification-type
       -	```data``` or ```metadata```; we want don’t want to mix these resources because we use them in different ways / at different times.
