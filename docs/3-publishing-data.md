@@ -451,7 +451,7 @@ Here’s how it works:
 
 ![Publishing notifications](images/meteogate-publishing-notifications.png)
  
-To illustrate what you need to know about WIS2 Notification Messages for data, let’s take a look at a fictional [example notification message](/examples/nl-knmi-nmc-Actuele10mindata-KNMIstations-2--notification-91c694b9-f811-4017-837b-2f19febdea58--draft-apr2024 1.json) providing a notification advertising availability of new data from WIGOS Station 0-20000-0-06344 (ROTTERDAM THE HAGUE AP, Netherlands) as part of KNMI’s current 10-minute observation dataset (Actuele10mindataKNMIstations-2).
+To illustrate what you need to know about WIS2 Notification Messages for data, let’s take a look at a fictional [example notification message](../examples/nl-knmi-nmc-Actuele10mindata-KNMIstations-2--notification-91c694b9-f811-4017-837b-2f19febdea58--draft-apr2024-1.json) providing a notification advertising availability of new data from WIGOS Station 0-20000-0-06344 (ROTTERDAM THE HAGUE AP, Netherlands) as part of KNMI’s current 10-minute observation dataset (Actuele10mindataKNMIstations-2).
 
 Notification identifier id must always be unique – use a UUID.
 
