@@ -97,7 +97,7 @@ Once ready, Data Publishers must onboard the Data Supply with MeteoGate and WIS2
 
 The Data Publisher and/or Data Owner will decide how they want their data to be made available. Data can be published through MeteoGate in three different patterns. The choice should be based on the data type, existing technical solutions and runtime environments already used for sharing open data (if any), and specific requirements for access control, cost, and performance. Data Publishers and/or Owners can choose different options for different datasets and APIs. 
 
-The publishing pattern must be selected before designing the Data Supply and APIs as it influences design choices. All options will need MeteoGate-compliant metadata and notifications to be shared to WMO WIS2 (See registering a WIS2 Node). 
+The publishing pattern must be selected before designing the Data Supply and APIs as it influences design choices. All options will need MeteoGate-compliant metadata and notifications to be shared to WMO WIS2 (See [Registering a WIS2 Node](#registering-a-wis2-node). 
 
 ### Pattern 1: Using a MeteoGate HVD Service 
 
@@ -438,7 +438,7 @@ Notifications are GeoJSON objects published using the Message Broker Protocol (M
 
 Data Publishers generate notifications and publish them from the MQTT broker within their Data Supply Component (“Local Broker”). Event-driven triggers, like data updates or file arrivals, can automate notification publishing.
 
-WIS 2.0 Global Brokers subscribe to those notifications and redistribute them at scale. Notifications must be published to the correct topic, as defined in the WIS2 Topic Hierarchy specification (also see section <<topic-hierarchy for message publication>>).
+WIS 2.0 Global Brokers subscribe to those notifications and redistribute them at scale. Notifications must be published to the correct topic, as defined in the WIS2 Topic Hierarchy specification (also see section [Topic Hierarchy for Message Publication](#topic-hierarchy-for-message-publication)).
 
 Data Consumers subscribe to the WIS 2.0 Global Brokers to receive notifications about new and updated data and metadata. WIS 2.0 recommends that Data Consumer subscribe to at least two Global Brokers for resilience.
 
@@ -652,12 +652,13 @@ A WIS2 “centre-id” is allocated to your Data Supply capability during this r
 
 Instructions for registering a WIS2 Node are in the [Guide to WIS (WMO No. 1061), Volume II: §2.6.1.1 Registration and decommissioning of a WIS2 Node](https://wmo-im.github.io/wis2-guide/guide/wis2-guide-APPROVED.html). The summary version is:
 
-  1.	You are ready to run a WIS2 Node and your **Permanent Representative to WMO** (PR, usually the head of the National Meteorological Service) has given approval. PR approval ensures that only datasets and services that conform to WMO Technical Regulations are added to WIS2.  
+  1.	You are ready to run a WIS2 Node.
   2.	Choose a “centre-id” based on the [specification](https://wmo-im.github.io/wis2-topic-hierarchy/standard/wis2-topic-hierarchy-STABLE.html) and [guidance](https://wmo-im.github.io/wis2-guide/guide/wis2-guide-APPROVED.html). See the [WMO Codes Registry](http://codes.wmo.int/wis/topic-hierarchy/centre-id) for the current list.
-  3.	Via your **WIS National Focal Point** (NFP, see list here) propose your “centre-id” to **WMO Secretariat** who will validate against the specification.
-  4.	Once “centre-id” is agreed, the **NFP** completes the **WIS2 register** with details of your WIS2 Node, including the address of your Local Broker and the credentials required for Global Services to subscribe.
-  5.	Your **GISC** then assesses that your WIS2 Node meets all the WIS2 requirements (see [Assessing and accepting the WIS2 Node](#assessing-and-accepting-the-wis2-node)).
-  6.	If all OK, your WIS2 Node is connected to the WIS2 Global Services and you can begin publishing notifications about data and metadata.
+  3.	Via your **WIS National Focal Point** (NFP, see list [here](https://wmoomm.sharepoint.com/:x:/s/wmocpdb/EdzGYikWZspJi_0t-gqh4XMBdPOmDtERdGXCTdNU7nnQDw?rtime=eFHfk76k3Ug)), start the registration process with WMO Secretariat and provide your proposed  “centre-id”.
+  4.	If your Data Supply component provides national data or products it is a **National Centre** (NC) in WIS2 terms. WMO Secretariat will confirm approval from your **Permanent Representative to WMO** (PR, usually the head of the National Meteorological Service). If your Data Supply Component provides global or regional data, WIS2 calls this a **Data Collection or Production Centre** (DCPC). DCPCs need approval from the **president of WMO Infrastructure Commission** (p/INFCOM). **WMO Secretariat** will facilitate approval on your behalf. Approval ensures that only datasets and services that conform to WMO Technical Regulations are added to WIS2.
+  5.	Once “centre-id” is agreed, the **NFP** completes the **WIS2 register** with details of your WIS2 Node, including the address of your Local Broker and the credentials required for Global Services to subscribe.
+  6.	Your **GISC** then assesses that your WIS2 Node meets all the WIS2 requirements (see [Assessing and accepting the WIS2 Node](#assessing-and-accepting-the-wis2-node)).
+  7.	If all OK, your WIS2 Node is connected to the WIS2 Global Services and you can begin publishing notifications about data and metadata.
 
 #### Which PR should I contact?
 
