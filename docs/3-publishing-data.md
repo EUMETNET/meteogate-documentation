@@ -553,11 +553,11 @@ For implementation guidance and more examples, refer to [Manual on WIS, Volume I
 There are many options for implementing WIS 2.0 Notification messaging:
 
   1.	Homebrew: Build your own application for notification message publication. Leverage one of many open-source or commercially available MQTT broker solutions
-      - [Mosquitto](https://mosquitto.org): simple open-source MQTT broker
-      - [EMQX](https://www.emqx.com): more sophisticated open-source MQTT broker, supports clustering, also available as a managed service (SaaS)
-      - [VerneMQ](https://vernemq.com): a scaleable, enterprise-ready MQTT broker
-      - [Solace](https://solace.com/products/platform): event-driven integration and streaming, deployable and available as a managed service (SaaS)
-      - [HiveMQ](https://www.hivemq.com): event-driven IoT data streaming platform, available as a managed service (SaaS) 
+        - [Mosquitto](https://mosquitto.org): simple open-source MQTT broker
+        - [EMQX](https://www.emqx.com): more sophisticated open-source MQTT broker, supports clustering, also available as a managed service (SaaS)
+        - [VerneMQ](https://vernemq.com): a scaleable, enterprise-ready MQTT broker
+        - [Solace](https://solace.com/products/platform): event-driven integration and streaming, deployable and available as a managed service (SaaS)
+        - [HiveMQ](https://www.hivemq.com): event-driven IoT data streaming platform, available as a managed service (SaaS) 
   2.	Open-source: WIS2box ([GitHub](https://github.com/World-Meteorological-Organization/wis2box), [documentation](https://docs.wis2box.wis.wmo.int)), developed with coordination from WMO as a reference implementation of a WIS2 Node and building on many other open-source projects, including [pygeoapi](https://pygeoapi.io), [paho-mqtt](https://pypi.org/project/paho-mqtt) and [mosquitto](https://mosquitto.org).
   3.	Commercial: For example, [IBL Moving Weather](https://www.iblsoft.com/products/moving-weather) – turn-key solution from a commercial provider with support and services.
   4.	Interactive / scripted: Script it in the terminal or use a Jupyter notebook. Leverage open-source utilities like [pywis-pubsub](https://github.com/World-Meteorological-Organization/pywis-pubsub) to do the heavy lifting; a utility carved out from WIS2box. Publish via cloud-based broker, e.g., HiveMQ.
