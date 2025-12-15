@@ -294,7 +294,7 @@ In MeteoGate, metadata is categorized into three levels:
   - Collection Metadata 
   - Resource/File-level Metadata 
 
-#### Discovery Metadata
+### Discovery Metadata
 
 Discovery metadata enables users to find and access datasets through MeteoGate’s Data Explorer, WMO WIS2 Global Discovery Catalogue, WIS2 Global Broker notifications, external search engines, and generative AI solutions. It provides a high-level description of the dataset, including title, description, keywords, and licensing information. 
 
@@ -358,7 +358,7 @@ Example for data using API Key for access control:
 
 Validate discovery metadata using the PYWCMP tool provided by WMO: see [WIS2 Cookbook recipe 3.7. Validating a WMO Core Metadata Profile Record](https://wmo-im.github.io/wis2-cookbook/cookbook/wis2-cookbook-DRAFT.html#_validating_a_wmo_core_metadata_profile_record).
 
-#### Collection Metadata
+### Collection Metadata
 
 Collection metadata provides essential contextual information, such as dataset structure, temporal and spatial coverage, and relationships between resources, enabling users to browse, discover, and retrieve specific resources of interest.  
 
@@ -372,7 +372,7 @@ To align with the data structuring requirements outlined earlier, collection met
   - Expose observation locations in GeoJSON format (collections/<collection_name>/locations), supporting geospatial queries and visualization in MeteoGate’s Data Explorer. 
   - Contain a time axis (domain.axes.t), ensuring compatibility with spatiotemporal queries, particularly for datasets structured according to the EDR restricted profile.
 
-#### Resource/File-Level Metadata
+### Resource/File-Level Metadata
 
 Resource or file-level metadata describes individual resources, such as data files, and provides essential context, such as the physical variable encoded and its units of measurement. Well-structured file-level metadata also facilitates the automatic generation of discovery and collection-level metadata. 
 
