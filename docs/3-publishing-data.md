@@ -298,12 +298,23 @@ In MeteoGate, metadata is categorized into three levels:
 
 Discovery metadata enables users to find and access datasets through MeteoGate’s Data Explorer, WMO WIS2 Global Discovery Catalogue, WIS2 Global Broker notifications, external search engines, and generative AI solutions. It provides a high-level description of the dataset, including title, description, keywords, and licensing information. 
 
-Recommendations
+See [Data Explorer](https://explorer.meteogate.eu) and [Global Discovery Catalogue]((../references/) for discovery metadata examples.
+
+**General Recommendations**
 
   - Comply with WMO Core Metadata Profile (WCMP2), GeoJSON, [OGC API – Records](https://ogcapi.ogc.org/records/), and WMO-specific attributes. Refer to Appendix F of the [WIS2 Manual](https://community.wmo.int/en/activity-areas/wis/publications/1060-vII) for more details on WCMP2 compliance 
   - Clearly describe the dataset by defining its content, purpose, and scope, including data collection and processing methods. 
-  - Provide essential metadata elements, such as title, author, creation date, and keywords, to improve searchability and user understanding. 
-  - use the "resolution property to describe the frequency at which data notifications get published. For example, ```"resolution":"PT1H"```
+  - Provide essential metadata elements, such as title, author, creation date, and keywords, to improve searchability and user understanding.
+  - Ensure accuracy and consistency by maintaining a standard terminology and formatting approach. 
+  - Regularly update metadata to reflect any changes in dataset scope, format, or availability. 
+  - Make metadata accessible in a searchable format with clear instructions for users. 
+  - Consider end-user needs by structuring metadata to support different user groups, including researchers, meteorologists, and public data consumers. 
+
+**Ensuring Discoverability**
+     
+Add keyword ```meteogate``` so that Data Explorer can identify the dataset as provided by a EUMETNET programme or Member.
+
+Use the ```resolution``` property to describe the frequency at which data notifications get published. For example, ```"resolution":"PT1H"```
 ```
     "time":{
         "interval":[
@@ -313,17 +324,45 @@ Recommendations
         "resolution":"PT1H"
     }
 ```
-  - Ensure accuracy and consistency by maintaining a standard terminology and formatting approach. 
-  - Regularly update metadata to reflect any changes in dataset scope, format, or availability. 
-  - Make metadata accessible in a searchable format with clear instructions for users. 
-  - Consider end-user needs by structuring metadata to support different user groups, including researchers, meteorologists, and public data consumers. 
-  - Validate discovery metadata using the PYWCMP tool provided by WMO. There are also additional validation methods outlined in the [WIS2 Cookbook](https://wmo-im.github.io/wis2-cookbook/cookbook/wis2-cookbook-DRAFT.html#_validate_a_wmo_core_metadata_profile_record). 
+
+**Addressing User Needs**
+
+If the API is proxied through the MeteoGate Gateway, include contact details for the MeteoGate service desk _in addition_ to contact details for your organisation.
+
+Where datasets can be accessed by an API, include a link to the human-readable API documentation (e.g., the Swagger docs for the API). This link should include: ```“rel”=”service-doc”``` and ```“type”=”text/html”```.
+
+**Describing Data Access Control**
+
+If you are publishing data that has access control in place (e.g. with API Key), you should describe it in the discovery metadata in a ```security``` object.
+
+Follow the instructions in [WIS2 Cookbook recipe 3.2. Publishing a WIS2 Notification Message with access control](https://wmo-im.github.io/wis2-cookbook/cookbook/wis2-cookbook-DRAFT.html#_publishing_a_wis2_notification_message_with_access_control) to describe the type of access control used.
+
+Example for data using API Key for access control:
+```
+{
+    "rel": "items",
+    "type": "application/vnd.coverage+json",
+    "href": "https://api.dataplatform.knmi.nl/edr/v1/collections/observations",
+    "security": {
+        "default": {
+            "type": "apiKey",
+            "name": "AUTHORIZATION",
+            "in": “header",
+            "description": "Please request an API key via https://developer.dataplatform.knmi.nl/open-data-api#token"
+        }
+    }
+}
+```
+
+**Validating Discovery Metadata**
+
+Validate discovery metadata using the PYWCMP tool provided by WMO: see [WIS2 Cookbook recipe 3.7. Validating a WMO Core Metadata Profile Record](https://wmo-im.github.io/wis2-cookbook/cookbook/wis2-cookbook-DRAFT.html#_validating_a_wmo_core_metadata_profile_record).
 
 #### Collection Metadata
 
 Collection metadata provides essential contextual information, such as dataset structure, temporal and spatial coverage, and relationships between resources, enabling users to browse, discover, and retrieve specific resources of interest.  
 
-Recommendations 
+**Recommendations **
 
 To align with the data structuring requirements outlined earlier, collection metadata should:
 
