@@ -312,9 +312,9 @@ See [Data Explorer](https://explorer.meteogate.eu) and [Global Discovery Catalog
 
 **Ensuring Discoverability**
      
-Add keyword ```meteogate``` so that Data Explorer can identify the dataset as provided by a EUMETNET programme or Member.
+Add keyword "meteogate" so that Data Explorer can identify the dataset as provided by a EUMETNET programme or Member.
 
-Use the ```resolution``` property to describe the frequency at which data notifications get published. For example, ```"resolution":"PT1H"```
+Use the "resolution" property to describe the frequency at which data notifications get published. For example, ```"resolution":"PT1H"```
 ```
     "time":{
         "interval":[
@@ -512,11 +512,11 @@ Identifier for the data item data_id must always be unique; you can decide how t
 
 ```"data_id": "nl-knmi-nmc/data/recommended/weather/surface-based-observations/synop/WIGOS_0-20000-0-06344_20240411T130000"```
 
-datetime is the time associated with the data (i.e., the observation time) – also useful for users to determine if this is data they need.
+"datetime" is the time associated with the data (i.e., the observation time) – also useful for users to determine if this is data they need.
 
 ```"datetime": "2024-04-11T13:00:00Z"```
 
-pubtime is the time when the notification message was sent; a CORRECTION must always have a later pubtime than the original message _and_ have a link with rel=update (see more on links later).
+"pubtime" is the time when the notification message was sent; a CORRECTION must always have a later pubtime than the original message _and_ have a link with rel=update (see more on links later).
 
 ```"pubtime": "2024-04-11T13:15:06Z"```
 
@@ -544,7 +544,7 @@ And also providing a link to a license.
 
 Here’s the crucial part of the notification message: the link to the data! Each link follows a similar structure. rel is the “link relation” type. A link with rel=canonical is always the default one to look at. Other link types include update and license (mentioned earlier), item and station (coming next), and more. A table (albeit incomplete) of link types is provided in the WCMP2 specification.
 
-type provides the media type (MIME type) of the resource. length enables a simple integrity check. href provides the URL for the resource – in this case an observation for The Hague encoded in BUFR4. For Core data, it’s the URL in the canonical link that Global Caches will download from. For Core data, the URL in the canonical link _must_ be directly resolvable – i.e., no access controls or URL templates.
+"type" provides the media type (MIME type) of the resource. length enables a simple integrity check. href provides the URL for the resource – in this case an observation for The Hague encoded in BUFR4. For Core data, it’s the URL in the canonical link that Global Caches will download from. For Core data, the URL in the canonical link _must_ be directly resolvable – i.e., no access controls or URL templates.
 
 ```
 "links": [
