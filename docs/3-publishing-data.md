@@ -337,7 +337,11 @@ Required Properties
 
 The following properties are required for all dataset-level discovery metadata records:
 
-- `geometry` (Required): Describes the **geospatial extent** of the dataset using GeoJSON geometry. This allows users to discover datasets based on spatial coverage. Example:
+- `type`: Describes the resource type described by the WCMP record. Example: `"type": "Feature"`
+- `title`: A human-readable name of the dataset. Example: `"title": "Land surface weather observations"`
+- `description`: A free-text summary description of the dataset. Example: `"description":"Land surface observations measured at automatic and manual weather stations of EUMETNET Members and their trusted partners (last 24 hours only)"`
+- `themes`: 
+- `geometry`: Describes the geospatial extent of the dataset using GeoJSON geometry. This allows users to discover datasets based on spatial coverage. Example:
 
 ```
 "geometry": {
@@ -366,31 +370,43 @@ The following properties are required for all dataset-level discovery metadata r
 ```
   `interval` defines the temporal coverage.
   `resolution` uses ISO 8601 duration format (e.g. PT10M, PT1H).
-- `contacts` (Required): Provides contact information for the dataset, enabling users to request support, report issues, or seek clarification. Contacts should include at least one responsible organisation or role. If the API is proxied through the MeteoGate Gateway, include contact details for the MeteoGate service desk _in addition_ to contact details for your organisation.
+- `contacts`: Provides contact information for the dataset, enabling users to request support, report issues, or seek clarification. Contacts should include at least one responsible organisation or role. If the API is proxied through the MeteoGate Gateway, include contact details for the MeteoGate service desk _in addition_ to contact details for your organisation.
+- `Keywords`: Include `"keyword": "meteogate"` to tag datasets as part of the MeteoGate system.
+- `created`: Indicates when the metadata record was created. Example:`"created": "2025-06-04T14:00:00Z"`
+- `links` (Required): Links provide access to the data, documentation, licences, and related resources, including e.g. canonical data access URLs, API endpoints, human-readable documentation, and licence information. Example:
+```
+{
+  "rel": "service-doc",
+  "type": "text/html",
+  "href": "https://api.example.org/documentation"
+}
+```
+Ensure links in metadata point to your authoritative endpoints — not to URLs created by the API Gateway.
+Include a `rel="canonical"` link pointing to the resolvable URL of the dataset.
 
 Conditionally Required Properties
 
-- `wmo:dataPolicy` (Conditional, but required for datasets): Specifies whether the dataset is classified as core or recommended, in accordance with the
-[WMO Unified Data Policy (Resolution 1 (Cg-Ext(2021)))]. Note that core data must be open access and recommended data may be open or access-controlled. This classification is independent of access control. Example: `"wmo:dataPolicy": "recommended"`
+- `wmo:dataPolicy`: Specifies whether the dataset is classified as core or recommended, in accordance with the
+WMO Unified Data Policy (Resolution 1 (Cg-Ext(2021))). Note that core data must be open access and recommended data may be open or access-controlled. This classification is independent of access control. Example: `"wmo:dataPolicy": "recommended"`
 
-Optional but Strongly Recommended Properties
+Optional Properties
 
 These properties are optional according to WCMP2, but are strongly recommended for MeteoGate datasets.
-- `created` and `updated`: Indicate when the metadata record was created and last updated. Example:
-```
-"created": "2025-06-04T14:00:00Z",
-"updated": "2025-06-04T14:00:00Z"
-```
+
+- `keywords`: Other keywords, tags or key phrases describing the dataset.
+- `updated`: Indicate when the metadata record was created and last updated. Example:`"updated": "2025-06-04T14:00:00Z"`
 - `rights`: A human-readable statement describing usage rights not fully covered by the licence. Example: `"rights": "Users are granted free and unrestricted access to this data, with attribution requeste`
 - `version`: Specifies the version or edition of the dataset, where applicable. Example: `"version": "1.0"`
 - `status`: Describes the operational status of the dataset (e.g. operational, experimental).
+- `linkTemplates`: Used for templated or parameterised access (e.g. dynamic API queries).
 
+Additional Properties
 
-
+The `properties` object may include additional fields as needed, provided they do not conflict with WCMP2. These can be used to, for example, support filtering and discovery, provide domain-specific information, and expose identifiers or references relevant to the dataset.
 
 *Parameters and Concepts*
 
-Use `concepts` to provide the user with (links to) information about the data, especially the physical `parameter` included.
+Use `concepts` to provide the user with (links to) information about the data, especially the physical `parameter` included. This helps users and AI tools interpret the content.
 
 Concepts example:
 
@@ -452,20 +468,6 @@ Parameter information example:
       }	
 ```
 
-This helps users and AI tools interpret the content.
-
-*Time and Resolution*
-
-Use the `time` object to specify time coverage and resolution. For example:
-```
-"time": {
-  "interval": ["2025-12-08T09:00:00Z", ".."],
-  "resolution": "PT1H"
-}
-```
-This describes a dataset that begins on 8 December 2025 and is updated hourly.
-
-
 *Topic Hierarchy*
 
 Set the correct topic using the WIS 2.0 Topic Hierarchy (See also [Topic Hierarchy](#topic-hierarchy).
@@ -482,25 +484,6 @@ Use experimental temporarily if no approved term exists — but note this is not
 Example:
 
 ```origin/a/wis2/eu-eumetnet-surface-observations/metadata/recommended/weather/surface-based-observations/surface-observation```
-
-*Ensuring Discoverability*
-
-Include `"keyword": "meteogate"` to tag datasets as part of the MeteoGate system.
-
-Ensure links in metadata point to your authoritative endpoints — not to URLs created by the API Gateway.
-Include a `rel="canonical"` link pointing to the resolvable URL of the dataset.
-
-Use the `resolution` property to describe the frequency at which data notifications get published. For example, `"resolution":"PT1H"`
-
-```
-    "time":{
-        "interval":[
-            "2025-12-08T09:00:00Z",
-            ".."
-        ],
-        "resolution":"PT1H"
-    }
-```
 
 *Access Control*
 
