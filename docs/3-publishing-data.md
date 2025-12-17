@@ -298,7 +298,7 @@ In MeteoGate, metadata is categorized into three levels:
 
 Discovery metadata enables users to find, understand, and access datasets through MeteoGate, WIS 2.0 Global Discovery Catalogue (GDC), and other interoperable tools. 
 
-See [Data Explorer](https://explorer.meteogate.eu) and [Global Discovery Catalogue]((../references/) for discovery metadata examples.
+See [Data Explorer](https://explorer.meteogate.eu) and [Global Discovery Catalogue](../references/) for discovery metadata examples.
 
 **Purpose and Principles**
 
@@ -314,13 +314,96 @@ Discovery metadata should:
 
 **Key Elements of a Metadata Record**
 
-- Identifier (`id`). Format: `urn:wmo:md:{centre-id}:{local-identifier}`. Use your assigned WIS2 centre-id (e.g., uk-metoffice, eu-eumetnet-weather-radar).
-For local identifier, use an unique name. For example:
+*Identifier* (`id`). Format: `urn:wmo:md:{centre-id}:{local-identifier}`.
+Use your assigned WIS2 centre-id (e.g., uk-metoffice, eu-eumetnet-weather-radar). For local identifier, use an unique name.
+For example:
 
 ```
 "id": "urn:wmo:md:eu-eumetnet-surface-observations:land-station-observations"
 ```
-- Time and Resolution. Use the `time` object to specify time coverage and resolution:
+
+*Time and Resolution*. Use the `time` object to specify time coverage and resolution.
+
+For example:
+```
+"time": {
+  "interval": ["2025-12-08T09:00:00Z", ".."],
+  "resolution": "PT1H"
+}
+```
+This describes a dataset that begins on 8 December 2025 and is updated hourly.
+
+*Geometry*. Provide coverage area like this: 
+
+```
+"geometry": {
+  "type": "Polygon",
+  "coordinates": [
+    [[-70, 10], [40, 10], [40, 90], [-70, 90], [-70, 10]]
+  ]
+}
+```
+
+*Topic Hierarchy*. Set the correct topic using the WIS 2.0 Topic Hierarchy (See also [Topic Hierarchy](#topic-hierarchy).
+
+The topic must include:
+- Your centre-id
+- data or metadata
+- Data policy (core or recommended)
+- Earth-system discipline (weather, climate, etc.)
+- Sub-discipline (surface-based-observations, prediction, etc.)
+
+Use experimental temporarily if no approved term exists — but note this is not a long-term solution.
+
+Example:
+```origin/a/wis2/eu-eumetnet-surface-observations/metadata/recommended/weather/surface-based-observations/surface-observation```
+
+**Linking and Supporting Information**
+
+*Human-readable API documentation*. Include a link to API docs, using `rel="service-doc"`.
+For example:
+```
+{
+  "rel": "service-doc",
+  "type": "text/html",
+  "href": "https://api.example.org/docs"
+}
+```
+
+*Licence and Rights*. For example:
+```
+"licence": "CC BY 4.0",
+"rights": "Free and unrestricted use. Attribution requested."
+```
+
+Also include:
+```
+"language": "en",
+"created": "2025-06-04T14:00:00Z",
+"updated": "2025-06-04T14:00:00Z",
+"wmo:dataPolicy": "recommended"
+```
+
+**Describing Access Control**
+
+If access control (e.g. API key) is required, describe it using the `security` block:
+```
+{
+  "rel": "items",
+  "type": "application/vnd.coverage+json",
+  "href": "https://api.example.org/edr/v1/collections/observations",
+  "security": {
+    "default": {
+      "type": "apiKey",
+      "name": "AUTHORIZATION",
+      "in": "header",
+      "description": "Request API key at https://developer.example.org"
+    }
+  }
+}
+```
+
+Follow the instructions in [WIS2 Cookbook recipe 3.2. Publishing a WIS2 Notification Message with access control](https://wmo-im.github.io/wis2-cookbook/cookbook/wis2-cookbook-DRAFT.html#_publishing_a_wis2_notification_message_with_access_control) to describe the type of access control used.
 
 
 
