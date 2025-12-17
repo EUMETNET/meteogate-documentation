@@ -356,12 +356,31 @@ The topic must include:
 Use experimental temporarily if no approved term exists — but note this is not a long-term solution.
 
 Example:
+
 ```origin/a/wis2/eu-eumetnet-surface-observations/metadata/recommended/weather/surface-based-observations/surface-observation```
+
+*Linking to Parameters and Concepts**
+
+You can use controlled vocabularies to indicate the physical parameters represented in your dataset:
+
+```
+"concepts": [
+  {
+    "id": "air_temperature",
+    "title": "Air temperature",
+    "url": "http://vocab.nerc.ac.uk/standard_name/air_temperature/"
+  }
+],
+"scheme": "https://vocab.nerc.ac.uk/standard_name"
+```
+
+This helps users and AI tools interpret the content.
 
 **Linking and Supporting Information**
 
 *Human-readable API documentation*. Include a link to API docs, using `rel="service-doc"`.
 For example:
+
 ```
 {
   "rel": "service-doc",
@@ -371,12 +390,14 @@ For example:
 ```
 
 *Licence and Rights*. For example:
+
 ```
 "licence": "CC BY 4.0",
 "rights": "Free and unrestricted use. Attribution requested."
 ```
 
 Also include:
+
 ```
 "language": "en",
 "created": "2025-06-04T14:00:00Z",
@@ -405,7 +426,34 @@ If access control (e.g. API key) is required, describe it using the `security` b
 
 Follow the instructions in [WIS2 Cookbook recipe 3.2. Publishing a WIS2 Notification Message with access control](https://wmo-im.github.io/wis2-cookbook/cookbook/wis2-cookbook-DRAFT.html#_publishing_a_wis2_notification_message_with_access_control) to describe the type of access control used.
 
+**Ensuring Discoverability**
 
+Include `"keyword": "meteogate"` to tag datasets as part of the MeteoGate system.
+
+Ensure links in metadata point to your authoritative endpoints — not to URLs created by the API Gateway.
+Include a `rel="canonical"` link pointing to the resolvable URL of the dataset.
+
+Use the `resolution` property to describe the frequency at which data notifications get published. For example, `"resolution":"PT1H"`
+
+```
+    "time":{
+        "interval":[
+            "2025-12-08T09:00:00Z",
+            ".."
+        ],
+        "resolution":"PT1H"
+    }
+```
+
+**Validation**
+
+Use the WMO WCMP2 validator to ensure metadata is compliant:
+- Go to Swagger UI
+- Click "Try it out"
+- Paste your full metadata record
+- Execute and review results
+
+Or use the [WIS2 Cookbook instructions](https://wmo-im.github.io/wis2-cookbook/cookbook/wis2-cookbook-DRAFT.html#_validating_a_wmo_core_metadata_profile_record).
 
 ### Collection Metadata
 
