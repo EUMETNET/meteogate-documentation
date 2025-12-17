@@ -314,7 +314,9 @@ Discovery metadata should:
 
 **Key Elements of a Metadata Record**
 
-*Identifier* (`id`). Format: `urn:wmo:md:{centre-id}:{local-identifier}`.
+*Identifier* (`id`)
+
+Format: `urn:wmo:md:{centre-id}:{local-identifier}`.
 Use your assigned WIS2 centre-id (e.g., uk-metoffice, eu-eumetnet-weather-radar). For local identifier, use an unique name.
 For example:
 
@@ -322,9 +324,9 @@ For example:
 "id": "urn:wmo:md:eu-eumetnet-surface-observations:land-station-observations"
 ```
 
-*Time and Resolution*. Use the `time` object to specify time coverage and resolution.
+*Time and Resolution*
 
-For example:
+Use the `time` object to specify time coverage and resolution. For example:
 ```
 "time": {
   "interval": ["2025-12-08T09:00:00Z", ".."],
@@ -333,7 +335,9 @@ For example:
 ```
 This describes a dataset that begins on 8 December 2025 and is updated hourly.
 
-*Geometry*. Provide coverage area like this: 
+*Geometry*
+
+Provide coverage area like this: 
 
 ```
 "geometry": {
@@ -344,7 +348,9 @@ This describes a dataset that begins on 8 December 2025 and is updated hourly.
 }
 ```
 
-*Topic Hierarchy*. Set the correct topic using the WIS 2.0 Topic Hierarchy (See also [Topic Hierarchy](#topic-hierarchy).
+*Topic Hierarchy*
+
+Set the correct topic using the WIS 2.0 Topic Hierarchy (See also [Topic Hierarchy](#topic-hierarchy).
 
 The topic must include:
 - Your centre-id
@@ -359,7 +365,7 @@ Example:
 
 ```origin/a/wis2/eu-eumetnet-surface-observations/metadata/recommended/weather/surface-based-observations/surface-observation```
 
-*Linking to Parameters and Concepts**
+*Linking to Parameters and Concepts*
 
 You can use controlled vocabularies to indicate the physical parameters represented in your dataset:
 
@@ -376,7 +382,7 @@ You can use controlled vocabularies to indicate the physical parameters represen
 
 This helps users and AI tools interpret the content.
 
-**Ensuring Discoverability**
+*Ensuring Discoverability*
 
 Include `"keyword": "meteogate"` to tag datasets as part of the MeteoGate system.
 
@@ -395,7 +401,7 @@ Use the `resolution` property to describe the frequency at which data notificati
     }
 ```
 
-**Describing Access Control**
+*Access Control*
 
 If access control (e.g. API key) is required, describe it using the `security` block.
 
@@ -421,7 +427,7 @@ Example for data using API Key for access control:
 
 Follow the instructions in [WIS2 Cookbook recipe 3.2. Publishing a WIS2 Notification Message with access control](https://wmo-im.github.io/wis2-cookbook/cookbook/wis2-cookbook-DRAFT.html#_publishing_a_wis2_notification_message_with_access_control) to describe the type of access control used.
 
-**Linking and Supporting Information**
+*Linking and Supporting Information*
 
 *Human-readable API documentation*. Include a link to API docs (e.g., the Swagger docs for the API). This link should include: `“rel”=”service-doc”` and `“type”=”text/html”`.
 
@@ -443,9 +449,10 @@ For example:
 ```
 
 *Contact Details*
+
 If the API is proxied through the MeteoGate Gateway, include contact details for the MeteoGate service desk _in addition_ to contact details for your organisation.
 
-Also include:
+*Also include:*
 
 ```
 "language": "en",
@@ -456,13 +463,7 @@ Also include:
 
 **Validation**
 
-Use the WMO WCMP2 validator to ensure metadata is compliant:
-- Go to Swagger UI
-- Click "Try it out"
-- Paste your full metadata record
-- Execute and review results
-
-Or use the [WIS2 Cookbook instructions](https://wmo-im.github.io/wis2-cookbook/cookbook/wis2-cookbook-DRAFT.html#_validating_a_wmo_core_metadata_profile_record).
+Validate discovery metadata using the PYWCMP tool provided by WMO: see [WIS2 Cookbook recipe 3.7. Validating a WMO Core Metadata Profile Record](https://wmo-im.github.io/wis2-cookbook/cookbook/wis2-cookbook-DRAFT.html#_validating_a_wmo_core_metadata_profile_record).
 
 ### Collection Metadata
 
