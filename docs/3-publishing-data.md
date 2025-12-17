@@ -314,15 +314,145 @@ Discovery metadata should:
 
 **Key Elements of a Metadata Record**
 
-*Identifier* (`id`)
+*Identifier* 
 
-Format: `urn:wmo:md:{centre-id}:{local-identifier}`.
-Use your assigned WIS2 centre-id (e.g., uk-metoffice, eu-eumetnet-weather-radar). For local identifier, use an unique name.
-For example:
+The `id` property is a unique identifier of the dataset. A record identifier is essential for querying and identifying records within the Global Discovery Catalogue. It has the following format: `urn:wmo:md:{centre_id}:{local_identifier}`.
+
+Use your assigned WIS2 centre-id (e.g., uk-metoffice). For local identifier, use an unique name.
+
+For example, the Met Office synoptic discovery metadata has the following id:
 
 ```
-"id": "urn:wmo:md:eu-eumetnet-surface-observations:land-station-observations"
+"id": "urn:wmo:md:uk-metoffice:weather.surface-based-observations.synop.uk_synop"
+
 ```
+
+*Properties*
+
+The `properties` object contains the core descriptive metadata for a dataset. These properties provide essential information that enables discovery, filtering, governance, and correct interpretation of the data in MeteoGate, WIS 2.0 Global Discovery Catalogue, and downstream systems.
+
+All discovery metadata records **must include the required properties** defined by the WMO Core Metadata Profile (WCMP) Version 2. Additional optional properties may be included where relevant. A complete and authoritative list is available in the [WMO Core Metadata Profile (WCMP) Version 2](https://wmo-im.github.io/wcmp2/).
+
+Required Properties
+
+The following properties are required for all dataset-level discovery metadata records:
+
+- `geometry` (Required): Describes the **geospatial extent** of the dataset using GeoJSON geometry. This allows users to discover datasets based on spatial coverage. Example:
+
+```
+"geometry": {
+  "type": "Polygon",
+  "coordinates": [
+    [
+      [-70, 10],
+      [40, 10],
+      [40, 90],
+      [-70, 90],
+      [-70, 10]
+    ]
+  ]
+}
+```
+
+- `time` (Required): Describes the temporal extent of the dataset. It may also include a resolution field to indicate how frequently new data or notifications are published. Example:
+```
+"time": {
+  "interval": [
+    "T00Z",
+    "T23Z"
+  ],
+  "resolution": "PT10M"
+}
+```
+  `interval` defines the temporal coverage.
+  `resolution` uses ISO 8601 duration format (e.g. PT10M, PT1H).
+- `contacts` (Required): Provides contact information for the dataset, enabling users to request support, report issues, or seek clarification. Contacts should include at least one responsible organisation or role. If the API is proxied through the MeteoGate Gateway, include contact details for the MeteoGate service desk _in addition_ to contact details for your organisation.
+
+Conditionally Required Properties
+
+- `wmo:dataPolicy` (Conditional, but required for datasets): Specifies whether the dataset is classified as core or recommended, in accordance with the
+[WMO Unified Data Policy (Resolution 1 (Cg-Ext(2021)))]. Note that core data must be open access and recommended data may be open or access-controlled. This classification is independent of access control. Example: `"wmo:dataPolicy": "recommended"`
+
+Optional but Strongly Recommended Properties
+
+These properties are optional according to WCMP2, but are strongly recommended for MeteoGate datasets.
+- `created` and `updated`: Indicate when the metadata record was created and last updated. Example:
+```
+"created": "2025-06-04T14:00:00Z",
+"updated": "2025-06-04T14:00:00Z"
+```
+- `rights`: A human-readable statement describing usage rights not fully covered by the licence. Example: `"rights": "Users are granted free and unrestricted access to this data, with attribution requeste`
+- `version`: Specifies the version or edition of the dataset, where applicable. Example: `"version": "1.0"`
+- `status`: Describes the operational status of the dataset (e.g. operational, experimental).
+
+
+
+
+*Parameters and Concepts*
+
+Use `concepts` to provide the user with (links to) information about the data, especially the physical `parameter` included.
+
+Concepts example:
+
+```
+        "concepts": [	
+          {	
+            "id": "weather",	
+            "title": "Weather",	
+            "url": "https://github.com/wmo-im/wis2-topic-hierarchy/blob/main/topic-hierarchy/earth-system-discipline/weather"	
+          }	
+        ],	
+        "scheme": "https://github.com/wmo-im/wis2-topic-hierarchy/blob/main/topic-hierarchy/earth-system-discipline"
+       },
+       { "concepts": [
+          {
+            "id":"weather",
+            "title": "Weather",	
+            "url": "https://codes.wmo.int/wis/topic-hierarchy/earth-system-discipline/weather"
+          }
+        ],
+        "scheme":"https://codes.wmo.int/wis/topic-hierarchy/earth-system-discipline"
+       },
+
+       { "concepts": [
+          {
+            "id":"surface-based-observations"
+          }
+        ],
+        "scheme":"https://codes.wmo.int/wis/topic-hierarchy/earth-system-discipline/weather"
+        },
+      {	
+        "concepts": [
+          {	
+            "id": "air_temperature",	
+            "title": "Air temperature",	
+            "url": "http://vocab.nerc.ac.uk/standard_name/air_temperature/"	
+```
+
+Parameter information example:
+```
+{ "concepts": [
+          {	
+            "id": "air_temperature",	
+            "title": "Air temperature",	
+            "url": "http://vocab.nerc.ac.uk/standard_name/air_temperature/"	
+          },	
+          {	
+            "id": "wind_speed",	
+            "title": "Wind Speed",	
+            "url": "http://vocab.nerc.ac.uk/standard_name/wind_speed/"	
+          },
+          {	
+            "id": "wind_to_direction",	
+            "title": "Wind to diection",	
+            "url": "http://vocab.nerc.ac.uk/standard_name/wind_to_direction/"	
+          }	
+                    ],	
+        "scheme": "https://vocab.nerc.ac.uk/standard_name"
+      }	
+```
+
+This helps users and AI tools interpret the content.
 
 *Time and Resolution*
 
@@ -335,18 +465,6 @@ Use the `time` object to specify time coverage and resolution. For example:
 ```
 This describes a dataset that begins on 8 December 2025 and is updated hourly.
 
-*Geometry*
-
-Provide coverage area like this: 
-
-```
-"geometry": {
-  "type": "Polygon",
-  "coordinates": [
-    [[-70, 10], [40, 10], [40, 90], [-70, 90], [-70, 10]]
-  ]
-}
-```
 
 *Topic Hierarchy*
 
@@ -364,23 +482,6 @@ Use experimental temporarily if no approved term exists — but note this is not
 Example:
 
 ```origin/a/wis2/eu-eumetnet-surface-observations/metadata/recommended/weather/surface-based-observations/surface-observation```
-
-*Linking to Parameters and Concepts*
-
-You can use controlled vocabularies to indicate the physical parameters represented in your dataset:
-
-```
-"concepts": [
-  {
-    "id": "air_temperature",
-    "title": "Air temperature",
-    "url": "http://vocab.nerc.ac.uk/standard_name/air_temperature/"
-  }
-],
-"scheme": "https://vocab.nerc.ac.uk/standard_name"
-```
-
-This helps users and AI tools interpret the content.
 
 *Ensuring Discoverability*
 
@@ -448,17 +549,24 @@ For example:
 "rights": "Free and unrestricted use. Attribution requested."
 ```
 
-*Contact Details*
+*More Metadata*
 
-If the API is proxied through the MeteoGate Gateway, include contact details for the MeteoGate service desk _in addition_ to contact details for your organisation.
-
-*Also include:*
+- Language: English
+- Creation/Update date of metadata.
+- WMO data policy: Recommended
+- Rights: Free and Unrestricted
+- Licence: CC by 4.0
+- Type: Dataset
 
 ```
-"language": "en",
-"created": "2025-06-04T14:00:00Z",
-"updated": "2025-06-04T14:00:00Z",
-"wmo:dataPolicy": "recommended"
+"language":"en",
+"created": "2025-06-04T14:00:00Z",	
+"updated": "2025-06-04T14:00:00Z",		
+"wmo:dataPolicy": "recommended",
+"rights": "Users are granted free and unrestricted access to this data, without charge and with no conditions on use. Users are requested to attribute the producer of this data. WMO Unified Data Policy (Resolution 1 (Cg-Ext 2021))",
+"licence": "CC BY 4.0 Creative Commons license",
+"type": "dataset"
+}
 ```
 
 **Validation**
