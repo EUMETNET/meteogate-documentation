@@ -321,7 +321,6 @@ The `id` property is a unique identifier of the dataset. A record identifier is 
 Use your assigned WIS2 centre-id (e.g., uk-metoffice). For local identifier, use an unique name.
 
 For example, the Met Office synoptic discovery metadata has the following id:
-
 ```
 "id": "urn:wmo:md:uk-metoffice:weather.surface-based-observations.synop.uk_synop"
 
@@ -371,18 +370,20 @@ The following properties are required for all dataset-level discovery metadata r
   `interval` defines the temporal coverage.
   `resolution` uses ISO 8601 duration format (e.g. PT10M, PT1H).
 - `contacts`: Provides contact information for the dataset, enabling users to request support, report issues, or seek clarification. Contacts should include at least one responsible organisation or role. If the API is proxied through the MeteoGate Gateway, include contact details for the MeteoGate service desk _in addition_ to contact details for your organisation.
-- `Keywords`: Include `"keyword": "meteogate"` to tag datasets as part of the MeteoGate system.
+- `keywords`: Include `"keyword": "meteogate"` to tag datasets as part of the MeteoGate system.
 - `created`: Indicates when the metadata record was created. Example:`"created": "2025-06-04T14:00:00Z"`
-- `links` (Required): Links provide access to the data, documentation, licences, and related resources, including e.g. canonical data access URLs, API endpoints, human-readable documentation, and licence information. Example:
+- `links` (Required): Links provide access to the data, documentation, licences, and related resources, including e.g. canonical data access URLs, API endpoints, human-readable documentation, and licence information.
+
+Ensure links in metadata point to your authoritative endpoints — not to URLs created by the API Gateway. Include a `rel="canonical"` link pointing to the resolvable URL of the dataset.
+
+Include a link to API docs (e.g., the Swagger docs for the API). This link should include: `“rel”=”service-doc”` and `“type”=”text/html”`. For example:
 ```
 {
   "rel": "service-doc",
   "type": "text/html",
-  "href": "https://api.example.org/documentation"
+  "href": "https://api.example.org/docs"
 }
 ```
-Ensure links in metadata point to your authoritative endpoints — not to URLs created by the API Gateway.
-Include a `rel="canonical"` link pointing to the resolvable URL of the dataset.
 
 Conditionally Required Properties
 
@@ -511,19 +512,6 @@ Example for data using API Key for access control:
 
 Follow the instructions in [WIS2 Cookbook recipe 3.2. Publishing a WIS2 Notification Message with access control](https://wmo-im.github.io/wis2-cookbook/cookbook/wis2-cookbook-DRAFT.html#_publishing_a_wis2_notification_message_with_access_control) to describe the type of access control used.
 
-*Linking and Supporting Information*
-
-*Human-readable API documentation*. Include a link to API docs (e.g., the Swagger docs for the API). This link should include: `“rel”=”service-doc”` and `“type”=”text/html”`.
-
-For example:
-
-```
-{
-  "rel": "service-doc",
-  "type": "text/html",
-  "href": "https://api.example.org/docs"
-}
-```
 
 *Licence and Rights*. For example:
 
