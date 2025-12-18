@@ -294,7 +294,6 @@ In MeteoGate, metadata is categorized into three levels:
   - Collection Metadata 
   - Resource/File-level Metadata 
 
-
 ### Discovery Metadata
 
 Discovery metadata describes a dataset in a way that makes it discoverable, understandable, and accessible through MeteoGate, the WIS 2.0 Global Discovery Catalogue, and related services. It provides the contextual information users and systems need in order to find relevant data and determine how it can be accessed.
@@ -331,10 +330,7 @@ The `id` property is a unique identifier of the dataset. A record identifier is 
 Use your assigned WIS2 centre-id (e.g., uk-metoffice), see also [Registering a WIS2 Node](#registering-a-wis2-node). For local identifier, use an unique name.
 
 For example, the Met Office synoptic discovery metadata has the following id:
-```
-"id": "urn:wmo:md:uk-metoffice:weather.surface-based-observations.synop.uk_synop"
-
-```
+```"id": "urn:wmo:md:uk-metoffice:weather.surface-based-observations.synop.uk_synop"```
 
 *Properties*
 
@@ -349,51 +345,67 @@ The following properties are required for all dataset-level discovery metadata r
 - `type`: Describes the resource type described by the WCMP record. Example: `"type": "Dataset"`
 - `title`: A human-readable name of the dataset. Example: `"title": "Land surface weather observations"`
 - `description`: A free-text summary description of the dataset. Example: `"description":"Land surface observations measured at automatic and manual weather stations of EUMETNET Members and their trusted partners (last 24 hours only)"`
-- `themes`: Thematic classification of the dataset, typically aligned with WMO or domain-specific vocabularies.
-- `geometry`: Describes the geospatial extent of the dataset using GeoJSON geometry. This allows users to discover datasets based on spatial coverage. Example:
+- `themes`: The `themes` field provides a high-level thematic classification of the dataset, supporting browsing and filtering in discovery services. In WCMP2, themes are expressed as lists of concepts referenced to a controlled vocabulary or knowledge organisation system.
 
-```
-"geometry": {
-  "type": "Polygon",
-  "coordinates": [
-    [
-      [-70, 10],
-      [40, 10],
-      [40, 90],
-      [-70, 90],
-      [-70, 10]
-    ]
+  Themes should be chosen from well-defined and authoritative vocabularies, such as the WIS 2.0 earth-system discipline codes.
+
+  For a detailed explanation of how themes, concepts, and parameters are used together, see the section *Themes, Concepts and Parameters* below.
+
+  Example:
+  ```
+  "themes": [
+    {
+      "concepts": [
+        {
+          "id": "weather",
+          "title": "Weather"
+        }
+      ],
+      "scheme": "https://codes.wmo.int/wis/topic-hierarchy/earth-system-discipline"
+    }
   ]
-}
-```
-
-- `time` (Required): Describes the temporal extent of the dataset. It may also include a resolution field to indicate how frequently new data or notifications are published. Example:
-```
-"time": {
-  "interval": [
-    "T00Z",
-    "T23Z"
-  ],
-  "resolution": "PT10M"
-}
-```
-  `interval` defines the temporal coverage.
+  ```
+- `geometry`: Describes the geospatial extent of the dataset using GeoJSON geometry. This allows users to discover datasets based on spatial coverage. Example:
+  ```
+  "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+      [
+        [-70, 10],
+        [40, 10],
+        [40, 90],
+        [-70, 90],
+        [-70, 10]
+      ]
+    ]
+  }
+  ```
+- `time`: Describes the temporal extent of the dataset. It may also include a resolution field to indicate how frequently new data or notifications are published. Example:
+  ```
+  "time": {
+    "interval": [
+      "T00Z",
+      "T23Z"
+    ],
+    "resolution": "PT10M"
+  }
+  ```
+  `interval` defines the temporal coverage.  
   `resolution` uses ISO 8601 duration format (e.g. PT10M, PT1H).
 - `contacts`: Provides contact information for the dataset, enabling users to request support, report issues, or seek clarification. Contacts should include at least one responsible organisation or role. If the API is proxied through the MeteoGate Gateway, include contact details for the MeteoGate service desk _in addition_ to contact details for your organisation.
 - `keywords`: Include `"meteogate"` to tag datasets as part of the MeteoGate system. Additional keywords may also be provided (optional).
 - `licence`: Include the licence under which the dataset is made available. Example: `"licence": "CC BY 4.0"`.
-- `links` (Required): Links provide access to the data, documentation, licences, and related resources, including e.g. canonical data access URLs, API endpoints, human-readable documentation, and licence information.
+- `links`: Links provide access to the data, documentation, licences, and related resources, including e.g. canonical data access URLs, API endpoints, human-readable documentation, and licence information.
+  Ensure links in metadata point to your authoritative endpoints — not to URLs created by the API Gateway. Include a `rel="canonical"` link pointing to the resolvable URL of the dataset.
 
-Ensure links in metadata point to your authoritative endpoints — not to URLs created by the API Gateway. Include a `rel="canonical"` link pointing to the resolvable URL of the dataset.
-
-Include a link to API docs (e.g., the Swagger docs for the API). This link should include: `“rel”=”service-doc”` and `“type”=”text/html”`. For example:
-```
-{
-  "rel": "service-doc",
-  "type": "text/html",
-  "href": "https://api.example.org/docs"
-}
-```
+  Include a link to API docs (e.g., the Swagger docs for the API). This link should include: `“rel”=”service-doc”` and `“type”=”text/html”`. For example:
+  ```
+  {
+    "rel": "service-doc",
+    "type": "text/html",
+    "href": "https://api.example.org/docs"
+  }
+  ```
 
 Conditionally Required / Strongly Recommended Properties:
 
@@ -415,17 +427,17 @@ Additional Properties:
 
 The `properties` object may include additional fields as needed, provided they do not conflict with WCMP2. These can be used to, for example, support filtering and discovery, provide domain-specific information, and expose identifiers or references relevant to the dataset.
 
-*Concepts and Parameters*
+*Themes, Concepts and Parameters*
 
-Discovery metadata can include concepts to describe the meaning and content of a dataset using shared, well-defined vocabularies. Concepts provide semantic context and help users, discovery services, and automated systems understand what the data represents.
+In WCMP2, semantic classification of datasets is expressed using the `themes` property. A theme represents a grouping of one or more `concepts` that are taken from a controlled vocabulary or knowledge organisation system.
 
-Concepts are not data values or API query parameters. Instead, they describe the scientific domain of the dataset, the type of observations or products, and the physical parameters included in the data. 
+Themes are used to describe both high-level classifications (such as scientific domain or observation type) and dataset parameters (such as physical variables). In this context, parameters are expressed as concepts using recognised parameter vocabularies.
 
-Using concepts allows consistent discovery across different datasets and publishers, filtering and grouping in MeteoGate Data Explorer, correct interpretation by external catalogues and AI tools, and alignment with WMO and international standards.
+Together, themes and concepts help users, discovery services, and automated systems understand what the data represents.
 
-Structure of a Concept Block:
+Structure of a Theme (Concept Block):
 
-Each concept block consists of:
+Each theme consists of:
 - a list of one or more `concepts`
 - a `scheme` that defines the vocabulary used
 
@@ -434,10 +446,9 @@ Each concept typically includes:
 - `title`: a human-readable label
 - `url`: a link to the authoritative definition
 
-Domain and Discipline Concepts (WIS 2.0):
-
-Concepts can be used to describe the scientific domain and data category, aligned with the WIS 2.0 Topic Hierarchy. Example:
+Example:
 ```
+"themes": [
 {
   "concepts": [
     {
@@ -449,9 +460,14 @@ Concepts can be used to describe the scientific domain and data category, aligne
   "scheme": "https://codes.wmo.int/wis/topic-hierarchy/earth-system-discipline"
 }
 ```
-These concepts describe what kind of data this dataset contains, not individual measurements.
 
-Observation Type Concepts:
+Discovery metadata can include multiple themes to describe different aspects of a dataset, such as its scientific domain, observation type, and physical parameters.
+
+Domain and Discipline Concepts (WIS 2.0):
+
+Concepts can be used to describe the scientific domain and data category, aligned with the WIS 2.0 Topic Hierarchy. Using concepts allows consistent discovery across different datasets and publishers, filtering and grouping in MeteoGate Data Explorer, correct interpretation by external catalogues and AI tools, and alignment with WMO and international standards.
+
+Concepts are not data values or API query parameters. Instead, they describe the scientific domain of the dataset, the type of observations or products, and the physical parameters included in the data. 
 
 Concepts can also describe the observation category, such as surface-based observations:
 ```
@@ -469,7 +485,7 @@ Parameter Concepts (Physical Variables):
 
 Physical parameters included in the dataset should be described using a recognised vocabulary, such as NERC standard names.
 
-Examples:
+Example:
 ```
 {
   "concepts": [
