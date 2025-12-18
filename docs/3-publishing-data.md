@@ -294,6 +294,7 @@ In MeteoGate, metadata is categorized into three levels:
   - Collection Metadata 
   - Resource/File-level Metadata 
 
+
 ### Discovery Metadata
 
 Discovery metadata describes a dataset in a way that makes it discoverable, understandable, and accessible through MeteoGate, the WIS 2.0 Global Discovery Catalogue, and related services. It provides the contextual information users and systems need in order to find relevant data and determine how it can be accessed.
@@ -304,11 +305,14 @@ See [Data Explorer](https://explorer.meteogate.eu) and [Global Discovery Catalog
 
 Discovery metadata should:
 
-- Follow the [WMO Core Metadata Profile (WCMP) Version 2](https://wmo-im.github.io/wcmp2/) and .
+- Follow the [WMO Core Metadata Profile (WCMP) Version 2](https://wmo-im.github.io/wcmp2/).
 - Provide a high-level, machine-readable summary of the dataset.
 - Support searchability and filtering (e.g., by time, space, keywords).
-- Link to supporting resources such as APIs, licences, or contact points.
-- Include access control information if authentication is required.
+- Be consistent with the WIS 2.0 Topic Hierarchy used when publishing notifications.
+- Be designed to be advertised and referenced through WIS 2.0 notification messages.
+- Link to supporting resources such as APIs, licences, and contact points.
+- Include access control information, where applicable, using link-level `security` blocks.
+- Use stable identifiers and semantics to ensure long-term discoverability and consistency.
 - Follow FAIR principles where possible.
 - Be validated prior to publication.
 
@@ -338,14 +342,14 @@ The `properties` object contains the core descriptive metadata for a dataset. Th
 
 All discovery metadata records **must include the required properties** defined by the WMO Core Metadata Profile (WCMP) Version 2. Additional optional properties may be included where relevant. A complete and authoritative list is available in the [WMO Core Metadata Profile (WCMP) Version 2](https://wmo-im.github.io/wcmp2/).
 
-Required Properties
+Required Properties:
 
 The following properties are required for all dataset-level discovery metadata records:
 
 - `type`: Describes the resource type described by the WCMP record. Example: `"type": "Dataset"`
 - `title`: A human-readable name of the dataset. Example: `"title": "Land surface weather observations"`
 - `description`: A free-text summary description of the dataset. Example: `"description":"Land surface observations measured at automatic and manual weather stations of EUMETNET Members and their trusted partners (last 24 hours only)"`
-- `themes`: 
+- `themes`: Thematic classification of the dataset, typically aligned with WMO or domain-specific vocabularies.
 - `geometry`: Describes the geospatial extent of the dataset using GeoJSON geometry. This allows users to discover datasets based on spatial coverage. Example:
 
 ```
@@ -376,8 +380,7 @@ The following properties are required for all dataset-level discovery metadata r
   `interval` defines the temporal coverage.
   `resolution` uses ISO 8601 duration format (e.g. PT10M, PT1H).
 - `contacts`: Provides contact information for the dataset, enabling users to request support, report issues, or seek clarification. Contacts should include at least one responsible organisation or role. If the API is proxied through the MeteoGate Gateway, include contact details for the MeteoGate service desk _in addition_ to contact details for your organisation.
-- `keywords`: Include `"keyword": "meteogate"` to tag datasets as part of the MeteoGate system.
-- `created`: Indicates when the metadata record was created. Example:`"created": "2025-06-04T14:00:00Z"`
+- `keywords`: Include `"meteogate"` to tag datasets as part of the MeteoGate system. Additional keywords may also be provided (optional).
 - `licence`: Include the licence under which the dataset is made available. Example: `"licence": "CC BY 4.0"`.
 - `links` (Required): Links provide access to the data, documentation, licences, and related resources, including e.g. canonical data access URLs, API endpoints, human-readable documentation, and licence information.
 
@@ -392,15 +395,15 @@ Include a link to API docs (e.g., the Swagger docs for the API). This link shoul
 }
 ```
 
-Conditionally Required Properties
+Conditionally Required / Strongly Recommended Properties:
 
 - `wmo:dataPolicy`: Specifies whether the dataset is classified as `core` or `recommended`, in accordance with the [WMO Unified Data Policy, Resolution 1 (Cg-Ext(2021))](https://library.wmo.int/idurl/4/58009). Note that core data must be open access and recommended data may be open or access-controlled. This classification is independent of access control. Example: `"wmo:dataPolicy": "recommended"`
+- `created`: Indicates when the metadata record was created. Example:`"created": "2025-06-04T14:00:00Z"`
 
-Optional Properties
+Optional Properties:
 
 These properties are optional according to WCMP2, but are strongly recommended for MeteoGate datasets.
 
-- `keywords`: Other keywords, tags or key phrases describing the dataset.
 - `language`: Language of the metadata, e.g. `"language":"en"`.
 - `updated`: Indicate when the metadata record was created and last updated. Example:`"updated": "2025-06-04T14:00:00Z"`
 - `rights`: A human-readable statement describing usage rights not fully covered by the licence. Example: `"rights": "Users are granted free and unrestricted access to this data, without charge and with no conditions on use. Users are requested to attribute the producer of this data. WMO Unified Data Policy (Resolution 1 (Cg-Ext 2021))"`
@@ -408,73 +411,94 @@ These properties are optional according to WCMP2, but are strongly recommended f
 - `status`: Describes the operational status of the dataset (e.g. operational, experimental).
 - `linkTemplates`: Used for templated or parameterised access (e.g. dynamic API queries).
 
-Additional Properties
+Additional Properties:
 
 The `properties` object may include additional fields as needed, provided they do not conflict with WCMP2. These can be used to, for example, support filtering and discovery, provide domain-specific information, and expose identifiers or references relevant to the dataset.
 
-*Parameters and Concepts*
+*Concepts and Parameters*
 
-Use `concepts` to provide the user with (links to) information about the data, especially the physical `parameter` included. This helps users and AI tools interpret the content.
+Discovery metadata can include concepts to describe the meaning and content of a dataset using shared, well-defined vocabularies. Concepts provide semantic context and help users, discovery services, and automated systems understand what the data represents.
 
-Concepts example:
+Concepts are not data values or API query parameters. Instead, they describe the scientific domain of the dataset, the type of observations or products, and the physical parameters included in the data. 
 
+Using concepts allows consistent discovery across different datasets and publishers, filtering and grouping in MeteoGate Data Explorer, correct interpretation by external catalogues and AI tools, and alignment with WMO and international standards.
+
+Structure of a Concept Block:
+
+Each concept block consists of:
+- a list of one or more `concepts`
+- a `scheme` that defines the vocabulary used
+
+Each concept typically includes:
+- `id`: a short identifier
+- `title`: a human-readable label
+- `url`: a link to the authoritative definition
+
+Domain and Discipline Concepts (WIS 2.0):
+
+Concepts can be used to describe the scientific domain and data category, aligned with the WIS 2.0 Topic Hierarchy. Example:
 ```
-        "concepts": [	
-          {	
-            "id": "weather",	
-            "title": "Weather",	
-            "url": "https://github.com/wmo-im/wis2-topic-hierarchy/blob/main/topic-hierarchy/earth-system-discipline/weather"	
-          }	
-        ],	
-        "scheme": "https://github.com/wmo-im/wis2-topic-hierarchy/blob/main/topic-hierarchy/earth-system-discipline"
-       },
-       { "concepts": [
-          {
-            "id":"weather",
-            "title": "Weather",	
-            "url": "https://codes.wmo.int/wis/topic-hierarchy/earth-system-discipline/weather"
-          }
-        ],
-        "scheme":"https://codes.wmo.int/wis/topic-hierarchy/earth-system-discipline"
-       },
+{
+  "concepts": [
+    {
+      "id": "weather",
+      "title": "Weather",
+      "url": "https://codes.wmo.int/wis/topic-hierarchy/earth-system-discipline/weather"
+    }
+  ],
+  "scheme": "https://codes.wmo.int/wis/topic-hierarchy/earth-system-discipline"
+}
+```
+These concepts describe what kind of data this dataset contains, not individual measurements.
 
-       { "concepts": [
-          {
-            "id":"surface-based-observations"
-          }
-        ],
-        "scheme":"https://codes.wmo.int/wis/topic-hierarchy/earth-system-discipline/weather"
-        },
-      {	
-        "concepts": [
-          {	
-            "id": "air_temperature",	
-            "title": "Air temperature",	
-            "url": "http://vocab.nerc.ac.uk/standard_name/air_temperature/"	
+Observation Type Concepts:
+
+Concepts can also describe the observation category, such as surface-based observations:
+```
+{
+  "concepts": [
+    {
+      "id": "surface-based-observations"
+    }
+  ],
+  "scheme": "https://codes.wmo.int/wis/topic-hierarchy/earth-system-discipline/weather"
+}
 ```
 
-Parameter information example:
+Parameter Concepts (Physical Variables):
+
+Physical parameters included in the dataset should be described using a recognised vocabulary, such as NERC standard names.
+
+Examples:
 ```
-{ "concepts": [
-          {	
-            "id": "air_temperature",	
-            "title": "Air temperature",	
-            "url": "http://vocab.nerc.ac.uk/standard_name/air_temperature/"	
-          },	
-          {	
-            "id": "wind_speed",	
-            "title": "Wind Speed",	
-            "url": "http://vocab.nerc.ac.uk/standard_name/wind_speed/"	
-          },
-          {	
-            "id": "wind_to_direction",	
-            "title": "Wind to diection",	
-            "url": "http://vocab.nerc.ac.uk/standard_name/wind_to_direction/"	
-          }	
-                    ],	
-        "scheme": "https://vocab.nerc.ac.uk/standard_name"
-      }	
+{
+  "concepts": [
+    {
+      "id": "air_temperature",
+      "title": "Air temperature",
+      "url": "http://vocab.nerc.ac.uk/standard_name/air_temperature/"
+    },
+    {
+      "id": "wind_speed",
+      "title": "Wind speed",
+      "url": "http://vocab.nerc.ac.uk/standard_name/wind_speed/"
+    },
+    {
+      "id": "wind_to_direction",
+      "title": "Wind direction",
+      "url": "http://vocab.nerc.ac.uk/standard_name/wind_to_direction/"
+    }
+  ],
+  "scheme": "https://vocab.nerc.ac.uk/standard_name"
+}
 ```
+These concepts indicate which physical quantities are available somewhere in the dataset, not how to query them.
+
+Best Practices:
+- Use well-known, authoritative vocabularies wherever possible.
+- Include only concepts that genuinely apply to the dataset.
+- Keep concepts stable over time to support long-term discovery.
+- Avoid duplicating information already expressed in the topic hierarchy unless it adds semantic clarity.
 
 *Access Control*
 
@@ -657,11 +681,11 @@ Identifier for the data item data_id must always be unique; you can decide how t
 
 ```"data_id": "nl-knmi-nmc/data/recommended/weather/surface-based-observations/synop/WIGOS_0-20000-0-06344_20240411T130000"```
 
-datetime is the time associated with the data (i.e., the observation time) – also useful for users to determine if this is data they need.
+"datetime" is the time associated with the data (i.e., the observation time) – also useful for users to determine if this is data they need.
 
 ```"datetime": "2024-04-11T13:00:00Z"```
 
-pubtime is the time when the notification message was sent; a CORRECTION must always have a later pubtime than the original message _and_ have a link with rel=update (see more on links later).
+"pubtime" is the time when the notification message was sent; a CORRECTION must always have a later pubtime than the original message _and_ have a link with rel=update (see more on links later).
 
 ```"pubtime": "2024-04-11T13:15:06Z"```
 
@@ -689,7 +713,7 @@ And also providing a link to a license.
 
 Here’s the crucial part of the notification message: the link to the data! Each link follows a similar structure. rel is the “link relation” type. A link with rel=canonical is always the default one to look at. Other link types include update and license (mentioned earlier), item and station (coming next), and more. A table (albeit incomplete) of link types is provided in the WCMP2 specification.
 
-type provides the media type (MIME type) of the resource. length enables a simple integrity check. href provides the URL for the resource – in this case an observation for The Hague encoded in BUFR4. For Core data, it’s the URL in the canonical link that Global Caches will download from. For Core data, the URL in the canonical link _must_ be directly resolvable – i.e., no access controls or URL templates.
+"type" provides the media type (MIME type) of the resource. length enables a simple integrity check. href provides the URL for the resource – in this case an observation for The Hague encoded in BUFR4. For Core data, it’s the URL in the canonical link that Global Caches will download from. For Core data, the URL in the canonical link _must_ be directly resolvable – i.e., no access controls or URL templates.
 
 ```
 "links": [
