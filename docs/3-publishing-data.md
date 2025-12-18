@@ -276,6 +276,8 @@ Naming conventions should follow standard practices to provide a clear and logic
 
 The Data Owner should make sure that all data published via MeteoGate have a well-defined license that specifies usage rights, restrictions, and attribution requirements.  
 
+Creative Commons Attribution 4.0 International (CC BY 4.0) license is recommended in MeteoGate.
+
 **Recommendations**
 
   - Make sure that your data is licenced at an adequate level. Choose an appropriate open data license based on the intended use and distribution model, such as CC BY 4.0 for attribution-required use or CC0 for public domain dedication. For High Value Data sets it is recommended to use CC BY 4 or equivalent.  
