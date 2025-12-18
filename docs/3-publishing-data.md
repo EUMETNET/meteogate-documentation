@@ -352,7 +352,7 @@ The following properties are required for all dataset-level discovery metadata r
     For a detailed explanation of how themes, concepts, and parameters are used together, see the section *Themes, Concepts and Parameters* below.  
 
     Example:  
-    ```
+    ```  
     "themes": [  
       {  
         "concepts": [  
@@ -365,6 +365,7 @@ The following properties are required for all dataset-level discovery metadata r
       }  
     ]  
     ```
+    
   - `geometry`: Describes the geospatial extent of the dataset using GeoJSON geometry. This allows users to discover datasets based on spatial coverage. Example:  
     ```  
     "geometry": {  
@@ -379,7 +380,8 @@ The following properties are required for all dataset-level discovery metadata r
         ]  
       ]  
     }  
-    ```  
+    ```
+    
   - `time`: Describes the temporal extent of the dataset. It may also include a resolution field to indicate how frequently new data or notifications are published. Example:  
     ```
     "time": {  
