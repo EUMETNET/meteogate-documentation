@@ -148,15 +148,15 @@ The API base URL looks like this, for example: ```api.eumetnet.eu/fi-fmi/edr```
 There are several ways to formulate the access request:
 
   - Use an API query tool (e.g. Swagger), if available
-    - Browse available collections and parameters from an API using specialist software, which formulates access request according to your preferences
-    - Copy the resulting access request
+      - Browse available collections and parameters from an API using specialist software, which formulates access request according to your preferences
+      - Copy the resulting access request
   - Copy the URL link from a notification message
-    - In case you have subscribed to notifications about particular data from the Global Broker, the notification message includes a direct URL link to the data you have subscribed to
+      - In case you have subscribed to notifications about particular data from the Global Broker, the notification message includes a direct URL link to the data you have subscribed to
   - Formulate manually using metadata from API (for expert users)
-    - Access the API collection URL to get collection metadata, which provides information on available data query types, parameters, spatial extents, and temporal extents (e.g. ```https://api.eumetnet.eu/fi-fmi/edr/collections```)
-    - Browse collection metadata to find collections and parameters to data that are available from that API.
-    - Decide what data you want to get (e.g. collection type, collection, type of data, time, geographic extent, output formats, other parameters)
-    - Formulate the access request by combining the API base URL, collection, and parameters according to the OGC-API EDR [specification](https://ogcapi.ogc.org/edr)
+      - Access the API collection URL to get collection metadata, which provides information on available data query types, parameters, spatial extents, and temporal extents (e.g. ```https://api.eumetnet.eu/fi-fmi/edr/collections```)
+      - Browse collection metadata to find collections and parameters to data that are available from that API.
+      - Decide what data you want to get (e.g. collection type, collection, type of data, time, geographic extent, output formats, other parameters)
+      - Formulate the access request by combining the API base URL, collection, and parameters according to the OGC-API EDR [specification](https://ogcapi.ogc.org/edr)
 
 #### How to Send the Access Request
 
@@ -208,16 +208,16 @@ Once data has been accessed or retrieved through the MeteoGate system—either v
 - Data retrieved via the API (e.g. in JSON, GeoJSON format) can be integrated into your workflows, applications, and databases.
 - You can automate periodic data pulls using scripts (e.g. Python, R)
 - Example use cases include:
-  - Visualising weather station data on a map
-  - Feeding weather data into weather or hydrological models
-  - Monitoring real-time observations (e.g. temperature, precipitation) for decision-making
-  - Supporting early warning systems with live data streams
-  - Performing climate trend analysis using historical datasets
-  - Integrating forecast data into agriculture decision support tools
-  - Powering smart city applications (e.g. air quality, urban flooding risk)
-  - Enhancing maritime or aviation planning with near real-time meteorological inputs
-  - Automating daily or hourly reports with scheduled API queries
-  - Combining data from multiple countries for cross-border analysis or research
+    - Visualising weather station data on a map
+    - Feeding weather data into weather or hydrological models
+    - Monitoring real-time observations (e.g. temperature, precipitation) for decision-making
+    - Supporting early warning systems with live data streams
+    - Performing climate trend analysis using historical datasets
+    - Integrating forecast data into agriculture decision support tools
+    - Powering smart city applications (e.g. air quality, urban flooding risk)
+    - Enhancing maritime or aviation planning with near real-time meteorological inputs
+    - Automating daily or hourly reports with scheduled API queries
+    - Combining data from multiple countries for cross-border analysis or research
 
 ### Developer Support
 
