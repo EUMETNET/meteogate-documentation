@@ -1,0 +1,2008 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Guidance and instructions for MeteoGate Stakeholders – Data Consumers, Data Publishers and Community Capability Operators">
+      
+      
+        <meta name="author" content="EUMETNET">
+      
+      
+      
+        <link rel="prev" href="../2-discovering-and-accessing-data/">
+      
+      
+        <link rel="next" href="../technical-architecture/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.1">
+    
+    
+      
+        <title>3. PUBLISHING DATA - MeteoGate Documentation</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Open Sans";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="black" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#3-publishing-data" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="MeteoGate Documentation" class="md-header__button md-logo" aria-label="MeteoGate Documentation" data-md-component="logo">
+      
+  <img src="../images/meteogate-logo.svg" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            MeteoGate Documentation
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              3. PUBLISHING DATA
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/EUMETNET/meteogate-documentation" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href=".." class="md-tabs__link">
+        
+  
+  
+    
+  
+  HOME
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../1-overview/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  1. OVERVIEW
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../2-discovering-and-accessing-data/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  2. DISCOVERING AND ACCESSING DATA
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    <li class="md-tabs__item md-tabs__item--active">
+      <a href="./" class="md-tabs__link">
+        
+  
+  
+    
+  
+  3. PUBLISHING DATA
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../technical-architecture/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  ARCHITECTURE
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../glossary/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  GLOSSARY
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../references/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  REFERENCES
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="MeteoGate Documentation" class="md-nav__button md-logo" aria-label="MeteoGate Documentation" data-md-component="logo">
+      
+  <img src="../images/meteogate-logo.svg" alt="logo">
+
+    </a>
+    MeteoGate Documentation
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/EUMETNET/meteogate-documentation" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    HOME
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../1-overview/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1. OVERVIEW
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2-discovering-and-accessing-data/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2. DISCOVERING AND ACCESSING DATA
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3. PUBLISHING DATA
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3. PUBLISHING DATA
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#what-is-a-data-supply" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What is a Data Supply?
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#roles-in-the-data-publishing-process" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Roles in the Data Publishing Process
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#data-publishers-responsibilities" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Data Publishers’ Responsibilities
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#fulfilling-eu-and-wmo-obligations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Fulfilling EU and WMO Obligations
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#start-here-steps-to-publish-data-through-meteogate" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Start Here – Steps to Publish Data Through MeteoGate
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Start Here – Steps to Publish Data Through MeteoGate">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#step-1-select-data-publishing-patterns-and-deployment-environment" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 1: Select data publishing pattern(s) and deployment environment
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-2-structure-and-prepare-data" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 2: Structure and Prepare Data
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-3-deploy-and-integrate-data-supply" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 3: Deploy and Integrate Data Supply
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-4-onboard-data-supply" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 4: Onboard Data Supply
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-1-select-data-publishing-pattern" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 1: Select Data Publishing Pattern
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Step 1: Select Data Publishing Pattern">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#pattern-1-using-a-meteogate-hvd-service" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Pattern 1: Using a MeteoGate HVD Service
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pattern-2-managed-and-proxied-access-through-meteogate-api-gateway" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Pattern 2: Managed and Proxied Access Through MeteoGate API Gateway
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pattern-3-direct-access" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Pattern 3: Direct Access
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#choose-a-suitable-platform-and-understand-related-costs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Choose a Suitable Platform and Understand Related Costs
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#decide-on-authentication-and-rate-limits" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Decide on Authentication and Rate Limits
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-2-structure-and-prepare-data_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 2: Structure and Prepare Data
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Step 2: Structure and Prepare Data">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#data-formats" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Data Formats
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#naming-conventions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Naming Conventions
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#license" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        License
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#metadata" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Metadata
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#discovery-metadata" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Discovery Metadata
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#collection-metadata" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Collection Metadata
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#resourcefile-level-metadata" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Resource/File-Level Metadata
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#links" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Links
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-3-deploy-and-integrate-data-supply_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 3: Deploy and Integrate Data Supply
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Step 3: Deploy and Integrate Data Supply">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#choosing-a-deployment-framework" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Choosing a Deployment Framework
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#deploying-apis" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Deploying APIs
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#publishing-discovery-metadata" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Publishing Discovery Metadata
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#publishing-notifications" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Publishing Notifications
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Publishing Notifications">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#topic-hierarchy-for-message-publication" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Topic Hierarchy for Message Publication
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#testing-and-validating-data-supply" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Testing and Validating Data Supply
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-4-onboarding-data-supply-to-meteogate-and-wmo-wis-2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 4: Onboarding Data Supply to MeteoGate and WMO WIS 2
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Step 4: Onboarding Data Supply to MeteoGate and WMO WIS 2">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#registering-a-wis2-node" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Registering a WIS2 Node
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Registering a WIS2 Node">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#which-pr-should-i-contact" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Which PR should I contact?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#registering-a-centre-id" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Registering a centre-id
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#assessing-and-accepting-the-wis2-node" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Assessing and accepting the WIS2 Node
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#integrating-the-data-supply-with-meteogate-and-wis2-components" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Integrating the Data Supply with MeteoGate and WIS2 components
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#additional-considerations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Additional Considerations
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Additional Considerations">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#quality-of-service" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Quality-of-Service
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#data-quality-and-data-governance" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Data Quality and Data Governance
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#incident-response-and-support-requests" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Incident Response and Support Requests
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#monitoring-and-insights" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Monitoring and Insights
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../technical-architecture/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ARCHITECTURE
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../glossary/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    GLOSSARY
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../references/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    REFERENCES
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="3-publishing-data">3. Publishing Data</h1>
+<p>This section describes how to publish open meteorological and hydrological data through MeteoGate, ensuring compliance with EU High-Value Datasets (HVD) regulations and WMO WIS 2.0 obligations.  </p>
+<p>These instructions are intended for <strong>NMHSs</strong> and other entities publishing data via MeteoGate, referred to as <strong>Data Publishers</strong> in MeteoGate.</p>
+<h2 id="what-is-a-data-supply">What is a Data Supply?</h2>
+<p>In MeteoGate, a <strong>Data Supply</strong> is the technical component used to share, manage, and publish data and metadata. It enables:</p>
+<ul>
+<li>Data storage</li>
+<li>API-based access</li>
+<li>Data processing in line with regulations</li>
+<li>Metadata management for discovery</li>
+<li>Notification services to the WMO WIS2 components</li>
+</ul>
+<p>A <strong>Data Publisher</strong> deploys a Data Supply to make datasets available through MeteoGate.</p>
+<p>More details on architecture and integration options can be found in the <a href="../1-overview/">MeteoGate Overview</a>.</p>
+<h2 id="roles-in-the-data-publishing-process">Roles in the Data Publishing Process</h2>
+<p>The data publishing process involves several roles:</p>
+<ul>
+<li><strong>Data Owners</strong>: Define usage rights and conditions.</li>
+<li><strong>Data Publishers</strong>: Share data through a Data Supply and ensure compliance.</li>
+<li><strong>Local Capability Operators</strong>: Manage Data Supplies, provide support, enforce policy adherence.</li>
+<li><strong>Data Consumers</strong>: Access shared data.</li>
+<li><strong>Community Capability Operators</strong>: Maintain MeteoGate data discovery and sharing infrastructure.</li>
+<li><strong>FEMDI Coordinating Member</strong>: Oversees system-level governance.</li>
+</ul>
+<p>See full description of roles and responsibilities in the <a href="../1-overview/">MeteoGate Overview</a>.</p>
+<h2 id="data-publishers-responsibilities">Data Publishers’ Responsibilities</h2>
+<p>Data Publishers must ensure:</p>
+<ul>
+<li>Data integrity and availability</li>
+<li>Compliance with MeteoGate policies</li>
+<li>Authorization from Data Owners</li>
+<li>Maintenance of minimum data availability</li>
+<li>Notification of disruptions</li>
+<li>Incident response and support</li>
+<li>Reporting to EUMETNET as required</li>
+</ul>
+<p>See full policy in the <a href="../references/">MeteoGate Participation Management Policy</a>.</p>
+<h2 id="fulfilling-eu-and-wmo-obligations">Fulfilling EU and WMO Obligations</h2>
+<p>MeteoGate aligns with:</p>
+<ul>
+<li>WMO WIS 2.0</li>
+<li>EU Open Data policies</li>
+</ul>
+<p>It integrates with:</p>
+<ul>
+<li>WIS2 Global Broker</li>
+<li>WIS2 Global Discovery Catalogue</li>
+</ul>
+<p>Compliance is ensured through:</p>
+<ul>
+<li><a href="http://data.europa.eu/eli/reg_impl/2023/138/oj">EU Commission Implementing Regulation 2023/138 on High Value Datasets</a></li>
+<li><a href="http://data.europa.eu/eli/dir/2019/1024/oj">EU Open Data Directive (2019/1024)</a></li>
+<li><a href="http://data.europa.eu/eli/dir/2007/2/oj">EU INSPIRE Directive (2007/2)</a></li>
+<li><a href="https://community.wmo.int/en/activity-areas/wis/publications/1060-vII">WMO Manual on WIS 2.0 (WMO No. 1060)</a></li>
+<li><a href="https://community.wmo.int/en/activity-areas/wis/publications/1061-vII">WMO Guide to WIS 2.0 (WMO No. 1061)</a></li>
+<li><a href="https://community.wmo.int/en/activity-areas/wis/publications/306-vI.2">WMO Manual on Codes (WMO No. 306)</a></li>
+</ul>
+<p>Recommended standards:</p>
+<ul>
+<li>EUMETDAPS definitions for European meteorological data-sharing policies</li>
+<li>Standardized vocabularies from WMO, ECMWF, EUMETNET, and EUMETSAT</li>
+<li><a href="https://www.go-fair.org/fair-principles/">FAIR Principles</a> for best practices in data consistency, accuracy, and compliance</li>
+</ul>
+<hr />
+<h2 id="start-here-steps-to-publish-data-through-meteogate">Start Here – Steps to Publish Data Through MeteoGate</h2>
+<h3 id="step-1-select-data-publishing-patterns-and-deployment-environment">Step 1: Select data publishing pattern(s) and deployment environment</h3>
+<p>The choice between using a MeteoGate HVD service, the API Gateway, or direct access affects design choices and deployment. The deployment platform – whether EWC, public cloud, or on-premises – should align with data access needs and cost considerations. Establish rate limits and potentially access control to ensure efficient resource use and fair access. </p>
+<h3 id="step-2-structure-and-prepare-data">Step 2: Structure and Prepare Data</h3>
+<p>Data must be structured into well-organised datasets and collections, ensuring compatibility with MeteoGate and WMO standards. High data quality is essential, and discovery metadata must be created to enable searchability in MeteoGate, WMO WIS2, and external search engines. </p>
+<h3 id="step-3-deploy-and-integrate-data-supply">Step 3: Deploy and Integrate Data Supply</h3>
+<p>The Data Supply must be deployed according to the chosen publishing pattern. This involves setting up and validating API endpoints, publishing metadata and notifications, and ensuring security, scalability, and compliance.</p>
+<h3 id="step-4-onboard-data-supply">Step 4: Onboard Data Supply</h3>
+<p>Once ready, Data Publishers must onboard the Data Supply with MeteoGate and WIS2 components. </p>
+<hr />
+<h2 id="step-1-select-data-publishing-pattern">Step 1: Select Data Publishing Pattern</h2>
+<p>The Data Publisher and/or Data Owner will decide how they want their data to be made available. Data can be published through MeteoGate in three different patterns. The choice should be based on the data type, existing technical solutions and runtime environments already used for sharing open data (if any), and specific requirements for access control, cost, and performance. Data Publishers and/or Owners can choose different options for different datasets and APIs. </p>
+<p>The publishing pattern must be selected before designing the Data Supply and APIs as it influences design choices. All options will need MeteoGate-compliant metadata and notifications to be shared to WMO WIS2 (See <a href="#registering-a-wis2-node">Registering a WIS2 Node</a>. </p>
+<h3 id="pattern-1-using-a-meteogate-hvd-service">Pattern 1: Using a MeteoGate HVD Service</h3>
+<p>Data Publishers integrate their Data Supply components to a MeteoGate HVD service provided by EUMETNET, which proxies and/or standardizes the data before making it available through the MeteoGate API Gateway. </p>
+<p>EUMETNET currently has the following HVD services available:  </p>
+<ul>
+<li><a href="https://api.meteogate.eu/eu-eumetnet-surface-observations">Land-based surface observations</a> (E-SOH)  </li>
+<li><a href="https://api.meteogate.eu/documentation/eu-eumetnet-weather-radar">EUMETNET OPERA weather radar</a>   </li>
+<li><a href="https://github.com/EUMETNET/ogc-edr-workshop">EUMETNET Climate Aggregator</a> </li>
+<li><a href="https://meteoalarm.org/en/live/page/redistribution-hub#list">EUMETNET Warnings API</a></li>
+</ul>
+<p>ℹ️ <strong><em>Note:</em></strong> Check specific integration requirements and instructions from the respective HVD service links.</p>
+<p>This pattern is appropriate for the following situations​: </p>
+<ul>
+<li>When providing data types already supported by an existing HVD service (e.g., climate, radar, land-based surface observations). </li>
+<li>Want to leverage standardized, centrally managed services for making data available to MeteoGate. </li>
+<li>Want to ensure alignment with EU High-Value Dataset (HVD) regulations by using a pre-established, compliant service. </li>
+<li>Prefer minimal IT investment while ensuring the data is discoverable, accessible, and compliant with MeteoGate requirements. </li>
+<li>Want to benefit from improved security, efficiency, and cost-effectiveness, as MeteoGate handles security, rate limiting, and monitoring. </li>
+</ul>
+<h3 id="pattern-2-managed-and-proxied-access-through-meteogate-api-gateway">Pattern 2: Managed and Proxied Access Through MeteoGate API Gateway</h3>
+<p>The Data Supply component is registered with an appropriate MeteoGate API Gateway​. Currently, these are deployed on the EWC, in ECMWF and EUMETSAT runtime environments. EUMETNET Members will connect their data services via EWC irrespective of the location of their data (e.g., EWC, public cloud, on-premises).​ ​In the future, if requirements change, MeteoGate API Gateway can be implemented also on public clouds. </p>
+<p>The data is requested from and goes through the MeteoGate API Gateway allowing: </p>
+<ul>
+<li>Managed data requests and data flow e.g., authorization, access control, and rate limiting</li>
+<li>Collection of insights on data requests and access​.</li>
+</ul>
+<p>Read more about the MeteoGate API Gateway features on <a href="https://eumetnet.github.io/meteogate-documentation/technical-architecture">MeteoGate Architecture</a>.</p>
+<p>This pattern is appropriate for the following situations​: </p>
+<ul>
+<li>There is no suitable HVD service for the type of data to be shared.</li>
+<li>Data is hosted on EWC, or data access APIs will be hosted on EWC.</li>
+<li>Prefer minimal IT investment while ensuring the data is discoverable, accessible, and compliant with MeteoGate requirements.</li>
+<li>Want to benefit from improved security, efficiency, manageability, and cost-effectiveness, as MeteoGate handles security, rate limiting, and monitoring. </li>
+</ul>
+<h3 id="pattern-3-direct-access">Pattern 3: Direct Access</h3>
+<p>Data will be discoverable using MeteoGate, but it is requested and accessed directly from the Data Supply​ – not via the MeteoGate API Gateway​. The Data Supply and APIs are responsible for access management, rate limiting, and monitoring​. This requires more capabilities from the Data Supply, potentially making it more expensive to implement.</p>
+<p>This pattern is appropriate for the following situations​: </p>
+<ul>
+<li>Data is already published through a public cloud providers’ open data initiative (e.g., Amazon Sustainability Data Initiative (ASDI), Microsoft Planetary Computer, Google Earth Engine, and Oracle Open Data). Such initiatives may cover the cost of data storage, cross-region duplication, and egress charges, thereby enabling large-scale distribution of data at low cost to the data provider – and, importantly, benefitting from the Quality-of-Service (QoS) provisions implemented by the cloud platform provider. </li>
+<li>Data is already published through a Government Data Portal​. </li>
+<li>Data or an existing API used to publish it is hosted on a public cloud (e.g. AWS, Azure, Google Cloud, or Oracle Cloud). Serving data through the MeteoGate API Gateway would be expensive due data egress costs. </li>
+<li>Large volume of data (e.g. radar or climate forecast data). </li>
+<li>High performance or availability requirements (e.g., large amount of data transferred or frequent use)​. </li>
+<li>Want to have full control of how the data is made available. </li>
+<li>Want to use fine-grained access control (e.g. for example, various groups of registered users with different QoS, paid or premium access, etc.). </li>
+<li>Want to set rate limits and quotas or allow monitoring above the capabilities offered by the MeteoGate API Gateway. </li>
+<li>Access control, request management and collection of usage metrics are already handled by a Third Party or the Data Supply/API (for example, the Data Publisher already has API Management implemented as part of the Data    Supply capability).</li>
+</ul>
+<p>In the future, EUMETNET Members may also make use of a packaged instance of the MeteoGate API that can be deployed locally either on-premises or in a designated cloud tenancy. This will enable the Members to benefit from all necessary API Management capabilities such as rate limiting, access control, and sharing of API keys while limiting its use for only to their own datasets. </p>
+<h3 id="choose-a-suitable-platform-and-understand-related-costs">Choose a Suitable Platform and Understand Related Costs</h3>
+<p>When selecting the appropriate runtime environment for publishing data through MeteoGate, Data Publishers should consider: </p>
+<ul>
+<li>Where their data and data access APIs are hosted (e.g., on-premises, EWC, or public cloud such as AWS, Azure, Google Cloud, or Oracle Cloud). </li>
+<li>Whether they need or want to use MeteoGate HVD services or the MeteoGate API Gateway (Data Publishing Patterns 1 or 2).</li>
+</ul>
+<p>The MeteoGate API Gateway is currently deployed on EWC. There is no MeteoGate API Gateway available on any public cloud. However, currently 80 % of EUMETNET Members either do not need API Gateway protection or can be covered by the MeteoGate API Gateway on EWC. </p>
+<p><strong>Recommendations</strong></p>
+<ul>
+<li>All Members providing High-Value Datasets (HVD) should connect to an appropriate HVD service or the MeteoGate API Gateway instance on EWC. </li>
+<li>If providing data or APIs that are hosted on-premises or in a public cloud, assess whether it makes sense to use HVD services, the MeteoGate API Gateway, or provide direct access. Members hosting data services on a public cloud should consider potential egress costs, as these depend on individual cloud service providers’ pricing models. Carefully evaluate whether the benefits of the MeteoGate API Gateway – such as access control, rate limiting, and monitoring – justify the additional data transfer costs. </li>
+</ul>
+<h3 id="decide-on-authentication-and-rate-limits">Decide on Authentication and Rate Limits</h3>
+<p>Together with the Data Owner the Data Publisher will define appropriate data access restrictions based on, for example, appropriate data policy, requirements on being able to identify users, performance and availability requirements, and the technical platform of the Data Supply and its limitations. </p>
+<p>Typically, the access restrictions are as follows:</p>
+<ul>
+<li>Rate limits and quotas: Control the number of requests a user or application can make to an API within a specified time frame to prevent abuse and ensure fair usage. </li>
+<li>Authentication: Determine if the API will be open to public users or restricted to authenticated users only.</li>
+</ul>
+<p>The access restrictions may be different for different datasets and APIs. Typically, it is most feasible to offer datasets sharing the same access restrictions under the same API endpoint. </p>
+<p>The access restrictions are implemented in different ways depending on the Data Publishing Pattern used:</p>
+<ul>
+<li>Pattern 1: When sharing data through a HVD service, the technical access restrictions also depend on the HVD service’s agreed specifications.  </li>
+<li>Pattern 2: The MeteoGate API Gateway allows setting 1) authentication (whether users need to authenticate using API Key or not to access the endpoint) and 2) rate limits (maximum number of requests per time interval) for each API endpoint. Rate limits can be set separately for authenticated and unauthenticated users, when authentication is not required (i.e. when offering better QoS to registered users). The Data Publisher can set the access restrictions for the Data Supply during the onboarding process.  </li>
+<li>Pattern 3: When sharing data directly, the Data Publisher is responsible for implementing all required access restrictions.</li>
+</ul>
+<hr />
+<h2 id="step-2-structure-and-prepare-data_1">Step 2: Structure and Prepare Data</h2>
+<p>Datasets should be structured in a way that ensures efficient access, consistency, interoperability, and discoverability within MeteoGate and WMO WIS2. Key aspects of structuring include defining dataset boundaries, standardizing parameters, optimizing metadata, ensuring proper indexing, and selecting suitable API technologies for data retrieval. </p>
+<p>MeteoGate does not enforce specific data structures or quality requirements. Data Owners and Data Publishers are responsible for ensuring that the published data is of sufficient quality. They can choose the most suitable data structures and formats based on their specific use cases, domains, and user requirements. However, MeteoGate and WIS 2 require standardized metadata and notifications for discoverability and interoperability. Also, Data Owners that are WMO members need to fulfil WMO data quality requirements. </p>
+<p>Data should be organised into datasets that share common characteristics, such as type (e.g., weather station observations), format, vocabulary, access protocol, quality management process, and license. </p>
+<p>Datasets are published as collections, which are logical groupings of related resources exposed through an API. Each collection is assigned a unique URL for accessibility. Different API technologies require different structuring approaches: </p>
+<ul>
+<li><a href="https://ogcapi.ogc.org/edr/">OGC API - Environmental Data Retrieval (EDR)</a> is recommended for interactive data access, enabling spatiotemporal queries and dynamic retrieval of real-time or historical observations within MeteoGate’s Data Explorer and Data Consumer applications.</li>
+<li><a href="https://stacspec.org/en/">SpatioTemporal Asset Catalog (STAC)</a> is recommended for pre-packaged data, providing a standardized catalog structure for geospatial and temporal datasets, enhancing metadata discoverability and supporting large-scale archives. </li>
+</ul>
+<p>Both EDR and STAC improve data usability but serve different purposes. EDR is optimized for direct queries and interactive exploration, while STAC is suited for structured metadata-driven dataset discovery. </p>
+<p><strong>Recommendations</strong> </p>
+<ul>
+<li>Ensure compatibility with API technologies such as EDR and STAC to optimize data retrieval.</li>
+<li>Follow the restrictive EDR profile to maintain consistency in data structuring.</li>
+<li>Use STAC for geospatial and temporal datasets to improve metadata standardization and searchability.</li>
+<li>Organise datasets based on retrieval methods (e.g., real-time data, historical archives, aggregated summaries) for usability.</li>
+<li>Define standardized parameters such as temperature, wind speed, and precipitation to ensure consistency across datasets and enable effective query.</li>
+<li>Ensure datasets are accessible through unique URLs to support efficient discovery and retrieval.</li>
+<li>Ensure compatibility with MeteoGate Data Explorer by:  <ul>
+<li>Including a list of available parameters (parameter_names) in the collection metadata.</li>
+<li>Providing observation locations in GeoJSON format (collections/<collection_name>/locations).</li>
+<li>Ensuring that data includes a time axis (domain.axes.t) for temporal queries. </li>
+</ul>
+</li>
+<li>Optimize data indexing for fast and reliable API queries. </li>
+</ul>
+<h3 id="data-formats">Data Formats</h3>
+<p>To ensure interoperability, usability, and performance across MeteoGate, data format should be chosen based on the type of data, the user community, and technical compatibility with MeteoGate services. </p>
+<p><strong>Recommendations</strong> </p>
+<p><strong>1. Use an Open, Non-Proprietary Format</strong> </p>
+<p>An open format allows unrestricted usage without licensing constraints, ensuring accessibility for both data producers and software developers. Open formats enhance interoperability and prevent vendor lock-in. </p>
+<p><strong>2. Choose a Format that Matches Your Data Type</strong></p>
+<p>Different data structures require different formats:</p>
+<ul>
+<li>Tabular data representing sets of  features (e.g., in-situ observations, station measurements)
+    → Recommended formats: Comma-Separated-Variable (CSV), TSV, GeoJSON (RFC 7946), BUFR, Parquet, GeoParquet. Cloud-optimized formats like Parquet are ideal for very large datasets. </li>
+<li>Spatiotemporal coverage data (e.g., grids, multi-dimensional arrays)
+    → Recommended formats: CoverageJSON, GRIB, HDF5, NetCDF (NetCDF4 as a profile of HDF5), GeoTIFF, Cloud-Optimised-GeoTIFF, Zarr. CoverageJSON is the recommended format for use with OGC API - EDR and supports efficient, standards-based access to coverage data. </li>
+<li>Overlapping cases → BUFR can encode both point-based and coverage data, but it is complex. Time-series data may be represented as a tabular list (CSV, Parque) or a one-dimensional array (NetCDF), Zarr.</li>
+</ul>
+<p><strong>3. Select a Format that Your User Community Understands</strong> </p>
+<p>The best format depends on who will use the data:</p>
+<ul>
+<li>For WMO members and meteorological agencies, GRIB and BUFR are well-established. </li>
+<li>For broader public use and data science applications, choose widely adopted formats like GeoJSON, CSV, and GeoTIFF. </li>
+<li>For multidisciplinary scientific research, formats like NetCDF (CF-NetCDF), HDF5, and Zarr provide enhanced compatibility with analysis tools. </li>
+</ul>
+<p>If serving multiple user groups, consider offering data in multiple formats. Additionally, some formats have domain-specific profiles (e.g., CF-NetCDF for atmospheric and oceanographic sciences), so be clear on which profile or convention is being used. </p>
+<p><strong>4. Ensure Compatibility with MeteoGate and WIS2</strong> </p>
+<p>To maximize usability and compliance with MeteoGate API Gateway and Data Explorer, HVD services, and WIS2, Data Publishers should:</p>
+<ul>
+<li>Use XML, HTML, and JSON formats. Currently, the MeteoGate API Gateway primarily supports these formats, and they are recommended for API-based data access. However, other formats may be necessary depending on the dataset type and intended use case.</li>
+<li>Use CoverageJSON for APIs based on OGC API - EDR, especially when integration with MeteoGate Data Explorer is expected.</li>
+<li>Provide GeoJSON for vector data and spatial metadata.</li>
+<li>For HVD data, follow the requirements in MeteoGate HVD service documentation. <em><link?></em></li>
+<li>For WMO data, follow Manual on Codes (WMO No. 306) for standardized formats. <em><link?></em></li>
+</ul>
+<h3 id="naming-conventions">Naming Conventions</h3>
+<p>Naming conventions should follow standard practices to provide a clear and logical structure for users and comply with international standards. </p>
+<p><strong>Recommendations</strong> </p>
+<ul>
+<li>Ensure names are human-readable and self-describing. </li>
+<li>Ensure names are aligned with relevant vocabularies and OGC standards, including the restrictive EDR profile. Where applicable, use WMO, ECMWF, EUMETNET, EUMETSAT vocabularies, which define standardized terminology and 
+  metadata for atmospheric and climate data. </li>
+<li>Use lowercase and hyphenated naming for all endpoints, resources, and parameters. </li>
+<li>Follow plural nouns for collections and singular nouns for individual resources. </li>
+<li>Maintain consistency in naming conventions between all your APIs. </li>
+<li>Learn from good examples to maintain consistency across all APIs within MeteoGate. </li>
+</ul>
+<h3 id="license">License</h3>
+<p>The Data Owner should make sure that all data published via MeteoGate have a well-defined license that specifies usage rights, restrictions, and attribution requirements.  </p>
+<p><strong>Recommendations</strong></p>
+<ul>
+<li>Make sure that your data is licenced at an adequate level. Choose an appropriate open data license based on the intended use and distribution model, such as CC BY 4.0 for attribution-required use or CC0 for public domain dedication. For High Value Data sets it is recommended to use CC BY 4 or equivalent.  </li>
+<li>Include license metadata in discovery, collection and resource metadata, using standardized fields. </li>
+<li>Document the license information clearly in the API documentation and provide links to the full license text for transparency. </li>
+<li>Maintain consistency in licensing between all your APIs, collections, and datasets </li>
+<li>Learn from good examples to maintain consistency across all APIs within MeteoGate. </li>
+</ul>
+<h3 id="metadata">Metadata</h3>
+<p>Data Publishers are responsible for including metadata for their datasets. Metadata should be published before the actual data is made available.  </p>
+<p>In MeteoGate, metadata is categorized into three levels:</p>
+<ul>
+<li>Discovery Metadata </li>
+<li>Collection Metadata </li>
+<li>Resource/File-level Metadata </li>
+</ul>
+<h3 id="discovery-metadata">Discovery Metadata</h3>
+<p>Discovery metadata describes a dataset in a way that makes it discoverable, understandable, and accessible through MeteoGate, the WIS 2.0 Global Discovery Catalogue, and related services. It provides the contextual information users and systems need in order to find relevant data and determine how it can be accessed.</p>
+<p>See <a href="https://explorer.meteogate.eu">Data Explorer</a> and <a href="../references/">Global Discovery Catalogue</a> for discovery metadata examples.</p>
+<p><strong>Purpose and Principles</strong></p>
+<p>Discovery metadata should:</p>
+<ul>
+<li>Follow the <a href="https://wmo-im.github.io/wcmp2/">WMO Core Metadata Profile (WCMP) Version 2</a>.</li>
+<li>Provide a high-level, machine-readable summary of the dataset.</li>
+<li>Support searchability and filtering (e.g., by time, space, keywords).</li>
+<li>Be consistent with the WIS 2.0 Topic Hierarchy used when publishing notifications.</li>
+<li>Be designed to be advertised and referenced through WIS 2.0 notification messages.</li>
+<li>Link to supporting resources such as APIs, licences, and contact points.</li>
+<li>Include access control information, where applicable, using link-level <code>security</code> blocks.</li>
+<li>Use stable identifiers and semantics to ensure long-term discoverability and consistency.</li>
+<li>Follow FAIR principles where possible.</li>
+<li>Be validated prior to publication.</li>
+</ul>
+<p><strong>Linking to Topic Hierarchy and Notifications</strong></p>
+<p>Discovery metadata is closely linked to the <a href="https://wmo-im.github.io/wis2-topic-hierarchy/standard/wis2-topic-hierarchy-STABLE.html">WIS 2.0 Topic Hierarchy</a>. The topic hierarchy defines how metadata and notifications are organised, routed, and filtered. Together, the topic hierarchy, discovery metadata, and notification messages form a coherent structure that enables scalable discovery and access to large volumes of data.</p>
+<p>Note that the WIS 2.0 topic is not a field inside the discovery metadata record itself. Instead, the topic is defined by the MQTT topic used when publishing the notification message that advertises the discovery metadata (see <a href="#topic-hierarchy-for-message-publication">Topic Hierarchy for Message Publication</a>). The discovery metadata record is linked to the topic through the <code>metadata_id</code> included in the notification message. For this reason, the topic used for publishing must be consistent with the content and classification of the discovery metadata.</p>
+<p><strong>Key Elements of a Metadata Record</strong></p>
+<p><em>Identifier</em> </p>
+<p>The <code>id</code> property is a unique identifier of the dataset. A record identifier is essential for querying and identifying records within the Global Discovery Catalogue. It has the following format: <code>urn:wmo:md:{centre_id}:{local_identifier}</code>.</p>
+<p>Use your assigned WIS2 centre-id (e.g., uk-metoffice), see also <a href="#registering-a-wis2-node">Registering a WIS2 Node</a>. For local identifier, use an unique name.</p>
+<p>For example, the Met Office synoptic discovery metadata has the following id:<br />
+<code>"id": "urn:wmo:md:uk-metoffice:weather.surface-based-observations.synop.uk_synop"</code></p>
+<p><em>Properties</em></p>
+<p>The <code>properties</code> object contains the core descriptive metadata for a dataset. These properties provide essential information that enables discovery, filtering, governance, and correct interpretation of the data in MeteoGate, WIS 2.0 Global Discovery Catalogue, and downstream systems.</p>
+<p>All discovery metadata records <strong>must include the required properties</strong> defined by the WMO Core Metadata Profile (WCMP) Version 2. Additional optional properties may be included where relevant. A complete and authoritative list is available in the <a href="https://wmo-im.github.io/wcmp2/">WMO Core Metadata Profile (WCMP) Version 2</a>.</p>
+<p>Required Properties:</p>
+<p>The following properties are required for all dataset-level discovery metadata records:</p>
+<ul>
+<li><code>type</code>: Describes the resource type described by the WCMP record. Example: <code>"type": "Dataset"</code>  </li>
+<li><code>title</code>: A human-readable name of the dataset. Example: <code>"title": "Land surface weather observations"</code>  </li>
+<li><code>description</code>: A free-text summary description of the dataset. Example: <code>"description":"Land surface observations measured at automatic and manual weather stations of EUMETNET Members and their trusted partners (last 24 hours only)"</code>  </li>
+<li><code>themes</code>: The <code>themes</code> field provides a high-level thematic classification of the dataset, supporting browsing and filtering in discovery services. In WCMP2, themes are expressed as lists of concepts referenced to a controlled vocabulary or knowledge organisation system.  </li>
+</ul>
+<p>Themes should be chosen from well-defined and authoritative vocabularies, such as the WIS 2.0 earth-system discipline codes.  </p>
+<p>For a detailed explanation of how themes, concepts, and parameters are used together, see the section <em>Themes, Concepts and Parameters</em> below.  </p>
+<p>Example:  </p>
+<pre><code>&quot;themes&quot;: [
+  {
+    &quot;id&quot;: &quot;weather&quot;,
+    &quot;title&quot;: &quot;Weather&quot;,
+    &quot;scheme&quot;: &quot;https://codes.wmo.int/wis/topic-hierarchy/earth-system-discipline&quot;
+  }
+]
+</code></pre>
+<ul>
+<li><code>geometry</code>: Describes the geospatial extent of the dataset using GeoJSON geometry. This allows users to discover datasets based on spatial coverage. Example:  </li>
+</ul>
+<pre><code>&quot;geometry&quot;: {
+  &quot;type&quot;: &quot;Polygon&quot;,
+  &quot;coordinates&quot;: [
+    [
+      [-70, 10],
+      [40, 10],
+      [40, 90],
+      [-70, 90],
+      [-70, 10]
+    ]
+  ]
+}
+</code></pre>
+<ul>
+<li><code>time</code>: Describes the temporal extent of the dataset. It may also include a resolution field to indicate how frequently new data or notifications are published. Example:  </li>
+</ul>
+<pre><code>&quot;time&quot;: {
+  &quot;interval&quot;: [
+    &quot;T00Z&quot;,
+    &quot;T23Z&quot;
+  ],
+  &quot;resolution&quot;: &quot;PT10M&quot;
+}
+</code></pre>
+<p><code>interval</code> defines the temporal coverage.<br />
+<code>resolution</code> uses ISO 8601 duration format (e.g. PT10M, PT1H).<br />
+  - <code>contacts</code>: Provides contact information for the dataset, enabling users to request support, report issues, or seek clarification. Contacts should include at least one responsible organisation or role. If the API is proxied through the MeteoGate Gateway, include contact details for the MeteoGate service desk <em>in addition</em> to contact details for your organisation.<br />
+  - <code>keywords</code>: Include <code>"meteogate"</code> to tag datasets as part of the MeteoGate system. Additional keywords may also be provided (optional).<br />
+  - <code>licence</code>: Include the licence under which the dataset is made available. Example: <code>"licence": "CC BY 4.0"</code>.<br />
+  - <code>links</code>: Links provide access to the data, documentation, licences, and related resources, including e.g. canonical data access URLs, API endpoints, human-readable documentation, and licence information.  </p>
+<p>Ensure links in metadata point to your authoritative endpoints — not to URLs created by the API Gateway. Include a <code>rel="canonical"</code> link pointing to the resolvable URL of the dataset.  </p>
+<p>Include a link to API docs (e.g., the Swagger docs for the API). This link should include: <code>“rel”=”service-doc”</code> and <code>“type”=”text/html”</code>. For example:  </p>
+<pre><code>{
+  &quot;rel&quot;: &quot;service-doc&quot;,
+  &quot;type&quot;: &quot;text/html&quot;,
+  &quot;href&quot;: &quot;https://api.example.org/docs&quot;
+}
+</code></pre>
+<p>Conditionally Required / Strongly Recommended Properties:</p>
+<ul>
+<li><code>wmo:dataPolicy</code>: Specifies whether the dataset is classified as <code>core</code> or <code>recommended</code>, in accordance with the <a href="https://library.wmo.int/idurl/4/58009">WMO Unified Data Policy, Resolution 1 (Cg-Ext(2021))</a>. Note that core data must be open access and recommended data may be open or access-controlled. This classification is independent of access control. Example: <code>"wmo:dataPolicy": "recommended"</code></li>
+<li><code>created</code>: Indicates when the metadata record was created. Example:<code>"created": "2025-06-04T14:00:00Z"</code></li>
+</ul>
+<p>Optional Properties:</p>
+<p>These properties are optional according to WCMP2, but are strongly recommended for MeteoGate datasets.</p>
+<ul>
+<li><code>language</code>: Language of the metadata, e.g. <code>"language":"en"</code>.</li>
+<li><code>updated</code>: Indicate when the metadata record was created and last updated. Example:<code>"updated": "2025-06-04T14:00:00Z"</code></li>
+<li><code>rights</code>: A human-readable statement describing usage rights not fully covered by the licence. Example: <code>"rights": "Users are granted free and unrestricted access to this data, without charge and with no conditions on use. Users are requested to attribute the producer of this data. WMO Unified Data Policy (Resolution 1 (Cg-Ext 2021))"</code></li>
+<li><code>version</code>: Specifies the version or edition of the dataset, where applicable. Example: <code>"version": "1.0"</code></li>
+<li><code>status</code>: Describes the operational status of the dataset (e.g. operational, experimental).</li>
+<li><code>linkTemplates</code>: Used for templated or parameterised access (e.g. dynamic API queries).</li>
+</ul>
+<p>Additional Properties:</p>
+<p>The <code>properties</code> object may include additional fields as needed, provided they do not conflict with WCMP2. These can be used to, for example, support filtering and discovery, provide domain-specific information, and expose identifiers or references relevant to the dataset.</p>
+<p><em>Themes, Concepts and Parameters</em></p>
+<p>In WCMP2, semantic classification of datasets is expressed using the <code>themes</code> property. A theme represents a grouping of one or more <code>concepts</code> that are taken from a controlled vocabulary or knowledge organisation system.</p>
+<p>Themes are used to describe both high-level classifications (such as scientific domain or observation type) and dataset parameters (such as physical variables). In this context, parameters are expressed as concepts using recognised parameter vocabularies.</p>
+<p>Together, themes and concepts help users, discovery services, and automated systems understand what the data represents.</p>
+<p>Structure of a Theme (Concept Block):</p>
+<p>Each theme consists of:<br />
+  - a list of one or more <code>concepts</code><br />
+  - a <code>scheme</code> that defines the vocabulary used  </p>
+<p>Each concept typically includes:<br />
+  - <code>id</code>: a short identifier<br />
+  - <code>title</code>: a human-readable label<br />
+  - <code>url</code>: a link to the authoritative definition  </p>
+<p>Example:</p>
+<pre><code>&quot;themes&quot;: [  
+{  
+  &quot;concepts&quot;: [  
+    {  
+      &quot;id&quot;: &quot;weather&quot;,  
+      &quot;title&quot;: &quot;Weather&quot;,  
+      &quot;url&quot;: &quot;https://codes.wmo.int/wis/topic-hierarchy/earth-system-discipline/weather&quot;  
+    }  
+  ],  
+  &quot;scheme&quot;: &quot;https://codes.wmo.int/wis/topic-hierarchy/earth-system-discipline&quot;  
+}  
+</code></pre>
+<p>Discovery metadata can include multiple themes to describe different aspects of a dataset, such as its scientific domain, observation type, and physical parameters.</p>
+<p>Domain and Discipline Concepts (WIS 2.0):</p>
+<p>Concepts can be used to describe the scientific domain and data category, aligned with the WIS 2.0 Topic Hierarchy. Using concepts allows consistent discovery across different datasets and publishers, filtering and grouping in MeteoGate Data Explorer, correct interpretation by external catalogues and AI tools, and alignment with WMO and international standards.</p>
+<p>Concepts are not data values or API query parameters. Instead, they describe the scientific domain of the dataset, the type of observations or products, and the physical parameters included in the data. </p>
+<p>Concepts can also describe the observation category, such as surface-based observations:</p>
+<pre><code>{  
+  &quot;concepts&quot;: [  
+    {  
+      &quot;id&quot;: &quot;surface-based-observations&quot;  
+    }  
+  ],  
+  &quot;scheme&quot;: &quot;https://codes.wmo.int/wis/topic-hierarchy/earth-system-discipline/weather&quot;  
+}  
+</code></pre>
+<p>Parameter Concepts (Physical Variables):</p>
+<p>Physical parameters included in the dataset should be described using a recognised vocabulary, such as NERC standard names.</p>
+<p>Example:  </p>
+<pre><code>{  
+  &quot;concepts&quot;: [  
+    {  
+      &quot;id&quot;: &quot;air_temperature&quot;,  
+      &quot;title&quot;: &quot;Air temperature&quot;,  
+      &quot;url&quot;: &quot;http://vocab.nerc.ac.uk/standard_name/air_temperature/&quot;  
+    },  
+    {  
+      &quot;id&quot;: &quot;wind_speed&quot;,  
+      &quot;title&quot;: &quot;Wind speed&quot;,  
+      &quot;url&quot;: &quot;http://vocab.nerc.ac.uk/standard_name/wind_speed/&quot;  
+    },  
+    {  
+      &quot;id&quot;: &quot;wind_to_direction&quot;,  
+      &quot;title&quot;: &quot;Wind direction&quot;,  
+      &quot;url&quot;: &quot;http://vocab.nerc.ac.uk/standard_name/wind_to_direction/&quot;  
+    }  
+  ],  
+  &quot;scheme&quot;: &quot;https://vocab.nerc.ac.uk/standard_name&quot;  
+}  
+</code></pre>
+<p>These concepts indicate which physical quantities are available somewhere in the dataset, not how to query them.</p>
+<p>Best Practices:
+  - Use well-known, authoritative vocabularies wherever possible.<br />
+  - Include only concepts that genuinely apply to the dataset.<br />
+  - Keep concepts stable over time to support long-term discovery.<br />
+  - Avoid duplicating information already expressed in the topic hierarchy unless it adds semantic clarity.</p>
+<p><em>Access Control</em></p>
+<p>If access control (e.g. API key) is required, describe it using the <code>security</code> block.</p>
+<p>Follow the instructions in <a href="https://wmo-im.github.io/wis2-cookbook/cookbook/wis2-cookbook-DRAFT.html#_publishing_a_wis2_notification_message_with_access_control">WIS2 Cookbook recipe 3.2. Publishing a WIS2 Notification Message with access control</a> to describe the type of access control used.</p>
+<p>Example for data using API Key for access control:</p>
+<pre><code>{
+  &quot;rel&quot;: &quot;items&quot;,  
+  &quot;type&quot;: &quot;application/vnd.coverage+json&quot;,  
+  &quot;href&quot;: &quot;https://api.example.org/edr/v1/collections/observations&quot;,  
+  &quot;security&quot;: {  
+    &quot;default&quot;: {  
+      &quot;type&quot;: &quot;apiKey&quot;,  
+      &quot;name&quot;: &quot;AUTHORIZATION&quot;,  
+      &quot;in&quot;: &quot;header&quot;,  
+      &quot;description&quot;: &quot;Request API key at https://developer.example.org&quot;  
+    }  
+  }  
+}  
+</code></pre>
+<p><strong>Validation</strong></p>
+<p>Validate discovery metadata using the PYWCMP tool provided by WMO: see <a href="https://wmo-im.github.io/wis2-cookbook/cookbook/wis2-cookbook-DRAFT.html#_validating_a_wmo_core_metadata_profile_record">WIS2 Cookbook recipe 3.7. Validating a WMO Core Metadata Profile Record</a>.</p>
+<h3 id="collection-metadata">Collection Metadata</h3>
+<p>Collection metadata provides essential contextual information, such as dataset structure, temporal and spatial coverage, and relationships between resources, enabling users to browse, discover, and retrieve specific resources of interest.  </p>
+<p>**Recommendations **</p>
+<p>To align with the data structuring requirements outlined earlier, collection metadata should:</p>
+<ul>
+<li>Clearly explain what the data represents in no more than three sentences, making it easy to understand for all users. </li>
+<li>Be available at the collection URL, ensuring direct access for Data Consumers. </li>
+<li>Include a list of available parameters (parameter_names), allowing users to understand what data is accessible within the collection. </li>
+<li>Expose observation locations in GeoJSON format (collections/<collection_name>/locations), supporting geospatial queries and visualization in MeteoGate’s Data Explorer. </li>
+<li>Contain a time axis (domain.axes.t), ensuring compatibility with spatiotemporal queries, particularly for datasets structured according to the EDR restricted profile.</li>
+</ul>
+<h3 id="resourcefile-level-metadata">Resource/File-Level Metadata</h3>
+<p>Resource or file-level metadata describes individual resources, such as data files, and provides essential context, such as the physical variable encoded and its units of measurement. Well-structured file-level metadata also facilitates the automatic generation of discovery and collection-level metadata. </p>
+<p>Metadata should clearly define key attributes to avoid misinterpretation. For example, simply stating “temperature” is insufficient – specifying whether it refers to air temperature, screen temperature, or instantaneous 2 m above-ground temperature provides the necessary precision. </p>
+<p><strong>Recommendations</strong></p>
+<p>To enhance metadata clarity and usability:</p>
+<ul>
+<li>Define contextual details, such as physical variables and measurement units. </li>
+<li>Use qualified terms linked to authoritative definitions, such as GRIB code tables or <a href="https://www.w3.org/TR/json-ld11/">JSON-LD</a> mappings, to provide machine- and human-readable references.</li>
+</ul>
+<p>File-level metadata can be included in various ways:</p>
+<ul>
+<li>Embedded within the data file (e.g., CF-netCDF format). </li>
+<li>Stored in a well-known location (e.g., BUFR code tables or “companion files” such as used in the CSV-Web format). </li>
+<li>Referenced externally (e.g., linked via HTTP headers using the describedBy Link Relation type). </li>
+<li>A combination of these methods, depending on the dataset. </li>
+</ul>
+<p>Using qualified terms with unique URLs enhances metadata discoverability and interoperability. This <a href="https://www.w3.org/TR/sdw-bp/#dfn-linked-data">Linked Data</a> approach enables better understanding across different formats and domains, making data more accessible and increasing its usability.</p>
+<h3 id="links">Links</h3>
+<p>Effective linking enhances discoverability and navigation. In MeteoGate, links should be designed to work seamlessly independent of the chosen Data Publishing Pattern. This is especially important when using the MeteoGate API Gateway to expose your API as the Gateway automatically transforms URLs provided in the metadata. </p>
+<p><strong>Recommendations</strong></p>
+<ul>
+<li>Do not link to MeteoGate API Gateway-specific URLs in metadata. Links should reference the original data source rather than API Gateway-specific URLs. The API Gateway will handle URL transformation. </li>
+<li>Use relative links to ensure compatibility with MeteoGate API Gateway link transformations. </li>
+<li>Implement X-Forwarded and X-Prefix Headers for correct URL resolution when using the MeteoGate API Gateway. </li>
+<li>Ensure consistent and intuitive navigation by maintaining a clear and logical link structure throughout the API. </li>
+</ul>
+<h2 id="step-3-deploy-and-integrate-data-supply_1">Step 3: Deploy and Integrate Data Supply</h2>
+<h3 id="choosing-a-deployment-framework">Choosing a Deployment Framework</h3>
+<p>Data Publishers have full flexibility in deploying Data Supply, as MeteoGate does not impose restrictions on the technology stack or deployment environment, provided it integrates successfully with MeteoGate. </p>
+<p>Beyond facilitating data access, Data Supply includes functionalities such as metadata management, notification services, data processing, and storage to ensure compliance with WMO WIS 2.0 and MeteoGate. </p>
+<p><strong>Recommendations</strong> </p>
+<p>A free and open-source reference implementation, <a href="https://community.wmo.int/en/activity-areas/wis/wis2box">WIS2 in a Box</a>, is available for WIS2-compliant Data Supply and is fully compatible with MeteoGate. 
+See the <a href="https://community.wmo.int/en/activity-areas/wis/publications/1060-vII">WMO Manual on WIS 2.0</a> and <a href="https://community.wmo.int/en/activity-areas/wis/publications/1061-vII">Guide to WIS 2.0</a> for more information on publishing data according to the WMO requirements. </p>
+<h3 id="deploying-apis">Deploying APIs</h3>
+<p>In addition to other Data Supply functionalities such as discovery metadata and notifications, MeteoGate-compliant APIs must be deployed. </p>
+<p>MeteoGate does not enforce a specific technical implementation for APIs but provides recommendations to ensure interoperability with MeteoGate components, compliance with EU Open Data and WMO WIS2 obligations, and efficiency and reliability in data access and integration.  </p>
+<p>Existing APIs implemented with other than MeteoGate-recommended technologies can still be valid if they include the necessary metadata and notification mechanisms. </p>
+<p>For further API implementation guidance, refer to <a href="https://developer.ogc.org">OGC Developer Portal</a>, <a href="https://opengeospatial.github.io/e-learning/index.html">OGC E-learning materials</a> and <a href="https://ogcapi-workshop.ogc.org/api-deep-dive/environmental-data-retrieval/">OGC EDR tutorial</a>, which provide documentation, tutorials, examples, and best practices for OGC API standards, including OGC API-EDR. Also, the <a href="https://stacspec.org/en/">STAC website</a> provides tutorials and other developer resources.</p>
+<p>For implementation examples, refer to e.g. <a href="https://api.meteogate.eu/fi-fmi/edr">FMI’s EDR API</a>, <a href="https://api.meteogate.eu/eu-eumetnet-weather-radar">Open Radar Data API</a> and <a href="https://api.meteogate.eu/eu-eumetnet-surface-observations">Surface Observations API</a>.</p>
+<p>The <a href="https://github.com/EUMETNET/ogc-edr-workshop">OGC EDR Workshop repository (given as part of the EUMETNET project RODEO)</a> contains example implementations, configuration files, and test data that demonstrate how to publish data using the OGC API - Environmental Data Retrieval (EDR) standard. It is recommended for Data Publishers looking to understand and test EDR-based APIs in a MeteoGate-compatible setup.</p>
+<p><strong>Recommendations</strong></p>
+<ul>
+<li>Use <a href="https://ogcapi.ogc.org/edr/">OGC API - Environmental Data Retrieval (EDR)</a> for interactive APIs. Enables seamless visualisation in MeteoGate Data Explorer, integration with HVD services, and interoperability across MeteoGate users. </li>
+<li>Use the <a href="https://github.com/EURODEO/rodeo-edr-profile">restrictive EDR profile</a> to ensure consistency across implementations.  </li>
+<li>Use SpatioTemporal Asset Catalog (STAC) for pre-packaged data. STAC provides a standardised approach for organising and cataloguing spatiotemporal datasets, making data more discoverable and accessible. STAC API enables structured access to metadata and assets, allowing users to efficiently browse, query, and retrieve datasets. This is particularly useful for satellite data, climate archives, and other large geospatial datasets. </li>
+<li>Support RESTful API principles with resource-based URL structures and appropriate HTTP methods (GET, POST, etc.). </li>
+<li>Ensure compatibility with WMO WIS2 metadata standards (WCMP2), including embedding metadata in API responses where needed. </li>
+<li>Follow proper naming conventions. Use clear, consistent, and descriptive names for API endpoints, parameters, and resources to improve readability and usability. Align with OGC, WMO, and MeteoGate metadata standards where applicable.</li>
+<li>Optimise for availability, scalability, performance, and cost. Use caching (Redis, CDNs) to reduce load, optimise database indexing for spatiotemporal data, and enable byte-range access (GRIB, COG) for efficient retrieval. Store large datasets in chunked formats (Zarr), process long-running queries asynchronously, and leverage cloud storage (S3, Azure) for auto-scaling. Apply stricter rate limiting for public cloud data and educate users on responsible API usage, including cost and CO2 impacts. </li>
+<li>Secure APIs appropriately. Implement API rate limiting and throttling to prevent abuse, DDoS attacks, and excessive traffic that could impact service availability. Use HTTPS for all API endpoints. Enforce input validation and sanitisation to mitigate injection attacks (e.g., SQL Injection, XSS). If local authentication is required, use strong authentication and authorisation methods such as API keys, OAuth 2.0, or JWT tokens. </li>
+<li>Ensure versioning and backward compatibility to prevent disruptions for users. Use URL-based versioning (e.g., /v1/resource) to prevent breaking changes. Follow semantic versioning (major.minor.patch), support multiple active versions during transitions, and clearly document deprecations with headers (Deprecation, Sunset). Maintain backward compatibility by making additive changes when possible. </li>
+<li>Enable structured logging and monitoring to track API usage and diagnose issues efficiently. </li>
+<li>Provide documentation. Create OpenAPI (Swagger) documentation for discoverability and self-describing endpoints. Provide a human- and machine-readable landing page to support AI applications and automated discovery, ensuring that key information is directly accessible on the page without requiring additional clicks. Use OpenAPI, JSON-LD, schema.org, or OGC API landing pages to structure the content.</li>
+</ul>
+<h3 id="publishing-discovery-metadata">Publishing Discovery Metadata</h3>
+<p>A dataset is only considered to be part of MeteoGate (and WMO WIS 2.0) once discovery metadata about it has been published into the WIS 2.0 Global Discovery Catalogue. Data Consumers can then find and use a dataset via the Data Explorer (or the Global Discovery Catalogue itself). This enables Data Consumers to identify relevant datasets based on scope, coverage, format, licensing, etc.</p>
+<p>This section explains how you should publish discovery metadata to the Global Discovery Catalogue using your Data Supply Capability.</p>
+<p>Here’s how it works:</p>
+<ol>
+<li>Create discovery metadata for your dataset. For more information about discovery metadata, see <a href="#discovery-metadata">Discovery Metadata</a>.</li>
+<li>The Global Discovery Catalogue needs to download the metadata record, so you need to publish it via an HTTP server. This may be as a simple file hosted on a web server (i.e., a static metadata record), or through an API (e.g., an OGC API - Records Web-service endpoint). Discovery metadata needs to be published so that it’s openly accessible (no access controls). Discovery metadata should be re-published daily (i.e., every 24-hours) even if there are no changes. This helps ensure that the discovery metadata in the Global Discovery Catalogue stays fresh.</li>
+<li>Publishing discovery metadata uses the same mechanisms in WIS2 used for telling users about new data: real-time notifications via MQTT. Publish a WIS2 Notification Message to the Local Broker of your Data Supply Component (remember to use access control to ensure only you can publish!). This notification message includes the URL of the discovery metadata record published in step (2). For more information see <a href="#publishing-notifications">Publishing Notifications</a>. Notifications about discovery metadata must be published to topic <code>origin/a/wis2/{centre-id}/metadata</code>. For more information on the WIS2 topic hierarchy see <a href="#topic-hierarchy-for-message-publication">Topic Hierarchy for Message Publication</a>.</li>
+<li>The WIS2 Global Broker subscribes to the Local Broker on the Data Supply Capability.</li>
+<li>The WIS2 Global Discovery Catalogue subscribes to the WIS2 Global Broker.</li>
+<li>The notification message is pushed to the WIS2 Global Broker and validated.</li>
+<li>If the notification message is valid, the Global Broker republishes it on the same topic.</li>
+<li>The notification message is pushed to the WIS2 Global Discovery Catalogue.</li>
+<li>The WIS2 Global Discovery Catalogue parses the WIS Notification Message and –</li>
+<li>Downloads the linked discovery metadata record from the HTTP server.</li>
+<li>The WIS2 Global Discovery Catalogue parses the discovery metadata record; it gets added to the catalogue if valid (note that the Global Discovery Catalogue also supports update and delete operations for discovery metadata records). The Global Discovery Catalogue also assesses the quality of the discovery metadata record against predefined KPIs and generates a report.</li>
+<li>The Global Discovery Catalogue publishes WIS2 Monitoring Event Messages (<a href="https://wmo-im.github.io/wis2-monitoring-events/standard/wis2-monitoring-events-DRAFT.html">draft spec</a>, based on <a href="https://cloudevents.io">CloudEvents</a>) on topic “monitor/a/wis2/{centre-id}” for validation (<a href="https://wmo-im.github.io/wis2-monitoring-events/standard/wis2-monitoring-events-DRAFT.html">metadata validation report - ETS</a>) and KPI assessment (<a href="https://wmo-im.github.io/wis2-monitoring-events/standard/wis2-monitoring-events-DRAFT.html">metadata quality report - KPI</a>).</li>
+<li>The Global Broker subscribes to these monitoring event messages and re-publishes them for Data Publishers. These messages are useful in determining whether you have successfully published discovery metadata. Data Publishers can tools like <a href="https://sonataflow.org/serverlessworkflow/latest/index.html">SonataFlow</a> to trigger workflows based on receiving these monitoring events.</li>
+<li>Now that the metadata is published to the Global Discovery Catalogue, users can browse the catalogue and discover data using the Data Explorer.  </li>
+</ol>
+<h3 id="publishing-notifications">Publishing Notifications</h3>
+<p>MeteoGate and WMO WIS 2.0 use real-time notifications to inform Data Consumers in near real-time about new or updated data and metadata.</p>
+<p>Notifications are GeoJSON objects published using the Message Broker Protocol (MQTT 3.1 or MQTT 5). Notifications must conform to the <a href="https://wmo-im.github.io/wis2-notification-message/standard/wis2-notification-message-STABLE.html">WIS2 Notification Message</a> specification. </p>
+<p>Data Publishers generate notifications and publish them from the MQTT broker within their Data Supply Component (“Local Broker”). Event-driven triggers, like data updates or file arrivals, can automate notification publishing.</p>
+<p>WIS 2.0 Global Brokers subscribe to those notifications and redistribute them at scale. Notifications must be published to the correct topic, as defined in the WIS2 Topic Hierarchy specification (also see section <a href="#topic-hierarchy-for-message-publication">Topic Hierarchy for Message Publication</a>).</p>
+<p>Data Consumers subscribe to the WIS 2.0 Global Brokers to receive notifications about new and updated data and metadata. WIS 2.0 recommends that Data Consumer subscribe to at least two Global Brokers for resilience.</p>
+<p>Here’s how it works:</p>
+<ol>
+<li>Publish a notification message to the Local Broker advertising availability of new data</li>
+<li>Global Broker subscribes to the Local Broker; it validates received messages and republishes them</li>
+<li>Data Consumer subscribes to the Global Broker and receives notifications about the availability of new data</li>
+<li>Data Consumer downloads data from the Data Supply Capability (aka. WIS2 Node) using the link in the notification message</li>
+</ol>
+<p><img alt="Publishing notifications" src="../images/meteogate-publishing-notifications.png" /></p>
+<p>To illustrate what you need to know about WIS2 Notification Messages for data, let’s take a look at a fictional <a href="../examples/nl-knmi-nmc-Actuele10mindata-KNMIstations-2--notification-91c694b9-f811-4017-837b-2f19febdea58--draft-apr2024-1.json">example notification message</a> providing a notification advertising availability of new data from WIGOS Station 0-20000-0-06344 (ROTTERDAM THE HAGUE AP, Netherlands) as part of KNMI’s current 10-minute observation dataset (Actuele10mindataKNMIstations-2).</p>
+<p>Notification identifier id must always be unique – use a UUID.</p>
+<p><code>"id": "91c694b9-f811-4017-837b-2f19febdea58"</code></p>
+<p>Including geometry for the data item is good practice – it helps Data Consumers decide if this particular data item is one they want.</p>
+<pre><code>&quot;geometry&quot;: {
+    &quot;type&quot;: &quot;Point&quot;,
+    &quot;coordinates&quot;: [
+        4.4469,
+        51.9606
+    ]
+}
+</code></pre>
+<p>Identifier for the data item data_id must always be unique; you can decide how to do this, but most people are appending a local identifier (i.e., file/object name) to the topic.</p>
+<p><code>"data_id": "nl-knmi-nmc/data/recommended/weather/surface-based-observations/synop/WIGOS_0-20000-0-06344_20240411T130000"</code></p>
+<p>"datetime" is the time associated with the data (i.e., the observation time) – also useful for users to determine if this is data they need.</p>
+<p><code>"datetime": "2024-04-11T13:00:00Z"</code></p>
+<p>"pubtime" is the time when the notification message was sent; a CORRECTION must always have a later pubtime than the original message <em>and</em> have a link with rel=update (see more on links later).</p>
+<p><code>"pubtime": "2024-04-11T13:15:06Z"</code></p>
+<p>Discovery metadata for the dataset must exist before the data is shared. The Global Broker will discard messages for which there is no associated metadata record. This is also useful for Data Consumers – they find more context about this data item by searching in the Global Discovery Catalogue (or maybe their favourite search engine).</p>
+<p><code>"metadata_id": "urn:wmo:md:nl-knmi-nmc:Actuele10mindataKNMIstations-2"</code></p>
+<p>The properties section in a GeoJSON record can contain anything. Here we’ve added the property wigos_station_identifier; given that KNMI’s 10-minute observations dataset contains 10s if not 100s of stations, this is a really easy way to help Data Consumers find the data items they need without them needing to download the data and unpack it to see if it’s what they need. This is called “client-side filtering”. See WIS2 Cookbook §3.6 Advertising client-side filters for data subscriptions in WCMP2 and WNM for details on this.</p>
+<p><code>"wigos_station_identifier": "0-20000-0-06344"</code></p>
+<p>We shouldn’t assume that Data Consumers know what they’re allowed to do with the data. Yes, they could look this up in the metadata record, but is does no harm to remind them in the notification message itself – at the point of data use.
+"rights": "Users are granted free and unrestricted access to this data, without charge and with no conditions on use. Users are requested to attribute the producer of this data. WMO Unified Data Policy (Resolution 1 (Cg-Ext 2021))"</p>
+<p>And also providing a link to a license. </p>
+<pre><code>{
+    &quot;rel&quot;: &quot;license&quot;,
+    &quot;type&quot;: &quot;text/html&quot;,
+    &quot;href&quot;: &quot;https://creativecommons.org/licenses/by/4.0/&quot;,
+    &quot;title&quot;: &quot;CC BY 4.0 Deed | Attribution 4.0 International | Creat...&quot;
+}
+</code></pre>
+<p>Here’s the crucial part of the notification message: the link to the data! Each link follows a similar structure. rel is the “link relation” type. A link with rel=canonical is always the default one to look at. Other link types include update and license (mentioned earlier), item and station (coming next), and more. A table (albeit incomplete) of link types is provided in the WCMP2 specification.</p>
+<p>"type" provides the media type (MIME type) of the resource. length enables a simple integrity check. href provides the URL for the resource – in this case an observation for The Hague encoded in BUFR4. For Core data, it’s the URL in the canonical link that Global Caches will download from. For Core data, the URL in the canonical link <em>must</em> be directly resolvable – i.e., no access controls or URL templates.</p>
+<pre><code>&quot;links&quot;: [
+    {
+        &quot;rel&quot;: &quot;canonical&quot;,
+        &quot;type&quot;: &quot;application/x-bufr&quot;,
+        &quot;href&quot;: &quot;https://api.dataplatform.knmi.nl/open-data/v1/datasets/Actuele10mindataKNMIstations/versions/2/files/WIGOS_0-20000-0-06344_20240411T130000.bufr4&quot;,
+        &quot;length&quot;: 199
+    },
+…
+]
+</code></pre>
+<p>KNMI also provide access to this data via an OGC-API EDR endpoint that requires an API key to access. The link relation item is used here to say that this link points to a resource that is a single item within the dataset (i.e., an observation at given place and time). The security block must follow one of the <a href="https://learn.openapis.org/specification/security.html">OpenAPI Security Schemes</a>. In this case, we’re indicating the API key must be added to the API call using the query parameter api-key, and where you can request an API key. More information about providing resources with access control can be found in the WIS2 Cookbook.</p>
+<pre><code>{
+    &quot;rel&quot;: &quot;item&quot;,
+    &quot;type&quot;: &quot;application/vnd.coverage+json&quot;,
+    &quot;href&quot;: &quot;https://api.dataplatform.knmi.nl/edr/v1/collections/observations/instances/unvalidated/locations/06344?datetime=2024-04-11T13%3A00%3A00Z&quot;,
+    &quot;security&quot;: {
+        &quot;default&quot;: {
+            &quot;type&quot;: &quot;apiKey&quot;,
+            &quot;name&quot;: &quot;AUTHORIZATION&quot;,
+            &quot;in&quot;: “header&quot;,
+            &quot;description&quot;: &quot;Please request an API key via https://developer.dataplatform.knmi.nl/open-data-api#token&quot;
+        }
+    }
+}
+</code></pre>
+<p>We can also use links to point to other useful information – such as a details of the observing platform where the data was collected. Here we use link relation station to indicate we’re referring to only one station. The resource we’re linking to is the description in OSCAR Surface.</p>
+<pre><code>{
+    &quot;rel&quot;: &quot;station&quot;,
+    &quot;type&quot;: &quot;text/html&quot;,
+    &quot;href&quot;: &quot;https://oscar.wmo.int/surface/#/search/station/stationReportDetails/0-20000-0-06344&quot;,
+    &quot;title&quot;: &quot;WIGOS Station 0-20000-0-06344, ROTTERDAM THE HAGUE ...&quot;
+}
+</code></pre>
+<p>For implementation guidance and more examples, refer to <a href="">Manual on WIS, Volume II</a>, Appendix E or <a href="https://wmo-im.github.io/wis2-notification-message/standard/wis2-notification-message-STABLE.html">WMO WIS2 Notification Message Encoding</a>, and the <a href="https://wmo-im.github.io/wis2-cookbook/cookbook/wis2-cookbook-DRAFT.html">WIS2 Cookbook</a> (recipes <a href="https://wmo-im.github.io/wis2-cookbook/cookbook/wis2-cookbook-DRAFT.html#_validating_a_wis2_notification_message">3.1. Validating a WIS2 Notification Message</a>, <a href="https://wmo-im.github.io/wis2-cookbook/cookbook/wis2-cookbook-DRAFT.html#_publishing_a_wis2_notification_message_with_access_control">3.2. Publishing a WIS2 Notification Message with access control</a>, <a href="https://wmo-im.github.io/wis2-cookbook/cookbook/wis2-cookbook-DRAFT.html#_publishing_a_wis2_notification_message_with_embedded_data">3.3. Publishing a WIS2 Notification Message with embedded data</a>, and <a href="https://wmo-im.github.io/wis2-cookbook/cookbook/wis2-cookbook-DRAFT.html#_publishing_a_wis2_notification_message_for_resource_deletion">3.4. Publishing a WIS2 Notification Message for resource deletion</a>).</p>
+<p>There are many options for implementing WIS 2.0 Notification messaging:</p>
+<ol>
+<li>Homebrew: Build your own application for notification message publication. Leverage one of many open-source or commercially available MQTT broker solutions
+        - <a href="https://mosquitto.org">Mosquitto</a>: simple open-source MQTT broker
+        - <a href="https://www.emqx.com">EMQX</a>: more sophisticated open-source MQTT broker, supports clustering, also available as a managed service (SaaS)
+        - <a href="https://vernemq.com">VerneMQ</a>: a scaleable, enterprise-ready MQTT broker
+        - <a href="https://solace.com/products/platform">Solace</a>: event-driven integration and streaming, deployable and available as a managed service (SaaS)
+        - <a href="https://www.hivemq.com">HiveMQ</a>: event-driven IoT data streaming platform, available as a managed service (SaaS) </li>
+<li>Open-source: WIS2box (<a href="https://github.com/World-Meteorological-Organization/wis2box">GitHub</a>, <a href="https://docs.wis2box.wis.wmo.int">documentation</a>), developed with coordination from WMO as a reference implementation of a WIS2 Node and building on many other open-source projects, including <a href="https://pygeoapi.io">pygeoapi</a>, <a href="https://pypi.org/project/paho-mqtt">paho-mqtt</a> and <a href="https://mosquitto.org">mosquitto</a>.</li>
+<li>Commercial: For example, <a href="https://www.iblsoft.com/products/moving-weather">IBL Moving Weather</a> – turn-key solution from a commercial provider with support and services.</li>
+<li>Interactive / scripted: Script it in the terminal or use a Jupyter notebook. Leverage open-source utilities like <a href="https://github.com/World-Meteorological-Organization/pywis-pubsub">pywis-pubsub</a> to do the heavy lifting; a utility carved out from WIS2box. Publish via cloud-based broker, e.g., HiveMQ.</li>
+</ol>
+<h4 id="topic-hierarchy-for-message-publication">Topic Hierarchy for Message Publication</h4>
+<p>MeteoGate layers on top of WMO WIS 2.0. Consequently, data exchange in MeteoGate must comply with WIS 2.0 specifications. As described in <a href="#publishing-notifications">Publishing Notifications </a>, notification messages must be published to the correct topics.</p>
+<p>Given that WIS 2.0 has hundreds of (meta)data publishers – how do we keep the notifications organised? Notifications in WIS 2.0 are published on specific <strong>topics</strong> according to the <a href="https://wmo-im.github.io/wis2-topic-hierarchy/standard/wis2-topic-hierarchy-STABLE.html">WIS2 Topic Hierarchy specification</a>.</p>
+<p>Valid terms for each level in the topic hierarchy are published on the <a href="http://codes.wmo.int/wis/topic-hierarchy">WMO Codes Registry</a>.</p>
+<p>WIS 2.0 Global Brokers will discard messages published on unregistered topics (i.e., not in the spec).</p>
+<p>The topic hierarchy follows the pattern below with 9 levels:</p>
+<p><code>{1:channel}/{2:version}/{3:system}/{4:centre-id}/{5:notification-type}/{6:data-policy}/{7:earth-system-discipline}/{8:sub-discipline}/{9:sub-sub-discipline}</code></p>
+<ol>
+<li>channel<ul>
+<li><code>origin</code> for messages coming from WIS2 Nodes, or <code>cache</code> for messages coming from Global Caches. Global Caches are part of the WIS 2.0 infrastructure – MeteoGate doesn’t use them directly, but see the <a href="https://wmo-im.github.io/wis2-guide/guide/wis2-guide-APPROVED.html#_2_4_3_global_cache">Guide to WIS, Volume II</a> if you’d like to know more. </li>
+</ul>
+</li>
+<li>version<ul>
+<li>Just <code>a</code> for now – but we’re ready for breaking changes in years to come such as modifying the structure of the topic hierarchy.</li>
+</ul>
+</li>
+<li>system<ul>
+<li>Just <code>wis2</code> for now – but WMO may reuse this mechanism for other initiatives?</li>
+<li>You’re free to re-use this messaging pattern, and the infrastructure you’ve deployed, for other purposes; just use a different value for {system} and the WIS2 Global Services will ignore the messages</li>
+</ul>
+</li>
+<li>centre-id<ul>
+<li>The centre identifier of your WIS2 Node agreed with WMO Secretariat. For information on registering your Data Supply Component as a WIS2 Node see <a href="#registering-a-wis2-node">Registering a WIS2 Node</a>.</li>
+<li>The official list is published on <a href="http://codes.wmo.int/wis/topic-hierarchy/centre-id">WMO Codes Registry</a>.</li>
+</ul>
+</li>
+<li>notification-type<ul>
+<li><code>data</code> or <code>metadata</code>; we want don’t want to mix these resources because we use them in different ways / at different times.</li>
+</ul>
+</li>
+<li>data-policy<ul>
+<li><code>core</code> or <code>recommended</code>, based on the terminology described in the <a href="https://library.wmo.int/idurl/4/58009">WMO Unified Data Policy, Resolution 1 (Cg-Ext(2021))</a>. </li>
+<li>Use the data-policy value you put in your discovery metadata record.</li>
+</ul>
+</li>
+<li>earth-system-discipline<ul>
+<li>Based on the set of disciplines described in the WMO Unified Data Policy:<ul>
+<li>atmospheric-composition</li>
+<li>climate</li>
+<li>cryosphere</li>
+<li>hydrology</li>
+<li>ocean</li>
+<li>space-weather</li>
+<li>weather</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>sub-discipline<ul>
+<li>Each Earth-system discipline has sub-disciplines defined by subject matter experts. Full details, refer to the <a href="http://codes.wmo.int/wis/topic-hierarchy">WMO Codes Registry</a>. </li>
+<li>Sub-disciplines for “weather” are:<ul>
+<li>advisories-warnings</li>
+<li>aviation</li>
+<li>prediction</li>
+<li>space-based-observations</li>
+<li>surface-based-observations</li>
+<li>experimental</li>
+</ul>
+</li>
+<li><code>space-based-observations</code> means those taken from orbiting satellite platforms; <code>surface-based-observations</code> is for everything else – including upper-air observations because the observing platforms are either on the surface (wind-profiler) or launched from the surface (radio-sonde).</li>
+<li>Sub-topics on <code>experimental</code> aren’t validated by the Global Brokers, so you can use what you like. However, Data Consumers shouldn’t expect these terms to be long-lasting, nor provide quality data at an operational SLA. </li>
+</ul>
+</li>
+<li>sub-sub-discipline<ul>
+<li>Refer to the <a href="http://codes.wmo.int/wis/topic-hierarchy">WMO Codes Registry</a> for sub-sub-disciplines.</li>
+</ul>
+</li>
+</ol>
+<p><img alt="Publishing discovery metadata" src="../images/meteogate-publishing-discovery-metadata.png" /></p>
+<h3 id="testing-and-validating-data-supply">Testing and Validating Data Supply</h3>
+<p>Thorough API testing is needed to ensure reliability, performance, security, interoperability, data accuracy as well as compliance with MeteoGate and WMO standard.  </p>
+<p>MeteoGate provides guidelines and recommendations but does not impose specific testing methodologies. Data Publishers are responsible for testing their APIs before integration. </p>
+<p>For Data Publishing Patterns 1 and 2, the MeteoGate Solution Manager performs additional validation and testing to ensure the Data Supply functions correctly before full integration. </p>
+<p><strong>Recommendations</strong> </p>
+<ul>
+<li>Implement automated API testing to verify functionality, response times, and error handling.  </li>
+<li>Validate data accuracy, consistency, and integrity to ensure compliance with MeteoGate and WMO standards.  </li>
+<li>Perform security testing to detect and mitigate vulnerabilities, including authentication and access control checks.  </li>
+<li>Use standard validation tools such as schema validation and data integrity checks to confirm format compliance.  </li>
+<li>Document all test cases, results, and known issues to support troubleshooting and future improvements.</li>
+</ul>
+<h2 id="step-4-onboarding-data-supply-to-meteogate-and-wmo-wis-2">Step 4: Onboarding Data Supply to MeteoGate and WMO WIS 2</h2>
+<p>Once the data is prepared, the publishing pattern is selected, and the Data Supply is deployed, the next step is to onboard it to WIS2 and MeteoGate. This process ensures that all registered Data Supply components function with MeteoGate and WMO WIS2 requirements, making them discoverable and accessible through MeteoGate. </p>
+<h3 id="registering-a-wis2-node">Registering a WIS2 Node</h3>
+<p>MeteoGate Data Supply Capabilities must be registered on WIS 2.0 as a WIS2 Node.</p>
+<p>This is required so that you can publish discovery metadata about your datasets, so they can be discovered using the Data Explorer and, consequently, considered to be part of MeteoGate.</p>
+<p>If your organization already has a WIS2 Node and you are planning to publish your notifications via the Local Broker of that WIS2 Node, then you do not need to register a separate WIS2 Node (you may do so – but it is not required). In this case, your Data Supply Capability will be treated as part of the existing WIS2 Node and you should use the Node’s “centre-id”.</p>
+<p>ℹ️ <strong><em>Note:</em></strong> If the operation of your Data Supply Capability might transition to another organisation at some point in the future (and hence use a different Local Broker) you should register a separate WIS2 Node. Unfortunately, a WIS2 Node can only have single Local Broker and is not possible to split publication of notifications between multiple brokers. This is why EUMETNET operated Data Supply Capabilities are registered as independent WIS2 Nodes from those of their Host Member.</p>
+<p>If you do not have an existing WIS2 Node, or you are not able to use the Local Broker from an existing WIS2 Node, you must start the on-boarding of your Data Supply Capability by registering a new WIS2 Node – as described below.</p>
+<p>A WIS2 “centre-id” is allocated to your Data Supply capability during this registration process. The “centre-id” is used when identifying datasets (e.g., in their discovery metadata) and when publishing notifications about new or updated data and metadata.</p>
+<p>Instructions for registering a WIS2 Node are in the <a href="https://wmo-im.github.io/wis2-guide/guide/wis2-guide-APPROVED.html">Guide to WIS (WMO No. 1061), Volume II: §2.6.1.1 Registration and decommissioning of a WIS2 Node</a>. The summary version is:</p>
+<ol>
+<li>You are ready to run a WIS2 Node.</li>
+<li>Choose a “centre-id” based on the <a href="https://wmo-im.github.io/wis2-topic-hierarchy/standard/wis2-topic-hierarchy-STABLE.html">specification</a> and <a href="https://wmo-im.github.io/wis2-guide/guide/wis2-guide-APPROVED.html">guidance</a>. See the <a href="http://codes.wmo.int/wis/topic-hierarchy/centre-id">WMO Codes Registry</a> for the current list.</li>
+<li>Via your <strong>WIS National Focal Point</strong> (NFP, see list <a href="https://wmoomm.sharepoint.com/:x:/s/wmocpdb/EdzGYikWZspJi_0t-gqh4XMBdPOmDtERdGXCTdNU7nnQDw?rtime=eFHfk76k3Ug">here</a>), start the registration process with WMO Secretariat and provide your proposed  “centre-id”.</li>
+<li>If your Data Supply component provides national data or products it is a <strong>National Centre</strong> (NC) in WIS2 terms. WMO Secretariat will confirm approval from your <strong>Permanent Representative to WMO</strong> (PR, usually the head of the National Meteorological Service). If your Data Supply Component provides global or regional data, WIS2 calls this a <strong>Data Collection or Production Centre</strong> (DCPC). DCPCs need approval from the <strong>president of WMO Infrastructure Commission</strong> (p/INFCOM). <strong>WMO Secretariat</strong> will facilitate approval on your behalf. Approval ensures that only datasets and services that conform to WMO Technical Regulations are added to WIS2.</li>
+<li>Once “centre-id” is agreed, the <strong>NFP</strong> completes the <strong>WIS2 register</strong> with details of your WIS2 Node, including the address of your Local Broker and the credentials required for Global Services to subscribe.</li>
+<li>Your <strong>GISC</strong> then assesses that your WIS2 Node meets all the WIS2 requirements (see <a href="#assessing-and-accepting-the-wis2-node">Assessing and accepting the WIS2 Node</a>).</li>
+<li>If all OK, your WIS2 Node is connected to the WIS2 Global Services and you can begin publishing notifications about data and metadata.</li>
+</ol>
+<h4 id="which-pr-should-i-contact">Which PR should I contact?</h4>
+<p>A PR is responsible for all data publication within their country or territory – not only that of the National Meteorological Service. For international organisations, contact the PR of the country or territory where the WIS2 Node is operated.
+It’s not always clear where your WIS2 Node is operated – especially in a cloud environment. For example, if Met Norway want to publish data on snow depth, with the technical components hosted on the ECMWF’s European Weather Cloud region in Bologna, the relevant PR from whom to seek approval is Norwegian rather than Italian. The criterion is where the people managing the service are based, rather than where the data-servers are situated.</p>
+<h4 id="registering-a-centre-id">Registering a centre-id</h4>
+<p>Registration of a WIS2 Node requires the designation of a “centre-id” - a mandatory element in the identifier of a dataset (property “metadata-id” in the discovery metadata). A centre-id is proposed by the provider of the MeteoGate Data Supply service and endorsed by the WMO Secretariat. It is a single identifier consisting of a top-level domain (TLD) and a centre name and represents the data publisher, distributor or issuing centre of a given dataset (see the <a href="https://wmo-im.github.io/wis2-topic-hierarchy/standard/wis2-topic-hierarchy-STABLE.html">Manual on WIS, Volume II – Appendix D. WIS2 Topic Hierarchy</a>).</p>
+<p>For example, “uk-metoffice-nmc” represents the National Meteorological Centre (NMC) operated by Met Office, the United Kingdom’s National Meteorological service. </p>
+<p>When providing a Data Supply service on behalf of a EUMETNET Programme (e.g., for an HVD Service), the “centre-id” should begin “eu-eumetnet-”, followed by a token that distinguishes the type of data, e.g., “eu-eumetnet-surface-observations”.</p>
+<p>For more information, please refer to the <a href="https://wmo-im.github.io/wis2-guide/guide/wis2-guide-APPROVED.html#_2_6_1_2_guidance_on_assigning_a_centre_identifier_for_a_wis2_node">Guide to WIS, Volume II, Section 2.6.1.2</a>.</p>
+<h4 id="assessing-and-accepting-the-wis2-node">Assessing and accepting the WIS2 Node</h4>
+<p>WMO designates Global Information System Centres (GISC) to coordinate and manage data sharing within WIS 2.0. When you register your Data Supply Component as a WIS2 Node registration, your GISC will assess its readiness for inclusion into WIS 2.0.</p>
+<p>Areas of responsibility for European GISCs are given below:
+  - <strong>GISC-Offenbach</strong>: Germany + Austria, Bosnia &amp; Herzegovina, Bulgaria, Croatia, Cyprus, Czechia, Denmark, Estonia, EUMETSAT, Finland, Greece, Hungary, Israel, Italy, Jordan, Kenya, Latvia, Lithuania, Montenegro, North Macedonia, Norway, Poland, Romania, Serbia, Slovakia, Sweden, Switzerland, Türkiye. 
+  - <strong>GISC-Toulouse</strong>: France (&amp; Clipperton, French Guyana, Guadeloupe, St Martin, St Barthelemy, Kerguelen Islands, La Reunion, Martinique, St Pierre &amp; Miquelon, Wallis &amp; Futuna) + Algeria, Belgium, Luxemburg, Monaco, Portugal, Spain.
+  - <strong>GISC-Exeter</strong>: UK (&amp; British Antarctic Survey, Ascension, Bermuda, Gibraltar, Pitcairn Islands, St Helena) + ECMWF, Ireland, Iceland, Netherlands.</p>
+<p>The GISC will also be able to provide guidance on choosing the right WMO Data Policy (Core or Recommended), and the correct WIS2 Topic Hierarchy on which to publish Notifications (see <a href="#topic-hierarchy-for-message-publication">Topic Hierarchy for Message Publication</a> for details).</p>
+<p>Once you have been approved by your GISC, the WMO Secretariat will request that all Global Brokers subscribe to the Local Broker in your Data Supply Component. </p>
+<p>After at least one Global Broker has confirmed that their subscription is configured, you can publish notifications to upload metadata to the Global Discovery Catalogue which completes the process of getting your dataset visible within MeteoGate. </p>
+<h3 id="integrating-the-data-supply-with-meteogate-and-wis2-components">Integrating the Data Supply with MeteoGate and WIS2 components</h3>
+<p>The integration process depends on the chosen Data Publishing Pattern and involves technical integration with HVD services or API Gateway, and WMO WIS2 components. </p>
+<ul>
+<li><strong>Pattern 1</strong>: Using MeteoGate HVD Service<ul>
+<li>Onboarding surface observations to E-SOH API</li>
+<li>Onboarding weather radar to EUMETNET OPERA</li>
+<li>Onboarding national weather radar products to Open Radar Data API</li>
+<li>Onboarding climate observations to EUMETNET Climate Aggregator</li>
+<li>Onboarding weather warnings to EUMETNET Warnings API</li>
+</ul>
+</li>
+</ul>
+<blockquote>
+<p>[links to be updated]</p>
+</blockquote>
+<ul>
+<li><strong>Pattern 2</strong>: Managed and Proxied Access Through MeteoGate API Gateway <ul>
+<li>Register the APIs with the MeteoGate API Gateway. This can be done via Service Desk. Send your API root URL to the MeteoGate Service Desk and request to onboard the API. <em>Contact details TBA</em> </li>
+<li>Once the configuration is complete, this will provide the URL for accessing the Data Supply service. This URL will be included in the discovery metadata describing the Data Supply service.</li>
+<li>Create the discovery metadata and publish into WIS2</li>
+</ul>
+</li>
+</ul>
+<blockquote>
+<p>[to be updated ] More instructions TBA</p>
+</blockquote>
+<ul>
+<li><strong>Pattern 3</strong>: Direct Access<ul>
+<li>Ensure integration with WMO WIS2 components, including metadata sharing and notifications, by repeating the WIS2 related steps above. </li>
+</ul>
+</li>
+</ul>
+<p>MeteoGate Community Capability Operators and WMO WIS2 Capability Operators are responsible for performing the necessary technical configurations in MeteoGate HVD services, MeteoGate API Gateway, and WMO WIS2 components. </p>
+<h2 id="additional-considerations">Additional Considerations</h2>
+<h3 id="quality-of-service">Quality-of-Service</h3>
+<p>MeteoGate has been established to deliver the target quality of service outlined in the Quality-of-Service agreement. This may vary depending on which data is being requested, with operational data and products generally being at a higher service than non-operational data and products. In general, a reasonable level of QoS is recommended for the supplied data.   </p>
+<p>MeteoGate will monitor the availability of the APIs and notify the Data Supplier in case any inactive or low performing APIs are detected.</p>
+<h3 id="data-quality-and-data-governance">Data Quality and Data Governance</h3>
+<p>Data Publishers are responsible for ensuring data quality. Commonly recognised guidelines such as the <a href="https://www.go-fair.org/fair-principles/">FAIR Principles</a> provide best practices to help maintain data consistency, accuracy, and compliance. </p>
+<p>WMO members are expected to meet relevant data quality standards, including:</p>
+<ul>
+<li><a href="https://community.wmo.int/en/activity-areas/WIGOS">WMO Integrated Global Observing System (WIGOS) Manual (2023)</a>  </li>
+<li><a href="https://community.wmo.int/en/activity-areas/wmo-integrated-processing-and-prediction-system-wipps">WMO Integrated Processing and Prediction System (WIPPS) Manual (2023)</a>   </li>
+<li>EUCOS Performance Standards</li>
+</ul>
+<p><strong>Data Governance</strong> </p>
+<p>Data governance policies ensure structured data management, compliance, and interoperability. The <a href="../references/">MeteoGate Data Governance Policy</a> defines the requirements for data documentation and publication. </p>
+<h3 id="incident-response-and-support-requests">Incident Response and Support Requests</h3>
+<p>MeteoGate's centralized helpdesk will handle inquiries, technical issues, and incident reports related to data publication. Data Publishers may receive support requests and incident notifications through this helpdesk.</p>
+<p>Per HVD regulation, Data Publishers must designate a contact point for incident notifications and support requests. Clear communication channels are crucial for data reliability, efficient issue resolution, and user support in the federated system. Data Publishers share the contact information as part of the onboarding process. </p>
+<p>Data Publishers will manage incidents related to their data services, including establishing IT service management processes, responding to issues promptly, and coordinating with MeteoGate’s helpdesk to resolve incidents.</p>
+<h3 id="monitoring-and-insights">Monitoring and Insights</h3>
+<p>Effective monitoring and logging are essential for ensuring API health, performance, and security. MeteoGate recommends a comprehensive observability stack to facilitate real-time monitoring, centralised logging, and proactive issue detection. </p>
+<p>In MeteoGate, logging and monitoring occur at three levels:</p>
+<ul>
+<li>Individual API Level (Data Publisher Responsibility): Each Data Publisher’s API is responsible for logging request details, errors, and performance metrics. This includes structured logs (e.g., JSON-based logging) that provide visibility into API behaviour, response times, and error rates. </li>
+<li>HVD Service Level (Data Publishing Pattern 1): MeteoGate’s centralised data services log request details, errors, and performance metrics.</li>
+<li>MeteoGate API Gateway Level (Data Publishing Pattern 2): MeteoGate API Gateway provides centralised logging, monitoring, and traffic analysis. It collects logs for all requests passing through the gateway, including request origins, response times, error rates, and usage metrics.</li>
+</ul>
+<p>MeteoGate includes an insights service and provides the following metrics that can be used for API performance reporting, when using Data Publishing Patterns 1 or 2:</p>
+<ul>
+<li>Info by data service end point (APIsix “route”), mapped on to dataset being published </li>
+<li>Total number of requests made to the API </li>
+<li>Data volume  </li>
+<li>Time to process a request  </li>
+<li>Http response code for the request </li>
+<li>API key used  </li>
+<li>IP addresses  </li>
+<li>Total number of datasets (and/or routes) registered in the MeteoGate API Gateway  </li>
+<li>Total number of datasets with APIs provided by EUMETNET Members  </li>
+<li>Total number of registered users  </li>
+<li>Keywords / search terms used  </li>
+<li>Number of “views” for each dataset </li>
+</ul>
+<p><strong>Recommendations</strong></p>
+<p>Ensure that your APIs are monitored and logged for security, performance, and reliability. Data Publishers remain responsible for local monitoring and logging even when using Data Publishing Patterns 1 or 2. </p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["navigation.instant", "navigation.tabs", "navigation.tabs.sticky", "navigation.top", "navigation.sections", "toc.integrate", "search.highlight", "content.code.copy"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>

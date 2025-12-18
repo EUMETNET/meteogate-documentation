@@ -1,0 +1,950 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Guidance and instructions for MeteoGate Stakeholders – Data Consumers, Data Publishers and Community Capability Operators">
+      
+      
+        <meta name="author" content="EUMETNET">
+      
+      
+      
+        <link rel="prev" href="..">
+      
+      
+        <link rel="next" href="../2-discovering-and-accessing-data/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.1">
+    
+    
+      
+        <title>1. OVERVIEW - MeteoGate Documentation</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Open Sans";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="black" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#1-overview" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="MeteoGate Documentation" class="md-header__button md-logo" aria-label="MeteoGate Documentation" data-md-component="logo">
+      
+  <img src="../images/meteogate-logo.svg" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            MeteoGate Documentation
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              1. OVERVIEW
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/EUMETNET/meteogate-documentation" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href=".." class="md-tabs__link">
+        
+  
+  
+    
+  
+  HOME
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    <li class="md-tabs__item md-tabs__item--active">
+      <a href="./" class="md-tabs__link">
+        
+  
+  
+    
+  
+  1. OVERVIEW
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../2-discovering-and-accessing-data/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  2. DISCOVERING AND ACCESSING DATA
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../3-publishing-data/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  3. PUBLISHING DATA
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../technical-architecture/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  ARCHITECTURE
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../glossary/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  GLOSSARY
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../references/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  REFERENCES
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="MeteoGate Documentation" class="md-nav__button md-logo" aria-label="MeteoGate Documentation" data-md-component="logo">
+      
+  <img src="../images/meteogate-logo.svg" alt="logo">
+
+    </a>
+    MeteoGate Documentation
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/EUMETNET/meteogate-documentation" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    HOME
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1. OVERVIEW
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1. OVERVIEW
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#what-is-meteogate" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What is MeteoGate
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#meteogate-system-overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        MeteoGate System Overview
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="MeteoGate System Overview">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#data-access-levels" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Data Access Levels
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#meteogate-stakeholders" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        MeteoGate Stakeholders
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="MeteoGate Stakeholders">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#governance" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Governance
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#community-component-roles" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Community Component Roles
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#data-supply-roles" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Data Supply Roles
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#high-level-end-to-end-process" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        High-Level End-to-End Process
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#data-quality" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Data Quality
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#quality-of-service" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Quality of Service
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2-discovering-and-accessing-data/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2. DISCOVERING AND ACCESSING DATA
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../3-publishing-data/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3. PUBLISHING DATA
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../technical-architecture/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ARCHITECTURE
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../glossary/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    GLOSSARY
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../references/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    REFERENCES
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="1-overview">1. Overview</h1>
+<p>This section introduces MeteoGate and provides a high-level understanding of the system, its components, stakeholders, and usage.</p>
+<hr />
+<h2 id="what-is-meteogate">What is MeteoGate</h2>
+<p>MeteoGate is a ‘One-Stop Shop’ for meteorological and hydrological products and data. It provides an integrated view of all data available through MeteoGate, and the ability to access it in a simple, consistent way.
+MeteoGate helps NMHSs make their data and data products discoverable and accessible while complying with:</p>
+<ul>
+<li>WMO WIS 2.0 inter-governmental agreements</li>
+<li>EU’s Open Data Directive</li>
+<li>EU High Value Datasets Regulation</li>
+<li>National Open Data requirements</li>
+</ul>
+<p>MeteoGate in an <a href="https://www.eumetnet.eu/">EUMETNET</a> Programme.  Delivery responsibility is delegated to a Member who will act as the Programme Manager.</p>
+<hr />
+<h2 id="meteogate-system-overview">MeteoGate System Overview</h2>
+<p>MeteoGate helps organisations and people share weather and water data within Europe and worldwide.
+MeteoGate provides technical infrastructure, underpinned by policies, standards, and processes, which enable data to be discovered and accessed in one place. It follows rules set by the WMO and the data owners, letting people share data without changing who owns it. 
+Developed and operated by <a href="https://www.eumetnet.eu/">EUMETNET</a>, MeteoGate lets European National Meteorological Services openly share their hydrological and meteorological data and information.  </p>
+<p><img alt="MeteoGate system overview" src="../images/meteogate-overview.png" /></p>
+<p><strong>MeteoGate Data Explorer</strong> lets users discover data through search, browse and preview functionalities. It provides URLs for setting up routine access to data as well as for subscribing to data updates from the WIS 2.0 Global Broker.</p>
+<p><strong>MeteoGate API Gateway</strong> for data access is made up of two key parts:</p>
+<ul>
+<li>API Management provides the interface between data consumers and local data stores. Once checks are completed it passes valid requests to Members.</li>
+<li>Identity &amp; Access Manager carries out checks, making sure that access policies are being followed and quality of service maintained.</li>
+</ul>
+<p>Currently, there is an API Gateway running on the <a href="https://www.europeanweather.cloud/">European Weather Cloud</a>. In the future, additional instances can be offered from public cloud platforms, if required.</p>
+<p><strong>The Data Supply</strong> (also called WIS 2 Node) is a local component operated by each National Meteorological and Hydrological Service (NMHS) or as a centralised service (for High-Value Datasets). It is responsible for exposing data, managing metadata, and publishing notifications in line with WIS 2.0 requirements. Data Supply components:</p>
+<ul>
+<li>Serve data collections via standard APIs (e.g. OGC API - EDR),</li>
+<li>Generate and publish discovery metadata and provenance metadata,</li>
+<li>Send update notifications via a Local Broker to the WIS 2.0 Global Broker.</li>
+</ul>
+<p>In MeteoGate, there are two main types of Data Supply components. The first are centrally operated HVD Services, which provide access to EU High-Value Datasets such as E-SOH (land-based surface observations), radar data, and climate datasets. The second type consists of locally maintained Data Supplies operated by (NMHSs).</p>
+<p>In addition, the <strong>Insights Service</strong> provides shared monitoring and analytics capabilities across the system. It collects usage statistics, performance metrics, and operational health data from core components such as the API Gateway.</p>
+<p>MeteoGate builds on the following <a href="https://community.wmo.int/en/activity-areas/wis">WMO WIS 2.0</a> components:</p>
+<ul>
+<li><strong>Global Discovery Catalogue</strong> lists and describes data assets and data collections, indexed, linked, and searchable to support data discovery and usage. It will only provide a basic interface to find data aimed at developers.</li>
+<li><strong>Global Broker</strong> provides a subscription service for notifications about the updates to both discovery metadata and the data.</li>
+</ul>
+<h3 id="data-access-levels">Data Access Levels</h3>
+<p>When using the MeteoGate API Gateway, Data Consumers have three access levels, determined by the Data Owner and Data Publisher:</p>
+<ol>
+<li>Unauthenticated access: Open to anonymous users.</li>
+<li>Authenticated access: Requires registration, offering higher Quality of Service and additional data as decided by the Data Owner.</li>
+<li>EUMETNET Members: Restricted to EUMETNET Members.</li>
+</ol>
+<p>Additional access levels may be added in the future.</p>
+<hr />
+<h2 id="meteogate-stakeholders">MeteoGate Stakeholders</h2>
+<p>This section describes MeteoGate stakeholders and their mutual interaction.</p>
+<h3 id="governance">Governance</h3>
+<p>MeteoGate is run by a Programme at EUMETNET, called FEMDI, with responsibility for delivery delegated to a EUMETNET Member as the ‘Coordinating Member’.</p>
+<ul>
+<li><strong>MeteoGate Owner:</strong> The organisation responsible for development, operation, maintenance, and funding of the MeteoGate system. EUMETNET is the owner of MeteoGate. EUMETNET Assembly will be the topmost governing body with overarching governance for strategic, technical, financial, and legal aspects of MeteoGate.</li>
+<li><strong>FEMDI Programme Manager:</strong> This role sits within the Coordinating Member, which has delegated authority from the MeteoGate Owner for the operation of the whole of the FEMDI Programme. The Coordinating Member is a Member of EUMETNET, selected through a robust bidding and assessment process. This organisation will coordinate and govern the FEMDI Programme.</li>
+<li><strong>MeteoGate Solution Manager:</strong> This role oversees and coordinates the operation and maintenance of the MeteoGate solution. This encompasses Community Components, as well as integrations to Data Supply Components and WMO WIS 2.0 Components. The Solution Manager sits within the Coordinating Member or other agreed </li>
+<li><strong>MeteoGate Service Desk</strong> is the one point of contact for MeteoGate stakeholders and acts as first-level support. The Service Desk coordinates with other parties to fulfil user requests and solve incidents.</li>
+<li><strong>FEMDI Expert Team:</strong> A team of experts providing technical and policy recommendations and support to the MeteoGate Programme Manager and Solution Manager. The membership is open to EUMETNET Members, with observers from other organisations as appropriate.</li>
+</ul>
+<h3 id="community-component-roles">Community Component Roles</h3>
+<ul>
+<li><strong>MeteoGate Community Capability Operators</strong>: Provide, operate, and maintain the infrastructure to allow for data to be discovered and shared through MeteoGate. They provide support services and manage access to the services they are responsible for. Community Capability Operators are selected from EUMETNET Members, ECMWF and EUMETSAT using standard EUMETNET processes.</li>
+<li><strong>Dependency on: WMO WIS 2.0 Global Service Operators</strong>: Provides and operates the common infrastructure for the WIS 2.0 system. There are Local capability operators that operate a WMO WIS 2.0 compliant Data Supply Component. In addition, there are Global capability operators that operate shared WMO 2.0 components, some of which are also used in MeteoGate.</li>
+</ul>
+<h3 id="data-supply-roles">Data Supply Roles</h3>
+<ul>
+<li><strong>Data Owner:</strong> Maintains the authority to decide how their data can be used through rights, obligations, terms, and conditions. They are typically EUMETNET Members.</li>
+<li><strong>Data Publisher:</strong> Collects and shares data using MeteoGate. This role may be the Data Owner as well, or act on behalf of another Data Owner. They are typically EUMETNET Members.</li>
+<li><strong>Local Capability Operator:</strong> Provides and operates a Data Supply Capability which integrates with the MeteoGate Community capabilities. They will provide support services and manage access to the services they are responsible for. They will also have technical mechanisms to ensure others are compliant with MeteoGate. Local Capability Operator can be the same party as Data Owner and/or Data Publisher. They are typically EUMETNET Members. </li>
+<li><strong>Data Consumer:</strong> The individual or organisation that accesses shared data through MeteoGate and utilises it. Data Consumers include, for example, NMHSs, public and private sector organisations, research institutions, and citizens.</li>
+<li><strong>Third-Party Data Publisher:</strong> A Data Publisher that shares data through MeteoGate but are not EUMETNET Members (for example, private companies).</li>
+</ul>
+<p>The interaction of the stakeholders is shown in the following diagram.</p>
+<p><img alt="MeteoGate stakeholder interaction" src="../images/meteogate-stakeholders.png" /></p>
+<hr />
+<h2 id="high-level-end-to-end-process">High-Level End-to-End Process</h2>
+<p>This section describes the high-level ‘data publication to access’ end-to-end process. It describes the flow from publishing to utilising data through MeteoGate. It includes roles and activities involved in the process. The process is described in the following diagram. Each of the activities is subsequently discussed.</p>
+<p><img alt="MeteoGate high-level end-to-end-process" src="../images/meteogate-data-publication-to-access-process.png" /></p>
+<p>i.  <strong>Create Data</strong>: In its operations, the Data Owner creates or updates data (for example, observations from automated weather stations or weather model data) in its applications.</p>
+<p>ii. <strong>Publish data</strong>: The Data Publisher:</p>
+<ul>
+<li>Collects the data (manually or automatically) and publishes it on its Data Supply component either<ul>
+<li>as an addition to an existing dataset, for example, one update cycle worth of new data added to a dataset consisting of weather observations; or,</li>
+<li>if the shared data forms a completely new dataset, one is created. </li>
+</ul>
+</li>
+<li>Updates the Collection-level metadata if required.<ul>
+<li>Creates or updates the Resource-level metadata.</li>
+<li>Manually updates the Discovery metadata on the Data Supply referring to the new or updated data, if required. </li>
+</ul>
+</li>
+</ul>
+<p><em>Note</em>: Discovery metadata does not change often. It may change, for example, if there is a fundamental change in the scope of the shared data, or a change in Data Publisher information or data licensing. New discovery metadata also needs to be created for completely new datasets.</p>
+<p>iii.    <strong>Publish notification</strong>: The Local Capability Operator publishes a notification to advertise the new discovery metadata and/or data.</p>
+<p>iv. <strong>WMO re-publishes notification</strong>: The WMO WIS 2.0 Global Broker subscribes to notifications from the Data Supply. It then re-publishes notifications about the new data and metadata to all applications which have subscribed to them.</p>
+<p>v.  <strong>Update WMO catalogue</strong>: The WMO WIS 2.0 Global Discovery Catalogue subscribes to notifications from the Global Broker and thus gets notified of new and updated discovery metadata. When it gets notified about such a change, the Global Discovery Catalogue fetches the updated discovery metadata and updates the catalogue accordingly.</p>
+<p>vi. <strong>Find data</strong>: Data Consumers can be made aware about available data in various ways. They can:</p>
+<ul>
+<li>Subscribe to notifications from the Global Broker and be notified about updated metadata and data.</li>
+<li>Find the datasets that meet their needs using the Data Explorer by browsing or searching for datasets with specific characteristics. </li>
+<li>Search and browse the WMO’s Global Discovery Catalogue, in cases where a summary of the available datasets is sufficient.</li>
+<li>Search via common search engines – records in the WMO Global Discovery Catalogue are indexed by the search engines enabling data consumers to find them via their favourite/normal search path.</li>
+</ul>
+<p>vii.    <strong>Request data</strong>: Using information provided in the discovery metadata, the Data Consumer can:</p>
+<ul>
+<li>Make anonymous requests for shared data through the API Gateway. </li>
+<li>When required by a data policy and in line with EU regulation, the API Gateway requires authentication from the user using an API Key. A Data Consumer can obtain an API Key by registering to MeteoGate using a trusted Third-Party Identity Provider.</li>
+</ul>
+<p>viii.   <strong>Proxied access</strong>: The API Gateway proxies access to connected Data Supply services. The user can then utilise the data in their own applications. </p>
+<p>ℹ️ <strong><em>Note:</em></strong> Using the API Gateway is optional for the Data Publisher. They can also publish the data directly from the Data Supply (for example, if the dataset is very large, if bulk download is required, or if the Data Publisher already has API Management implemented as part of their Data Supply capability).</p>
+<p>ix.   <strong>Insights service</strong>: Community Capability Operators and other stakeholders can use the Insights service in the API Gateway to monitor data discovery and use. For example, they can observe how the data is passing through the system to be able to address any issues.</p>
+<hr />
+<h2 id="data-quality">Data Quality</h2>
+<p>MeteoGate ensures that data can be discovered and accessed in a reliable and consistent way — but it does not define or enforce the quality of the underlying data itself.</p>
+<p>Responsibility for data quality lies with the <strong>Data Owners</strong> and <strong>Data Publishers</strong>, who are expected to follow their own national standards and any applicable WMO and EU regulations.</p>
+<p>Key points regarding data quality:</p>
+<ul>
+<li><strong>Data Quality Responsibility</strong>: Each Data Publisher is responsible for the accuracy, completeness, timeliness, and consistency of the data they share via MeteoGate.</li>
+<li><strong>Compliance with Standards</strong>: WMO Members must ensure that their data complies with WMO regulations, including quality requirements defined in the WMO WIS 2.0 framework.</li>
+<li><strong>Metadata Transparency</strong>: Discovery and provenance metadata should clearly indicate any known data limitations or quality issues.</li>
+<li><strong>No Central Validation</strong>: MeteoGate does not centrally validate or cleanse data — it acts as an access and discovery platform.</li>
+<li><strong>Consumer Responsibility</strong>: Data Consumers are encouraged to evaluate data quality based on metadata, provenance information, and known standards.</li>
+</ul>
+<hr />
+<h2 id="quality-of-service">Quality of Service</h2>
+<p>MeteoGate is committed to ensuring a high-quality user experience across its components and services. The concept of Quality of Service (QoS) in MeteoGate refers to measurable and agreed-upon service levels that apply to both Community and Local Components.</p>
+<p>Quality of Service aspects cover:</p>
+<ul>
+<li><strong>Availability</strong>: Ensuring API Gateways, Developer Portals, and Data Explorer remain operational with high uptime.</li>
+<li><strong>Performance</strong>: Data access endpoints should return responses within acceptable timeframes, even under load.</li>
+<li><strong>Scalability</strong>: System components are designed to handle varying data volumes and request loads without degradation.</li>
+<li><strong>Support and incident response</strong>: MeteoGate provides centralised support through the Service Desk and follows defined escalation procedures.</li>
+<li><strong>Monitoring and metrics</strong>: Usage statistics and performance data are collected through the Insights Service to proactively identify issues.</li>
+<li><strong>Service differentiation</strong>: Authenticated users and EUMETNET Member users may receive enhanced QoS, including higher rate limits or data prioritisation.</li>
+</ul>
+<p>Minimum acceptable service levels for MeteoGate components are agreed by EUMETNET.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["navigation.instant", "navigation.tabs", "navigation.tabs.sticky", "navigation.top", "navigation.sections", "toc.integrate", "search.highlight", "content.code.copy"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>
