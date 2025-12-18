@@ -367,7 +367,7 @@ The following properties are required for all dataset-level discovery metadata r
   ```
   
 - `geometry`: Describes the geospatial extent of the dataset using GeoJSON geometry. This allows users to discover datasets based on spatial coverage. Example:  
-  ```
+  ```  
   "geometry": {  
     "type": "Polygon",  
     "coordinates": [  
@@ -380,7 +380,7 @@ The following properties are required for all dataset-level discovery metadata r
       ]  
     ]  
   }  
-  ```
+  ```  
 - `time`: Describes the temporal extent of the dataset. It may also include a resolution field to indicate how frequently new data or notifications are published. Example:  
   ```
   "time": {  
@@ -401,13 +401,13 @@ The following properties are required for all dataset-level discovery metadata r
   Ensure links in metadata point to your authoritative endpoints — not to URLs created by the API Gateway. Include a `rel="canonical"` link pointing to the resolvable URL of the dataset.  
 
   Include a link to API docs (e.g., the Swagger docs for the API). This link should include: `“rel”=”service-doc”` and `“type”=”text/html”`. For example:  
-  ```
+  ```  
   {  
     "rel": "service-doc",  
     "type": "text/html",  
     "href": "https://api.example.org/docs"  
   }  
-  ```
+  ```  
 
 Conditionally Required / Strongly Recommended Properties:
 
