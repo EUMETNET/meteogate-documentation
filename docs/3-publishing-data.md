@@ -345,13 +345,13 @@ The following properties are required for all dataset-level discovery metadata r
 - `type`: Describes the resource type described by the WCMP record. Example: `"type": "Dataset"`
 - `title`: A human-readable name of the dataset. Example: `"title": "Land surface weather observations"`
 - `description`: A free-text summary description of the dataset. Example: `"description":"Land surface observations measured at automatic and manual weather stations of EUMETNET Members and their trusted partners (last 24 hours only)"`
-- `themes`: The `themes` field provides a high-level thematic classification of the dataset, supporting browsing and filtering in discovery services. In WCMP2, themes are expressed as lists of concepts referenced to a controlled vocabulary or knowledge organisation system.
+- `themes`: The `themes` field provides a high-level thematic classification of the dataset, supporting browsing and filtering in discovery services. In WCMP2, themes are expressed as lists of concepts referenced to a controlled vocabulary or knowledge organisation system.  
 
-  Themes should be chosen from well-defined and authoritative vocabularies, such as the WIS 2.0 earth-system discipline codes.
+  Themes should be chosen from well-defined and authoritative vocabularies, such as the WIS 2.0 earth-system discipline codes.  
 
-  For a detailed explanation of how themes, concepts, and parameters are used together, see the section *Themes, Concepts and Parameters* below.
+  For a detailed explanation of how themes, concepts, and parameters are used together, see the section *Themes, Concepts and Parameters* below.  
 
-  Example:
+  Example:  
   ```
   "themes": [
     {
@@ -365,6 +365,7 @@ The following properties are required for all dataset-level discovery metadata r
     }
   ]
   ```
+  
 - `geometry`: Describes the geospatial extent of the dataset using GeoJSON geometry. This allows users to discover datasets based on spatial coverage. Example:
   ```
   "geometry": {
@@ -380,8 +381,7 @@ The following properties are required for all dataset-level discovery metadata r
     ]
   }
   ```
-- `time`: Describes the temporal extent of the dataset. It may also include a resolution field to indicate how frequently new data or notifications are published. Example:
-
+- `time`: Describes the temporal extent of the dataset. It may also include a resolution field to indicate how frequently new data or notifications are published. Example:  
   ```
   "time": {
     "interval": [
@@ -392,12 +392,12 @@ The following properties are required for all dataset-level discovery metadata r
   }
   ```
   `interval` defines the temporal coverage.  
-  `resolution` uses ISO 8601 duration format (e.g. PT10M, PT1H).
-
+  `resolution` uses ISO 8601 duration format (e.g. PT10M, PT1H).  
 - `contacts`: Provides contact information for the dataset, enabling users to request support, report issues, or seek clarification. Contacts should include at least one responsible organisation or role. If the API is proxied through the MeteoGate Gateway, include contact details for the MeteoGate service desk _in addition_ to contact details for your organisation.
 - `keywords`: Include `"meteogate"` to tag datasets as part of the MeteoGate system. Additional keywords may also be provided (optional).
 - `licence`: Include the licence under which the dataset is made available. Example: `"licence": "CC BY 4.0"`.
 - `links`: Links provide access to the data, documentation, licences, and related resources, including e.g. canonical data access URLs, API endpoints, human-readable documentation, and licence information.
+
   Ensure links in metadata point to your authoritative endpoints — not to URLs created by the API Gateway. Include a `rel="canonical"` link pointing to the resolvable URL of the dataset.  
 
   Include a link to API docs (e.g., the Swagger docs for the API). This link should include: `“rel”=”service-doc”` and `“type”=”text/html”`. For example:  
