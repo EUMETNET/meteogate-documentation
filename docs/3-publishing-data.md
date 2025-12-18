@@ -331,10 +331,7 @@ The `id` property is a unique identifier of the dataset. A record identifier is 
 Use your assigned WIS2 centre-id (e.g., uk-metoffice), see also [Registering a WIS2 Node](#registering-a-wis2-node). For local identifier, use an unique name.
 
 For example, the Met Office synoptic discovery metadata has the following id:
-```
-"id": "urn:wmo:md:uk-metoffice:weather.surface-based-observations.synop.uk_synop"
-
-```
+```"id": "urn:wmo:md:uk-metoffice:weather.surface-based-observations.synop.uk_synop"```
 
 *Properties*
 
@@ -382,7 +379,7 @@ The following properties are required for all dataset-level discovery metadata r
 - `contacts`: Provides contact information for the dataset, enabling users to request support, report issues, or seek clarification. Contacts should include at least one responsible organisation or role. If the API is proxied through the MeteoGate Gateway, include contact details for the MeteoGate service desk _in addition_ to contact details for your organisation.
 - `keywords`: Include `"meteogate"` to tag datasets as part of the MeteoGate system. Additional keywords may also be provided (optional).
 - `licence`: Include the licence under which the dataset is made available. Example: `"licence": "CC BY 4.0"`.
-- `links` (Required): Links provide access to the data, documentation, licences, and related resources, including e.g. canonical data access URLs, API endpoints, human-readable documentation, and licence information.
+- `links`: Links provide access to the data, documentation, licences, and related resources, including e.g. canonical data access URLs, API endpoints, human-readable documentation, and licence information.
 
 Ensure links in metadata point to your authoritative endpoints — not to URLs created by the API Gateway. Include a `rel="canonical"` link pointing to the resolvable URL of the dataset.
 
