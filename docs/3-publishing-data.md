@@ -304,16 +304,16 @@ See [Data Explorer](https://explorer.meteogate.eu) and [Global Discovery Catalog
 
 Discovery metadata should:
 
-- Follow the [WMO Core Metadata Profile (WCMP) Version 2](https://wmo-im.github.io/wcmp2/).
-- Provide a high-level, machine-readable summary of the dataset.
-- Support searchability and filtering (e.g., by time, space, keywords).
-- Be consistent with the WIS 2.0 Topic Hierarchy used when publishing notifications.
-- Be designed to be advertised and referenced through WIS 2.0 notification messages.
-- Link to supporting resources such as APIs, licences, and contact points.
-- Include access control information, where applicable, using link-level `security` blocks.
-- Use stable identifiers and semantics to ensure long-term discoverability and consistency.
-- Follow FAIR principles where possible.
-- Be validated prior to publication.
+  - Follow the [WMO Core Metadata Profile (WCMP) Version 2](https://wmo-im.github.io/wcmp2/).
+  - Provide a high-level, machine-readable summary of the dataset.
+  - Support searchability and filtering (e.g., by time, space, keywords).
+  - Be consistent with the WIS 2.0 Topic Hierarchy used when publishing notifications.
+  - Be designed to be advertised and referenced through WIS 2.0 notification messages.
+  - Link to supporting resources such as APIs, licences, and contact points.
+  - Include access control information, where applicable, using link-level `security` blocks.
+  - Use stable identifiers and semantics to ensure long-term discoverability and consistency.
+  - Follow FAIR principles where possible.
+  - Be validated prior to publication.
 
 **Linking to Topic Hierarchy and Notifications**
 
@@ -329,7 +329,7 @@ The `id` property is a unique identifier of the dataset. A record identifier is 
 
 Use your assigned WIS2 centre-id (e.g., uk-metoffice), see also [Registering a WIS2 Node](#registering-a-wis2-node). For local identifier, use an unique name.
 
-For example, the Met Office synoptic discovery metadata has the following id:
+For example, the Met Office synoptic discovery metadata has the following id:  
 ```"id": "urn:wmo:md:uk-metoffice:weather.surface-based-observations.synop.uk_synop"```
 
 *Properties*
@@ -342,56 +342,57 @@ Required Properties:
 
 The following properties are required for all dataset-level discovery metadata records:
 
-  - `type`: Describes the resource type described by the WCMP record. Example: `"type": "Dataset"`
-  - `title`: A human-readable name of the dataset. Example: `"title": "Land surface weather observations"`
-  - `description`: A free-text summary description of the dataset. Example: `"description":"Land surface observations measured at automatic and manual weather stations of EUMETNET Members and their trusted partners (last 24 hours only)"`
+  - `type`: Describes the resource type described by the WCMP record. Example: `"type": "Dataset"`  
+  - `title`: A human-readable name of the dataset. Example: `"title": "Land surface weather observations"`  
+  - `description`: A free-text summary description of the dataset. Example: `"description":"Land surface observations measured at automatic and manual weather stations of EUMETNET Members and their trusted partners (last 24 hours only)"`  
   - `themes`: The `themes` field provides a high-level thematic classification of the dataset, supporting browsing and filtering in discovery services. In WCMP2, themes are expressed as lists of concepts referenced to a controlled vocabulary or knowledge organisation system.  
 
-    Themes should be chosen from well-defined and authoritative vocabularies, such as the WIS 2.0 earth-system discipline codes.  
+  Themes should be chosen from well-defined and authoritative vocabularies, such as the WIS 2.0 earth-system discipline codes.  
 
-    For a detailed explanation of how themes, concepts, and parameters are used together, see the section *Themes, Concepts and Parameters* below.  
+  For a detailed explanation of how themes, concepts, and parameters are used together, see the section *Themes, Concepts and Parameters* below.  
 
-    Example:  
-    ```  
-    "themes": [  
-      {  
-        "concepts": [  
-          {  
-            "id": "weather",  
-            "title": "Weather"  
-          }  
-        ],  
-        "scheme": "https://codes.wmo.int/wis/topic-hierarchy/earth-system-discipline"  
-      }  
-    ]  
-    ```
+  Example:  
+  ```  
+  "themes": [  
+    {  
+      "concepts": [  
+        {  
+          "id": "weather",  
+          "title": "Weather"  
+        }  
+      ],  
+      "scheme": "https://codes.wmo.int/wis/topic-hierarchy/earth-system-discipline"  
+    }  
+  ]  
+  ```
     
   - `geometry`: Describes the geospatial extent of the dataset using GeoJSON geometry. This allows users to discover datasets based on spatial coverage. Example:  
-    ```  
-    "geometry": {  
-      "type": "Polygon",  
-      "coordinates": [  
-        [  
-          [-70, 10],  
-          [40, 10],  
-          [40, 90],  
-          [-70, 90],  
-          [-70, 10]  
-        ]  
-      ]  
-    }  
+```  
+"geometry": {
+  "type": "Polygon",
+  "coordinates": [
+    [
+      [-70, 10],
+      [40, 10],
+      [40, 90],
+      [-70, 90],
+      [-70, 10]
+    ]
+  ]
+}
+```
     ```
     
   - `time`: Describes the temporal extent of the dataset. It may also include a resolution field to indicate how frequently new data or notifications are published. Example:  
-    ```
-    "time": {  
-      "interval": [  
-        "T00Z",  
-        "T23Z"  
-      ],  
-      "resolution": "PT10M"  
-    }  
-    ```
+```
+"time": {
+  "interval": [
+    "T00Z",
+    "T23Z"
+  ],
+  "resolution": "PT10M"
+}
+```
     `interval` defines the temporal coverage.  
     `resolution` uses ISO 8601 duration format (e.g. PT10M, PT1H).  
   - `contacts`: Provides contact information for the dataset, enabling users to request support, report issues, or seek clarification. Contacts should include at least one responsible organisation or role. If the API is proxied through the MeteoGate Gateway, include contact details for the MeteoGate service desk _in addition_ to contact details for your organisation.
