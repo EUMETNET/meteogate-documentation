@@ -276,8 +276,6 @@ Naming conventions should follow standard practices to provide a clear and logic
 
 The Data Owner should make sure that all data published via MeteoGate have a well-defined license that specifies usage rights, restrictions, and attribution requirements.  
 
-Creative Commons Attribution 4.0 International (CC BY 4.0) license is recommended in MeteoGate.
-
 **Recommendations**
 
   - Make sure that your data is licenced at an adequate level. Choose an appropriate open data license based on the intended use and distribution model, such as CC BY 4.0 for attribution-required use or CC0 for public domain dedication. For High Value Data sets it is recommended to use CC BY 4 or equivalent.  
@@ -390,14 +388,14 @@ The following properties are required for all dataset-level discovery metadata r
 ```
   `interval` defines the temporal coverage.  
   `resolution` uses ISO 8601 duration format (e.g. PT10M, PT1H).  
-  - `contacts`: Provides contact information for the dataset, enabling users to request support, report issues, or seek clarification. Contacts should include at least one responsible organisation or role. If the API is proxied through the MeteoGate Gateway, include contact details for the MeteoGate service desk _in addition_ to contact details for your organisation.
-  - `keywords`: Include `"meteogate"` to tag datasets as part of the MeteoGate system. Additional keywords may also be provided (optional).
-  - `licence`: Include the licence under which the dataset is made available. Example: `"licence": "CC BY 4.0"`.
+  - `contacts`: Provides contact information for the dataset, enabling users to request support, report issues, or seek clarification. Contacts should include at least one responsible organisation or role. If the API is proxied through the MeteoGate Gateway, include contact details for the MeteoGate service desk _in addition_ to contact details for your organisation.  
+  - `keywords`: Include `"meteogate"` to tag datasets as part of the MeteoGate system. Additional keywords may also be provided (optional).  
+  - `licence`: Include the licence under which the dataset is made available. Example: `"licence": "CC BY 4.0"`.  
   - `links`: Links provide access to the data, documentation, licences, and related resources, including e.g. canonical data access URLs, API endpoints, human-readable documentation, and licence information.  
 
-    Ensure links in metadata point to your authoritative endpoints — not to URLs created by the API Gateway. Include a `rel="canonical"` link pointing to the resolvable URL of the dataset.  
+Ensure links in metadata point to your authoritative endpoints — not to URLs created by the API Gateway. Include a `rel="canonical"` link pointing to the resolvable URL of the dataset.  
 
-    Include a link to API docs (e.g., the Swagger docs for the API). This link should include: `“rel”=”service-doc”` and `“type”=”text/html”`. For example:  
+Include a link to API docs (e.g., the Swagger docs for the API). This link should include: `“rel”=”service-doc”` and `“type”=”text/html”`. For example:  
 ```
 {
   "rel": "service-doc",
