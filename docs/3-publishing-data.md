@@ -391,8 +391,8 @@ The following properties are required for all dataset-level discovery metadata r
   "resolution": "PT10M"
 }
 ```
-  `interval` defines the temporal coverage.  
-  `resolution` uses ISO 8601 duration format (e.g. PT10M, PT1H).  
+   `interval` defines the temporal coverage.  
+   `resolution` uses ISO 8601 duration format (e.g. PT10M, PT1H).  
 - `contacts`: Provides contact information for the dataset, enabling users to request support, report issues, or seek clarification. Contacts should include at least one responsible organisation or role. If the API is proxied through the MeteoGate Gateway, include contact details for the MeteoGate service desk _in addition_ to contact details for your organisation.
 - `keywords`: Include `"meteogate"` to tag datasets as part of the MeteoGate system. Additional keywords may also be provided (optional).
 - `licence`: Include the licence under which the dataset is made available. Example: `"licence": "CC BY 4.0"`.
