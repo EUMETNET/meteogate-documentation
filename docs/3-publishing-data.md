@@ -296,7 +296,7 @@ In MeteoGate, metadata is categorized into three levels:
 
 ### Discovery Metadata
 
-Discovery metadata enables users to find, understand, and access datasets through MeteoGate, WIS 2.0 Global Discovery Catalogue (GDC), and other interoperable tools. 
+Discovery metadata describes a dataset in a way that makes it discoverable, understandable, and accessible through MeteoGate, the WIS 2.0 Global Discovery Catalogue, and related services. It provides the contextual information users and systems need in order to find relevant data and determine how it can be accessed.
 
 See [Data Explorer](https://explorer.meteogate.eu) and [Global Discovery Catalogue](../references/) for discovery metadata examples.
 
@@ -312,13 +312,19 @@ Discovery metadata should:
 - Follow FAIR principles where possible.
 - Be validated prior to publication.
 
+**Linking to Topic Hierarchy and Notifications**
+
+Discovery metadata is closely linked to the [WIS 2.0 Topic Hierarchy](https://wmo-im.github.io/wis2-topic-hierarchy/standard/wis2-topic-hierarchy-STABLE.html). The topic hierarchy defines how metadata and notifications are organised, routed, and filtered. Together, the topic hierarchy, discovery metadata, and notification messages form a coherent structure that enables scalable discovery and access to large volumes of data.
+
+Note that the WIS 2.0 topic is not a field inside the discovery metadata record itself. Instead, the topic is defined by the MQTT topic used when publishing the notification message that advertises the discovery metadata (see [Topic Hierarchy for Message Publication](#topic-hierarchy-for-message-publication)). The discovery metadata record is linked to the topic through the `metadata_id` included in the notification message. For this reason, the topic used for publishing must be consistent with the content and classification of the discovery metadata.
+
 **Key Elements of a Metadata Record**
 
 *Identifier* 
 
 The `id` property is a unique identifier of the dataset. A record identifier is essential for querying and identifying records within the Global Discovery Catalogue. It has the following format: `urn:wmo:md:{centre_id}:{local_identifier}`.
 
-Use your assigned WIS2 centre-id (e.g., uk-metoffice). For local identifier, use an unique name.
+Use your assigned WIS2 centre-id (e.g., uk-metoffice), see also [Registering a WIS2 Node](#registering-a-wis2-node). For local identifier, use an unique name.
 
 For example, the Met Office synoptic discovery metadata has the following id:
 ```
@@ -336,7 +342,7 @@ Required Properties
 
 The following properties are required for all dataset-level discovery metadata records:
 
-- `type`: Describes the resource type described by the WCMP record. Example: `"type": "Feature"`
+- `type`: Describes the resource type described by the WCMP record. Example: `"type": "Dataset"`
 - `title`: A human-readable name of the dataset. Example: `"title": "Land surface weather observations"`
 - `description`: A free-text summary description of the dataset. Example: `"description":"Land surface observations measured at automatic and manual weather stations of EUMETNET Members and their trusted partners (last 24 hours only)"`
 - `themes`: 
@@ -372,6 +378,7 @@ The following properties are required for all dataset-level discovery metadata r
 - `contacts`: Provides contact information for the dataset, enabling users to request support, report issues, or seek clarification. Contacts should include at least one responsible organisation or role. If the API is proxied through the MeteoGate Gateway, include contact details for the MeteoGate service desk _in addition_ to contact details for your organisation.
 - `keywords`: Include `"keyword": "meteogate"` to tag datasets as part of the MeteoGate system.
 - `created`: Indicates when the metadata record was created. Example:`"created": "2025-06-04T14:00:00Z"`
+- `licence`: Include the licence under which the dataset is made available. Example: `"licence": "CC BY 4.0"`.
 - `links` (Required): Links provide access to the data, documentation, licences, and related resources, including e.g. canonical data access URLs, API endpoints, human-readable documentation, and licence information.
 
 Ensure links in metadata point to your authoritative endpoints — not to URLs created by the API Gateway. Include a `rel="canonical"` link pointing to the resolvable URL of the dataset.
@@ -387,16 +394,16 @@ Include a link to API docs (e.g., the Swagger docs for the API). This link shoul
 
 Conditionally Required Properties
 
-- `wmo:dataPolicy`: Specifies whether the dataset is classified as core or recommended, in accordance with the
-WMO Unified Data Policy (Resolution 1 (Cg-Ext(2021))). Note that core data must be open access and recommended data may be open or access-controlled. This classification is independent of access control. Example: `"wmo:dataPolicy": "recommended"`
+- `wmo:dataPolicy`: Specifies whether the dataset is classified as `core` or `recommended`, in accordance with the [WMO Unified Data Policy, Resolution 1 (Cg-Ext(2021))](https://library.wmo.int/idurl/4/58009). Note that core data must be open access and recommended data may be open or access-controlled. This classification is independent of access control. Example: `"wmo:dataPolicy": "recommended"`
 
 Optional Properties
 
 These properties are optional according to WCMP2, but are strongly recommended for MeteoGate datasets.
 
 - `keywords`: Other keywords, tags or key phrases describing the dataset.
+- `language`: Language of the metadata, e.g. `"language":"en"`.
 - `updated`: Indicate when the metadata record was created and last updated. Example:`"updated": "2025-06-04T14:00:00Z"`
-- `rights`: A human-readable statement describing usage rights not fully covered by the licence. Example: `"rights": "Users are granted free and unrestricted access to this data, with attribution requeste`
+- `rights`: A human-readable statement describing usage rights not fully covered by the licence. Example: `"rights": "Users are granted free and unrestricted access to this data, without charge and with no conditions on use. Users are requested to attribute the producer of this data. WMO Unified Data Policy (Resolution 1 (Cg-Ext 2021))"`
 - `version`: Specifies the version or edition of the dataset, where applicable. Example: `"version": "1.0"`
 - `status`: Describes the operational status of the dataset (e.g. operational, experimental).
 - `linkTemplates`: Used for templated or parameterised access (e.g. dynamic API queries).
@@ -469,23 +476,6 @@ Parameter information example:
       }	
 ```
 
-*Topic Hierarchy*
-
-Set the correct topic using the WIS 2.0 Topic Hierarchy (See also [Topic Hierarchy](#topic-hierarchy).
-
-The topic must include:
-- Your centre-id
-- data or metadata
-- Data policy (core or recommended)
-- Earth-system discipline (weather, climate, etc.)
-- Sub-discipline (surface-based-observations, prediction, etc.)
-
-Use experimental temporarily if no approved term exists — but note this is not a long-term solution.
-
-Example:
-
-```origin/a/wis2/eu-eumetnet-surface-observations/metadata/recommended/weather/surface-based-observations/surface-observation```
-
 *Access Control*
 
 If access control (e.g. API key) is required, describe it using the `security` block.
@@ -493,7 +483,6 @@ If access control (e.g. API key) is required, describe it using the `security` b
 Follow the instructions in [WIS2 Cookbook recipe 3.2. Publishing a WIS2 Notification Message with access control](https://wmo-im.github.io/wis2-cookbook/cookbook/wis2-cookbook-DRAFT.html#_publishing_a_wis2_notification_message_with_access_control) to describe the type of access control used.
 
 Example for data using API Key for access control:
-
 ```
 {
   "rel": "items",
@@ -507,36 +496,6 @@ Example for data using API Key for access control:
       "description": "Request API key at https://developer.example.org"
     }
   }
-}
-```
-
-Follow the instructions in [WIS2 Cookbook recipe 3.2. Publishing a WIS2 Notification Message with access control](https://wmo-im.github.io/wis2-cookbook/cookbook/wis2-cookbook-DRAFT.html#_publishing_a_wis2_notification_message_with_access_control) to describe the type of access control used.
-
-
-*Licence and Rights*. For example:
-
-```
-"licence": "CC BY 4.0",
-"rights": "Free and unrestricted use. Attribution requested."
-```
-
-*More Metadata*
-
-- Language: English
-- Creation/Update date of metadata.
-- WMO data policy: Recommended
-- Rights: Free and Unrestricted
-- Licence: CC by 4.0
-- Type: Dataset
-
-```
-"language":"en",
-"created": "2025-06-04T14:00:00Z",	
-"updated": "2025-06-04T14:00:00Z",		
-"wmo:dataPolicy": "recommended",
-"rights": "Users are granted free and unrestricted access to this data, without charge and with no conditions on use. Users are requested to attribute the producer of this data. WMO Unified Data Policy (Resolution 1 (Cg-Ext 2021))",
-"licence": "CC BY 4.0 Creative Commons license",
-"type": "dataset"
 }
 ```
 
@@ -642,7 +601,7 @@ Here’s how it works:
 
   1.	Create discovery metadata for your dataset. For more information about discovery metadata, see [Discovery Metadata](#discovery-metadata).
   2.	The Global Discovery Catalogue needs to download the metadata record, so you need to publish it via an HTTP server. This may be as a simple file hosted on a web server (i.e., a static metadata record), or through an API (e.g., an OGC API - Records Web-service endpoint). Discovery metadata needs to be published so that it’s openly accessible (no access controls). Discovery metadata should be re-published daily (i.e., every 24-hours) even if there are no changes. This helps ensure that the discovery metadata in the Global Discovery Catalogue stays fresh.
-  3.	Publishing discovery metadata uses the same mechanisms in WIS2 used for telling users about new data: real-time notifications via MQTT. Publish a WIS2 Notification Message to the Local Broker of your Data Supply Component (remember to use access control to ensure only you can publish!). This notification message includes the URL of the discovery metadata record published in step (2). For more information see [Publishing Notifications](#publishing-notifications). Notifications about discovery metadata must be published to topic ```origin/a/wis2/{centre-id}/metadata```. For more information on the WIS2 topic hierarchy see [Topic Hierarchy for Message Publication](#topic-hierarchy-for-message-publication).
+  3.	Publishing discovery metadata uses the same mechanisms in WIS2 used for telling users about new data: real-time notifications via MQTT. Publish a WIS2 Notification Message to the Local Broker of your Data Supply Component (remember to use access control to ensure only you can publish!). This notification message includes the URL of the discovery metadata record published in step (2). For more information see [Publishing Notifications](#publishing-notifications). Notifications about discovery metadata must be published to topic `origin/a/wis2/{centre-id}/metadata`. For more information on the WIS2 topic hierarchy see [Topic Hierarchy for Message Publication](#topic-hierarchy-for-message-publication).
   4.	The WIS2 Global Broker subscribes to the Local Broker on the Data Supply Capability.
   5.	The WIS2 Global Discovery Catalogue subscribes to the WIS2 Global Broker.
   6.	The notification message is pushed to the WIS2 Global Broker and validated.
@@ -802,19 +761,19 @@ The topic hierarchy follows the pattern below with 9 levels:
 ```{1:channel}/{2:version}/{3:system}/{4:centre-id}/{5:notification-type}/{6:data-policy}/{7:earth-system-discipline}/{8:sub-discipline}/{9:sub-sub-discipline}```
 
   1. channel
-      - ```origin``` for messages coming from WIS2 Nodes, or ```cache``` for messages coming from Global Caches. Global Caches are part of the WIS 2.0 infrastructure – MeteoGate doesn’t use them directly, but see the [Guide to WIS, Volume II](https://wmo-im.github.io/wis2-guide/guide/wis2-guide-APPROVED.html#_2_4_3_global_cache) if you’d like to know more. 
+      - `origin` for messages coming from WIS2 Nodes, or ```cache``` for messages coming from Global Caches. Global Caches are part of the WIS 2.0 infrastructure – MeteoGate doesn’t use them directly, but see the [Guide to WIS, Volume II](https://wmo-im.github.io/wis2-guide/guide/wis2-guide-APPROVED.html#_2_4_3_global_cache) if you’d like to know more. 
   2. version
-      - Just ```a``` for now – but we’re ready for breaking changes in years to come such as modifying the structure of the topic hierarchy.
+      - Just `a` for now – but we’re ready for breaking changes in years to come such as modifying the structure of the topic hierarchy.
   3. system
-      - Just ```wis2``` for now – but WMO may reuse this mechanism for other initiatives?
+      - Just `wis2` for now – but WMO may reuse this mechanism for other initiatives?
       - You’re free to re-use this messaging pattern, and the infrastructure you’ve deployed, for other purposes; just use a different value for {system} and the WIS2 Global Services will ignore the messages
   4. centre-id
       -	The centre identifier of your WIS2 Node agreed with WMO Secretariat. For information on registering your Data Supply Component as a WIS2 Node see [Registering a WIS2 Node](#registering-a-wis2-node).
-      - The official list is published on WMO Codes Registry at http://codes.wmo.int/wis/topic-hierarchy/centre-id.
+      - The official list is published on [WMO Codes Registry](http://codes.wmo.int/wis/topic-hierarchy/centre-id).
   5. notification-type
-      -	```data``` or ```metadata```; we want don’t want to mix these resources because we use them in different ways / at different times.
+      -	`data` or `metadata`; we want don’t want to mix these resources because we use them in different ways / at different times.
   6. data-policy
-      -	```core``` or ```recommended```, based on the terminology described in the [WMO Unified Data Policy, Resolution 1 (Cg-Ext(2021))](https://library.wmo.int/idurl/4/58009). 
+      -	`core` or `recommended`, based on the terminology described in the [WMO Unified Data Policy, Resolution 1 (Cg-Ext(2021))](https://library.wmo.int/idurl/4/58009). 
       -	Use the data-policy value you put in your discovery metadata record.
   7. earth-system-discipline
       - Based on the set of disciplines described in the WMO Unified Data Policy:
@@ -834,8 +793,8 @@ The topic hierarchy follows the pattern below with 9 levels:
         - space-based-observations
         - surface-based-observations
         - experimental
-      - ```space-based-observations``` means those taken from orbiting satellite platforms; ```surface-based-observations``` is for everything else – including upper-air observations because the observing platforms are either on the surface (wind-profiler) or launched from the surface (radio-sonde).
-      - Sub-topics on ```experimental``` aren’t validated by the Global Brokers, so you can use what you like. However, Data Consumers shouldn’t expect these terms to be long-lasting, nor provide quality data at an operational SLA. 
+      - `space-based-observations` means those taken from orbiting satellite platforms; `surface-based-observations` is for everything else – including upper-air observations because the observing platforms are either on the surface (wind-profiler) or launched from the surface (radio-sonde).
+      - Sub-topics on `experimental` aren’t validated by the Global Brokers, so you can use what you like. However, Data Consumers shouldn’t expect these terms to be long-lasting, nor provide quality data at an operational SLA. 
   9. sub-sub-discipline
       - Refer to the [WMO Codes Registry](http://codes.wmo.int/wis/topic-hierarchy) for sub-sub-disciplines.
 
