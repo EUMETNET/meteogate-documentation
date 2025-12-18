@@ -625,7 +625,7 @@ Here’s how it works:
 
   1.	Create discovery metadata for your dataset. For more information about discovery metadata, see [Discovery Metadata](#discovery-metadata).
   2.	The Global Discovery Catalogue needs to download the metadata record, so you need to publish it via an HTTP server. This may be as a simple file hosted on a web server (i.e., a static metadata record), or through an API (e.g., an OGC API - Records Web-service endpoint). Discovery metadata needs to be published so that it’s openly accessible (no access controls). Discovery metadata should be re-published daily (i.e., every 24-hours) even if there are no changes. This helps ensure that the discovery metadata in the Global Discovery Catalogue stays fresh.
-  3.	Publishing discovery metadata uses the same mechanisms in WIS2 used for telling users about new data: real-time notifications via MQTT. Publish a WIS2 Notification Message to the Local Broker of your Data Supply Component (remember to use access control to ensure only you can publish!). This notification message includes the URL of the discovery metadata record published in step (2). For more information see [Publishing Notifications](#publishing-notifications). Notifications about discovery metadata must be published to topic ```origin/a/wis2/{centre-id}/metadata```. For more information on the WIS2 topic hierarchy see [Topic Hierarchy for Message Publication](#topic-hierarchy-for-message-publication).
+  3.	Publishing discovery metadata uses the same mechanisms in WIS2 used for telling users about new data: real-time notifications via MQTT. Publish a WIS2 Notification Message to the Local Broker of your Data Supply Component (remember to use access control to ensure only you can publish!). This notification message includes the URL of the discovery metadata record published in step (2). For more information see [Publishing Notifications](#publishing-notifications). Notifications about discovery metadata must be published to topic `origin/a/wis2/{centre-id}/metadata`. For more information on the WIS2 topic hierarchy see [Topic Hierarchy for Message Publication](#topic-hierarchy-for-message-publication).
   4.	The WIS2 Global Broker subscribes to the Local Broker on the Data Supply Capability.
   5.	The WIS2 Global Discovery Catalogue subscribes to the WIS2 Global Broker.
   6.	The notification message is pushed to the WIS2 Global Broker and validated.
@@ -785,19 +785,19 @@ The topic hierarchy follows the pattern below with 9 levels:
 ```{1:channel}/{2:version}/{3:system}/{4:centre-id}/{5:notification-type}/{6:data-policy}/{7:earth-system-discipline}/{8:sub-discipline}/{9:sub-sub-discipline}```
 
   1. channel
-      - ```origin``` for messages coming from WIS2 Nodes, or ```cache``` for messages coming from Global Caches. Global Caches are part of the WIS 2.0 infrastructure – MeteoGate doesn’t use them directly, but see the [Guide to WIS, Volume II](https://wmo-im.github.io/wis2-guide/guide/wis2-guide-APPROVED.html#_2_4_3_global_cache) if you’d like to know more. 
+      - `origin` for messages coming from WIS2 Nodes, or ```cache``` for messages coming from Global Caches. Global Caches are part of the WIS 2.0 infrastructure – MeteoGate doesn’t use them directly, but see the [Guide to WIS, Volume II](https://wmo-im.github.io/wis2-guide/guide/wis2-guide-APPROVED.html#_2_4_3_global_cache) if you’d like to know more. 
   2. version
-      - Just ```a``` for now – but we’re ready for breaking changes in years to come such as modifying the structure of the topic hierarchy.
+      - Just `a` for now – but we’re ready for breaking changes in years to come such as modifying the structure of the topic hierarchy.
   3. system
-      - Just ```wis2``` for now – but WMO may reuse this mechanism for other initiatives?
+      - Just `wis2` for now – but WMO may reuse this mechanism for other initiatives?
       - You’re free to re-use this messaging pattern, and the infrastructure you’ve deployed, for other purposes; just use a different value for {system} and the WIS2 Global Services will ignore the messages
   4. centre-id
       -	The centre identifier of your WIS2 Node agreed with WMO Secretariat. For information on registering your Data Supply Component as a WIS2 Node see [Registering a WIS2 Node](#registering-a-wis2-node).
-      - The official list is published on WMO Codes Registry at http://codes.wmo.int/wis/topic-hierarchy/centre-id.
+      - The official list is published on [WMO Codes Registry](http://codes.wmo.int/wis/topic-hierarchy/centre-id).
   5. notification-type
-      -	```data``` or ```metadata```; we want don’t want to mix these resources because we use them in different ways / at different times.
+      -	`data` or `metadata`; we want don’t want to mix these resources because we use them in different ways / at different times.
   6. data-policy
-      -	```core``` or ```recommended```, based on the terminology described in the [WMO Unified Data Policy, Resolution 1 (Cg-Ext(2021))](https://library.wmo.int/idurl/4/58009). 
+      -	`core` or `recommended`, based on the terminology described in the [WMO Unified Data Policy, Resolution 1 (Cg-Ext(2021))](https://library.wmo.int/idurl/4/58009). 
       -	Use the data-policy value you put in your discovery metadata record.
   7. earth-system-discipline
       - Based on the set of disciplines described in the WMO Unified Data Policy:
@@ -817,8 +817,8 @@ The topic hierarchy follows the pattern below with 9 levels:
         - space-based-observations
         - surface-based-observations
         - experimental
-      - ```space-based-observations``` means those taken from orbiting satellite platforms; ```surface-based-observations``` is for everything else – including upper-air observations because the observing platforms are either on the surface (wind-profiler) or launched from the surface (radio-sonde).
-      - Sub-topics on ```experimental``` aren’t validated by the Global Brokers, so you can use what you like. However, Data Consumers shouldn’t expect these terms to be long-lasting, nor provide quality data at an operational SLA. 
+      - `space-based-observations` means those taken from orbiting satellite platforms; `surface-based-observations` is for everything else – including upper-air observations because the observing platforms are either on the surface (wind-profiler) or launched from the surface (radio-sonde).
+      - Sub-topics on `experimental` aren’t validated by the Global Brokers, so you can use what you like. However, Data Consumers shouldn’t expect these terms to be long-lasting, nor provide quality data at an operational SLA. 
   9. sub-sub-discipline
       - Refer to the [WMO Codes Registry](http://codes.wmo.int/wis/topic-hierarchy) for sub-sub-disciplines.
 
