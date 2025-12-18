@@ -294,67 +294,213 @@ In MeteoGate, metadata is categorized into three levels:
   - Collection Metadata 
   - Resource/File-level Metadata 
 
+
 ### Discovery Metadata
 
-Discovery metadata enables users to find and access datasets through MeteoGate’s Data Explorer, WMO WIS2 Global Discovery Catalogue, WIS2 Global Broker notifications, external search engines, and generative AI solutions. It provides a high-level description of the dataset, including title, description, keywords, and licensing information. 
+Discovery metadata describes a dataset in a way that makes it discoverable, understandable, and accessible through MeteoGate, the WIS 2.0 Global Discovery Catalogue, and related services. It provides the contextual information users and systems need in order to find relevant data and determine how it can be accessed.
 
-See [Data Explorer](https://explorer.meteogate.eu) and [Global Discovery Catalogue]((../references/) for discovery metadata examples.
+See [Data Explorer](https://explorer.meteogate.eu) and [Global Discovery Catalogue](../references/) for discovery metadata examples.
 
-**General Recommendations**
+**Purpose and Principles**
 
-  - Comply with WMO Core Metadata Profile (WCMP2), GeoJSON, [OGC API – Records](https://ogcapi.ogc.org/records/), and WMO-specific attributes. Refer to Appendix F of the [WIS2 Manual](https://community.wmo.int/en/activity-areas/wis/publications/1060-vII) for more details on WCMP2 compliance 
-  - Clearly describe the dataset by defining its content, purpose, and scope, including data collection and processing methods. 
-  - Provide essential metadata elements, such as title, author, creation date, and keywords, to improve searchability and user understanding.
-  - Ensure accuracy and consistency by maintaining a standard terminology and formatting approach. 
-  - Regularly update metadata to reflect any changes in dataset scope, format, or availability. 
-  - Make metadata accessible in a searchable format with clear instructions for users. 
-  - Consider end-user needs by structuring metadata to support different user groups, including researchers, meteorologists, and public data consumers. 
+Discovery metadata should:
 
-**Ensuring Discoverability**
-     
-Add keyword "meteogate" so that Data Explorer can identify the dataset as provided by a EUMETNET programme or Member.
+- Follow the [WMO Core Metadata Profile (WCMP) Version 2](https://wmo-im.github.io/wcmp2/) and .
+- Provide a high-level, machine-readable summary of the dataset.
+- Support searchability and filtering (e.g., by time, space, keywords).
+- Link to supporting resources such as APIs, licences, or contact points.
+- Include access control information if authentication is required.
+- Follow FAIR principles where possible.
+- Be validated prior to publication.
 
-Use the "resolution" property to describe the frequency at which data notifications get published. For example, ```"resolution":"PT1H"```
+**Linking to Topic Hierarchy and Notifications**
+
+Discovery metadata is closely linked to the [WIS 2.0 Topic Hierarchy](https://wmo-im.github.io/wis2-topic-hierarchy/standard/wis2-topic-hierarchy-STABLE.html). The topic hierarchy defines how metadata and notifications are organised, routed, and filtered. Together, the topic hierarchy, discovery metadata, and notification messages form a coherent structure that enables scalable discovery and access to large volumes of data.
+
+Note that the WIS 2.0 topic is not a field inside the discovery metadata record itself. Instead, the topic is defined by the MQTT topic used when publishing the notification message that advertises the discovery metadata (see [Topic Hierarchy for Message Publication](#topic-hierarchy-for-message-publication)). The discovery metadata record is linked to the topic through the `metadata_id` included in the notification message. For this reason, the topic used for publishing must be consistent with the content and classification of the discovery metadata.
+
+**Key Elements of a Metadata Record**
+
+*Identifier* 
+
+The `id` property is a unique identifier of the dataset. A record identifier is essential for querying and identifying records within the Global Discovery Catalogue. It has the following format: `urn:wmo:md:{centre_id}:{local_identifier}`.
+
+Use your assigned WIS2 centre-id (e.g., uk-metoffice), see also [Registering a WIS2 Node](#registering-a-wis2-node). For local identifier, use an unique name.
+
+For example, the Met Office synoptic discovery metadata has the following id:
 ```
-    "time":{
-        "interval":[
-            "2025-12-08T09:00:00Z",
-            ".."
+"id": "urn:wmo:md:uk-metoffice:weather.surface-based-observations.synop.uk_synop"
+
+```
+
+*Properties*
+
+The `properties` object contains the core descriptive metadata for a dataset. These properties provide essential information that enables discovery, filtering, governance, and correct interpretation of the data in MeteoGate, WIS 2.0 Global Discovery Catalogue, and downstream systems.
+
+All discovery metadata records **must include the required properties** defined by the WMO Core Metadata Profile (WCMP) Version 2. Additional optional properties may be included where relevant. A complete and authoritative list is available in the [WMO Core Metadata Profile (WCMP) Version 2](https://wmo-im.github.io/wcmp2/).
+
+Required Properties
+
+The following properties are required for all dataset-level discovery metadata records:
+
+- `type`: Describes the resource type described by the WCMP record. Example: `"type": "Dataset"`
+- `title`: A human-readable name of the dataset. Example: `"title": "Land surface weather observations"`
+- `description`: A free-text summary description of the dataset. Example: `"description":"Land surface observations measured at automatic and manual weather stations of EUMETNET Members and their trusted partners (last 24 hours only)"`
+- `themes`: 
+- `geometry`: Describes the geospatial extent of the dataset using GeoJSON geometry. This allows users to discover datasets based on spatial coverage. Example:
+
+```
+"geometry": {
+  "type": "Polygon",
+  "coordinates": [
+    [
+      [-70, 10],
+      [40, 10],
+      [40, 90],
+      [-70, 90],
+      [-70, 10]
+    ]
+  ]
+}
+```
+
+- `time` (Required): Describes the temporal extent of the dataset. It may also include a resolution field to indicate how frequently new data or notifications are published. Example:
+```
+"time": {
+  "interval": [
+    "T00Z",
+    "T23Z"
+  ],
+  "resolution": "PT10M"
+}
+```
+  `interval` defines the temporal coverage.
+  `resolution` uses ISO 8601 duration format (e.g. PT10M, PT1H).
+- `contacts`: Provides contact information for the dataset, enabling users to request support, report issues, or seek clarification. Contacts should include at least one responsible organisation or role. If the API is proxied through the MeteoGate Gateway, include contact details for the MeteoGate service desk _in addition_ to contact details for your organisation.
+- `keywords`: Include `"keyword": "meteogate"` to tag datasets as part of the MeteoGate system.
+- `created`: Indicates when the metadata record was created. Example:`"created": "2025-06-04T14:00:00Z"`
+- `licence`: Include the licence under which the dataset is made available. Example: `"licence": "CC BY 4.0"`.
+- `links` (Required): Links provide access to the data, documentation, licences, and related resources, including e.g. canonical data access URLs, API endpoints, human-readable documentation, and licence information.
+
+Ensure links in metadata point to your authoritative endpoints — not to URLs created by the API Gateway. Include a `rel="canonical"` link pointing to the resolvable URL of the dataset.
+
+Include a link to API docs (e.g., the Swagger docs for the API). This link should include: `“rel”=”service-doc”` and `“type”=”text/html”`. For example:
+```
+{
+  "rel": "service-doc",
+  "type": "text/html",
+  "href": "https://api.example.org/docs"
+}
+```
+
+Conditionally Required Properties
+
+- `wmo:dataPolicy`: Specifies whether the dataset is classified as `core` or `recommended`, in accordance with the [WMO Unified Data Policy, Resolution 1 (Cg-Ext(2021))](https://library.wmo.int/idurl/4/58009). Note that core data must be open access and recommended data may be open or access-controlled. This classification is independent of access control. Example: `"wmo:dataPolicy": "recommended"`
+
+Optional Properties
+
+These properties are optional according to WCMP2, but are strongly recommended for MeteoGate datasets.
+
+- `keywords`: Other keywords, tags or key phrases describing the dataset.
+- `language`: Language of the metadata, e.g. `"language":"en"`.
+- `updated`: Indicate when the metadata record was created and last updated. Example:`"updated": "2025-06-04T14:00:00Z"`
+- `rights`: A human-readable statement describing usage rights not fully covered by the licence. Example: `"rights": "Users are granted free and unrestricted access to this data, without charge and with no conditions on use. Users are requested to attribute the producer of this data. WMO Unified Data Policy (Resolution 1 (Cg-Ext 2021))"`
+- `version`: Specifies the version or edition of the dataset, where applicable. Example: `"version": "1.0"`
+- `status`: Describes the operational status of the dataset (e.g. operational, experimental).
+- `linkTemplates`: Used for templated or parameterised access (e.g. dynamic API queries).
+
+Additional Properties
+
+The `properties` object may include additional fields as needed, provided they do not conflict with WCMP2. These can be used to, for example, support filtering and discovery, provide domain-specific information, and expose identifiers or references relevant to the dataset.
+
+*Parameters and Concepts*
+
+Use `concepts` to provide the user with (links to) information about the data, especially the physical `parameter` included. This helps users and AI tools interpret the content.
+
+Concepts example:
+
+```
+        "concepts": [	
+          {	
+            "id": "weather",	
+            "title": "Weather",	
+            "url": "https://github.com/wmo-im/wis2-topic-hierarchy/blob/main/topic-hierarchy/earth-system-discipline/weather"	
+          }	
+        ],	
+        "scheme": "https://github.com/wmo-im/wis2-topic-hierarchy/blob/main/topic-hierarchy/earth-system-discipline"
+       },
+       { "concepts": [
+          {
+            "id":"weather",
+            "title": "Weather",	
+            "url": "https://codes.wmo.int/wis/topic-hierarchy/earth-system-discipline/weather"
+          }
         ],
-        "resolution":"PT1H"
-    }
+        "scheme":"https://codes.wmo.int/wis/topic-hierarchy/earth-system-discipline"
+       },
+
+       { "concepts": [
+          {
+            "id":"surface-based-observations"
+          }
+        ],
+        "scheme":"https://codes.wmo.int/wis/topic-hierarchy/earth-system-discipline/weather"
+        },
+      {	
+        "concepts": [
+          {	
+            "id": "air_temperature",	
+            "title": "Air temperature",	
+            "url": "http://vocab.nerc.ac.uk/standard_name/air_temperature/"	
 ```
 
-**Addressing User Needs**
+Parameter information example:
+```
+{ "concepts": [
+          {	
+            "id": "air_temperature",	
+            "title": "Air temperature",	
+            "url": "http://vocab.nerc.ac.uk/standard_name/air_temperature/"	
+          },	
+          {	
+            "id": "wind_speed",	
+            "title": "Wind Speed",	
+            "url": "http://vocab.nerc.ac.uk/standard_name/wind_speed/"	
+          },
+          {	
+            "id": "wind_to_direction",	
+            "title": "Wind to diection",	
+            "url": "http://vocab.nerc.ac.uk/standard_name/wind_to_direction/"	
+          }	
+                    ],	
+        "scheme": "https://vocab.nerc.ac.uk/standard_name"
+      }	
+```
 
-If the API is proxied through the MeteoGate Gateway, include contact details for the MeteoGate service desk _in addition_ to contact details for your organisation.
+*Access Control*
 
-Where datasets can be accessed by an API, include a link to the human-readable API documentation (e.g., the Swagger docs for the API). This link should include: ```“rel”=”service-doc”``` and ```“type”=”text/html”```.
-
-**Describing Data Access Control**
-
-If you are publishing data that has access control in place (e.g. with API Key), you should describe it in the discovery metadata in a ```security``` object.
+If access control (e.g. API key) is required, describe it using the `security` block.
 
 Follow the instructions in [WIS2 Cookbook recipe 3.2. Publishing a WIS2 Notification Message with access control](https://wmo-im.github.io/wis2-cookbook/cookbook/wis2-cookbook-DRAFT.html#_publishing_a_wis2_notification_message_with_access_control) to describe the type of access control used.
 
 Example for data using API Key for access control:
 ```
 {
-    "rel": "items",
-    "type": "application/vnd.coverage+json",
-    "href": "https://api.dataplatform.knmi.nl/edr/v1/collections/observations",
-    "security": {
-        "default": {
-            "type": "apiKey",
-            "name": "AUTHORIZATION",
-            "in": “header",
-            "description": "Please request an API key via https://developer.dataplatform.knmi.nl/open-data-api#token"
-        }
+  "rel": "items",
+  "type": "application/vnd.coverage+json",
+  "href": "https://api.example.org/edr/v1/collections/observations",
+  "security": {
+    "default": {
+      "type": "apiKey",
+      "name": "AUTHORIZATION",
+      "in": "header",
+      "description": "Request API key at https://developer.example.org"
     }
+  }
 }
 ```
 
-**Validating Discovery Metadata**
+**Validation**
 
 Validate discovery metadata using the PYWCMP tool provided by WMO: see [WIS2 Cookbook recipe 3.7. Validating a WMO Core Metadata Profile Record](https://wmo-im.github.io/wis2-cookbook/cookbook/wis2-cookbook-DRAFT.html#_validating_a_wmo_core_metadata_profile_record).
 
