@@ -353,43 +353,43 @@ The following properties are required for all dataset-level discovery metadata r
 
   Example:  
   ```
-  "themes": [
-    {
-      "concepts": [
-        {
-          "id": "weather",
-          "title": "Weather"
-        }
-      ],
-      "scheme": "https://codes.wmo.int/wis/topic-hierarchy/earth-system-discipline"
-    }
-  ]
+  "themes": [  
+    {  
+      "concepts": [  
+        {  
+          "id": "weather",  
+          "title": "Weather"  
+        }  
+      ],  
+      "scheme": "https://codes.wmo.int/wis/topic-hierarchy/earth-system-discipline"  
+    }  
+  ]  
   ```
   
-- `geometry`: Describes the geospatial extent of the dataset using GeoJSON geometry. This allows users to discover datasets based on spatial coverage. Example:
+- `geometry`: Describes the geospatial extent of the dataset using GeoJSON geometry. This allows users to discover datasets based on spatial coverage. Example:  
   ```
-  "geometry": {
-    "type": "Polygon",
-    "coordinates": [
-      [
-        [-70, 10],
-        [40, 10],
-        [40, 90],
-        [-70, 90],
-        [-70, 10]
-      ]
-    ]
-  }
+  "geometry": {  
+    "type": "Polygon",  
+    "coordinates": [  
+      [  
+        [-70, 10],  
+        [40, 10],  
+        [40, 90],  
+        [-70, 90],  
+        [-70, 10]  
+      ]  
+    ]  
+  }  
   ```
 - `time`: Describes the temporal extent of the dataset. It may also include a resolution field to indicate how frequently new data or notifications are published. Example:  
   ```
-  "time": {
-    "interval": [
-      "T00Z",
-      "T23Z"
-    ],
-    "resolution": "PT10M"
-  }
+  "time": {  
+    "interval": [  
+      "T00Z",  
+      "T23Z"  
+    ],  
+    "resolution": "PT10M"  
+  }  
   ```
   `interval` defines the temporal coverage.  
   `resolution` uses ISO 8601 duration format (e.g. PT10M, PT1H).  
@@ -402,11 +402,11 @@ The following properties are required for all dataset-level discovery metadata r
 
   Include a link to API docs (e.g., the Swagger docs for the API). This link should include: `“rel”=”service-doc”` and `“type”=”text/html”`. For example:  
   ```
-  {
-    "rel": "service-doc",
-    "type": "text/html",
-    "href": "https://api.example.org/docs"
-  }
+  {  
+    "rel": "service-doc",  
+    "type": "text/html",  
+    "href": "https://api.example.org/docs"  
+  }  
   ```
 
 Conditionally Required / Strongly Recommended Properties:
@@ -450,17 +450,17 @@ Each concept typically includes:
 
 Example:
 ```
-"themes": [
-{
-  "concepts": [
-    {
-      "id": "weather",
-      "title": "Weather",
-      "url": "https://codes.wmo.int/wis/topic-hierarchy/earth-system-discipline/weather"
-    }
-  ],
-  "scheme": "https://codes.wmo.int/wis/topic-hierarchy/earth-system-discipline"
-}
+"themes": [  
+{  
+  "concepts": [  
+    {  
+      "id": "weather",  
+      "title": "Weather",  
+      "url": "https://codes.wmo.int/wis/topic-hierarchy/earth-system-discipline/weather"  
+    }  
+  ],  
+  "scheme": "https://codes.wmo.int/wis/topic-hierarchy/earth-system-discipline"  
+}  
 ```
 
 Discovery metadata can include multiple themes to describe different aspects of a dataset, such as its scientific domain, observation type, and physical parameters.
@@ -473,42 +473,42 @@ Concepts are not data values or API query parameters. Instead, they describe the
 
 Concepts can also describe the observation category, such as surface-based observations:
 ```
-{
-  "concepts": [
-    {
-      "id": "surface-based-observations"
-    }
-  ],
-  "scheme": "https://codes.wmo.int/wis/topic-hierarchy/earth-system-discipline/weather"
-}
+{  
+  "concepts": [  
+    {  
+      "id": "surface-based-observations"  
+    }  
+  ],  
+  "scheme": "https://codes.wmo.int/wis/topic-hierarchy/earth-system-discipline/weather"  
+}  
 ```
 
 Parameter Concepts (Physical Variables):
 
 Physical parameters included in the dataset should be described using a recognised vocabulary, such as NERC standard names.
 
-Example:
+Example:  
 ```
-{
-  "concepts": [
-    {
-      "id": "air_temperature",
-      "title": "Air temperature",
-      "url": "http://vocab.nerc.ac.uk/standard_name/air_temperature/"
-    },
-    {
-      "id": "wind_speed",
-      "title": "Wind speed",
-      "url": "http://vocab.nerc.ac.uk/standard_name/wind_speed/"
-    },
-    {
-      "id": "wind_to_direction",
-      "title": "Wind direction",
-      "url": "http://vocab.nerc.ac.uk/standard_name/wind_to_direction/"
-    }
-  ],
-  "scheme": "https://vocab.nerc.ac.uk/standard_name"
-}
+{  
+  "concepts": [  
+    {  
+      "id": "air_temperature",  
+      "title": "Air temperature",  
+      "url": "http://vocab.nerc.ac.uk/standard_name/air_temperature/"  
+    },  
+    {  
+      "id": "wind_speed",  
+      "title": "Wind speed",  
+      "url": "http://vocab.nerc.ac.uk/standard_name/wind_speed/"  
+    },  
+    {  
+      "id": "wind_to_direction",  
+      "title": "Wind direction",  
+      "url": "http://vocab.nerc.ac.uk/standard_name/wind_to_direction/"  
+    }  
+  ],  
+  "scheme": "https://vocab.nerc.ac.uk/standard_name"  
+}  
 ```
 These concepts indicate which physical quantities are available somewhere in the dataset, not how to query them.
 
@@ -527,18 +527,18 @@ Follow the instructions in [WIS2 Cookbook recipe 3.2. Publishing a WIS2 Notifica
 Example for data using API Key for access control:
 ```
 {
-  "rel": "items",
-  "type": "application/vnd.coverage+json",
-  "href": "https://api.example.org/edr/v1/collections/observations",
-  "security": {
-    "default": {
-      "type": "apiKey",
-      "name": "AUTHORIZATION",
-      "in": "header",
-      "description": "Request API key at https://developer.example.org"
-    }
-  }
-}
+  "rel": "items",  
+  "type": "application/vnd.coverage+json",  
+  "href": "https://api.example.org/edr/v1/collections/observations",  
+  "security": {  
+    "default": {  
+      "type": "apiKey",  
+      "name": "AUTHORIZATION",  
+      "in": "header",  
+      "description": "Request API key at https://developer.example.org"  
+    }  
+  }  
+}  
 ```
 
 **Validation**
