@@ -347,25 +347,20 @@ The following properties are required for all dataset-level discovery metadata r
   - `description`: A free-text summary description of the dataset. Example: `"description":"Land surface observations measured at automatic and manual weather stations of EUMETNET Members and their trusted partners (last 24 hours only)"`  
   - `themes`: The `themes` field provides a high-level thematic classification of the dataset, supporting browsing and filtering in discovery services. In WCMP2, themes are expressed as lists of concepts referenced to a controlled vocabulary or knowledge organisation system.  
 
-  Themes should be chosen from well-defined and authoritative vocabularies, such as the WIS 2.0 earth-system discipline codes.  
+Themes should be chosen from well-defined and authoritative vocabularies, such as the WIS 2.0 earth-system discipline codes.  
 
-  For a detailed explanation of how themes, concepts, and parameters are used together, see the section *Themes, Concepts and Parameters* below.  
+For a detailed explanation of how themes, concepts, and parameters are used together, see the section *Themes, Concepts and Parameters* below.  
 
-  Example:  
-  ```  
-  "themes": [  
-    {  
-      "concepts": [  
-        {  
-          "id": "weather",  
-          "title": "Weather"  
-        }  
-      ],  
-      "scheme": "https://codes.wmo.int/wis/topic-hierarchy/earth-system-discipline"  
-    }  
-  ]  
-  ```
-    
+Example:  
+```
+"themes": [
+  {
+    "id": "weather",
+    "title": "Weather",
+    "scheme": "https://codes.wmo.int/wis/topic-hierarchy/earth-system-discipline"
+  }
+]
+```
   - `geometry`: Describes the geospatial extent of the dataset using GeoJSON geometry. This allows users to discover datasets based on spatial coverage. Example:  
 ```  
 "geometry": {
@@ -380,9 +375,7 @@ The following properties are required for all dataset-level discovery metadata r
     ]
   ]
 }
-```
-    ```
-    
+```    
   - `time`: Describes the temporal extent of the dataset. It may also include a resolution field to indicate how frequently new data or notifications are published. Example:  
 ```
 "time": {
@@ -393,8 +386,8 @@ The following properties are required for all dataset-level discovery metadata r
   "resolution": "PT10M"
 }
 ```
-    `interval` defines the temporal coverage.  
-    `resolution` uses ISO 8601 duration format (e.g. PT10M, PT1H).  
+  `interval` defines the temporal coverage.  
+  `resolution` uses ISO 8601 duration format (e.g. PT10M, PT1H).  
   - `contacts`: Provides contact information for the dataset, enabling users to request support, report issues, or seek clarification. Contacts should include at least one responsible organisation or role. If the API is proxied through the MeteoGate Gateway, include contact details for the MeteoGate service desk _in addition_ to contact details for your organisation.
   - `keywords`: Include `"meteogate"` to tag datasets as part of the MeteoGate system. Additional keywords may also be provided (optional).
   - `licence`: Include the licence under which the dataset is made available. Example: `"licence": "CC BY 4.0"`.
@@ -429,7 +422,7 @@ These properties are optional according to WCMP2, but are strongly recommended f
 
 Additional Properties:
 
-  The `properties` object may include additional fields as needed, provided they do not conflict with WCMP2. These can be used to, for example, support filtering and discovery, provide domain-specific information, and expose identifiers or references relevant to the dataset.
+The `properties` object may include additional fields as needed, provided they do not conflict with WCMP2. These can be used to, for example, support filtering and discovery, provide domain-specific information, and expose identifiers or references relevant to the dataset.
 
 *Themes, Concepts and Parameters*
 
@@ -441,14 +434,14 @@ Together, themes and concepts help users, discovery services, and automated syst
 
 Structure of a Theme (Concept Block):
 
-Each theme consists of:  
-  - a list of one or more `concepts`
-  - a `scheme` that defines the vocabulary used
+Each theme consists of:
+    - a list of one or more `concepts`  
+    - a `scheme` that defines the vocabulary used
 
 Each concept typically includes:  
-  - `id`: a short identifier
-  - `title`: a human-readable label
-  - `url`: a link to the authoritative definition
+    - `id`: a short identifier  
+    - `title`: a human-readable label  
+    - `url`: a link to the authoritative definition
 
 Example:
 ```
@@ -515,10 +508,10 @@ Example:
 These concepts indicate which physical quantities are available somewhere in the dataset, not how to query them.
 
 Best Practices:
-  - Use well-known, authoritative vocabularies wherever possible.
-  - Include only concepts that genuinely apply to the dataset.
-  - Keep concepts stable over time to support long-term discovery.
-  - Avoid duplicating information already expressed in the topic hierarchy unless it adds semantic clarity.
+    - Use well-known, authoritative vocabularies wherever possible.  
+    - Include only concepts that genuinely apply to the dataset.  
+    - Keep concepts stable over time to support long-term discovery.  
+    - Avoid duplicating information already expressed in the topic hierarchy unless it adds semantic clarity.
 
 *Access Control*
 
