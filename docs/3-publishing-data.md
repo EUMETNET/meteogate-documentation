@@ -305,11 +305,14 @@ See [Data Explorer](https://explorer.meteogate.eu) and [Global Discovery Catalog
 
 Discovery metadata should:
 
-- Follow the [WMO Core Metadata Profile (WCMP) Version 2](https://wmo-im.github.io/wcmp2/) and .
+- Follow the [WMO Core Metadata Profile (WCMP) Version 2](https://wmo-im.github.io/wcmp2/).
 - Provide a high-level, machine-readable summary of the dataset.
 - Support searchability and filtering (e.g., by time, space, keywords).
-- Link to supporting resources such as APIs, licences, or contact points.
-- Include access control information if authentication is required.
+- Be consistent with the WIS 2.0 Topic Hierarchy used when publishing notifications.
+- Be designed to be advertised and referenced through WIS 2.0 notification messages.
+- Link to supporting resources such as APIs, licences, and contact points.
+- Include access control information, where applicable, using link-level `security` blocks.
+- Use stable identifiers and semantics to ensure long-term discoverability and consistency.
 - Follow FAIR principles where possible.
 - Be validated prior to publication.
 
