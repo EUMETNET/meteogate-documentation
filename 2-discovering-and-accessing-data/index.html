@@ -1,0 +1,1173 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Guidance and instructions for MeteoGate Stakeholders – Data Consumers, Data Publishers and Community Capability Operators">
+      
+      
+        <meta name="author" content="EUMETNET">
+      
+      
+      
+        <link rel="prev" href="../1-overview/">
+      
+      
+        <link rel="next" href="../3-publishing-data/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.1">
+    
+    
+      
+        <title>2. DISCOVERING AND ACCESSING DATA - MeteoGate Documentation</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Open Sans";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="black" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#2-discovering-and-accessing-data" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="MeteoGate Documentation" class="md-header__button md-logo" aria-label="MeteoGate Documentation" data-md-component="logo">
+      
+  <img src="../images/meteogate-logo.svg" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            MeteoGate Documentation
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              2. DISCOVERING AND ACCESSING DATA
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/EUMETNET/meteogate-documentation" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href=".." class="md-tabs__link">
+        
+  
+  
+    
+  
+  HOME
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../1-overview/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  1. OVERVIEW
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    <li class="md-tabs__item md-tabs__item--active">
+      <a href="./" class="md-tabs__link">
+        
+  
+  
+    
+  
+  2. DISCOVERING AND ACCESSING DATA
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../3-publishing-data/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  3. PUBLISHING DATA
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../technical-architecture/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  ARCHITECTURE
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../glossary/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  GLOSSARY
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../references/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  REFERENCES
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="MeteoGate Documentation" class="md-nav__button md-logo" aria-label="MeteoGate Documentation" data-md-component="logo">
+      
+  <img src="../images/meteogate-logo.svg" alt="logo">
+
+    </a>
+    MeteoGate Documentation
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/EUMETNET/meteogate-documentation" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    HOME
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../1-overview/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1. OVERVIEW
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2. DISCOVERING AND ACCESSING DATA
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2. DISCOVERING AND ACCESSING DATA
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#terms-and-conditions-on-using-data" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Terms and Conditions on Using Data
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1-discovering-data" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1 Discovering Data
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1 Discovering Data">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#using-the-data-explorer-to-discover-data" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Using the Data Explorer to Discover Data
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#searching-the-global-discovery-catalogue" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Searching the Global Discovery Catalogue
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#subscribing-to-notifications-about-availability-of-new-data" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Subscribing to Notifications About Availability of New Data
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-accessing-data" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2 Accessing Data
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2 Accessing Data">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#registering-to-meteogate-and-creating-api-keys" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Registering to MeteoGate and Creating API Keys
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Registering to MeteoGate and Creating API Keys">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#registering-as-normal-user" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Registering as Normal User
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#registering-as-eumetnet-member-user" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Registering as EUMETNET Member User
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#creating-api-key" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Creating API Key
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#deleting-api-key" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Deleting API Key
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#viewing-available-api-endpoints-ie-routes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Viewing Available API Endpoints (i.e. routes)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#registering-as-a-local-user-on-the-data-supply" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Registering as a Local User on the Data Supply
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#accessing-data-through-meteogate-api-gateway" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Accessing Data Through MeteoGate API Gateway
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Accessing Data Through MeteoGate API Gateway">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#what-is-an-access-request" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What is an Access Request?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#how-to-find-the-api" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How to Find the API
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#how-formulate-the-access-request" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How Formulate the Access Request
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#how-to-send-the-access-request" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How to Send the Access Request
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#how-to-access-data-supply-components-requiring-authentication" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How to Access Data Supply Components Requiring Authentication
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#accessing-data-directly-from-data-supply-apis" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Accessing Data Directly From Data Supply APIs
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-using-data" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3 Using Data
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3 Using Data">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#respect-usage-terms-and-licenses" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Respect Usage Terms and Licenses
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#attribution-and-reuse" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Attribution and Reuse
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#comply-with-meteogate-terms-of-use" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Comply with MeteoGate Terms of Use
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#integration-into-your-systems" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Integration into Your Systems
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#developer-support" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Developer Support
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../3-publishing-data/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3. PUBLISHING DATA
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../technical-architecture/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ARCHITECTURE
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../glossary/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    GLOSSARY
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../references/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    REFERENCES
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="2-discovering-and-accessing-data">2. Discovering and Accessing Data</h1>
+<p>This section explains how to find and access meteorological and hydrological data through the MeteoGate system.</p>
+<p>It describes the tools available for discovering datasets, subscribing to notifications, and retrieving data via APIs. The section also provides guidance on registering as a MeteoGate user, authentication, API Keys, and how to use the data in your own systems or workflows. Whether accessing data through the API Gateway or directly from a Data Supply component, this section will help you to make effective use of MeteoGate’s services.</p>
+<p>These instructions are meant for anyone interested in discovering and accessing data through MeteoGate, collectively referred to as <strong>Data Consumers</strong> in MeteoGate terminology.</p>
+<hr />
+<h2 id="terms-and-conditions-on-using-data">Terms and Conditions on Using Data</h2>
+<p>The MeteoGate <a href="../references/">Participation Management Policy</a> outlines the agreements Data Consumers must respect. In addition, the MeteoGate <a href="../references/">Data Governance Policy</a> includes Data Consumer Acceptable Use.</p>
+<p>Open data can be accessed freely, but consumers must follow data usage rights and use data within terms of the licenses as specified in the metadata for each data set. In addition, consumers must comply with the Data Governance Policy on acceptable use.</p>
+<p>Data Consumers must agree to the following MeteoGate Terms of Use:</p>
+<ul>
+<li>Any abusive behaviour towards other users or staff members will result in a warning, suspension or ban.</li>
+<li>Users must comply with the law of their country when using MeteoGate.</li>
+<li>Any attempt to gain entry to locked or restricted areas will result in a permanent ban.</li>
+<li>Any unlawful activity on the website may result in referral to law enforcement agencies.</li>
+</ul>
+<hr />
+<h2 id="1-discovering-data">1 Discovering Data</h2>
+<p>The first step in utilizing MeteoGate to access data is to find data that suits your needs.</p>
+<h3 id="using-the-data-explorer-to-discover-data">Using the Data Explorer to Discover Data</h3>
+<p>You can browse and search for datasets available through MeteoGate using the MeteoGate <a href="https://explorer.meteogate.eu">Data Explorer</a>. It is a lightweight web application that can be used to explore the available API endpoints, and the datasets and parameters available through them. The Data Explorer supports both anonymous and authenticated access to data.</p>
+<p>The Data Explorer uses metadata and data from Global Discovery Catalogue and MeteoGate-compliant Data Supply components to provide detailed information on what data is available through MeteoGate. It also pulls in supplementary station information from OSCAR/Surface. This allows you to evaluate the suitability of data.</p>
+<p>When you have found the data that you wish to use, you can copy the appropriate API endpoint URL from Data Explorer and use it to access the data.</p>
+<p>See the <a href="">Data Explorer User Guide</a> for more information on usig the Data Explorer. For more detail, consult the <a href="https://gitlab.com/groups/opengeoweb/-/wikis/Documentation/User-Manual">GeoWeb User Manual</a>.</p>
+<blockquote>
+<p>[to be updated] Ref. to Data Explorer quick guide and documentation.</p>
+</blockquote>
+<h3 id="searching-the-global-discovery-catalogue">Searching the Global Discovery Catalogue</h3>
+<p>Alternatively, you can browse the datasets available through MeteoGate and WIS 2.0 using the WMO WIS 2.0 Global Discovery Catalogue. It is a web application that uses discovery metadata to provide information on what data is available. Global Discovery Catalogue is part of the MeteoGate ecosystem, but is managed by WMO Members to meet WIS 2.0 requirements, not by the FEMDI Programme.</p>
+<p>You can search for datasets using keywords, geographic area of interest, temporal information, or free text. The Global Discovery Catalogue provides high-level information (title, description, keywords, spatiotemporal extents, data policy, licensing, contact information) and URL links of the datasets.</p>
+<p>See the Guide to WIS 2.0 for more information on using the Global Discovery Catalogue.</p>
+<blockquote>
+<p>[to be updated]  add link</p>
+</blockquote>
+<h3 id="subscribing-to-notifications-about-availability-of-new-data">Subscribing to Notifications About Availability of New Data</h3>
+<p>You can subscribe to receive notifications about new and updated data and metadata. You can choose the API endpoints, datasets, and topics for which you want to receive notifications. The notifications also include URL that can be used to access the newly added data. Notifications are especially useful in utilizing real-time data.</p>
+<p>Notifications are published on Data Supply components and republished at the WMO WIS 2.0 Global Broker. You can subscribe to notifications at multiple Global Brokers to ensure resilient communication. The Global Broker is part of the MeteoGate ecosystem, but is managed by WMO Members to meet WIS 2.0 requirements, not by the FEMDI Programme.</p>
+<p>You can subscribe to specific WIS2 topics to receive notifications on the data types you are interested in. Topic structure follows the WIS 2.0 Topic Hierarchy. The Message Broker Protocol (MQTT 3.1 or MQTT 5) is used to convey the notifications. The notifications are formatted according to WIS 2.0 Notification standard.</p>
+<p>See the Guide to WIS 2.0 for more information on subscribing to notifications.</p>
+<hr />
+<h2 id="2-accessing-data">2 Accessing Data</h2>
+<p>Once you have found a dataset that fits your needs, you can access it either anonymously or as a registered user, depending on the data policy. This section explains how to register for API access (if required), use API Keys, and retrieve data through MeteoGate API Gateway or directly from Data Supply services.</p>
+<p>MeteoGate provides limited bulk download of data. For large bulk downloads, please contact the Data Provider directly.</p>
+<h3 id="registering-to-meteogate-and-creating-api-keys">Registering to MeteoGate and Creating API Keys</h3>
+<p>Most of the data accessible through MeteoGate is open to anonymous users and does not require registering as a MeteoGate user. But when required by a data policy and in line with EU regulation, the MeteoGate API Gateway requires authentication from the user using an API Key.  Users can also register to receive higher Quality of Service than anonymous users.</p>
+<p>Users must register in the MeteoGate Developer Portal to obtain an API Key.</p>
+<p>Users from EUMETNET Members can receive priority access for official duty by registering as EUMETNET Member users.</p>
+<p>The API Key (which is a string of characters) is appended to the HTTP header of the data access request or alternatively provided as an URL parameter.</p>
+<h4 id="registering-as-normal-user">Registering as Normal User</h4>
+<p>Navigate to MeteoGate Developer Portal and log in with your preferred identity provider. If required, input missing account information such as first and last name. You are then taken to the Developer Portal front page.</p>
+<h4 id="registering-as-eumetnet-member-user">Registering as EUMETNET Member User</h4>
+<p>Navigate to MeteoGate Developer Portal and log in with your organisation’s identity provider (e.g. Azure AD). The identity provider should provide your work email address, showing that you are affiliated with a EUMETNET Member. If required, input missing account information such as first and last name. You are then taken to the Developer Portal front page.</p>
+<p>Send email to the MeteoGate helpdesk with a request for priority EUMETNET Member access, including the email address you used to register to the Developer portal. The MeteoGate support agent will verify that you are affiliated with a EUMETNET Member and add you to the appropriate EUMETNET Member group.</p>
+<h4 id="creating-api-key">Creating API Key</h4>
+<p>You can obtain a new API Key by clicking the ‘Create API Key’ button in the Developer Portal. The API Key (which is a string of characters) is subsequently shown.</p>
+<h4 id="deleting-api-key">Deleting API Key</h4>
+<p>If there is a need to revoke your API Key (for example, the API Key has been compromised), you can delete the API Key by clicking the ‘Delete API Key’ button in the Developer Portal.</p>
+<h4 id="viewing-available-api-endpoints-ie-routes">Viewing Available API Endpoints (i.e. routes)</h4>
+<p>You can view the API endpoints (i.e. routes) of the Data Suplly components available through the MeteoGate API Gateways by clicking the ‘Show routes’ button in the in the Developer Portal.</p>
+<h3 id="registering-as-a-local-user-on-the-data-supply">Registering as a Local User on the Data Supply</h3>
+<p>There are Data Supply components that require users to register, but which handle authentication and access control locally. You cannot use a MeteoGate API Key to access data on these Data Supply components but need to create a local user account and authenticate following the Data Provider’s instructions.</p>
+<h3 id="accessing-data-through-meteogate-api-gateway">Accessing Data Through MeteoGate API Gateway</h3>
+<p>MeteoGate API Gateways provide managed access to the local Data Supply components that are available through MeteoGate. The API Gateways manage data requests and data access flow by e.g., providing cybersecurity, priority access, request limiting, and rate limiting measures. The API Gateway also collects usage data. There are several API Gateways available. The Data Publisher chooses which API Gateway instance they want to use. It is also possible to publish data directly, without using the API Gateway.</p>
+<p>Data is accessed by sending an access request to a specific API endpoint of the API Gateway. Data can be accessed with a web browser, a specialised software program, or programmatically (i.e. from software code).</p>
+<p>Note that these instructions apply specifically to OGC-API-EDR type of API.</p>
+<h4 id="what-is-an-access-request">What is an Access Request?</h4>
+<p>Accessing data begins with formulating a data access request. It is basically a text string send to the MeteoGate API Gateway. It includes the URL for the particular API endpoint and parameters. The API Key (which is also a text string) must be included for restricted data.</p>
+<p>A data access request may like this, for example:</p>
+<p><code>https://api.eumetnet.eu/fi-fmi/edr/collections/ecmwf/instances/20240911T000000/locations/100683?&amp;datetime=2024-09-11T06:00Z/2024-09-12T09:00Z&amp;parameter-name=Temperature&amp;crs=CRS:84&amp;f=GeoJSON</code></p>
+<p>In the example, the parts of the access request are as follows:</p>
+<ul>
+<li>API endpoint: <code>https://api.eumetnet.eu/fi-fmi/edr/collections/ecmwf/instances/20240911T000000/locations/100683</code></li>
+<li>Parameters: <code>&amp;datetime=2024-09-11T06:00Z/2024-09-12T09:00Z&amp;parameter-name=Temperature&amp;crs=CRS:84&amp;f=GeoJSON</code></li>
+</ul>
+<p>In the example, the request is targeting a specific dataset (ECMWF data), for a particular date and time (<code>2024-09-11T00:00:00</code>) and at a specific location (<code>100683</code>). The API endpoint specifies the API base URL including the type of API (<code>https://api.eumetnet.eu/fi-fmi/edr</code>), collection or dataset (<code>ecmwf</code>), instance of a collection (in this case, data taken at a particular time: <code>20240911T000000</code>), specific location within the collection instance (in this case, a station id: <code>100683</code>). You can see from the base URL, that it point to the MeteoGate API Gateway.</p>
+<p>Parameters are often specified after a ? symbol in the access request. In the example, the parameters request temperature data for the time range between September 11, 2024, 06:00 UTC, and September 12, 2024, 09:00 UTC. The data should be returned in GeoJSON format, using CRS:84 as the coordinate system.</p>
+<h4 id="how-to-find-the-api">How to Find the API</h4>
+<p>First, it is necessary to identify the API from which the data will be retrieved. The collection metadata for the API in question specify how the access request should be formulated. For example, it specifies which collections (datasets) and parameters are available.</p>
+<p>There are several ways to find the API that can provide data for your needs:</p>
+<ul>
+<li>MeteoGate <a href="https://explorer.meteogate.eu">Data Explorer</a> (recommended, see above)</li>
+<li>WMO WIS2 Global Discovery Catalogue (see above)</li>
+<li>Route list in MeteoGate Developer Portal (see above). Note that the route list includes only Data Supply components that are accessed through MeteoGate API Gateway(s).</li>
+<li>Notification message (see above)</li>
+<li>Search for datasets on a web search engine, e.g. Google Dataset Search</li>
+<li>Data Supply web landing page (e.g. WIS2Box UI)</li>
+</ul>
+<p>The API base URL looks like this, for example: <code>api.eumetnet.eu/fi-fmi/edr</code></p>
+<h4 id="how-formulate-the-access-request">How Formulate the Access Request</h4>
+<p>There are several ways to formulate the access request:</p>
+<ul>
+<li>Use an API query tool (e.g. Swagger), if available<ul>
+<li>Browse available collections and parameters from an API using specialist software, which formulates access request according to your preferences</li>
+<li>Copy the resulting access request</li>
+</ul>
+</li>
+<li>Copy the URL link from a notification message<ul>
+<li>In case you have subscribed to notifications about particular data from the Global Broker, the notification message includes a direct URL link to the data you have subscribed to</li>
+</ul>
+</li>
+<li>Formulate manually using metadata from API (for expert users)<ul>
+<li>Access the API collection URL to get collection metadata, which provides information on available data query types, parameters, spatial extents, and temporal extents (e.g. <code>https://api.eumetnet.eu/fi-fmi/edr/collections</code>)</li>
+<li>Browse collection metadata to find collections and parameters to data that are available from that API.</li>
+<li>Decide what data you want to get (e.g. collection type, collection, type of data, time, geographic extent, output formats, other parameters)</li>
+<li>Formulate the access request by combining the API base URL, collection, and parameters according to the OGC-API EDR <a href="https://ogcapi.ogc.org/edr">specification</a></li>
+</ul>
+</li>
+</ul>
+<h4 id="how-to-send-the-access-request">How to Send the Access Request</h4>
+<p>Data can be accessed with a web browser, a specialised software program, or programmatically (i.e. from software code). Data access happens behind the scenes. There is no UI for the MeteoGate API Gateway.</p>
+<p>If using a web browser, just input the access request to the address bar and press enter. If the request was input correctly, a response is opened with the requested data (typically in JSON format).</p>
+<p>You can also access data from software code using e.g. Python by sending the access request as a GET request to the API.</p>
+<p>In addition, there are specialised software programs that can be used to access and display data. MeteoGate <a href="https://explorer.meteogate.eu">Data Explorer</a> is an example of such a solution.</p>
+<h4 id="how-to-access-data-supply-components-requiring-authentication">How to Access Data Supply Components Requiring Authentication</h4>
+<p>For API endpoints that require authentication using API Key, the API Key is appended to the HTTP header of the data access request or alternatively provided as an URL parameter. Metadata should state whether the endpoint requires authentication.</p>
+<h3 id="accessing-data-directly-from-data-supply-apis">Accessing Data Directly From Data Supply APIs</h3>
+<p>Some Data Supply APIs are not accessed through the MeteoGate API Gateway(s), but directly. You can still find these APIs by the same means as the APIs that are accessed through the MeteoGate API Gateway(s) (except route list on Developer Portal), for example using the <a href="https://explorer.meteogate.eu">Data Explorer</a> or WIS 2.0 Global Discovery Catalogue.</p>
+<p>Follow the instructions and documentation available from the particular Data Provider to access these APIs. You should find the required links or information on the Data Provider from the metadata or a landing page available from the API base URL. Some Data Supply components may require authentication.</p>
+<blockquote>
+<p>[to be updated]</p>
+</blockquote>
+<hr />
+<h2 id="3-using-data">3 Using Data</h2>
+<p>Once data has been accessed or retrieved through the MeteoGate system—either via the API Gateway or directly from a Data Supply component—Data Consumers must ensure that it is used in accordance with applicable policies and licenses.</p>
+<h3 id="respect-usage-terms-and-licenses">Respect Usage Terms and Licenses</h3>
+<ul>
+<li>Each dataset includes discovery metadata that specifies its license, access policy, and permitted use.</li>
+<li>Make sure to check the metadata for license type (e.g. Creative Commons, national open data license) and any conditions set by the Data Owner or Publisher.</li>
+<li>You are responsible for complying with the stated license terms.</li>
+</ul>
+<h3 id="attribution-and-reuse">Attribution and Reuse</h3>
+<ul>
+<li>Cite the data source where required by the license.</li>
+<li>If modifications are made to the data (e.g., processing, reformatting), clearly indicate that changes have been made, if required by the license.</li>
+</ul>
+<h3 id="comply-with-meteogate-terms-of-use">Comply with MeteoGate Terms of Use</h3>
+<ul>
+<li>Follow the <a href="../references/">Terms of Use</a> and <a href="../references/">Data Governance Policy</a> that outline fair use and responsibilities of Data Consumers.</li>
+<li>Avoid excessive or abusive automated queries.</li>
+<li>Do not redistribute restricted data without permission from the Data Owner.</li>
+</ul>
+<h3 id="integration-into-your-systems">Integration into Your Systems</h3>
+<ul>
+<li>Data retrieved via the API (e.g. in JSON, GeoJSON format) can be integrated into your workflows, applications, and databases.</li>
+<li>You can automate periodic data pulls using scripts (e.g. Python, R)</li>
+<li>Example use cases include:<ul>
+<li>Visualising weather station data on a map</li>
+<li>Feeding weather data into weather or hydrological models</li>
+<li>Monitoring real-time observations (e.g. temperature, precipitation) for decision-making</li>
+<li>Supporting early warning systems with live data streams</li>
+<li>Performing climate trend analysis using historical datasets</li>
+<li>Integrating forecast data into agriculture decision support tools</li>
+<li>Powering smart city applications (e.g. air quality, urban flooding risk)</li>
+<li>Enhancing maritime or aviation planning with near real-time meteorological inputs</li>
+<li>Automating daily or hourly reports with scheduled API queries</li>
+<li>Combining data from multiple countries for cross-border analysis or research</li>
+</ul>
+</li>
+</ul>
+<h3 id="developer-support">Developer Support</h3>
+<ul>
+<li>Use the Developer Portal to view available routes and manage your API Keys.</li>
+<li>If you need technical guidance or encounter issues, contact the <a href="#">MeteoGate Service Desk</a></li>
+<li>If you have questions about a specific dataset, contact the appropriate Data Publisher.</li>
+</ul>
+<p>ℹ️ <strong><em>Note:</em></strong> Some datasets may be updated or deprecated over time. Always check for the latest metadata and availability status.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["navigation.instant", "navigation.tabs", "navigation.tabs.sticky", "navigation.top", "navigation.sections", "toc.integrate", "search.highlight", "content.code.copy"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>
