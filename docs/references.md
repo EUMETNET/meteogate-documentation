@@ -14,15 +14,13 @@ The approach for MeteoGate is to use appropriate policies and standards which ar
 
 The following MeteoGate documents are available:
 
-  - [Terms of Use](): Terms and conditions MeteoGate users must approve to access data through MeteoGate.
-  - [Privacy Policy](): Ensures that MeteoGate users’ data is handled in compliance with GDPR.
-  - [Data Governance Policy](https://github.com/EUMETNET/meteogate-documentation/raw/policy-files/files/Data_governance_policy.docx): Top-level policy to ensure that the data shared through MeteoGate is consistent, trustworthy, and not misused. It guides data publishing and consumption practices.
-  - [Cyber Security Policy](https://github.com/EUMETNET/meteogate-documentation/raw/policy-files/files/Cyber_security_policy.docx): Outlines EUMETNET's approach to protecting MeteoGate, its technology assets, and data.
-  - [Participation Management Policy](https://github.com/EUMETNET/meteogate-documentation/raw/policy-files/files/Participation_Management_Policy.docx): Management approach for each category of MeteoGate stakeholders (Data Publishers, Data Consumers, Community Capability Operators).
-  - [Incident and Problem Management Policy](https://github.com/EUMETNET/meteogate-documentation/raw/policy-files/files/Incident_and_Problem_mgt_policy.docx): Approach for managing incidents and problems across MeteoGate by the Solution Manager and Community Capability Operators.
+  - [Privacy Policy](https://en.ilmatieteenlaitos.fi/meteogate-privacy-notice): Ensures that MeteoGate users’ data is handled in compliance with GDPR.
+  - [Data Governance Policy](https://github.com/EUMETNET/meteogate-documentation/raw/main/files/Data_governance_policy.docx): Top-level policy to ensure that the data shared through MeteoGate is consistent, trustworthy, and not misused. It guides data publishing and consumption practices.
+  - [Cyber Security Policy](https://github.com/EUMETNET/meteogate-documentation/raw/main/files/Cyber_security_policy.docx): Outlines EUMETNET's approach to protecting MeteoGate, its technology assets, and data.
+  - [Participation Management Policy](https://github.com/EUMETNET/meteogate-documentation/raw/main/files/Participation_Management_Policy.docx): Management approach for each category of MeteoGate stakeholders (Data Publishers, Data Consumers, Community Capability Operators).
+  - [Incident and Problem Management Policy](https://github.com/EUMETNET/meteogate-documentation/raw/main/files/Incident_and_Problem_mgt_policy.docx): Approach for managing incidents and problems across MeteoGate by the Solution Manager and Community Capability Operators.
   - [MeteoGate Documentation](https://github.com/EUMETNET/meteogate-documentation) (this document): Comprehensive guidance on how to access, share, and operate with MeteoGate, including implementation of policies.
   - [Quality of Service](): Defines the quality criteria for the MeteoGate service, Community Components, and relevant Local Components.
-  - [EUMETNET FEMDI Programme Decision](): The official agreement for MeteoGate operation and maintenance, covering governance, reporting, budgeting, legal matters, and termination.
 
 ---
 
@@ -55,7 +53,7 @@ This section lists useful references related to MeteoGate.
 ### MeteoGate Community Component Repositories and Developer Docs
 
   - [MeteoGate Documentation repository](https://github.com/EUMETNET/meteogate-documentation)
-  - [Data Explorer repository]()
+  - [Data Explorer repository](https://gitlab.com/opengeoweb/opengeoweb)
   - [API Gateway repository](https://github.com/EURODEO/api-management-tool-poc)
   - [Developer Portal repository](https://github.com/EURODEO/Dev-portal)
   - [Infrastructure repository](https://github.com/EURODEO/femdi-gateway-iac)
@@ -65,7 +63,7 @@ This section lists useful references related to MeteoGate.
 
   - [Land-based surface observations](https://api.meteogate.eu/eu-eumetnet-surface-observations) (E-SOH)  
   - [EUMETNET OPERA weather radar](https://api.meteogate.eu/documentation/eu-eumetnet-weather-radar)   
-  - [EUMETNET Climate Aggregator](https://github.com/EUMETNET/ogc-edr-workshop) 
+  - [EUMETNET Climate Aggregator](https://api.meteogate.eu/eu-eumetnet-climate-observations/v1) 
   - [EUMETNET Warnings API](https://meteoalarm.org/en/live/page/redistribution-hub#list)
 
 ### API Implementation Examples
