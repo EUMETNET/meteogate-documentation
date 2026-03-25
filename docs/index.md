@@ -25,7 +25,7 @@ This guide is designed for:
 | [1. Overview](./1-overview/) | Introduction to MeteoGate and its components |
 | [2. Discovering and Accessing Data](./2-discovering-and-accessing-data/) | How users can search for, preview, and retrieve data |
 | [3. Publishing Data](./3-publishing-data/) | How NMHSs can publish datasets and APIs via MeteoGate |
-| [4. Onboarding Your Api](./3-onboarding-your-api/) | How NMHSs can add their APIs via MeteoGate |
+| [4. Onboarding Your Api](./4-onboarding-your-api/) | How NMHSs can add their APIs via MeteoGate |
 | [Architecture](./technical-architecture/) | Overview of the architecture of the MeteoGate system |
 | [Glossary](./glossary/) | Definitions of key concepts |
 | [References](./references/) | Relevant policies, tools, and resources |
